@@ -2,7 +2,7 @@
 
 **Coşkunun adresi. Yaparız baba!** → [hadibaba.com](https://hadibaba.com)
 
-Türk futbolunu coşkuyla yorumlayan statik site. Sahnedeki rakibi: [Yürü Baba](https://github.com/sevketirtem/yurubaba).
+Türk futbolunu coşkuyla yorumlayan statik site. Sahnedeki rakibi: [Yürü Baba](https://github.com/sevketirtem/yurubaba2027).
 
 ## Teknik yapı
 
