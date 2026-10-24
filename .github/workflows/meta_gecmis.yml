@@ -1,0 +1,56 @@
+# Ekim'de, Meta hesapları açılmadan önce yayınlanmış yazıları Kasım 2026'da
+# haftada bir, sırayla Facebook / Instagram / Threads'e gönderir
+# (Bluesky ve Telegram'a zaten gitmişlerdi; onlara dokunulmaz).
+# Tarihler bitince hiçbir şey yapmaz; iş bitince bu dosya silinebilir.
+name: Eski yazıları Meta'da paylaş (Kasım 2026)
+
+on:
+  schedule:
+    - cron: "17 9 3,10,17 11 *"   # 3, 10, 17 Kasım 12:17 (İstanbul)
+  workflow_dispatch:
+    inputs:
+      tarih:
+        description: "O tarihin yazısını ŞİMDİ gönder (AA-GG, ör. 11-03); boş = bugünün planı"
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bluesky
+  cancel-in-progress: false
+
+jobs:
+  paylas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bugünün yazısını seç
+        id: sec
+        env:
+          TARIH: ${{ inputs.tarih }}
+        run: |
+          gun="${TARIH:-$(date -u +%m-%d)}"
+          yil="$(date -u +%Y)"
+          url=""
+          if [ "$yil" = "2026" ] || [ -n "$TARIH" ]; then
+            case "$gun" in
+              11-03) url="https://hadibaba.com/2026/10/kartal-geriden-dondu-trabzon-2de-2-yapti/" ;;
+              11-10) url="https://hadibaba.com/2026/10/lille-de-dort-gol-bu-sezon-baska/" ;;
+              11-17) url="https://hadibaba.com/2026/10/daha-dun-actik-bugun-kopyasi-cikti/" ;;
+            esac
+          fi
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "Seçilen: ${url:-yok}"
+      - name: Meta'ya gönder
+        if: steps.sec.outputs.url != ''
+        env:
+          SITE_FEED: https://hadibaba.com/index.xml
+          META_YAZI: ${{ steps.sec.outputs.url }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_SAYFA_ADI: "Hadi Baba"
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          ETIKETLER: "#futbol"
+          IG_ETIKETLER: "#futbol #süperlig #türkfutbolu"
+        run: python3 scripts/bluesky_paylas.py
