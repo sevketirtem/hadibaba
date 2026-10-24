@@ -22,6 +22,8 @@ summaryLength = 40
   # Tema renkleri: iki site aynı iskeleti, farklı renklerle kullanır
   accent = "#e4572e"
   accentInk = "#ffffff"
+  # Paylaşım kartındaki kategori etiketinin rengi (layouts/partials/kart.html)
+  kartEtiket = "#ffd9cc"
   # Sahnedeki rakip
   rivalName = "Yürü Baba"
   rivalURL = "https://yurubaba.com/"
