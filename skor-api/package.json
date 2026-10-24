@@ -1,0 +1,9 @@
+{
+  "name": "superlig-veri",
+  "private": true,
+  "description": "Süper Lig maçları ve puan durumu için önbellekli küçük API (API-Football → hadibaba.com / yurubaba.com)",
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module"
+}

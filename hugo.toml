@@ -28,6 +28,9 @@ summaryLength = 40
   rivalName = "Yürü Baba"
   rivalURL = "https://yurubaba.com/"
   rivalJab = "Keyif kaçırıcılar için:"
+  # Canlı skor / puan durumu veri adresi (skor-api/ Vercel projesi). Boşsa "çok yakında".
+  skorAPI = ""
+
   # Ziyaretçi sayacı (GoatCounter): https://hadibaba.goatcounter.com — boş bırakılırsa sayaç kapanır.
   goatcounter = "hadibaba"
 
@@ -40,6 +43,10 @@ summaryLength = 40
     placeholder = "Yaz bakalım, coşkunu paylaş! Yaparız baba!"
 
 [menus]
+  [[menus.main]]
+    name = "Canlı Skor"
+    url = "/canli/"
+    weight = 0
   [[menus.main]]
     name = "Maç Önü"
     url = "/kategoriler/mac-onu/"
