@@ -1,6 +1,7 @@
-// Takım sayfası verisi: kulüp bilgisi, son 5 ve sıradaki 3 maç, kadro, sakat/cezalılar.
-// /api/takim?id=<takım no>. Beş API-Football isteği; 3 saat önbellek (canlı maç varken 5 dk).
+// Takım sayfası verisi: kulüp bilgisi, son 5 ve sıradaki 3 maç, kadro, sakat/cezalılar, bu sezonki transferler.
+// /api/takim?id=<takım no>. Altı API-Football isteği; 3 saat önbellek (canlı maç varken 5 dk).
 import { SEZON, cors, onbellek, apiFootball, hata, macOzet, sayi, CANLI } from "./_ortak.js";
+import { transferListesi, SEZON_BASI } from "./transferler.js";
 
 const MEVKI = { Goalkeeper: "Kaleci", Defender: "Defans", Midfielder: "Orta saha", Attacker: "Forvet" };
 
@@ -11,12 +12,13 @@ export default async function handler(req, res) {
   if (!id) { onbellek(res, 86400); return res.status(400).json({ hata: "Geçersiz takım numarası" }); }
   try {
     const tz = "Europe/Istanbul";
-    const [bilgi, son, sonraki, kadro, sakat] = await Promise.all([
+    const [bilgi, son, sonraki, kadro, sakat, transfer] = await Promise.all([
       apiFootball("teams", { id }),
       apiFootball("fixtures", { team: id, last: 5, timezone: tz }),
       apiFootball("fixtures", { team: id, next: 3, timezone: tz }),
       apiFootball("players/squads", { team: id }).catch(() => []),
       apiFootball("injuries", { team: id, season: SEZON, timezone: tz }).catch(() => []),
+      apiFootball("transfers", { team: id }).catch(() => []),
     ]);
     const t = bilgi[0];
     if (!t || t.team?.country !== "Turkey") {
@@ -43,6 +45,7 @@ export default async function handler(req, res) {
       takim: { id: t.team.id, ad: t.team.name, kurulus: t.team.founded },
       stat: t.venue ? { ad: t.venue.name, sehir: t.venue.city, kapasite: t.venue.capacity } : null,
       son: sonMaclar, sonraki: sonrakiler, kadro: oyuncular, sakatlar,
+      transferler: transferListesi(transfer, Number(id), SEZON_BASI),
     });
   } catch (e) {
     hata(res, e);
