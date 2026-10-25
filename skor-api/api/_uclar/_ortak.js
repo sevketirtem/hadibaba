@@ -72,6 +72,6 @@ export async function apiFootball(yol, params) {
 }
 
 export function hata(res, e) {
-  onbellek(res, 300); // hata da 5 dk önbellekte kalsın, kota boşa gitmesin
+  onbellek(res, 30); // hata kısa süre önbellekte kalsın (Pro planda kota rahat), sonra yeniden denensin
   res.status(502).json({ hata: String(e.message || e) });
 }
