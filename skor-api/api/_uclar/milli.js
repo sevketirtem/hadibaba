@@ -3,11 +3,15 @@ import { cors, onbellek, apiFootball, hata, macOzet, CANLI } from "./_ortak.js";
 
 const MEVKI = { Goalkeeper: "Kaleci", Defender: "Defans", Midfielder: "Orta saha", Attacker: "Forvet" };
 
+// API-Football adı zamanla "Turkey" → "Türkiye" olabiliyor; sırayla dener, en son aramaya geçer.
 export async function milliTakim() {
-  const r = await apiFootball("teams", { name: "Turkey" });
-  const t = r.find((x) => x.team?.national) || r[0];
-  if (!t) throw new Error("Milli takım bulunamadı");
-  return t.team;
+  const deneme = [{ name: "Türkiye" }, { name: "Turkey" }, { search: "Turk" }, { country: "Turkey" }];
+  for (const q of deneme) {
+    const r = await apiFootball("teams", q).catch(() => []);
+    const t = r.find((x) => x.team?.national && /^t[üu]rk/i.test(x.team?.name || "")) || r.find((x) => x.team?.national);
+    if (t) return t.team;
+  }
+  throw new Error("Milli takım bulunamadı");
 }
 
 export default async function handler(req, res) {
