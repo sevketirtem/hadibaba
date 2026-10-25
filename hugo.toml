@@ -42,11 +42,28 @@ summaryLength = 40
     serverURL = "https://yorum.hadibaba.com"
     placeholder = "Yaz bakalım, coşkunu paylaş! Yaparız baba!"
 
+  # Sosyal medya (başlıkta her sayfada görünür; partials/header.html)
+  [[params.sosyal]]
+    ad = "Instagram"
+    url = "https://www.instagram.com/hadibabacom/"
+  [[params.sosyal]]
+    ad = "Threads"
+    url = "https://www.threads.com/@hadibabacom"
+  [[params.sosyal]]
+    ad = "Facebook"
+    url = "https://www.facebook.com/1445671885292077"
+  [[params.sosyal]]
+    ad = "Bluesky"
+    url = "https://bsky.app/profile/hadibaba.bsky.social"
+  [[params.sosyal]]
+    ad = "Telegram"
+    url = "https://t.me/hadibabacom"
+
 [menus]
   [[menus.main]]
     name = "Canlı Skor"
     url = "/canli/"
-    weight = 0
+    weight = -1
   [[menus.main]]
     name = "Maç Önü"
     url = "/kategoriler/mac-onu/"
