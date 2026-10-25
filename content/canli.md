@@ -7,4 +7,4 @@ Kalbim RAMS Park'ta, gözüm Trabzon'da, kulağım Amed'de! Bu sayfa haftanın b
 
 {{< skor >}}
 
-Veriler API-Football'dan otomatik alınır; nadiren birkaç dakika gecikebilir. Bir hata görürsen [bize yaz](/iletisim/).
+Veriler API-Football'dan otomatik alınır; nadiren birkaç dakika gecikebilir. Maça tıklayınca ilk 11'ler, goller ve istatistikler açılır. Gol yarışı için [Gol Krallığı](/krallar/). Bir hata görürsen [bize yaz](/iletisim/).
