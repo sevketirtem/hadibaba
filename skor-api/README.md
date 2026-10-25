@@ -19,6 +19,9 @@ yanıtlar Vercel CDN'de önbelleğe alınır:
 
 En kötü gün tahmini: canlı 6 saat × 10 + 18 saat × 1 + puan 12 ≈ 90 istek.
 
+## Yapı
+Vercel ücretsiz planı proje başına 12 fonksiyonla sınırlı; bu yüzden tek fonksiyon var: `api/[uc].js`, isteği `api/_uclar/<uç>.js`'e yönlendirir. Yeni uç eklerken dosyayı `_uclar/`'a koy ve `[uc].js`'teki listeye ekle.
+
 ## Kurulum
 1. dashboard.api-football.com → ücretsiz hesap → API anahtarı.
 2. Vercel → Add New → Project → `sevketirtem/hadibaba` deposunu seç →
