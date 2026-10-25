@@ -2,7 +2,10 @@
 // /api/mac?id=<fixture id>. Tek API-Football isteği (fixtures?id= hepsini birlikte verir).
 // Önbellek: canlıyken 1 dk, başlamaya 2 saatten az kaldıysa 5 dk (ilk 11'ler ~1 saat önce gelir),
 // daha uzaksa 1 saat, bitmişse 1 gün.
-import { LIG, cors, onbellek, apiFootball, hata } from "./_ortak.js";
+import { AVRUPA, cors, onbellek, apiFootball, hata } from "./_ortak.js";
+
+// Maç sayfası açılabilen ligler: Süper Lig, 1. Lig, Avrupa kupaları
+const IZINLI = new Set(["203", "204", ...Object.keys(AVRUPA)]);
 
 const CANLI = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
 const BITTI = new Set(["FT", "AET", "PEN", "AWD", "WO", "CANC", "ABD"]);
@@ -39,8 +42,8 @@ export default async function handler(req, res) {
   try {
     const r = await apiFootball("fixtures", { id, timezone: "Europe/Istanbul" });
     const m = r[0];
-    // Yalnızca bizim ligimizin maçları (başkaları kotamızı harcamasın diye)
-    if (!m || String(m.league?.id) !== String(LIG)) {
+    // Yalnızca bizim liglerimizin maçları (başkaları kotamızı harcamasın diye)
+    if (!m || !IZINLI.has(String(m.league?.id))) {
       onbellek(res, 86400);
       return res.status(404).json({ hata: "Maç bulunamadı" });
     }
@@ -79,7 +82,8 @@ export default async function handler(req, res) {
       hafta: (m.league.round || "").replace("Regular Season - ", ""),
       stat: m.fixture.venue?.name || null, sehir: m.fixture.venue?.city || null,
       hakem: m.fixture.referee || null,
-      ev: m.teams.home.name, dep: m.teams.away.name,
+      lig: m.league?.name, ligId: m.league?.id,
+      ev: m.teams.home.name, dep: m.teams.away.name, evId: m.teams.home.id, depId: m.teams.away.id,
       evGol: m.goals.home, depGol: m.goals.away,
       iy: m.score?.halftime || null,
       olaylar, kadro, istatistik,
