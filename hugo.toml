@@ -21,6 +21,7 @@ summaryLength = 40
     posts = "/:year/:month/:contentbasename/"
 
 [params]
+  yandexDogrulama = "b960791fc16a7860"
   slogan = "Coşkunun adresi. Yaparız baba!"
   description = "Türk futbolunu coşkuyla yorumlayan site. Takım tutmayız, futbola âşığız."
   # Tema renkleri: iki site aynı iskeleti, farklı renklerle kullanır
