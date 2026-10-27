@@ -78,10 +78,10 @@ def main():
     satirlar = []
     for h in sayfalar.get("hits", [])[:5]:
         sayi = h.get("count", h.get("count_unique", 0))
-        ad = (h.get("title") or h.get("path") or "?").strip()
+        ad = re.sub(r"\s+·\s+(Hadi|Yürü) Baba.*$", "", (h.get("title") or h.get("path") or "?").strip())
         satirlar.append(f"{ad} ({h.get('path')}): {sayi}")
     ust = " | ".join(satirlar) if satirlar else "—"
-    print(f"::notice title=Ziyaretçi {kod} {gun.isoformat()}::Toplam {ziyaret} | En çok: {ust}")
+    print(f"::notice title=Ziyaretçi {kod} {gun.isoformat()}::Toplam {ziyaret} görüntüleme | En çok: {ust}")
 
     ozet = os.environ.get("GITHUB_STEP_SUMMARY")
     if ozet:
