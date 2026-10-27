@@ -56,12 +56,19 @@ def main():
     son = bas + timedelta(days=1)
     params = {"start": bas.strftime("%Y-%m-%dT%H:%M:%SZ"), "end": son.strftime("%Y-%m-%dT%H:%M:%SZ")}
 
+    yol = "stats/total"
     try:
-        toplam = iste(kod, token, "stats/total", params)
-        sayfalar = iste(kod, token, "stats/hits", {**params, "limit": 5})
+        toplam = iste(kod, token, yol, params)
+        yol = "stats/hits"
+        sayfalar = iste(kod, token, yol, {**params, "limit": 5})
     except urllib.error.HTTPError as e:
         govde = e.read().decode("utf-8", "replace")[:200]
-        print(f"::error title=Ziyaretçi raporu::GoatCounter {e.code}: {govde}")
+        print(f"::error title=Ziyaretçi raporu::GoatCounter {e.code} ({e.url} ← {yol}): {govde}")
+        try:
+            me = iste(kod, token, "me", {})
+            print(f"::notice title=Ziyaretçi raporu tanı::/me çalışıyor: {json.dumps(me)[:300]}")
+        except urllib.error.HTTPError as e2:
+            print(f"::notice title=Ziyaretçi raporu tanı::/me {e2.code}: {e2.read().decode('utf-8','replace')[:200]}")
         return 1
     except Exception as e:  # ağ hatası vb.
         print(f"::error title=Ziyaretçi raporu::{type(e).__name__}: {e}")
