@@ -18,6 +18,10 @@ on:
         description: "Bölüm zaten varsa yeniden üret"
         type: boolean
         default: false
+      sadece_youtube:
+        description: "Yalnızca var olan bölümün videosunu YouTube'a yükle"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -117,8 +121,14 @@ jobs:
           git commit -qm "Podcast: $t" && git pull -q --rebase --autostash origin main && git push -q origin main
           gh workflow run hugo.yml --ref main
 
+      - name: Var olan videoyu indir (yalnızca YouTube)
+        if: inputs.sadece_youtube
+        run: |
+          mkdir -p /tmp/b
+          gh release download "podcast-${{ steps.sec.outputs.tarih }}" -p "*.mp4" -O /tmp/b/video.mp4
+
       - name: YouTube'a yükle
-        if: steps.sec.outputs.uret == 'true'
+        if: steps.sec.outputs.uret == 'true' || inputs.sadece_youtube
         continue-on-error: true
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
