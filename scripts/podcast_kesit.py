@@ -6,8 +6,9 @@ Kullanım: python scripts/podcast_kesit.py <senaryo.json> <bolum.mp3> <kesit.mp4
 1) Zamanlama: faster-whisper (yerel, ücretsiz) bölüm sesindeki kelimelerin zamanını çıkarır; senaryo
    metniyle hizalanır → her replik ve kelimenin başlangıç/bitiş saniyesi. Whisper yoksa/başarısızsa
    replikler karakter sayısına göre orantılı dağıtılır (altyazı yaklaşık olur).
-2) Seçim: Gemini (GEMINI_API_KEY; model GEMINI_METIN_MODEL, varsayılan gemini-2.5-flash) ardışık
+2) Seçim: Gemini (GEMINI_API_KEY; model GEMINI_METIN_MODEL, varsayılan gemini-3.8-flash) ardışık
    replikleri seçer ve kısa bir Shorts başlığı yazar. Anahtar/yanıt yoksa süreye göre seçilir.
+   KESIT_SADE=1: alttaki "Tam bölüm" ve alan adı yazıları konmaz (TikTok kuralı).
 3) Video: bölümün gerçek sesi; konuşan karakter büyür ve sesle nabız atar; altyazıda o an söylenen
    kelime sarı; altta ilerleme çubuğu ve "Tam bölüm" çağrısı.
 """
@@ -54,7 +55,12 @@ def replik_kelimeleri(senaryo):
 def whisper_kelimeler(mp3):
     from faster_whisper import WhisperModel
     model = WhisperModel(os.environ.get("WHISPER_MODEL", "small"), device="cpu", compute_type="int8")
-    parcalar, _ = model.transcribe(mp3, language="tr", word_timestamps=True, vad_filter=False, beam_size=1)
+    import numpy as np
+    # Sesi ffmpeg ile kendimiz çözüyoruz (faster-whisper'ın PyAV okuyucusu bazı sürümlerde hata veriyor)
+    ham = subprocess.run(["ffmpeg", "-v", "error", "-i", mp3, "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
+                         capture_output=True, check=True).stdout
+    ses = np.frombuffer(ham, np.int16).astype(np.float32) / 32768.0
+    parcalar, _ = model.transcribe(ses, language="tr", word_timestamps=True, vad_filter=False, beam_size=1)
     return [(w.word.strip(), w.start, w.end) for p in parcalar for w in (p.words or []) if w.word.strip()]
 
 
@@ -159,7 +165,7 @@ def sec_gemini(senaryo, rp):
         "Ayrıca bu kesit için en fazla 60 karakterlik, merak uyandıran ama yanıltmayan Türkçe bir başlık yaz "
         "(bahis/kupon çağrışımı yok, gerçek kişiye hakaret yok). "
         'Yalnızca JSON döndür: {"bas": <ilk no>, "son": <son no>, "baslik": "..."}\n\n' + satirlar)
-    model = os.environ.get("GEMINI_METIN_MODEL", "gemini-2.5-flash")
+    model = os.environ.get("GEMINI_METIN_MODEL", "gemini-3.8-flash")
     govde = {"contents": [{"parts": [{"text": istem}]}],
              "generationConfig": {"responseMimeType": "application/json", "temperature": 0.4}}
     req = urllib.request.Request(
@@ -261,6 +267,8 @@ class Cizer:
         d.multiline_text((W // 2, 255), "\n".join(satir), font=self.f_baslik, fill="white", anchor="ma",
                          align="center", stroke_width=4, stroke_fill=(20, 20, 30), spacing=8)
         d.rectangle([0, 1010, W, H], fill=RENK["zemin"])
+        if os.environ.get("KESIT_SADE"):  # TikTok: API ile gönderilen videoda bağlantı/tanıtım yazısı olmamalı
+            return im
         d.text((W // 2, H - 150), "Tam bölüm: YouTube · Spotify — \"Hadi vs Yürü\"", font=self.f_kucuk,
                fill=RENK["hadi_acik"], anchor="mm")
         d.text((W // 2, H - 100), "hadibaba.com · yurubaba.com", font=self.f_kucuk, fill=RENK["yuru_acik"], anchor="mm")
