@@ -20,8 +20,8 @@ TERCIH = {
     "yuru": ["tr-TR-Chirp3-HD-Algenib", "tr-TR-Chirp3-HD-Charon", "tr-TR-Wavenet-E", "tr-TR-Standard-E"],
 }
 # Seslendirmeden sonra uygulanan perde kaydırma (tempo korunur): Hadi daha ince, Yürü daha kalın.
-# 1.09 ≈ +1,5 yarım ton, 0.88 ≈ -2,2 yarım ton
-PERDE_CARPANI = {"hadi": 1.09, "yuru": 0.88}
+# 1.09 ≈ +1,5 yarım ton; 1.0 = değişiklik yok
+PERDE_CARPANI = {"hadi": 1.09, "yuru": 1.0}  # Yürü: sahibinin isteğiyle doğal perde
 # Chirp 3 HD perde ayarı kabul etmez; hız ayarı her seste var
 AYAR = {"hadi": {"speakingRate": 1.12}, "yuru": {"speakingRate": 0.95}}
 AYAR_PERDE = {"hadi": 2.0, "yuru": -2.5}
