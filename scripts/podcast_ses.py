@@ -46,7 +46,7 @@ def tts_modeli():
     if not adlar:
         raise RuntimeError("TTS modeli bulunamadı")
     notice("Gemini TTS modelleri", ", ".join(adlar))
-    adlar.sort(key=lambda n: ("flash" not in n, "preview" in n, n))
+    adlar.sort(key=lambda n: ("flash" not in n, "lite" in n, "preview" in n, n))
     return adlar[0]
 
 
@@ -106,5 +106,9 @@ def sure(yol):
 if __name__ == "__main__":
     senaryo = json.load(open(sys.argv[1], encoding="utf-8"))
     cikti, motor = sys.argv[2], (sys.argv[3] if len(sys.argv) > 3 else "gemini")
-    (gemini_ses if motor == "gemini" else google_ses)(senaryo, cikti)
+    try:
+        (gemini_ses if motor == "gemini" else google_ses)(senaryo, cikti)
+    except Exception as e:  # noqa: BLE001
+        print(f"::error title=Podcast {motor} hatası::{str(e)[:600]}", flush=True)
+        sys.exit(1)
     notice("Podcast süresi", f"{os.path.basename(cikti)}: {sure(cikti):.0f} sn")

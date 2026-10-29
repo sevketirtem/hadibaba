@@ -12,6 +12,10 @@ on:
         description: 'Gemini sesi (Hadi)'
         required: false
         default: 'Umbriel'
+      motorlar:
+        description: 'gemini, google ya da ikisi'
+        required: false
+        default: 'ikisi'
       gemini_yuru:
         description: 'Gemini sesi (Yürü)'
         required: false
@@ -25,6 +29,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
       - name: Gemini sesi
+        if: inputs.motorlar != 'google'
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -32,6 +37,7 @@ jobs:
           GEMINI_SES_YURU: ${{ inputs.gemini_yuru }}
         run: mkdir -p /tmp/d && python scripts/podcast_ses.py "${{ inputs.senaryo }}" /tmp/d/A-gemini.mp3 gemini
       - name: Google sesi
+        if: inputs.motorlar != 'gemini'
         continue-on-error: true
         env:
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
