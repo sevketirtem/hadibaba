@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-10-29",
+  "mac": "Kasımpaşa – Beşiktaş",
+  "mac_alt": "10. hafta · Pazar 19.00",
+  "tablo": "Tahmin ligi: Hadi 1 · Yürü 0",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Bu hafta şampiyon BEŞİKTAŞ! Pazar Kasımpaşa'da 1-2 alırız!"},
+    {"kim": "yuru", "metin": "Geçen hafta Trabzonspor'du. Sende şampiyonluk haftalık abonelik."},
+    {"kim": "hadi", "metin": "Lidere sadece 4 puan! Bir Pazar akşamı kapanır. Yaparız baba!"},
+    {"kim": "yuru", "metin": "Arada üç takım var. Ekim'de şampiyon olunmaz. 1-1. Görürüz."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "1-2", "yuru": "1-1"},
+  "aciklama": "Hadi bu hafta şampiyonu ilan etti: Beşiktaş! Yürü yine hesap makinesiyle geldi. Kasımpaşa – Beşiktaş, Pazar 19.00. Senin tahminin ne?",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/10/bu-hafta-sampiyon-besiktas-kasimpasa/",
+    "yuru": "https://yurubaba.com/2026/10/haftalik-sampiyon-enflasyonu-besiktas-kasimpasa/"
+  }
+}

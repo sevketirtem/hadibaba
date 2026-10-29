@@ -1,0 +1,125 @@
+# Günlük atışma videosu: video/senaryolar/<tarih>.json push edilince videoyu üretir,
+# static/video/ altına koyup siteyi yayınlar, sonra Telegram, Instagram Reels,
+# Facebook ve Threads'te paylaşır.
+# Secret'lar: GOOGLE_TTS_KEY (seslendirme; yoksa sessiz efektli video),
+#             TELEGRAM_BOT_TOKEN, META_PAGE_TOKEN, THREADS_TOKEN (paylaşım).
+name: Atışma videosu
+
+on:
+  push:
+    branches: [main]
+    paths: ["video/senaryolar/**"]
+  workflow_dispatch:
+    inputs:
+      tarih:
+        description: "Senaryo tarihi (YYYY-AA-GG; boş = en yeni senaryo)"
+        type: string
+        default: ""
+      dry_run:
+        description: "Deneme: videoyu üret, yalnızca indirilebilir dosya (artifact) olarak sakla; siteye koyma, paylaşma"
+        type: boolean
+        default: false
+      yeniden:
+        description: "Video zaten varsa yeniden üret (paylaşılmış platformlara tekrar gönderilmez)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: video
+  cancel-in-progress: false
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Senaryoyu seç
+        id: sec
+        run: |
+          if [ -n "${{ inputs.tarih }}" ]; then t="${{ inputs.tarih }}"; else
+            t=$(ls video/senaryolar/*.json | xargs -n1 basename | sed 's/\.json$//' | sort | tail -1); fi
+          # Deneme senaryoları video/denemeler/ altında durur (push'ta otomatik çalışmaz)
+          if [ -f "video/senaryolar/$t.json" ]; then f="video/senaryolar/$t.json"; elif [ -f "video/denemeler/$t.json" ]; then f="video/denemeler/$t.json"; else echo "::error::Senaryo yok: $t"; exit 1; fi
+          echo "tarih=$t" >> "$GITHUB_OUTPUT"
+          echo "dosya=$f" >> "$GITHUB_OUTPUT"
+          if [ -f "static/video/$t.mp4" ] && [ "${{ inputs.yeniden }}" != "true" ]; then echo "uret=false" >> "$GITHUB_OUTPUT"; else echo "uret=true" >> "$GITHUB_OUTPUT"; fi
+          echo "::notice title=Senaryo::$t"
+
+      - name: Araçları kur
+        if: steps.sec.outputs.uret == 'true'
+        run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          fc-list | grep -q DejaVuSans-Bold || sudo apt-get install -y -qq fonts-dejavu-core
+          pip install -q pillow
+
+      - name: Videoyu üret
+        if: steps.sec.outputs.uret == 'true'
+        env:
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+        run: |
+          mkdir -p static/video
+          python video/atisma_video.py "${{ steps.sec.outputs.dosya }}" "static/video/${{ steps.sec.outputs.tarih }}.mp4" | tee uretim.log
+          echo "::notice title=Video üretildi::$(tail -1 uretim.log)"
+          rm -rf static/video/*.parcalar uretim.log
+          # Sitede yalnızca son 14 günün videoları kalsın (platformlar kendi kopyalarını tutar)
+          for f in static/video/*.mp4; do d=$(basename "$f" .mp4); [[ "$d" < "$(date -u -d '14 days ago' +%F)" ]] && git rm -q "$f" || true; done
+
+      - name: Deneme videosunu sakla
+        if: inputs.dry_run
+        uses: actions/upload-artifact@v4
+        with:
+          name: deneme-video
+          path: static/video/${{ steps.sec.outputs.tarih }}.mp4
+
+      - name: Siteye koy ve yayınla
+        if: steps.sec.outputs.uret == 'true' && !inputs.dry_run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "Claude (Hadi-Yürü ekibi)"
+          git config user.email "noreply@anthropic.com"
+          git add static/video
+          git commit -qm "Video: atışma ${{ steps.sec.outputs.tarih }}" || exit 0
+          git pull -q --rebase origin main && git push -q origin main
+          gh workflow run hugo.yml --ref main
+
+      - name: Video sitede açılana kadar bekle
+        if: ${{ !inputs.dry_run }}
+        id: bekle
+        run: |
+          url="https://hadibaba.com/video/${{ steps.sec.outputs.tarih }}.mp4"
+          boy=$(stat -c %s "static/video/${{ steps.sec.outputs.tarih }}.mp4")
+          for i in $(seq 1 60); do
+            uz=$(curl -sIL "$url?v=$i" | tr -d '\r' | awk 'tolower($1)=="content-length:"{v=$2} END{print v}')
+            [ "$uz" = "$boy" ] && { echo "url=$url" >> "$GITHUB_OUTPUT"; echo "::notice title=Yayında::$url"; exit 0; }
+            sleep 20
+          done
+          echo "::error::Video 20 dakikada yayına girmedi: $url"; exit 1
+
+      - name: Paylaş
+        if: ${{ !inputs.dry_run }}
+        env:
+          DRY_RUN: "false"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_KANALLAR: "@hadibabacom,@yurubaba"
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_SAYFA_ADI: "Hadi Baba"
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+        run: |
+          python video/video_paylas.py "${{ steps.sec.outputs.dosya }}" \
+            "static/video/${{ steps.sec.outputs.tarih }}.mp4" "${{ steps.bekle.outputs.url }}"
+
+      - name: Paylaşım kaydını sakla
+        if: ${{ always() && !inputs.dry_run }}
+        run: |
+          git config user.name "Claude (Hadi-Yürü ekibi)"
+          git config user.email "noreply@anthropic.com"
+          git add video/paylasildi.txt 2>/dev/null || exit 0
+          git commit -qm "Video paylaşım kaydı ${{ steps.sec.outputs.tarih }}" || exit 0
+          git pull -q --rebase origin main && git push -q origin main
