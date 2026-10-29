@@ -1,0 +1,45 @@
+# Podcast ses denemesi: aynı senaryoyu Gemini TTS ve Google Chirp sesleriyle seslendirir, podcast-deneme dalına koyar.
+# Hiçbir şey yayınlamaz.
+name: Podcast deneme
+on:
+  workflow_dispatch:
+    inputs:
+      senaryo:
+        description: 'Senaryo dosyası'
+        required: false
+        default: 'podcast/denemeler/2026-10-29.json'
+      gemini_hadi:
+        description: 'Gemini sesi (Hadi)'
+        required: false
+        default: 'Umbriel'
+      gemini_yuru:
+        description: 'Gemini sesi (Yürü)'
+        required: false
+        default: 'Algenib'
+permissions:
+  contents: write
+jobs:
+  ses:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - name: Gemini sesi
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_SES_HADI: ${{ inputs.gemini_hadi }}
+          GEMINI_SES_YURU: ${{ inputs.gemini_yuru }}
+        run: mkdir -p /tmp/d && python scripts/podcast_ses.py "${{ inputs.senaryo }}" /tmp/d/A-gemini.mp3 gemini
+      - name: Google sesi
+        continue-on-error: true
+        env:
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+        run: mkdir -p /tmp/d && python scripts/podcast_ses.py "${{ inputs.senaryo }}" /tmp/d/B-google.mp3 google
+      - name: podcast-deneme dalına koy
+        run: |
+          ls /tmp/d/*.mp3 >/dev/null 2>&1 || exit 1
+          cd /tmp/d && git init -q && git checkout -q -b podcast-deneme
+          git config user.name "Claude (Hadi-Yürü ekibi)" && git config user.email "noreply@anthropic.com"
+          git add *.mp3 && git commit -qm "Podcast ses denemesi"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" podcast-deneme
