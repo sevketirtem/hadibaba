@@ -77,6 +77,14 @@ def model_sec():
     return adaylar[0]
 
 
+def _ref(kim):
+    """Karakter referans resmi: assets/kart/ref-<kim>.png (iki depoda), yoksa video/<kim>.png."""
+    for yol in (os.path.join(KOK, "assets", "kart", f"ref-{kim}.png"), os.path.join(KOK, "video", f"{kim}.png")):
+        if os.path.exists(yol):
+            return yol
+    raise FileNotFoundError(f"{kim} referans resmi yok")
+
+
 def _resim(yol):
     with open(yol, "rb") as f:
         return {"inline_data": {"mime_type": "image/png", "data": base64.b64encode(f.read()).decode()}}
@@ -85,7 +93,7 @@ def _resim(yol):
 def gorsel(cikti, istem, kim="ikisi", en_boy="1:1"):
     model = model_sec()
     kimler = ["hadi", "yuru"] if kim == "ikisi" else [kim]
-    parcalar = [_resim(os.path.join(KOK, "video", "hadi.png")), _resim(os.path.join(KOK, "video", "yuru.png"))]
+    parcalar = [_resim(_ref("hadi")), _resim(_ref("yuru"))]
     metin = " ".join(TARIF[k] for k in kimler) + " SAHNE: " + istem + " " + KURALLAR
     parcalar.append({"text": metin})
     govde = {
