@@ -70,12 +70,16 @@ jobs:
           # Sitede yalnızca son 14 günün videoları kalsın (platformlar kendi kopyalarını tutar)
           for f in static/video/*.mp4; do d=$(basename "$f" .mp4); [[ "$d" < "$(date -u -d '14 days ago' +%F)" ]] && git rm -q "$f" || true; done
 
-      - name: Deneme videosunu sakla
+      - name: Deneme videosunu ayrı dala koy (video-deneme; site yayınına girmez)
         if: inputs.dry_run
-        uses: actions/upload-artifact@v4
-        with:
-          name: deneme-video
-          path: static/video/${{ steps.sec.outputs.tarih }}.mp4
+        run: |
+          f="static/video/${{ steps.sec.outputs.tarih }}.mp4"
+          mkdir -p /tmp/d && cp "$f" /tmp/d/deneme.mp4
+          cd /tmp/d && git init -q && git checkout -q -b video-deneme
+          git config user.name "Claude (Hadi-Yürü ekibi)" && git config user.email "noreply@anthropic.com"
+          git add deneme.mp4 && git commit -qm "Deneme videosu ${{ steps.sec.outputs.tarih }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" video-deneme
+          echo "::notice title=Deneme::video-deneme dalına kondu"
 
       - name: Siteye koy ve yayınla
         if: steps.sec.outputs.uret == 'true' && !inputs.dry_run
