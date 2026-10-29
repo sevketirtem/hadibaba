@@ -12,7 +12,7 @@ yanıtlar Vercel CDN'de önbelleğe alınır:
 | `/api/krallar` | gol ve asist krallığı (ilk 20) | 6 saat |
 | `/api/takim?id=` | takım: bilgi, son 5, sıradaki 3, kadro, sakat/cezalı (5 istek) | 3 saat (canlı maç varken 5 dk) |
 | `/api/sakat` | Süper Lig sakat/cezalı (bugün + 10 gün) | 3 saat |
-| `/api/avrupa` | Türk takımlarının ŞL/AL/KL maçları ve lig aşaması sıraları (7 istek) | 3 saat (canlıda 5 dk) |
+| `/api/avrupa` | Süper Lig takımlarının ŞL/AL/KL maçları ve lig aşaması sıraları (7 istek) | 3 saat (canlıda 5 dk) |
 | `/api/h2h?a=&b=` | iki takımın son 5 karşılaşması | 12 saat |
 | `?lig=204` | `/api/puan` ve `/api/maclar` için 1. Lig | aynı |
 | `/api/durum` | kalan kota (kotadan düşmez) | yok |

@@ -1,5 +1,5 @@
-// Türk takımlarının Avrupa kupası maçları (bugün -7 / +14 gün) ve lig aşaması sıraları.
-// Süper Lig takımları = Türk takımları. 7 API-Football isteği; canlı maç varken 5 dk, yoksa 3 saat.
+// Süper Lig takımlarının Avrupa kupası maçları (bugün -7 / +14 gün) ve lig aşaması sıraları.
+// Süper Lig takımları. 7 API-Football isteği; canlı maç varken 5 dk, yoksa 3 saat.
 import { LIG, SEZON, AVRUPA, CANLI, cors, onbellek, apiFootball, hata, macOzet, gun } from "./_ortak.js";
 
 export default async function handler(req, res) {
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       ]);
       const maclar = fikstur.filter((m) => turk.has(m.teams.home.id) || turk.has(m.teams.away.id))
         .map(macOzet).sort((a, b) => a.tarih.localeCompare(b.tarih));
-      // Lig aşaması tek tablo (36 takım); Türk takımlarının satırları
+      // Lig aşaması tek tablo (36 takım); Süper Lig takımlarının satırları
       const satirlar = (sira[0]?.league?.standings || []).flat()
         .filter((t) => turk.has(t.team.id))
         .map((t) => ({ sira: t.rank, takim: t.team.name, id: t.team.id, o: t.all.played, g: t.all.win,

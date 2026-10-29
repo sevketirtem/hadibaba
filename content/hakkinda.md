@@ -2,7 +2,7 @@
 title: "Hakkında"
 ---
 
-Hadi Baba, Türk futbolunu coşkuyla yorumlayan bir site. Takım tutmayız; futbola âşığız. Her hafta bir başka takımın şampiyonluğuna inanırız, çünkü bu sezon başka!
+Hadi Baba, Süper Lig'i ve futbolu coşkuyla yorumlayan bir site. Takım tutmayız; futbola âşığız. Her hafta bir başka takımın şampiyonluğuna inanırız, çünkü bu sezon başka!
 
 **Burada ne bulursunuz?** Maç önü heyecanı, maç sonu yorumları, transfer kulisi ve karşı mahalledeki keyif kaçırıcılara cevaplar.
 

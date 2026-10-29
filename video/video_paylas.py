@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.join(KOK, "scripts"))
 import meta  # noqa: E402
 
 KAYIT = os.path.join(KOK, "video", "paylasildi.txt")
-ETIKETLER = "#futbol #süperlig #türkfutbolu #hadibaba #yurubaba"
+ETIKETLER = "#futbol #süperlig #hadibaba #yurubaba"
 
 
 def notice(baslik, mesaj, tur="notice"):

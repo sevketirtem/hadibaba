@@ -9,8 +9,8 @@ KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://hadibaba.com"
 GOSTERI = {
     "baslik": "Hadi vs Yürü",
-    "aciklama": ("Türk futbolunun en tatlı atışması: coşkulu taraftar Hadi Baba ile alaycı abi Yürü Baba her gün "
-                 "Süper Lig gündemini, maçları ve tahminlerini tartışıyor. Kısa, eğlenceli, bahissiz. "
+    "aciklama": ("Süper Lig'in en tatlı atışması: coşkulu taraftar Hadi Baba ile alaycı abi Yürü Baba her gün "
+                 "maçları, gündemi ve tahminleri tartışıyor. Kısa, eğlenceli, bahissiz. "
                  "Yazılar hadibaba.com ve yurubaba.com'da."),
     "yazar": "Hadi vs Yürü",
     "eposta": "sevketirtem+hadi@gmail.com",

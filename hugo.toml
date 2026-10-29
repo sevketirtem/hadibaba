@@ -23,7 +23,7 @@ summaryLength = 40
 [params]
   yandexDogrulama = "b960791fc16a7860"
   slogan = "Coşkunun adresi. Yaparız baba!"
-  description = "Türk futbolunu coşkuyla yorumlayan site. Takım tutmayız, futbola âşığız."
+  description = "Süper Lig'i ve futbolu coşkuyla yorumlayan site. Takım tutmayız, futbola âşığız."
   # Tema renkleri: iki site aynı iskeleti, farklı renklerle kullanır
   accent = "#e4572e"
   accentInk = "#ffffff"

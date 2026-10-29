@@ -25,7 +25,7 @@ def main():
     no = next((b["no"] for b in bolumler if b["tarih"] == s["tarih"]), None)
     baslik = f"{s['baslik']} | Hadi vs Yürü" + (f" #{no}" if no else "")
     yazilar = "\n".join(f"• {u}" for u in s.get("yazilar", {}).values())
-    aciklama = (f"{s['aciklama']}\n\nCoşkulu taraftar Hadi Baba ile alaycı abi Yürü Baba her gün Türk futbolunu tartışıyor. "
+    aciklama = (f"{s['aciklama']}\n\nCoşkulu taraftar Hadi Baba ile alaycı abi Yürü Baba her gün Süper Lig'i tartışıyor. "
                 f"Tahmininizi yorumlara yazın (skor, kupon değil; burada bahis yok).\n\n{yazilar}\n\n"
                 "Podcast: Spotify'da \"Hadi vs Yürü\" · RSS: https://hadibaba.com/podcast/feed.xml\n"
                 "Sesler ve görseller yapay zekâ ile üretilmiştir; karakterler hayalîdir.\n"
