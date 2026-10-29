@@ -26,6 +26,14 @@ def kart(no, ad, yol):
 
 
 def main():
+    try:
+        _main()
+    except Exception as e:  # noqa: BLE001
+        print(f"::error title=Katalog hatası::{type(e).__name__}: {e}")
+        raise
+
+
+def _main():
     cikti = sys.argv[1]
     tmp = cikti + ".parca"
     os.makedirs(tmp, exist_ok=True)
@@ -35,10 +43,15 @@ def main():
     erkek.sort(key=lambda a: (0 if "Chirp3" in a else 1 if "Wavenet" in a or "Neural" in a else 2, a))
     liste, parcalar = [], []
     for i, ad in enumerate(erkek, 1):
-        mp3 = f"{tmp}/{i}.mp3"
-        r = seslendir._istek("text:synthesize", {"input": {"text": f"{i}. {CUMLE}"},
+        mp3 = f"{tmp}/{len(parcalar) + 1}.mp3"
+        try:
+            r = seslendir._istek("text:synthesize", {"input": {"text": f"{i}. {CUMLE}"},
                                                  "voice": {"languageCode": "tr-TR", "name": ad},
                                                  "audioConfig": {"audioEncoding": "MP3", "sampleRateHertz": 44100}})
+        except Exception as e:  # noqa: BLE001
+            print(f"::warning title=Ses atlandı {ad}::{e}")
+            continue
+        i = len(parcalar) + 1
         import base64
         open(mp3, "wb").write(base64.b64decode(r["audioContent"]))
         png = f"{tmp}/{i}.png"
