@@ -71,10 +71,9 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          B=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['baslik'].replace('\"',''))" "${{ steps.sec.outputs.dosya }}")
           python scripts/gemini_gorsel.py gorsel "[
-            {\"cikti\":\"/tmp/b/hadi.png\",\"kim\":\"hadi\",\"en_boy\":\"1:1\",\"istem\":\"Podcast bölümü: $B. Hadi Baba mikrofon başında coşkuyla konuşuyor, yüz büyük ve net, karenin ortasında, yazı yok.\"},
-            {\"cikti\":\"/tmp/b/yuru.png\",\"kim\":\"yuru\",\"en_boy\":\"1:1\",\"istem\":\"Podcast bölümü: $B. Yürü Baba mikrofon başında tek kaşı kalkık, alaycı gülümsüyor, yüz büyük ve net, karenin ortasında, yazı yok.\"}
+            {\"cikti\":\"/tmp/b/hadi.png\",\"kim\":\"hadi\",\"en_boy\":\"1:1\",\"istem\":\"Hadi Baba bir podcast mikrofonunun başında coşkuyla, gülerek konuşuyor; yakın plan, yüz büyük ve net, karenin ortasında.\"},
+            {\"cikti\":\"/tmp/b/yuru.png\",\"kim\":\"yuru\",\"en_boy\":\"1:1\",\"istem\":\"Yürü Baba bir podcast mikrofonunun başında tek kaşı kalkık, alaycı gülümsüyor; yakın plan, yüz büyük ve net, karenin ortasında.\"}
           ]"
 
       - name: Video
