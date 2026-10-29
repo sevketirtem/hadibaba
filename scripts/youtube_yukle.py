@@ -38,6 +38,8 @@ def main():
                    "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True},
     }
     sonuc = yukle(video, govde)
+    if os.environ.get("YOUTUBE_ID_DOSYA"):
+        open(os.environ["YOUTUBE_ID_DOSYA"], "w").write(sonuc["id"])
     notice("YouTube'a yüklendi", f"https://youtu.be/{sonuc['id']} — {baslik}")
 
 
