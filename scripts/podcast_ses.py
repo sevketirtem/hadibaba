@@ -65,7 +65,22 @@ def gemini_ses(senaryo, cikti):
                 for k in ("hadi", "yuru")]}},
         },
     }
-    y = _gemini(f"{model}:generateContent", govde)
+    try:
+        y = _gemini(f"{model}:generateContent", govde)
+    except RuntimeError as e:
+        if "speech_metadata" not in str(e):
+            raise
+        # Yeni modeller: her replik ayrı parça + konuşmacı bilgisi; üslup sistem talimatında
+        govde["systemInstruction"] = {"parts": [{"text": metin.split("\n\n")[0]}]}
+        govde["contents"] = [{"parts": [{"text": okunus(r["metin"]), "speechMetadata": {"speaker": AD[r["kim"]]}}
+                                        for r in senaryo["replikler"]]}]
+        try:
+            y = _gemini(f"{model}:generateContent", govde)
+        except RuntimeError as e2:
+            if "systemInstruction" not in str(e2) and "system_instruction" not in str(e2):
+                raise
+            govde.pop("systemInstruction")
+            y = _gemini(f"{model}:generateContent", govde)
     parca = y["candidates"][0]["content"]["parts"][0]["inlineData"]
     oran = int((re.search(r"rate=(\d+)", parca.get("mimeType", "")) or [0, 24000])[1])
     with tempfile.NamedTemporaryFile(suffix=".pcm", delete=False) as f:
