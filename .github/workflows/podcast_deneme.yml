@@ -12,6 +12,10 @@ on:
         description: 'Gemini sesi (Hadi)'
         required: false
         default: 'Umbriel'
+      tts_modeller:
+        description: 'Denenecek Gemini TTS modelleri (boşlukla)'
+        required: false
+        default: 'gemini-3.8-flash-tts gemini-2.5-pro-preview-tts'
       motorlar:
         description: 'gemini, google ya da ikisi'
         required: false
@@ -35,7 +39,11 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_SES_HADI: ${{ inputs.gemini_hadi }}
           GEMINI_SES_YURU: ${{ inputs.gemini_yuru }}
-        run: mkdir -p /tmp/d && python scripts/podcast_ses.py "${{ inputs.senaryo }}" /tmp/d/A-gemini.mp3 gemini
+        run: |
+          mkdir -p /tmp/d
+          for m in ${{ inputs.tts_modeller }}; do
+            GEMINI_TTS_MODEL=$m python scripts/podcast_ses.py "${{ inputs.senaryo }}" /tmp/d/A-$m.mp3 gemini || true
+          done
       - name: Google sesi
         if: inputs.motorlar != 'gemini'
         continue-on-error: true

@@ -77,9 +77,9 @@ def gemini_ses(senaryo, cikti):
         try:
             y = _gemini(f"{model}:generateContent", govde)
         except RuntimeError as e2:
-            if "systemInstruction" not in str(e2) and "system_instruction" not in str(e2):
+            if "HTTP 400" not in str(e2):
                 raise
-            govde.pop("systemInstruction")
+            govde.pop("systemInstruction")  # bazı modeller sistem talimatı kabul etmiyor
             y = _gemini(f"{model}:generateContent", govde)
     parca = y["candidates"][0]["content"]["parts"][0]["inlineData"]
     oran = int((re.search(r"rate=(\d+)", parca.get("mimeType", "")) or [0, 24000])[1])
