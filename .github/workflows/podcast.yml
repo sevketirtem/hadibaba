@@ -172,7 +172,9 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GH_TOKEN: ${{ github.token }}
+          TIKTOK_VAR: ${{ secrets.TIKTOK_REFRESH_TOKEN != '' }}
         run: |
+          [ "$TIKTOK_VAR" = "true" ] && export KESIT_SADE_CIKTI=/tmp/b/kesit-tiktok.mp4
           python scripts/podcast_kesit.py "${{ steps.sec.outputs.dosya }}" /tmp/b/ses.mp3 /tmp/b/kesit.mp4 /tmp/b/hadi.png /tmp/b/yuru.png
           t="${{ steps.sec.outputs.tarih }}"
           if [ "${{ inputs.kesit_deneme }}" = "true" ]; then

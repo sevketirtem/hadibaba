@@ -381,6 +381,11 @@ def main():
         uyari("Kesit seçimi", f"Gemini seçemedi, süreye göre seçildi: {str(e)[:200]}")
         (i, j), baslik, secim = sec_sureyle(rp), "", "süre"
     sure = video(senaryo, mp3, cikti, rp, i, j, baslik, hadi, yuru)
+    sade = os.environ.get("KESIT_SADE_CIKTI")  # aynı kesitin yazısız (TikTok) kopyası
+    if sade:
+        os.environ["KESIT_SADE"] = "1"
+        video(senaryo, mp3, sade, rp, i, j, baslik, hadi, yuru)
+        os.environ.pop("KESIT_SADE")
     meta = {"tarih": senaryo["tarih"], "bas": i, "son": j, "baslik": baslik or senaryo["baslik"], "sure": round(sure, 1),
             "zamanlama": yontem, "secim": secim}
     json.dump(meta, open(os.path.splitext(cikti)[0] + ".json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)

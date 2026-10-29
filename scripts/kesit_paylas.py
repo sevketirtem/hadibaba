@@ -60,8 +60,9 @@ def tiktok(s, video, meta):
     if kayitli(anahtar):
         youtube_yukle.notice("Kesit TikTok", f"{s['tarih']} zaten gönderilmiş")
         return
+    sade = os.path.join(os.path.dirname(video), "kesit-tiktok.mp4")
     metin = f"{meta['baslik']} #futbol #süperlig #podcast #hadibaba #yurubaba"
-    sonuc = tiktok_yukle.gonder(video, metin)
+    sonuc = tiktok_yukle.gonder(sade if os.path.exists(sade) else video, metin)
     kaydet(anahtar)
     youtube_yukle.notice("Kesit TikTok'a gönderildi", f"{sonuc} — {meta['baslik']}")
 
