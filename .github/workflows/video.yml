@@ -119,6 +119,15 @@ jobs:
           python video/video_paylas.py "${{ steps.sec.outputs.dosya }}" \
             "static/video/${{ steps.sec.outputs.tarih }}.mp4" "${{ steps.bekle.outputs.url }}"
 
+      - name: YouTube Shorts
+        if: ${{ !inputs.dry_run }}
+        continue-on-error: true
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: python scripts/youtube_shorts.py "${{ steps.sec.outputs.dosya }}" "static/video/${{ steps.sec.outputs.tarih }}.mp4"
+
       - name: Paylaşım kaydını sakla
         if: ${{ always() && !inputs.dry_run }}
         run: |

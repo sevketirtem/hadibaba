@@ -37,6 +37,12 @@ def main():
         "status": {"privacyStatus": os.environ.get("YOUTUBE_GIZLILIK", "public"),
                    "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True},
     }
+    sonuc = yukle(video, govde)
+    notice("YouTube'a yüklendi", f"https://youtu.be/{sonuc['id']} — {baslik}")
+
+
+def yukle(video, govde):
+    """Videoyu yükler, YouTube'un döndürdüğü video kaynağını verir (hata olursa ::error + çıkış)."""
     anahtar = erisim_anahtari()
     boyut = os.path.getsize(video)
     req = urllib.request.Request(
@@ -55,7 +61,7 @@ def main():
     except urllib.error.HTTPError as e:
         print(f"::error title=YouTube::HTTP {e.code}: {e.read()[:500]!r}", flush=True)
         sys.exit(1)
-    notice("YouTube'a yüklendi", f"https://youtu.be/{sonuc['id']} — {baslik}")
+    return sonuc
 
 
 if __name__ == "__main__":
