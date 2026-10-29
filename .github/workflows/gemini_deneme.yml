@@ -1,0 +1,47 @@
+# Gemini API denemesi: görsel modellerini listeler, deneme görsellerini üretip gemini-deneme dalına koyar.
+# Yayına hiçbir şey koymaz, paylaşmaz.
+name: Gemini deneme
+on:
+  workflow_dispatch:
+    inputs:
+      isler:
+        description: 'JSON iş listesi [{"cikti","istem","kim","en_boy"}]; boşsa varsayılan 3 deneme'
+        required: false
+        default: ''
+      model:
+        description: 'İsteğe bağlı model adı (boşsa otomatik)'
+        required: false
+        default: ''
+permissions:
+  contents: write
+jobs:
+  deneme:
+    runs-on: ubuntu-latest
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_GORSEL_MODEL: ${{ inputs.model }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Modelleri listele
+        run: python scripts/gemini_gorsel.py liste
+      - name: Deneme görselleri
+        env:
+          ISLER: ${{ inputs.isler }}
+        run: |
+          mkdir -p /tmp/d
+          if [ -z "$ISLER" ]; then
+            ISLER='[
+             {"cikti":"/tmp/d/1-hadi-sevinc.png","kim":"hadi","en_boy":"1:1","istem":"Hadi Baba turuncu konfeti yağmuru altında iki kolunu havaya kaldırmış, kahkahayla zıplıyor; boynunda sade turuncu bir atkı var."},
+             {"cikti":"/tmp/d/2-yuru-hesap.png","kim":"yuru","en_boy":"1:1","istem":"Yürü Baba lacivert bir istatistik tahtasının önünde, elinde tebeşir, tek kaşı kalkık, kameraya alaycı bakıyor; tahtada sadece soyut çizgiler ve oklar var, okunur yazı yok."},
+             {"cikti":"/tmp/d/3-atisma-kart.png","kim":"ikisi","en_boy":"16:9","istem":"Ekranın solunda turuncu zeminde coşkuyla bağıran Hadi, sağında lacivert zeminde kollarını kavuşturmuş gülümseyen Yürü; ortada bir futbol topu, ikisi birbirine bakıyor."}
+            ]'
+          fi
+          python scripts/gemini_gorsel.py gorsel "$ISLER"
+      - name: gemini-deneme dalına koy
+        if: always()
+        run: |
+          ls /tmp/d/*.png >/dev/null 2>&1 || exit 0
+          cd /tmp/d && git init -q && git checkout -q -b gemini-deneme
+          git config user.name "Claude (Hadi-Yürü ekibi)" && git config user.email "noreply@anthropic.com"
+          git add *.png && git commit -qm "Gemini deneme görselleri"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" gemini-deneme
