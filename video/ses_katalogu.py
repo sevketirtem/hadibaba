@@ -42,8 +42,9 @@ def _main():
     # önce en doğal (Chirp3-HD), sonra diğerleri
     erkek.sort(key=lambda a: (0 if "Chirp3" in a else 1 if "Wavenet" in a or "Neural" in a else 2, a))
     liste, parcalar = [], []
-    for i, ad in enumerate(erkek, 1):
-        mp3 = f"{tmp}/{len(parcalar) + 1}.mp3"
+    for ad in erkek:
+        i = len(parcalar) + 1
+        mp3 = f"{tmp}/{i}.mp3"
         try:
             r = seslendir._istek("text:synthesize", {"input": {"text": f"{i}. {CUMLE}"},
                                                  "voice": {"languageCode": "tr-TR", "name": ad},
@@ -51,7 +52,6 @@ def _main():
         except Exception as e:  # noqa: BLE001
             print(f"::warning title=Ses atlandı {ad}::{e}")
             continue
-        i = len(parcalar) + 1
         import base64
         open(mp3, "wb").write(base64.b64decode(r["audioContent"]))
         png = f"{tmp}/{i}.png"

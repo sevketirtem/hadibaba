@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: pip install -q pillow
+      - run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          pip install -q pillow
       - name: Kataloğu üret
         env:
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
