@@ -236,6 +236,13 @@ class Video:
             ad = "HADİ" if kim == "hadi" else "YÜRÜ"
             w = d.textlength(ad, font=self.f_ad)
             d.text((x + 165 - w / 2, 1100), ad, font=self.f_ad, fill=RENK["gri"])
+            soz = b.get(f"{kim}_soz")
+            soz_bas = next((z["bas"] for z in b.get("sozler", []) if z["kim"] == kim), None)
+            mutlak = t + b["bas"]
+            if soz and (soz_bas is None and t > 1.0 or soz_bas is not None and mutlak >= soz_bas):
+                f = self.f_kucuk
+                w = d.textlength(f"“{soz}”", font=f)
+                d.text((x + 165 - w / 2, 1150), f"“{soz}”", font=f, fill=renk)
         if t > 0.9:
             p = ease_out_back((t - 0.9) / 0.5)
             f = font(FONT_BASLIK, max(10, int(84 * p)))
@@ -262,6 +269,8 @@ def efektler(s, sure, cikti):
     for m in s["mesajlar"]:
         if m.get("ses_dosyasi"):
             olaylar.append((m["ses_dosyasi"], m["bas"] + 0.35))
+    for z in s["bitis_karti"].get("sozler", []):
+        olaylar.append((z["dosya"], z["bas"]))
     for i, (kaynak, bas) in enumerate(olaylar):
         if kaynak.startswith("/") or kaynak.endswith((".mp3", ".wav")):
             girdiler += ["-i", kaynak]
@@ -295,8 +304,19 @@ def zamanla(s, klasor):
             t += max(3.2, uzunluk + 0.9)
         else:
             t += 4.0
-    s["bitis_karti"]["bas"] = t + 0.1
-    s["sure"] = round(t + 4.2, 2)
+    b = s["bitis_karti"]
+    b["bas"] = t + 0.1
+    # Bitiş kartında imza sözleri: önce Hadi, sonra Yürü
+    b.setdefault("hadi_soz", "Yaparız baba!")
+    b.setdefault("yuru_soz", "Görürüz baba.")
+    son = b["bas"] + 1.6
+    b["sozler"] = []
+    for kim in ("hadi", "yuru"):
+        dosya = seslendir.seslendir(b[f"{kim}_soz"], kim, f"{klasor}/soz_{kim}.mp3")
+        if dosya:
+            b["sozler"].append({"kim": kim, "bas": son, "dosya": dosya})
+            son += sure_olc(dosya) + 0.35
+    s["sure"] = round(max(b["bas"] + 4.2, son + 1.2), 2)
     return s
 
 

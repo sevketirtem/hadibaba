@@ -14,10 +14,14 @@ SAYI = ["sıfır", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "seki
 YONELME = ["sıfıra", "bire", "ikiye", "üçe", "dörde", "beşe", "altıya", "yediye", "sekize", "dokuza"]
 
 # Karakter → tercih edilen sesler (sırayla denenir; listede olmayan atlanır)
+# Sahibinin seçimi (29 Ekim 2026, ses kataloğu): Hadi 15 = Umbriel, Yürü 2 = Algenib
 TERCIH = {
-    "hadi": ["tr-TR-Chirp3-HD-Puck", "tr-TR-Chirp3-HD-Fenrir", "tr-TR-Wavenet-B", "tr-TR-Standard-B"],
-    "yuru": ["tr-TR-Chirp3-HD-Charon", "tr-TR-Chirp3-HD-Orus", "tr-TR-Wavenet-E", "tr-TR-Standard-E"],
+    "hadi": ["tr-TR-Chirp3-HD-Umbriel", "tr-TR-Chirp3-HD-Puck", "tr-TR-Wavenet-B", "tr-TR-Standard-B"],
+    "yuru": ["tr-TR-Chirp3-HD-Algenib", "tr-TR-Chirp3-HD-Charon", "tr-TR-Wavenet-E", "tr-TR-Standard-E"],
 }
+# Seslendirmeden sonra uygulanan perde kaydırma (tempo korunur): Hadi daha ince, Yürü daha kalın.
+# 1.09 ≈ +1,5 yarım ton, 0.88 ≈ -2,2 yarım ton
+PERDE_CARPANI = {"hadi": 1.09, "yuru": 0.88}
 # Chirp 3 HD perde ayarı kabul etmez; hız ayarı her seste var
 AYAR = {"hadi": {"speakingRate": 1.12}, "yuru": {"speakingRate": 0.95}}
 AYAR_PERDE = {"hadi": 2.0, "yuru": -2.5}
@@ -86,7 +90,14 @@ def seslendir(metin, kim, cikti):
     except RuntimeError:
         govde["audioConfig"] = {"audioEncoding": "MP3"}  # ayar kabul edilmezse sade dene
         r = _istek("text:synthesize", govde)
-    with open(cikti, "wb") as f:
+    ham = cikti + ".ham.mp3"
+    with open(ham, "wb") as f:
         f.write(base64.b64decode(r["audioContent"]))
-    print(f"  ses: {kim} → {ad} ({len(metin)} karakter)")
-    return cikti
+    k = float(os.environ.get("SES_PERDE_" + kim.upper(), PERDE_CARPANI[kim]))
+    wav = os.path.splitext(cikti)[0] + ".wav"
+    import subprocess
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", ham, "-af",
+                    f"asetrate={int(44100 * k)},aresample=44100,atempo={1 / k:.5f}", wav], check=True)
+    os.remove(ham)
+    print(f"  ses: {kim} → {ad} (perde ×{k}, {len(metin)} karakter)")
+    return wav
