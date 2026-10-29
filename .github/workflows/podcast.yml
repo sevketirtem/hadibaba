@@ -1,0 +1,130 @@
+# Günlük "Hadi vs Yürü" podcast'i: podcast/senaryolar/<tarih>.json push edilince
+# ses (Gemini TTS) + sahne görselleri (Gemini) + YouTube videosu üretir, sesi GitHub Releases'a koyar,
+# RSS beslemesini (hadibaba.com/podcast/feed.xml) günceller → Spotify/Apple beslemeden kendisi çeker.
+# YouTube'a yükleme YOUTUBE_* secret'ları varsa yapılır.
+name: Podcast
+
+on:
+  push:
+    branches: [main]
+    paths: ["podcast/senaryolar/**"]
+  workflow_dispatch:
+    inputs:
+      tarih:
+        description: "Senaryo tarihi (YYYY-AA-GG; boş = en yeni)"
+        type: string
+        default: ""
+      yeniden:
+        description: "Bölüm zaten varsa yeniden üret"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: podcast
+  cancel-in-progress: false
+
+jobs:
+  bolum:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Senaryoyu seç
+        id: sec
+        run: |
+          if [ -n "${{ inputs.tarih }}" ]; then t="${{ inputs.tarih }}"; else
+            t=$(ls podcast/senaryolar/*.json | xargs -n1 basename | sed 's/\.json$//' | sort | tail -1); fi
+          f="podcast/senaryolar/$t.json"
+          [ -f "$f" ] || f="podcast/denemeler/$t.json"
+          [ -f "$f" ] || { echo "::error::Senaryo yok: $t"; exit 1; }
+          echo "tarih=$t" >> "$GITHUB_OUTPUT"; echo "dosya=$f" >> "$GITHUB_OUTPUT"
+          if grep -q "\"tarih\": \"$t\"" podcast/bolumler.json 2>/dev/null && [ "${{ inputs.yeniden }}" != "true" ]; then
+            echo "uret=false" >> "$GITHUB_OUTPUT"; echo "::notice title=Podcast::$t zaten var"; else echo "uret=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Araçları kur
+        if: steps.sec.outputs.uret == 'true'
+        run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          pip install -q pillow
+
+      - name: Seslendir (Gemini TTS)
+        if: steps.sec.outputs.uret == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TTS_MODEL: gemini-3.8-flash-tts
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+        run: |
+          mkdir -p /tmp/b
+          python scripts/podcast_ses.py "${{ steps.sec.outputs.dosya }}" /tmp/b/ses.mp3 gemini \
+            || python scripts/podcast_ses.py "${{ steps.sec.outputs.dosya }}" /tmp/b/ses.mp3 google
+
+      - name: Sahne görselleri (Gemini)
+        if: steps.sec.outputs.uret == 'true'
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          B=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['baslik'].replace('\"',''))" "${{ steps.sec.outputs.dosya }}")
+          python scripts/gemini_gorsel.py gorsel "[
+            {\"cikti\":\"/tmp/b/hadi.png\",\"kim\":\"hadi\",\"en_boy\":\"1:1\",\"istem\":\"Podcast bölümü: $B. Hadi Baba mikrofon başında coşkuyla konuşuyor, yüz büyük ve net, karenin ortasında, yazı yok.\"},
+            {\"cikti\":\"/tmp/b/yuru.png\",\"kim\":\"yuru\",\"en_boy\":\"1:1\",\"istem\":\"Podcast bölümü: $B. Yürü Baba mikrofon başında tek kaşı kalkık, alaycı gülümsüyor, yüz büyük ve net, karenin ortasında, yazı yok.\"}
+          ]"
+
+      - name: Video
+        if: steps.sec.outputs.uret == 'true'
+        run: python scripts/podcast_video.py "${{ steps.sec.outputs.dosya }}" /tmp/b/ses.mp3 /tmp/b/video.mp4 /tmp/b/hadi.png /tmp/b/yuru.png
+
+      - name: Sesi Releases'a koy, RSS'i güncelle
+        if: steps.sec.outputs.uret == 'true'
+        run: |
+          t="${{ steps.sec.outputs.tarih }}"; etiket="podcast-$t"
+          cp /tmp/b/ses.mp3 "/tmp/b/hadi-vs-yuru-$t.mp3"; cp /tmp/b/video.mp4 "/tmp/b/hadi-vs-yuru-$t.mp4"
+          gh release delete "$etiket" -y --cleanup-tag 2>/dev/null || true
+          gh release create "$etiket" "/tmp/b/hadi-vs-yuru-$t.mp3" "/tmp/b/hadi-vs-yuru-$t.mp4" \
+            --title "Hadi vs Yürü — $t" --notes "Podcast bölümü $t"
+          python3 - "$t" "${{ steps.sec.outputs.dosya }}" <<'PY'
+          import json, os, subprocess, sys, datetime as dt
+          t, dosya = sys.argv[1], sys.argv[2]
+          s = json.load(open(dosya, encoding="utf-8"))
+          yol = "podcast/bolumler.json"
+          liste = json.load(open(yol, encoding="utf-8")) if os.path.exists(yol) else []
+          liste = [b for b in liste if b["tarih"] != t]
+          mp3 = f"/tmp/b/hadi-vs-yuru-{t}.mp3"
+          sure = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp3],
+                                      capture_output=True, text=True).stdout or 0)
+          repo = os.environ["GITHUB_REPOSITORY"]
+          liste.append({"tarih": t, "no": len(liste) + 1, "baslik": s["baslik"], "aciklama": s["aciklama"],
+                        "yazilar": s.get("yazilar", {}),
+                        "yayin": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
+                        "ses_url": f"https://github.com/{repo}/releases/download/podcast-{t}/hadi-vs-yuru-{t}.mp3",
+                        "video_url": f"https://github.com/{repo}/releases/download/podcast-{t}/hadi-vs-yuru-{t}.mp4",
+                        "boyut": os.path.getsize(mp3), "sure": round(sure)})
+          liste.sort(key=lambda b: b["tarih"])
+          for i, b in enumerate(liste, 1):
+              b["no"] = i
+          json.dump(liste, open(yol, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+          print(f"::notice title=Podcast bölümü::{t} — {s['baslik']} ({round(sure)} sn)")
+          PY
+          python3 scripts/podcast_rss.py
+          git config user.name "Claude (Hadi-Yürü ekibi)"; git config user.email "noreply@anthropic.com"
+          git add podcast/bolumler.json static/podcast/feed.xml
+          git commit -qm "Podcast: $t" && git pull -q --rebase --autostash origin main && git push -q origin main
+          gh workflow run hugo.yml --ref main
+
+      - name: YouTube'a yükle
+        if: steps.sec.outputs.uret == 'true'
+        continue-on-error: true
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          [ -n "$YOUTUBE_REFRESH_TOKEN" ] || { echo "::notice title=YouTube::anahtar yok, yükleme atlandı"; exit 0; }
+          python scripts/youtube_yukle.py "${{ steps.sec.outputs.dosya }}" /tmp/b/video.mp4
