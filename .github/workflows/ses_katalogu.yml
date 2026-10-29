@@ -1,0 +1,23 @@
+# Türkçe erkek seslerinin numaralı dinleme kataloğunu üretir ve video-deneme dalına koyar.
+name: Ses kataloğu
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  katalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q pillow
+      - name: Kataloğu üret
+        env:
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+        run: python video/ses_katalogu.py /tmp/katalog.mp4
+      - name: video-deneme dalına koy
+        run: |
+          mkdir -p /tmp/d && cp /tmp/katalog.mp4 /tmp/d/katalog.mp4
+          cd /tmp/d && git init -q && git checkout -q -b video-deneme
+          git config user.name "Claude (Hadi-Yürü ekibi)" && git config user.email "noreply@anthropic.com"
+          git add katalog.mp4 && git commit -qm "Ses kataloğu"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" video-deneme
