@@ -3,6 +3,7 @@
 Kullanım: python3 video/atisma_video.py video/senaryolar/2026-10-29.json cikti.mp4
 Dikey 1080x1920, 30 fps; kendi avatarlarımız + konuşma balonları + seslendirme
 (GOOGLE_TTS_KEY varsa Google Cloud Text-to-Speech; yoksa yalnızca efekt sesleri).
+Senaryoda isteğe bağlı "kanca" (≤36 karakter): ilk 2 sn karakter adları yerine kocaman görünür.
 ATISMA_SADE_CIKTI=<yol>: aynı videonun alan adı yazısız kopyası da üretilir (TikTok kuralı:
 API ile gönderilen videoda bağlantı/tanıtım yazısı olmamalı). Ses ve zamanlama ortaktır.
 """
@@ -78,12 +79,35 @@ class Video:
         self.f_alt = font(FONT_METIN, 42)
         self.f_kucuk = font(FONT_METIN, 36)
         self.zemin = self._zemin()
+        self.kanca = self._kanca_hazirla(s.get("kanca", ""))
         olcu = ImageDraw.Draw(Image.new("RGB", (1, 1)))
         self.mesajlar = []
         for m in s["mesajlar"]:
             sat = satirla(m["metin"], self.f_mesaj, 640, olcu)
             yuk = 60 + len(sat) * 64 + 50
             self.mesajlar.append({**m, "satirlar": sat, "yuk": yuk})
+
+    def _kanca_hazirla(self, metin):
+        """İsteğe bağlı giriş kancası: 960 px'e sığan en büyük boyda, en fazla 3 satır; sığmazsa kullanılmaz."""
+        metin = " ".join(str(metin or "").split())
+        if not metin or len(metin) > 44:
+            return None
+        metin = metin.replace("i", "İ").upper()
+        olcu = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+        for boy in (118, 106, 96, 86, 76):
+            f = font(FONT_BASLIK, boy)
+            satirlar, sat = [], ""
+            for k in metin.split():
+                dene = f"{sat} {k}".strip()
+                if sat and olcu.textlength(dene, font=f) > 960:
+                    satirlar.append(sat)
+                    sat = k
+                else:
+                    sat = dene
+            satirlar.append(sat)
+            if len(satirlar) <= 3 and all(olcu.textlength(x, font=f) <= 980 for x in satirlar):
+                return {"boy": boy, "satirlar": satirlar}
+        return None
 
     def _zemin(self):
         z = Image.new("RGB", (W, H), RENK["zemin"])
@@ -132,7 +156,22 @@ class Video:
             p = ease_out_back((t - 0.5) / 0.5)
             f = font(FONT_BASLIK, max(10, int(140 * p)))
             self.ortala(d, 740 - 70 * p, "VS", f, RENK["sari"])
-        if t > 0.8:
+        if self.kanca and t > 0.6:
+            # Senaryoda "kanca" varsa: karakter adları yerine kocaman merak cümlesi (kaydırmasın diye)
+            k = self.kanca
+            p = ease_out_back((t - 0.6) / 0.45)
+            f = font(FONT_BASLIK, max(10, int(k["boy"] * min(p, 1.06))))
+            satir_y = int(k["boy"] * 1.18)
+            for n, sat in enumerate(k["satirlar"]):
+                renk = RENK["sari"] if n == len(k["satirlar"]) - 1 else RENK["beyaz"]
+                w = d.textlength(sat, font=f)
+                d.text(((W - w) / 2, 1010 + n * satir_y), sat, font=f, fill=renk,
+                       stroke_width=6, stroke_fill=(10, 12, 20))
+            y = 1010 + satir_y * len(k["satirlar"]) + 40
+            a = int(255 * ease_out((t - 0.8) / 0.5))
+            self.ortala(d, y, self.s["mac"], self.f_alt, RENK["beyaz"] + (a,))
+            self.ortala(d, y + 60, self.s["mac_alt"], self.f_kucuk, RENK["gri"] + (a,))
+        elif t > 0.8:
             a = int(255 * ease_out((t - 0.8) / 0.5))
             self.ortala(d, 1030, "HADİ BABA", self.f_bas, RENK["hadi"] + (a,))
             self.ortala(d, 1140, "YÜRÜ BABA", self.f_bas, RENK["yuru_acik"] + (a,))
