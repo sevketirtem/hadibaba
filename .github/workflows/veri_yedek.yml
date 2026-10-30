@@ -1,0 +1,32 @@
+# Kendi veri sistemimize geçiş (API-Football aboneliği 25 Kasım 2026'da bitiyor):
+# sezonun fikstürünü, sonuçlarını, puan durumunu, krallığı ve kadroları kendi-veri/ altına kaydeder.
+# Abonelik bitene kadar her gün çalışır; sonra bu iş akışı kapatılır (veri artık kendi-veri/sonuclar.csv'den gelir).
+name: Veri yedeği
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 4 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: veri-yedek
+  cancel-in-progress: false
+
+jobs:
+  yedek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Veriyi kaydet
+        run: python3 scripts/veri_yedek.py
+      - name: Depoya yaz
+        run: |
+          git config user.name "Claude (Hadi-Yürü ekibi)"
+          git config user.email "noreply@anthropic.com"
+          git add kendi-veri
+          git commit -qm "Veri yedeği $(date -u +%F)" || exit 0
+          git pull -q --rebase origin main && git push -q origin main
