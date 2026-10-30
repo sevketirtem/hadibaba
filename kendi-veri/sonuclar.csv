@@ -1,0 +1,307 @@
+tarih,hafta,ev,dep,ev_gol,dep_gol,durum,id
+2026-08-14 21:30,1,Galatasaray,Çorum FK,2,2,bitti,1584370
+2026-08-15 19:00,1,Konyaspor,Rizespor,0,1,bitti,1584374
+2026-08-15 19:00,1,Kasımpaşa,Trabzonspor,1,1,bitti,1584373
+2026-08-15 21:30,1,Gençlerbirliği S.K.,Fenerbahçe,2,1,bitti,1584372
+2026-08-15 21:30,1,Gaziantep FK,Alanyaspor,1,1,bitti,1584371
+2026-08-16 19:00,1,Başakşehir,Kocaelispor,2,0,bitti,1584368
+2026-08-16 21:30,1,Beşiktaş,Eyüpspor,1,0,bitti,1584369
+2026-08-16 21:30,1,Amed,Erzurumspor FK,3,0,bitti,1584367
+2026-08-17 21:30,1,Samsunspor,Göztepe,3,3,bitti,1584375
+2026-08-21 21:30,2,Erzurumspor FK,Galatasaray,0,4,bitti,1584378
+2026-08-22 19:00,2,Rizespor,Samsunspor,0,2,bitti,1584383
+2026-08-22 19:00,2,Çorum FK,Kasımpaşa,0,1,bitti,1584377
+2026-08-22 21:30,2,Fenerbahçe,Konyaspor,4,2,bitti,1584380
+2026-08-23 19:00,2,Trabzonspor,Başakşehir,2,1,bitti,1584384
+2026-08-23 19:00,2,Eyüpspor,Gaziantep FK,0,1,bitti,1584379
+2026-08-23 21:30,2,Göztepe,Gençlerbirliği S.K.,0,1,bitti,1584381
+2026-08-23 21:30,2,Alanyaspor,Beşiktaş,1,0,bitti,1584376
+2026-08-24 21:30,2,Kocaelispor,Amed,2,0,bitti,1584382
+2026-08-28 21:30,3,Gençlerbirliği S.K.,Erzurumspor FK,1,1,bitti,1584391
+2026-08-29 19:00,3,Konyaspor,Kocaelispor,1,2,bitti,1584392
+2026-08-29 21:30,3,Galatasaray,Göztepe,3,2,bitti,1584389
+2026-08-29 21:30,3,Gaziantep FK,Rizespor,1,2,bitti,1584390
+2026-08-30 19:00,3,Eyüpspor,Alanyaspor,2,1,bitti,1584388
+2026-08-30 21:30,3,Başakşehir,Kasımpaşa,1,1,bitti,1584386
+2026-08-30 21:30,3,Samsunspor,Fenerbahçe,0,2,bitti,1584393
+2026-08-31 21:30,3,Beşiktaş,Çorum FK,6,2,bitti,1584387
+2026-08-31 21:30,3,Amed,Trabzonspor,2,1,bitti,1584385
+2026-09-04 20:00,4,Başakşehir,Galatasaray,2,3,bitti,1584394
+2026-09-05 17:00,4,Erzurumspor FK,Konyaspor,1,0,bitti,1584396
+2026-09-05 20:00,4,Fenerbahçe,Beşiktaş,1,2,bitti,1584397
+2026-09-06 17:00,4,Kasımpaşa,Amed,2,2,bitti,1584399
+2026-09-06 17:00,4,Çorum FK,Eyüpspor,3,0,bitti,1584395
+2026-09-06 20:00,4,Trabzonspor,Gençlerbirliği S.K.,5,0,bitti,1584402
+2026-09-06 20:00,4,Kocaelispor,Samsunspor,1,0,bitti,1584400
+2026-09-07 20:00,4,Göztepe,Gaziantep FK,2,4,bitti,1584398
+2026-09-07 20:00,4,Rizespor,Alanyaspor,0,1,bitti,1584401
+2026-09-11 20:00,5,Beşiktaş,Erzurumspor FK,3,0,bitti,1584405
+2026-09-12 17:00,5,Eyüpspor,Rizespor,0,2,bitti,1584406
+2026-09-12 17:00,5,Samsunspor,Çorum FK,1,5,bitti,1584411
+2026-09-12 20:00,5,Konyaspor,Trabzonspor,1,0,bitti,1584410
+2026-09-12 20:00,5,Alanyaspor,Göztepe,2,2,bitti,1584403
+2026-09-13 17:00,5,Gençlerbirliği S.K.,Kasımpaşa,1,2,bitti,1584409
+2026-09-13 20:00,5,Galatasaray,Kocaelispor,1,0,bitti,1584407
+2026-09-13 20:00,5,Amed,Başakşehir,5,0,bitti,1584404
+2026-09-14 20:00,5,Gaziantep FK,Fenerbahçe,0,0,bitti,1584408
+2026-09-18 20:00,6,Kasımpaşa,Konyaspor,0,0,bitti,1584418
+2026-09-19 17:00,6,Çorum FK,Alanyaspor,1,2,bitti,1584414
+2026-09-19 17:00,6,Kocaelispor,Gaziantep FK,2,0,bitti,1584419
+2026-09-19 20:00,6,Başakşehir,Gençlerbirliği S.K.,4,0,bitti,1584413
+2026-09-19 20:00,6,Trabzonspor,Galatasaray,4,0,bitti,1584420
+2026-09-20 17:00,6,Fenerbahçe,Eyüpspor,8,0,bitti,1584416
+2026-09-20 17:00,6,Erzurumspor FK,Samsunspor,1,0,bitti,1584415
+2026-09-20 20:00,6,Göztepe,Rizespor,2,2,bitti,1584417
+2026-09-20 20:00,6,Amed,Beşiktaş,3,2,bitti,1584412
+2026-10-09 20:00,7,Galatasaray,Kasımpaşa,3,1,bitti,1584424
+2026-10-10 13:30,7,Gençlerbirliği S.K.,Amed,2,2,bitti,1584426
+2026-10-10 16:00,7,Alanyaspor,Erzurumspor FK,0,0,bitti,1584421
+2026-10-10 16:00,7,Samsunspor,Trabzonspor,0,3,bitti,1584429
+2026-10-10 19:00,7,Rizespor,Fenerbahçe,0,3,bitti,1584428
+2026-10-11 13:30,7,Konyaspor,Başakşehir,0,0,bitti,1584427
+2026-10-11 16:00,7,Gaziantep FK,Çorum FK,0,3,bitti,1584425
+2026-10-11 19:00,7,Beşiktaş,Kocaelispor,2,1,bitti,1584422
+2026-10-12 20:00,7,Eyüpspor,Göztepe,0,4,bitti,1584423
+2026-10-16 20:00,8,Çorum FK,Rizespor,2,1,bitti,1584432
+2026-10-17 13:30,8,Erzurumspor FK,Eyüpspor,2,0,bitti,1584433
+2026-10-17 16:00,8,Gençlerbirliği S.K.,Galatasaray,0,1,bitti,1584435
+2026-10-17 16:00,8,Amed,Konyaspor,1,0,bitti,1584430
+2026-10-17 19:00,8,Fenerbahçe,Alanyaspor,3,0,bitti,1584434
+2026-10-18 13:30,8,Kasımpaşa,Samsunspor,4,1,bitti,1584436
+2026-10-18 16:00,8,Kocaelispor,Göztepe,1,2,bitti,1584437
+2026-10-18 19:00,8,Başakşehir,Gaziantep FK,2,1,bitti,1584431
+2026-10-19 20:00,8,Trabzonspor,Beşiktaş,2,0,bitti,1584438
+2026-10-23 20:00,9,Alanyaspor,Kocaelispor,1,2,bitti,1584439
+2026-10-24 13:30,9,Eyüpspor,Kasımpaşa,0,1,bitti,1584441
+2026-10-24 16:00,9,Gaziantep FK,Erzurumspor FK,1,3,bitti,1584443
+2026-10-24 19:00,9,Samsunspor,Amed,1,2,bitti,1584447
+2026-10-25 16:00,9,Konyaspor,Gençlerbirliği S.K.,2,0,bitti,1584445
+2026-10-25 19:00,9,Göztepe,Çorum FK,2,0,bitti,1584444
+2026-10-26 19:00,9,Beşiktaş,Başakşehir,2,0,bitti,1584440
+2026-10-26 19:00,9,Rizespor,Trabzonspor,3,4,bitti,1584446
+2026-10-26 21:30,9,Galatasaray,Fenerbahçe,2,1,bitti,1584442
+2026-10-30 20:00,10,Konyaspor,Galatasaray,,,,1584455
+2026-10-31 13:30,10,Erzurumspor FK,Çorum FK,,,,1584450
+2026-10-31 16:00,10,Kocaelispor,Rizespor,,,,1584454
+2026-10-31 19:00,10,Fenerbahçe,Göztepe,,,,1584451
+2026-11-01 13:30,10,Amed,Eyüpspor,,,,1584448
+2026-11-01 16:00,10,Başakşehir,Samsunspor,,,,1584449
+2026-11-01 16:00,10,Trabzonspor,Gaziantep FK,,,,1584456
+2026-11-01 19:00,10,Kasımpaşa,Beşiktaş,,,,1584453
+2026-11-02 20:00,10,Gençlerbirliği S.K.,Alanyaspor,,,,1584452
+2026-11-06 20:00,11,Gaziantep FK,Kasımpaşa,,,,1584462
+2026-11-07 13:30,11,Eyüpspor,Kocaelispor,,,,1584460
+2026-11-07 16:00,11,Samsunspor,Konyaspor,,,,1584465
+2026-11-07 19:00,11,Galatasaray,Amed,,,,1584461
+2026-11-07 19:00,11,Göztepe,Başakşehir,,,,1584463
+2026-11-08 13:30,11,Rizespor,Erzurumspor FK,,,,1584464
+2026-11-08 16:00,11,Çorum FK,Fenerbahçe,,,,1584459
+2026-11-08 18:30,11,Alanyaspor,Trabzonspor,,,,1584457
+2026-11-08 21:00,11,Beşiktaş,Gençlerbirliği S.K.,,,,1584458
+2026-11-21 13:30,12,Gençlerbirliği S.K.,Gaziantep FK,,,,1584470
+2026-11-21 16:00,12,Galatasaray,Samsunspor,,,,1584469
+2026-11-21 16:00,12,Amed,Rizespor,,,,1584466
+2026-11-21 19:00,12,Kocaelispor,Fenerbahçe,,,,1584472
+2026-11-22 13:30,12,Erzurumspor FK,Göztepe,,,,1584468
+2026-11-22 16:00,12,Konyaspor,Beşiktaş,,,,1584473
+2026-11-22 16:00,12,Kasımpaşa,Alanyaspor,,,,1584471
+2026-11-22 19:00,12,Trabzonspor,Eyüpspor,,,,1584474
+2026-11-23 20:00,12,Başakşehir,Çorum FK,,,,1584467
+2026-11-27 20:00,13,Alanyaspor,Konyaspor,,,,1584475
+2026-11-27 20:00,13,Rizespor,Kasımpaşa,,,,1584482
+2026-11-28 16:00,13,Samsunspor,Gençlerbirliği S.K.,,,,1584483
+2026-11-28 19:00,13,Gaziantep FK,Amed,,,,1584480
+2026-11-29 13:30,13,Çorum FK,Kocaelispor,,,,1584477
+2026-11-29 16:00,13,Eyüpspor,Başakşehir,,,,1584478
+2026-11-29 19:00,13,Fenerbahçe,Erzurumspor FK,,,,1584479
+2026-11-30 19:00,13,Göztepe,Trabzonspor,,,,1584481
+2026-11-30 21:00,13,Beşiktaş,Galatasaray,,,,1584476
+2026-12-04 20:00,14,Galatasaray,Rizespor,,,,1584488
+2026-12-05 13:30,14,Konyaspor,Gaziantep FK,,,,1584491
+2026-12-05 16:00,14,Amed,Alanyaspor,,,,1584484
+2026-12-05 19:00,14,Başakşehir,Fenerbahçe,,,,1584485
+2026-12-06 13:30,14,Erzurumspor FK,Kocaelispor,,,,1584487
+2026-12-06 16:00,14,Beşiktaş,Samsunspor,,,,1584486
+2026-12-06 16:00,14,Gençlerbirliği S.K.,Eyüpspor,,,,1584489
+2026-12-06 19:00,14,Trabzonspor,Çorum FK,,,,1584492
+2026-12-07 20:00,14,Kasımpaşa,Göztepe,,,,1584490
+2026-12-11 20:00,15,Çorum FK,Amed,,,,1584494
+2026-12-12 13:30,15,Erzurumspor FK,Kasımpaşa,,,,1584495
+2026-12-12 16:00,15,Alanyaspor,Samsunspor,,,,1584493
+2026-12-12 19:00,15,Eyüpspor,Galatasaray,,,,1584496
+2026-12-13 13:30,15,Kocaelispor,Gençlerbirliği S.K.,,,,1584500
+2026-12-13 16:00,15,Göztepe,Konyaspor,,,,1584499
+2026-12-13 16:00,15,Rizespor,Başakşehir,,,,1584501
+2026-12-13 19:00,15,Fenerbahçe,Trabzonspor,,,,1584497
+2026-12-14 20:00,15,Gaziantep FK,Beşiktaş,,,,1584498
+2026-12-18 20:00,16,Kasımpaşa,Fenerbahçe,,,,1584507
+2026-12-18 20:00,16,Amed,Göztepe,,,,1584502
+2026-12-19 13:30,16,Konyaspor,Eyüpspor,,,,1584508
+2026-12-19 16:00,16,Başakşehir,Erzurumspor FK,,,,1584503
+2026-12-19 19:00,16,Galatasaray,Alanyaspor,,,,1584505
+2026-12-20 13:30,16,Gençlerbirliği S.K.,Çorum FK,,,,1584506
+2026-12-20 16:00,16,Samsunspor,Gaziantep FK,,,,1584509
+2026-12-20 19:00,16,Beşiktaş,Rizespor,,,,1584504
+2026-12-21 20:00,16,Trabzonspor,Kocaelispor,,,,1584510
+2027-01-17 15:00,17,Fenerbahçe,Amed,,,,1584515
+2027-01-17 15:00,17,Göztepe,Beşiktaş,,,,1584517
+2027-01-17 15:00,17,Alanyaspor,Başakşehir,,,,1584511
+2027-01-17 15:00,17,Rizespor,Gençlerbirliği S.K.,,,,1584519
+2027-01-17 15:00,17,Erzurumspor FK,Trabzonspor,,,,1584513
+2027-01-17 15:00,17,Gaziantep FK,Galatasaray,,,,1584516
+2027-01-17 15:00,17,Eyüpspor,Samsunspor,,,,1584514
+2027-01-17 15:00,17,Çorum FK,Konyaspor,,,,1584512
+2027-01-17 15:00,17,Kocaelispor,Kasımpaşa,,,,1584518
+2027-01-24 15:00,18,Fenerbahçe,Gençlerbirliği S.K.,,,,1584524
+2027-01-24 15:00,18,Göztepe,Samsunspor,,,,1584525
+2027-01-24 15:00,18,Alanyaspor,Gaziantep FK,,,,1584520
+2027-01-24 15:00,18,Trabzonspor,Kasımpaşa,,,,1584528
+2027-01-24 15:00,18,Rizespor,Konyaspor,,,,1584527
+2027-01-24 15:00,18,Erzurumspor FK,Amed,,,,1584522
+2027-01-24 15:00,18,Eyüpspor,Beşiktaş,,,,1584523
+2027-01-24 15:00,18,Çorum FK,Galatasaray,,,,1584521
+2027-01-24 15:00,18,Kocaelispor,Başakşehir,,,,1584526
+2027-01-31 15:00,19,Beşiktaş,Alanyaspor,,,,1584531
+2027-01-31 15:00,19,Başakşehir,Trabzonspor,,,,1584530
+2027-01-31 15:00,19,Konyaspor,Fenerbahçe,,,,1584536
+2027-01-31 15:00,19,Galatasaray,Erzurumspor FK,,,,1584532
+2027-01-31 15:00,19,Gençlerbirliği S.K.,Göztepe,,,,1584534
+2027-01-31 15:00,19,Kasımpaşa,Çorum FK,,,,1584535
+2027-01-31 15:00,19,Gaziantep FK,Eyüpspor,,,,1584533
+2027-01-31 15:00,19,Amed,Kocaelispor,,,,1584529
+2027-01-31 15:00,19,Samsunspor,Rizespor,,,,1584537
+2027-02-07 15:00,20,Fenerbahçe,Samsunspor,,,,1584541
+2027-02-07 15:00,20,Göztepe,Galatasaray,,,,1584542
+2027-02-07 15:00,20,Alanyaspor,Eyüpspor,,,,1584538
+2027-02-07 15:00,20,Trabzonspor,Amed,,,,1584546
+2027-02-07 15:00,20,Kasımpaşa,Başakşehir,,,,1584543
+2027-02-07 15:00,20,Rizespor,Gaziantep FK,,,,1584545
+2027-02-07 15:00,20,Erzurumspor FK,Gençlerbirliği S.K.,,,,1584540
+2027-02-07 15:00,20,Çorum FK,Beşiktaş,,,,1584539
+2027-02-07 15:00,20,Kocaelispor,Konyaspor,,,,1584544
+2027-02-14 15:00,21,Beşiktaş,Fenerbahçe,,,,1584549
+2027-02-14 15:00,21,Konyaspor,Erzurumspor FK,,,,1584554
+2027-02-14 15:00,21,Galatasaray,Başakşehir,,,,1584551
+2027-02-14 15:00,21,Alanyaspor,Rizespor,,,,1584547
+2027-02-14 15:00,21,Gençlerbirliği S.K.,Trabzonspor,,,,1584553
+2027-02-14 15:00,21,Gaziantep FK,Göztepe,,,,1584552
+2027-02-14 15:00,21,Amed,Kasımpaşa,,,,1584548
+2027-02-14 15:00,21,Eyüpspor,Çorum FK,,,,1584550
+2027-02-14 15:00,21,Samsunspor,Kocaelispor,,,,1584555
+2027-02-21 15:00,22,Başakşehir,Amed,,,,1584556
+2027-02-21 15:00,22,Fenerbahçe,Gaziantep FK,,,,1584559
+2027-02-21 15:00,22,Göztepe,Alanyaspor,,,,1584560
+2027-02-21 15:00,22,Trabzonspor,Konyaspor,,,,1584564
+2027-02-21 15:00,22,Kasımpaşa,Gençlerbirliği S.K.,,,,1584561
+2027-02-21 15:00,22,Rizespor,Eyüpspor,,,,1584563
+2027-02-21 15:00,22,Erzurumspor FK,Beşiktaş,,,,1584558
+2027-02-21 15:00,22,Çorum FK,Samsunspor,,,,1584557
+2027-02-21 15:00,22,Kocaelispor,Galatasaray,,,,1584562
+2027-02-28 15:00,23,Beşiktaş,Amed,,,,1584566
+2027-02-28 15:00,23,Konyaspor,Kasımpaşa,,,,1584571
+2027-02-28 15:00,23,Galatasaray,Trabzonspor,,,,1584568
+2027-02-28 15:00,23,Alanyaspor,Çorum FK,,,,1584565
+2027-02-28 15:00,23,Gençlerbirliği S.K.,Başakşehir,,,,1584570
+2027-02-28 15:00,23,Rizespor,Göztepe,,,,1584572
+2027-02-28 15:00,23,Gaziantep FK,Kocaelispor,,,,1584569
+2027-02-28 15:00,23,Eyüpspor,Fenerbahçe,,,,1584567
+2027-02-28 15:00,23,Samsunspor,Erzurumspor FK,,,,1584573
+2027-03-07 15:00,24,Başakşehir,Konyaspor,,,,1584575
+2027-03-07 15:00,24,Fenerbahçe,Rizespor,,,,1584578
+2027-03-07 15:00,24,Göztepe,Eyüpspor,,,,1584579
+2027-03-07 15:00,24,Trabzonspor,Samsunspor,,,,1584582
+2027-03-07 15:00,24,Kasımpaşa,Galatasaray,,,,1584580
+2027-03-07 15:00,24,Erzurumspor FK,Alanyaspor,,,,1584577
+2027-03-07 15:00,24,Amed,Gençlerbirliği S.K.,,,,1584574
+2027-03-07 15:00,24,Çorum FK,Gaziantep FK,,,,1584576
+2027-03-07 15:00,24,Kocaelispor,Beşiktaş,,,,1584581
+2027-03-14 15:00,25,Beşiktaş,Trabzonspor,,,,1584584
+2027-03-14 15:00,25,Konyaspor,Amed,,,,1584589
+2027-03-14 15:00,25,Galatasaray,Gençlerbirliği S.K.,,,,1584586
+2027-03-14 15:00,25,Göztepe,Kocaelispor,,,,1584588
+2027-03-14 15:00,25,Alanyaspor,Fenerbahçe,,,,1584583
+2027-03-14 15:00,25,Rizespor,Çorum FK,,,,1584590
+2027-03-14 15:00,25,Gaziantep FK,Başakşehir,,,,1584587
+2027-03-14 15:00,25,Eyüpspor,Erzurumspor FK,,,,1584585
+2027-03-14 15:00,25,Samsunspor,Kasımpaşa,,,,1584591
+2027-03-21 15:00,26,Başakşehir,Beşiktaş,,,,1584593
+2027-03-21 15:00,26,Fenerbahçe,Galatasaray,,,,1584596
+2027-03-21 15:00,26,Gençlerbirliği S.K.,Konyaspor,,,,1584597
+2027-03-21 15:00,26,Trabzonspor,Rizespor,,,,1584600
+2027-03-21 15:00,26,Kasımpaşa,Eyüpspor,,,,1584598
+2027-03-21 15:00,26,Erzurumspor FK,Gaziantep FK,,,,1584595
+2027-03-21 15:00,26,Amed,Samsunspor,,,,1584592
+2027-03-21 15:00,26,Çorum FK,Göztepe,,,,1584594
+2027-03-21 15:00,26,Kocaelispor,Alanyaspor,,,,1584599
+2027-04-04 15:00,27,Beşiktaş,Kasımpaşa,,,,1584602
+2027-04-04 15:00,27,Galatasaray,Konyaspor,,,,1584605
+2027-04-04 15:00,27,Göztepe,Fenerbahçe,,,,1584607
+2027-04-04 15:00,27,Alanyaspor,Gençlerbirliği S.K.,,,,1584601
+2027-04-04 15:00,27,Rizespor,Kocaelispor,,,,1584608
+2027-04-04 15:00,27,Gaziantep FK,Trabzonspor,,,,1584606
+2027-04-04 15:00,27,Eyüpspor,Amed,,,,1584604
+2027-04-04 15:00,27,Samsunspor,Başakşehir,,,,1584609
+2027-04-04 15:00,27,Çorum FK,Erzurumspor FK,,,,1584603
+2027-04-11 15:00,28,Başakşehir,Göztepe,,,,1584611
+2027-04-11 15:00,28,Konyaspor,Samsunspor,,,,1584617
+2027-04-11 15:00,28,Fenerbahçe,Çorum FK,,,,1584613
+2027-04-11 15:00,28,Gençlerbirliği S.K.,Beşiktaş,,,,1584614
+2027-04-11 15:00,28,Trabzonspor,Alanyaspor,,,,1584618
+2027-04-11 15:00,28,Kasımpaşa,Gaziantep FK,,,,1584615
+2027-04-11 15:00,28,Erzurumspor FK,Rizespor,,,,1584612
+2027-04-11 15:00,28,Amed,Galatasaray,,,,1584610
+2027-04-11 15:00,28,Kocaelispor,Eyüpspor,,,,1584616
+2027-04-18 15:00,29,Beşiktaş,Konyaspor,,,,1584620
+2027-04-18 15:00,29,Fenerbahçe,Kocaelispor,,,,1584623
+2027-04-18 15:00,29,Göztepe,Erzurumspor FK,,,,1584625
+2027-04-18 15:00,29,Alanyaspor,Kasımpaşa,,,,1584619
+2027-04-18 15:00,29,Rizespor,Amed,,,,1584626
+2027-04-18 15:00,29,Gaziantep FK,Gençlerbirliği S.K.,,,,1584624
+2027-04-18 15:00,29,Eyüpspor,Trabzonspor,,,,1584622
+2027-04-18 15:00,29,Samsunspor,Galatasaray,,,,1584627
+2027-04-18 15:00,29,Çorum FK,Başakşehir,,,,1584621
+2027-04-25 15:00,30,Başakşehir,Eyüpspor,,,,1584629
+2027-04-25 15:00,30,Konyaspor,Alanyaspor,,,,1584635
+2027-04-25 15:00,30,Galatasaray,Beşiktaş,,,,1584631
+2027-04-25 15:00,30,Gençlerbirliği S.K.,Samsunspor,,,,1584632
+2027-04-25 15:00,30,Trabzonspor,Göztepe,,,,1584636
+2027-04-25 15:00,30,Kasımpaşa,Rizespor,,,,1584633
+2027-04-25 15:00,30,Erzurumspor FK,Fenerbahçe,,,,1584630
+2027-04-25 15:00,30,Amed,Gaziantep FK,,,,1584628
+2027-04-25 15:00,30,Kocaelispor,Çorum FK,,,,1584634
+2027-05-02 15:00,31,Fenerbahçe,Başakşehir,,,,1584640
+2027-05-02 15:00,31,Göztepe,Kasımpaşa,,,,1584642
+2027-05-02 15:00,31,Alanyaspor,Amed,,,,1584637
+2027-05-02 15:00,31,Rizespor,Galatasaray,,,,1584644
+2027-05-02 15:00,31,Gaziantep FK,Konyaspor,,,,1584641
+2027-05-02 15:00,31,Eyüpspor,Gençlerbirliği S.K.,,,,1584639
+2027-05-02 15:00,31,Samsunspor,Beşiktaş,,,,1584645
+2027-05-02 15:00,31,Çorum FK,Trabzonspor,,,,1584638
+2027-05-02 15:00,31,Kocaelispor,Erzurumspor FK,,,,1584643
+2027-05-09 15:00,32,Beşiktaş,Gaziantep FK,,,,1584648
+2027-05-09 15:00,32,Başakşehir,Rizespor,,,,1584647
+2027-05-09 15:00,32,Konyaspor,Göztepe,,,,1584652
+2027-05-09 15:00,32,Galatasaray,Eyüpspor,,,,1584649
+2027-05-09 15:00,32,Gençlerbirliği S.K.,Kocaelispor,,,,1584650
+2027-05-09 15:00,32,Trabzonspor,Fenerbahçe,,,,1584654
+2027-05-09 15:00,32,Kasımpaşa,Erzurumspor FK,,,,1584651
+2027-05-09 15:00,32,Amed,Çorum FK,,,,1584646
+2027-05-09 15:00,32,Samsunspor,Alanyaspor,,,,1584653
+2027-05-16 15:00,33,Fenerbahçe,Kasımpaşa,,,,1584659
+2027-05-16 15:00,33,Göztepe,Amed,,,,1584661
+2027-05-16 15:00,33,Alanyaspor,Galatasaray,,,,1584655
+2027-05-16 15:00,33,Rizespor,Beşiktaş,,,,1584663
+2027-05-16 15:00,33,Erzurumspor FK,Başakşehir,,,,1584657
+2027-05-16 15:00,33,Gaziantep FK,Samsunspor,,,,1584660
+2027-05-16 15:00,33,Eyüpspor,Konyaspor,,,,1584658
+2027-05-16 15:00,33,Çorum FK,Gençlerbirliği S.K.,,,,1584656
+2027-05-16 15:00,33,Kocaelispor,Trabzonspor,,,,1584662
+2027-05-23 15:00,34,Beşiktaş,Göztepe,,,,1584666
+2027-05-23 15:00,34,Başakşehir,Alanyaspor,,,,1584665
+2027-05-23 15:00,34,Konyaspor,Çorum FK,,,,1584670
+2027-05-23 15:00,34,Galatasaray,Gaziantep FK,,,,1584667
+2027-05-23 15:00,34,Gençlerbirliği S.K.,Rizespor,,,,1584668
+2027-05-23 15:00,34,Trabzonspor,Erzurumspor FK,,,,1584672
+2027-05-23 15:00,34,Kasımpaşa,Kocaelispor,,,,1584669
+2027-05-23 15:00,34,Amed,Fenerbahçe,,,,1584664
+2027-05-23 15:00,34,Samsunspor,Eyüpspor,,,,1584671
