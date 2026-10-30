@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-10-30",
+  "mac": "Konyaspor – Galatasaray",
+  "mac_alt": "10. hafta · Cuma 20.00",
+  "tablo": "Tahmin ligi: Hadi 1 · Yürü 0",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Şampiyonluk abonelik değil, form takibi! Bu gece 1-2 alırız baba!"},
+    {"kim": "yuru", "metin": "Dört takım dört puan arada. Kapıyı herkese açan kimseyi seçmemiştir baba."},
+    {"kim": "hadi", "metin": "Yirmi beş hafta var, heyecanla yürünür! Hallederiz baba!"},
+    {"kim": "yuru", "metin": "Ben 1-1 diyorum. Heyecan bedava, tablo değil. Görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "1-2", "yuru": "1-1", "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Hadi form takibi diyor, Yürü tablo muhasebesi. Konyaspor – Galatasaray bu gece 20.00'de. Senin tahminin ne?",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/10/abonelik-degil-form-takibi-hadi-yuruye-cevap/",
+    "yuru": "https://yurubaba.com/2026/10/yirmi-bes-hafta-kalmis-hadiye-cevap/"
+  }
+}
