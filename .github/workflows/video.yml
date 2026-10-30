@@ -1,6 +1,6 @@
 # Günlük atışma videosu: video/senaryolar/<tarih>.json push edilince videoyu üretir,
 # static/video/ altına koyup siteyi yayınlar, sonra Telegram, Instagram Reels,
-# Facebook ve Threads'te paylaşır.
+# Facebook ve Threads'te paylaşır; alan adı yazısız kopyası TikTok'a taslak olarak gider.
 # Secret'lar: GOOGLE_TTS_KEY (seslendirme; yoksa sessiz efektli video),
 #             TELEGRAM_BOT_TOKEN, META_PAGE_TOKEN, THREADS_TOKEN (paylaşım).
 name: Atışma videosu
@@ -62,6 +62,7 @@ jobs:
         if: steps.sec.outputs.uret == 'true'
         env:
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+          ATISMA_SADE_CIKTI: /tmp/atisma-tiktok.mp4  # alan adı yazısız kopya (TikTok)
         run: |
           mkdir -p static/video
           python video/atisma_video.py "${{ steps.sec.outputs.dosya }}" "static/video/${{ steps.sec.outputs.tarih }}.mp4" | tee uretim.log
@@ -115,6 +116,10 @@ jobs:
           META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
           META_SAYFA_ADI: "Hadi Baba"
           THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          TIKTOK_DOSYA: /tmp/atisma-tiktok.mp4
         run: |
           python video/video_paylas.py "${{ steps.sec.outputs.dosya }}" \
             "static/video/${{ steps.sec.outputs.tarih }}.mp4" "${{ steps.bekle.outputs.url }}"

@@ -8,6 +8,7 @@ Kullanım: python scripts/podcast_kesit.py <senaryo.json> <bolum.mp3> <kesit.mp4
    replikler karakter sayısına göre orantılı dağıtılır (altyazı yaklaşık olur).
 2) Seçim: Gemini (GEMINI_API_KEY; model GEMINI_METIN_MODEL, varsayılan gemini-3.8-flash) ardışık
    replikleri seçer ve kısa bir Shorts başlığı yazar. Anahtar/yanıt yoksa süreye göre seçilir.
+   Gemini ayrıca ilk ~2 sn ekranda büyük görünen bir "kanca" cümlesi yazar (izleyici kaydırmasın diye).
    KESIT_SADE=1: alttaki "Tam bölüm" ve alan adı yazıları konmaz (TikTok kuralı).
 3) Video: bölümün gerçek sesi; konuşan karakter büyür ve sesle nabız atar; altyazıda o an söylenen
    kelime sarı; altta ilerleme çubuğu ve "Tam bölüm" çağrısı.
@@ -164,7 +165,10 @@ def sec_gemini(senaryo, rp):
         "Açılış selamı ve kapanış vedasıyla başlama; güçlü bir laf sokma ya da espriyle bitir. "
         "Ayrıca bu kesit için en fazla 60 karakterlik, merak uyandıran ama yanıltmayan Türkçe bir başlık yaz "
         "(bahis/kupon çağrışımı yok, gerçek kişiye hakaret yok). "
-        'Yalnızca JSON döndür: {"bas": <ilk no>, "son": <son no>, "baslik": "..."}\n\n' + satirlar)
+        "Son olarak videonun ilk 2 saniyesinde ekranda kocaman yazacak bir KANCA yaz: 2–6 kelime, en fazla "
+        "36 karakter, izleyiciyi kaydırmadan durduracak merak ya da gerilim (ör. \"Yürü bu sefer fena yakalandı!\"). "
+        "Kanca seçtiğin replikleri doğru anlatmalı, başlığı tekrar etmemeli; emoji, bahis, hakaret yok. "
+        'Yalnızca JSON döndür: {"bas": <ilk no>, "son": <son no>, "baslik": "...", "kanca": "..."}\n\n' + satirlar)
     model = os.environ.get("GEMINI_METIN_MODEL", "gemini-3.8-flash")
     govde = {"contents": [{"parts": [{"text": istem}]}],
              "generationConfig": {"responseMimeType": "application/json", "temperature": 0.4}}
@@ -195,7 +199,10 @@ def sec_gemini(senaryo, rp):
         else:
             break
         s = pencere_suresi(rp, i, j)
-    return i, j, str(c.get("baslik", "")).strip()[:70], model
+    kanca = re.sub(r"\s+", " ", str(c.get("kanca", ""))).strip()
+    if len(kanca) > 44:
+        kanca = ""
+    return i, j, str(c.get("baslik", "")).strip()[:70], kanca, model
 
 
 # ---------------------------------------------------------------- 3) video
@@ -225,8 +232,12 @@ def ses_zarfi(mp3, bas, sure):
 
 
 class Cizer:
-    def __init__(self, senaryo, rp, i, j, baslik, hadi, yuru):
+    KANCA_SN = 2.2  # kancanın ekranda kalma süresi
+
+    def __init__(self, senaryo, rp, i, j, baslik, hadi, yuru, kanca="", bas=0.0):
         self.rp, self.i, self.j = rp, i, j
+        self.bas = bas
+        self.kanca = self._kanca_hazirla(kanca.replace("i", "İ").upper() if kanca else "")
         self.f_ust = ImageFont.truetype(FONT_B, 64)
         self.f_etiket = ImageFont.truetype(FONT_B, 30)
         self.f_baslik = ImageFont.truetype(FONT_B, 46)
@@ -249,6 +260,44 @@ class Cizer:
             if sat:
                 satirlar.append(sat)
             r["sayfalar"] = [satirlar[k:k + 3] for k in range(0, len(satirlar), 3)]
+
+    def _kanca_hazirla(self, metin):
+        """Kancayı 960 px'e sığacak en büyük yazı boyuyla en fazla 3 satıra böler."""
+        if not metin:
+            return None
+        olcu = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+        for boy in (124, 112, 100, 88, 78, 68):
+            f = ImageFont.truetype(FONT_B, boy)
+            satirlar, sat = [], ""
+            for k in metin.split():
+                dene = f"{sat} {k}".strip()
+                if sat and olcu.textlength(dene, font=f) > 960:
+                    satirlar.append(sat)
+                    sat = k
+                else:
+                    sat = dene
+            satirlar.append(sat)
+            if len(satirlar) <= 3 and all(olcu.textlength(x, font=f) <= 980 for x in satirlar):
+                return {"font": f, "boy": boy, "satirlar": satirlar}
+        return None
+
+    def _kanca_ciz(self, im, rel):
+        """İlk ~2 sn: ekran kararır, kanca büyüyerek gelir, sonra söner."""
+        k = self.kanca
+        sonme = max(0.0, min(1.0, (self.KANCA_SN - rel) / 0.35))
+        gelis = min(1.0, rel / 0.25)
+        olcek = 0.6 + 0.4 * min(1.0, rel / 0.18) + 0.06 * max(0.0, 1 - abs(rel - 0.22) / 0.12)
+        ort = Image.new("RGBA", (W, H), (8, 10, 18, int(175 * sonme * gelis)))
+        im.alpha_composite(ort)
+        f = ImageFont.truetype(FONT_B, max(10, int(k["boy"] * olcek)))
+        d = ImageDraw.Draw(im)
+        satir_y = int(k["boy"] * olcek * 1.18)
+        y = 760 - satir_y * len(k["satirlar"]) // 2
+        a = int(255 * sonme)
+        for n, sat in enumerate(k["satirlar"]):
+            renk = RENK["sari"] if n == len(k["satirlar"]) - 1 else RENK["beyaz"]
+            d.text((W // 2, y + n * satir_y), sat, font=f, fill=renk + (a,), anchor="ma",
+                   stroke_width=max(4, int(8 * olcek)), stroke_fill=(10, 12, 20, a))
 
     def _zemin(self, baslik):
         im = Image.new("RGB", (W, H), RENK["zemin"])
@@ -341,15 +390,18 @@ class Cizer:
         # İlerleme çubuğu
         d.rectangle([0, H - 30, W, H], fill=(40, 48, 66))
         d.rectangle([0, H - 30, int(W * ilerleme), H], fill=RENK["sari"])
+        rel = t - self.bas
+        if self.kanca and rel < self.KANCA_SN:
+            self._kanca_ciz(im, rel)
         return im.convert("RGB")
 
 
-def video(senaryo, mp3, cikti, rp, i, j, baslik, hadi, yuru):
+def video(senaryo, mp3, cikti, rp, i, j, baslik, hadi, yuru, kanca=""):
     bas = max(0.0, rp[i]["bas"] - 0.2)
     son = min(sure_olc(mp3), rp[j]["son"] + 0.5)
     sure = son - bas
     zarf = ses_zarfi(mp3, bas, sure)
-    c = Cizer(senaryo, rp, i, j, baslik, hadi, yuru)
+    c = Cizer(senaryo, rp, i, j, baslik, hadi, yuru, kanca, bas)
     n = int(sure * FPS)
     ff = subprocess.Popen([
         "ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
@@ -375,22 +427,22 @@ def main():
     yuru = sys.argv[5] if len(sys.argv) > 5 and os.path.exists(sys.argv[5]) else os.path.join(KOK, "video", "yuru.png")
     rp, yontem = zamanla(senaryo, mp3)
     try:
-        i, j, baslik, model = sec_gemini(senaryo, rp)
+        i, j, baslik, kanca, model = sec_gemini(senaryo, rp)
         secim = f"Gemini {model}"
     except Exception as e:  # noqa: BLE001
         uyari("Kesit seçimi", f"Gemini seçemedi, süreye göre seçildi: {str(e)[:200]}")
-        (i, j), baslik, secim = sec_sureyle(rp), "", "süre"
-    sure = video(senaryo, mp3, cikti, rp, i, j, baslik, hadi, yuru)
+        (i, j), baslik, kanca, secim = sec_sureyle(rp), "", "", "süre"
+    sure = video(senaryo, mp3, cikti, rp, i, j, baslik, hadi, yuru, kanca)
     sade = os.environ.get("KESIT_SADE_CIKTI")  # aynı kesitin yazısız (TikTok) kopyası
     if sade:
         os.environ["KESIT_SADE"] = "1"
-        video(senaryo, mp3, sade, rp, i, j, baslik, hadi, yuru)
+        video(senaryo, mp3, sade, rp, i, j, baslik, hadi, yuru, kanca)
         os.environ.pop("KESIT_SADE")
     meta = {"tarih": senaryo["tarih"], "bas": i, "son": j, "baslik": baslik or senaryo["baslik"], "sure": round(sure, 1),
-            "zamanlama": yontem, "secim": secim}
+            "zamanlama": yontem, "secim": secim, "kanca": kanca}
     json.dump(meta, open(os.path.splitext(cikti)[0] + ".json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     notice("Podcast kesiti", f"{os.path.basename(cikti)}: replik {i}–{j}, {sure:.0f} sn, seçim {secim}, "
-                             f"zamanlama {yontem} — {meta['baslik']}")
+                             f"zamanlama {yontem} — {meta['baslik']}" + (f" · kanca: {kanca}" if kanca else ""))
 
 
 if __name__ == "__main__":

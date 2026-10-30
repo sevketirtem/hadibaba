@@ -3,6 +3,8 @@
 Kullanım: python3 video/atisma_video.py video/senaryolar/2026-10-29.json cikti.mp4
 Dikey 1080x1920, 30 fps; kendi avatarlarımız + konuşma balonları + seslendirme
 (GOOGLE_TTS_KEY varsa Google Cloud Text-to-Speech; yoksa yalnızca efekt sesleri).
+ATISMA_SADE_CIKTI=<yol>: aynı videonun alan adı yazısız kopyası da üretilir (TikTok kuralı:
+API ile gönderilen videoda bağlantı/tanıtım yazısı olmamalı). Ses ve zamanlama ortaktır.
 """
 import json, math, subprocess, sys, os
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -59,8 +61,9 @@ def satirla(metin, f, genislik, d):
 
 
 class Video:
-    def __init__(self, s):
+    def __init__(self, s, sade=False):
         self.s = s
+        self.sade = sade
         self.av = {
             "hadi": daire_avatar(f"{KOK}/hadi.png", 170),
             "yuru": daire_avatar(f"{KOK}/yuru.png", 170),
@@ -214,7 +217,8 @@ class Video:
     def alt_bant(self, d):
         d.rectangle((0, 1680, W, H), fill=(10, 13, 22, 235))
         self.ortala(d, 1720, self.s["tablo"], self.f_alt, RENK["sari"])
-        self.ortala(d, 1790, "hadibaba.com  ·  yurubaba.com", self.f_kucuk, RENK["gri"])
+        if not self.sade:
+            self.ortala(d, 1790, "hadibaba.com  ·  yurubaba.com", self.f_kucuk, RENK["gri"])
 
     def bitis(self, im, d, t):
         b = self.s["bitis_karti"]
@@ -251,7 +255,8 @@ class Video:
             aa = int(255 * ease_out((t - 1.3) / 0.4))
             self.ortala(d, 1420, b.get("alt", "Skor tahminini yoruma yaz"), self.f_alt, RENK["gri"] + (aa,))
             self.ortala(d, 1600, self.s["tablo"], self.f_alt, RENK["sari"] + (aa,))
-            self.ortala(d, 1680, "hadibaba.com  ·  yurubaba.com", self.f_kucuk, RENK["gri"] + (aa,))
+            if not self.sade:
+                self.ortala(d, 1680, "hadibaba.com  ·  yurubaba.com", self.f_kucuk, RENK["gri"] + (aa,))
 
 
 def efektler(s, sure, cikti):
@@ -328,21 +333,27 @@ def main():
     sys.path.insert(0, KOK)
     s = zamanla(s, klasor)
     sure = s["sure"]
-    v = Video(s)
-    sessiz = cikti + ".video.mp4"
-    p = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
-                          "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264",
-                          "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", sessiz],
-                         stdin=subprocess.PIPE)
+    sade_cikti = os.environ.get("ATISMA_SADE_CIKTI")
+    hedefler = [(Video(s), cikti)] + ([(Video(s, sade=True), sade_cikti)] if sade_cikti else [])
+    borular = []
+    for v, hedef in hedefler:
+        p = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
+                              "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264",
+                              "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", hedef + ".video.mp4"],
+                             stdin=subprocess.PIPE)
+        borular.append((v, p))
     for i in range(int(sure * FPS)):
-        p.stdin.write(v.kare(i / FPS).tobytes())
-    p.stdin.close()
-    p.wait()
+        for v, p in borular:
+            p.stdin.write(v.kare(i / FPS).tobytes())
+    for _, p in borular:
+        p.stdin.close()
+        p.wait()
     sesdosya = cikti + ".ses.m4a"
     efektler(s, sure, sesdosya)
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", sessiz, "-i", sesdosya, "-c:v", "copy",
-                    "-c:a", "copy", "-shortest", "-movflags", "+faststart", cikti], check=True)
-    os.remove(sessiz)
+    for _, hedef in hedefler:
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", hedef + ".video.mp4", "-i", sesdosya,
+                        "-c:v", "copy", "-c:a", "copy", "-shortest", "-movflags", "+faststart", hedef], check=True)
+        os.remove(hedef + ".video.mp4")
     os.remove(sesdosya)
     sesli = any(m.get("ses_dosyasi") for m in s["mesajlar"])
     print(f"Video hazır: {cikti} ({sure:.1f} sn, {'seslendirmeli' if sesli else 'yalnızca efekt sesi'})")

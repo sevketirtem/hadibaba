@@ -4,6 +4,7 @@ Kullanım: python3 video/video_paylas.py <senaryo.json> <yerel_video.mp4> <yayı
 Her platform bağımsızdır; biri hata verirse diğerleri devam eder. Paylaşılanlar
 video/paylasildi.txt dosyasına yazılır, aynı gün ikinci kez paylaşılmaz.
 Ortam: TELEGRAM_BOT_TOKEN, TELEGRAM_KANALLAR (virgüllü), META_PAGE_TOKEN, META_SAYFA_ADI, THREADS_TOKEN,
+       TIKTOK_* + TIKTOK_DOSYA (alan adı yazısız kopya; TikTok'a taslak olarak gider),
        DRY_RUN=true ise hiçbir şey göndermez, sadece ne yapacağını yazar.
 """
 import json, os, sys, time, uuid, urllib.error, urllib.request
@@ -138,6 +139,15 @@ def main():
     th = os.environ.get("THREADS_TOKEN")
     if th:
         calistir("threads", lambda: threads_video(th, video_url, metin(s, uzun=False)))
+    tt_dosya = os.environ.get("TIKTOK_DOSYA", "")
+    if os.environ.get("TIKTOK_REFRESH_TOKEN"):
+        if tt_dosya and os.path.exists(tt_dosya):
+            import tiktok_yukle
+            # TikTok kuralı: API videosunun açıklamasında bağlantı/alan adı yok
+            tt_metin = f"{s.get('aciklama', s['mac'])} {ETIKETLER} #podcast"
+            calistir("tiktok", lambda: tiktok_yukle.gonder(tt_dosya, tt_metin))
+        elif f"{gun} tiktok" not in yapilan:
+            notice("Video tiktok", "yazısız kopya yok (video bu çalıştırmada üretilmedi), atlandı")
     if not dry and not sonuc and not any(a.startswith(gun) for a in yapilan):
         notice("Video", "hiçbir platformda paylaşılamadı", "warning")
 
