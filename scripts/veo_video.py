@@ -35,8 +35,63 @@ def video_bul(o):
     return None
 
 
+def vertex_veo(resim, cikti, istem):
+    """Vertex AI Veo 3.1 Fast (deneme kredisi). Omni Vertex'te yok; Veo var (us-central1, predictLongRunning)."""
+    model = os.environ.get("VERTEX_VIDEO_MODEL", "veo-3.1-fast-generate-001")
+    taban = (f"https://us-central1-aiplatform.googleapis.com/v1/projects/{os.environ.get('VERTEX_PROJE', 'hadi-yuru-ses')}"
+             f"/locations/us-central1/publishers/google/models/{model}")
+    b = {"Authorization": "Bearer " + os.environ["GOOGLE_VERTEX_TOKEN"], "Content-Type": "application/json"}
+
+    def post(url, govde):
+        req = urllib.request.Request(url, data=json.dumps(govde).encode(), headers=b, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            raise RuntimeError(f"Veo HTTP {e.code}: {e.read()[:500]!r}") from None
+
+    veri = base64.b64encode(open(resim, "rb").read()).decode()
+    tip = "image/png" if resim.lower().endswith(".png") else "image/jpeg"
+    ornek = {"prompt": istem}
+    referans = "character reference" in istem.lower()
+    if referans:  # görsel yalnızca karakter örneği: yeni sahne
+        ornek["referenceImages"] = [{"image": {"bytesBase64Encoded": veri, "mimeType": tip}, "referenceType": "asset"}]
+    else:         # görsel ilk kare: onu canlandır
+        ornek["image"] = {"bytesBase64Encoded": veri, "mimeType": tip}
+    oran = os.environ.get("VEO_ORAN", "16:9")
+    coz = os.environ.get("VEO_COZUNURLUK", "720p")
+    param = {"aspectRatio": oran, "sampleCount": 1, "durationSeconds": 8, "generateAudio": False,
+             "resolution": "1080p" if coz == "1080p" else "720p", "personGeneration": "allow_all"}
+    try:
+        op = post(f"{taban}:predictLongRunning", {"instances": [ornek], "parameters": param})
+    except RuntimeError as e:
+        if "personGeneration" in str(e) or "allow_all" in str(e):
+            param["personGeneration"] = "allow_adult"
+            op = post(f"{taban}:predictLongRunning", {"instances": [ornek], "parameters": param})
+        else:
+            raise
+    ad = op["name"]
+    print(f"::notice title=Veo (Vertex)::{model} · {'referans' if referans else 'ilk kare'} · {ad.split('/')[-1]}", flush=True)
+    for _ in range(90):
+        time.sleep(10)
+        y = post(f"{taban}:fetchPredictOperation", {"operationName": ad})
+        if y.get("done"):
+            break
+    else:
+        raise RuntimeError("Veo 15 dakikada bitmedi")
+    if "error" in y:
+        raise RuntimeError(f"Veo hatası: {y['error']}")
+    vids = y.get("response", {}).get("videos", [])
+    if not vids:
+        raise RuntimeError(f"Video yok (güvenlik filtresi olabilir): {json.dumps(y.get('response', {}))[:500]}")
+    open(cikti, "wb").write(base64.b64decode(vids[0]["bytesBase64Encoded"]))
+    print(f"::notice title=Video bitti::{cikti} ({os.path.getsize(cikti)} bayt, {model}, Vertex)")
+
+
 def main():
     resim, cikti, istem = sys.argv[1], sys.argv[2], sys.argv[3]
+    if os.environ.get("GOOGLE_VERTEX_TOKEN") and not os.environ.get("VEO_MODEL"):
+        return vertex_veo(resim, cikti, istem)
     model = os.environ.get("VEO_MODEL") or "gemini-omni-1.1-flash"
     govde = {"model": model,
              "input": [{"type": "image", "data": base64.b64encode(open(resim, "rb").read()).decode(),
