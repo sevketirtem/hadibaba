@@ -1,0 +1,36 @@
+# Bir YouTube videosuna özel kapak resmi koyar (elle). Kanal telefonla doğrulanmış olmalı.
+name: YouTube kapak
+on:
+  workflow_dispatch:
+    inputs:
+      video_id: {description: "YouTube video kimliği", type: string, required: true}
+      resim: {description: "Depodaki JPG/PNG yolu (1280x720, <2MB)", type: string, required: true}
+jobs:
+  kapak:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Kapağı yükle
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          VID: ${{ inputs.video_id }}
+          RESIM: ${{ inputs.resim }}
+        run: |
+          python - <<'PY'
+          import os, sys, urllib.request, urllib.error
+          sys.path.insert(0, "scripts")
+          import youtube_yukle as y
+          a = y.erisim_anahtari()
+          tur = "image/png" if os.environ["RESIM"].endswith(".png") else "image/jpeg"
+          req = urllib.request.Request(
+              f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={os.environ['VID']}&uploadType=media",
+              data=open(os.environ["RESIM"], "rb").read(), method="POST",
+              headers={"Authorization": f"Bearer {a}", "Content-Type": tur})
+          try:
+              urllib.request.urlopen(req, timeout=120).read()
+              print(f"::notice title=YouTube kapak::{os.environ['VID']} kapağı kondu")
+          except urllib.error.HTTPError as e:
+              print(f"::error title=YouTube kapak::HTTP {e.code}: {e.read()[:400]!r}"); sys.exit(1)
+          PY
