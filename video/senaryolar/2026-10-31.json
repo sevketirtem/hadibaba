@@ -1,0 +1,37 @@
+{
+  "tarih": "2026-10-31",
+  "mac": "Fenerbahçe – Göztepe",
+  "mac_alt": "10. hafta · Cumartesi 19.00",
+  "kanca": "Yürü bu sefer risk aldı",
+  "tablo": "Tahmin ligi: Hadi 2 · Yürü 0",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Fener ligin en çok gol atanı! Bu akşam 3-1 alırız baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Ama dokuz maçta sekiz gol de yedi. Rakam iki yüzlüdür baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Gol yiyen de gol atar, futbol bu! Hallederiz baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Söz verdim, risk aldım: 1-2 diyorum. Görürüz baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "TAHMİNLER",
+    "hadi": "3-1",
+    "yuru": "1-2",
+    "hadi_soz": "Yaparız baba!",
+    "yuru_soz": "Görürüz baba."
+  },
+  "aciklama": "Hadi Fenerbahçe 3-1 diyor, Yürü riske girip Göztepe 1-2 yazdı. Maç bu akşam 19.00'da. Sen kimden yanasın?",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/10/fener-goztepe-onu-hadi-3-1-yuru-yine-bahane-arayacak/",
+    "yuru": "https://yurubaba.com/2026/10/fener-goztepe-riske-girdim-1-2-yazdim/"
+  }
+}
