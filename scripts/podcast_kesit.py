@@ -152,6 +152,19 @@ def sec_sureyle(rp):
     return en_iyi
 
 
+def replik_bankasi():
+    """replikler.md'deki imza laflar → istem eki (dosya yoksa boş)."""
+    try:
+        with open(os.path.join(KOK, "replikler.md"), encoding="utf-8") as f:
+            laflar = [s[2:].strip() for s in f if s.startswith("- \"")]
+    except OSError:
+        return ""
+    if not laflar:
+        return ""
+    return ("Karakterlerin imza lafları (kesitte geçiyorsa ya da kesitin ruhuna uyuyorsa kanca veya başlıkta "
+            "bunlardan birini kullanmayı tercih et, uymuyorsa zorlama):\n" + "\n".join(laflar[:30]) + "\n")
+
+
 def sec_gemini(senaryo, rp):
     anahtar = os.environ.get("GEMINI_API_KEY")
     if not anahtar:
@@ -168,6 +181,7 @@ def sec_gemini(senaryo, rp):
         "Son olarak videonun ilk 2 saniyesinde ekranda kocaman yazacak bir KANCA yaz: 2–6 kelime, en fazla "
         "36 karakter, izleyiciyi kaydırmadan durduracak merak ya da gerilim (ör. \"Yürü bu sefer fena yakalandı!\"). "
         "Kanca seçtiğin replikleri doğru anlatmalı, başlığı tekrar etmemeli; emoji, bahis, hakaret yok. "
+        + replik_bankasi() +
         'Yalnızca JSON döndür: {"bas": <ilk no>, "son": <son no>, "baslik": "...", "kanca": "..."}\n\n' + satirlar)
     model = os.environ.get("GEMINI_METIN_MODEL", "gemini-3.8-flash")
     govde = {"contents": [{"parts": [{"text": istem}]}],
