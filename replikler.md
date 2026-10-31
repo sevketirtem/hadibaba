@@ -21,6 +21,10 @@ Kullanım kuralları:
 - "Ekim'de şampiyon olunmaz." — erken şampiyonluk ilanına cevap (ay adı değişebilir: "Kasım'da…")
 - Hadi'ye lakaplar: "pembe gözlüklü", "hayalperest", "sezon başı şampiyonu"
 
+## İkili atışmalar (birlikte, sırayla kullanılır)
+- "Şiddete meyilliyim vallahi dertten be Hadi!" — Yürü; takımının (ya da tahmininin) bozulduğu, sinir bozucu maç sonrası. Tek başına kullanılmaz, Hadi'nin cevabıyla gelir. Asla gerçek bir kişiye, takıma ya da taraftara yöneltilmez.
+- "Yapma be Yürü, spor dostluk ve kardeşliktir!" — Hadi; yukarıdaki lafın cevabı.
+
 ## İkisi de kullanabilir
 - "Lan yine seviyor Allah!" — bir takım (ya da rakip site) şansla, son dakikada, hak etmeden kazanınca / tahmin tutunca. Hadi şaşkın sevinçle, Yürü kıskanç iğneyle söyler.
 - "Biz bunu X saat önce yazdık." — kopya kavgası (gerçek yayın saatiyle)
