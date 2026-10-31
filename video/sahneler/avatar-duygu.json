@@ -1,0 +1,25 @@
+{
+ "referans": "video/sahneler/hadi-dikey.jpg",
+ "sahneler": [
+  {
+   "ad": "hadi-sevinc",
+   "referans": "video/sahneler/hadi-dikey.jpg",
+   "istem": "Animate this exact image. The cartoon character (Hadi) is ecstatic after a win: talking and cheering with a huge open-mouth laugh, eyes squeezed with joy, head bouncing, eyebrows jumping, as if shouting 'we did it!'. Keep EXACTLY the same flat 2D cartoon style, colors, face, glasses/hair and the round badge with its background as in the image. Camera completely locked, no zoom, no pan, the round badge stays in exactly the same place and size in the center for the whole video. Only the character's face and head move. Seamless, loopable motion. No text, no tears flying out of the badge, no new objects, no sound effects, no music."
+  },
+  {
+   "ad": "hadi-uzgun",
+   "referans": "video/sahneler/hadi-dikey.jpg",
+   "istem": "Animate this exact image. The cartoon character (Hadi) is heartbroken after a loss: talking sadly, mouth turned down, eyebrows slanted up in despair, eyes watery and shiny, sighing, head drooping slowly, then shaking his head in disbelief. Keep EXACTLY the same flat 2D cartoon style, colors, face, glasses/hair and the round badge with its background as in the image. Camera completely locked, no zoom, no pan, the round badge stays in exactly the same place and size in the center for the whole video. Only the character's face and head move. Seamless, loopable motion. No text, no tears flying out of the badge, no new objects, no sound effects, no music."
+  },
+  {
+   "ad": "yuru-sevinc",
+   "referans": "video/sahneler/yuru-dikey.jpg",
+   "istem": "Animate this exact image. The cartoon character (Yuru, with glasses) is smug because his prediction was right: talking with a wide satisfied smirk, one eyebrow high, eyes half closed proudly, adjusting his glasses with confidence, small 'I told you so' nod. Keep EXACTLY the same flat 2D cartoon style, colors, face, glasses/hair and the round badge with its background as in the image. Camera completely locked, no zoom, no pan, the round badge stays in exactly the same place and size in the center for the whole video. Only the character's face and head move. Seamless, loopable motion. No text, no tears flying out of the badge, no new objects, no sound effects, no music."
+  },
+  {
+   "ad": "yuru-uzgun",
+   "referans": "video/sahneler/yuru-dikey.jpg",
+   "istem": "Animate this exact image. The cartoon character (Yuru, with glasses) is shocked and annoyed because his prediction was wrong: talking with wide eyes behind his glasses, eyebrows up, mouth open in disbelief, then a grumpy frown, glasses slipping down his nose. Keep EXACTLY the same flat 2D cartoon style, colors, face, glasses/hair and the round badge with its background as in the image. Camera completely locked, no zoom, no pan, the round badge stays in exactly the same place and size in the center for the whole video. Only the character's face and head move. Seamless, loopable motion. No text, no tears flying out of the badge, no new objects, no sound effects, no music."
+  }
+ ]
+}
