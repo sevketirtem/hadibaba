@@ -9,7 +9,7 @@ kaynaklar: []
 
 Yıllardır tribünde başkalarının bestesine bağırdık, bugün kendi tezahüratımızı yazdık baba! Adı **"Mahalle Arasında"**. Ne bir takımın marşı, ne bir rengin şarkısı. Taş kaleyle, yamalı topla başlayan o sevdanın şarkısı.
 
-👉 **[Videoyu buradan izle](/video/tezahurat-mahalle.mp4)**. YouTube, Instagram, TikTok ve Telegram'da da var. Tam hâli (3 dakika) YouTube kanalımız "Hadi vs Yürü"de.
+👉 **[Videoyu buradan izle](/video/tezahurat-mahalle.mp4)**. YouTube, Instagram, TikTok ve Telegram'da da var. Tam hâli (3 dakika): [YouTube](https://youtu.be/l0LhU6i02Xg).
 
 ## Sözler
 
