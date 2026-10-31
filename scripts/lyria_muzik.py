@@ -1,0 +1,73 @@
+"""Lyria 3.5 (Gemini API, Interactions) ile şarkı üretir.
+Kullanım: python scripts/lyria_muzik.py <istem.txt> <cikti.wav|mp3>
+Ortam: GEMINI_API_KEY, LYRIA_MODEL (varsayılan lyria-3.5)
+"""
+import base64, json, os, sys, time, urllib.error, urllib.request
+API = "https://generativelanguage.googleapis.com/v1beta"
+KEY = os.environ["GEMINI_API_KEY"]
+
+
+def istek(url, govde=None):
+    req = urllib.request.Request(url, data=json.dumps(govde).encode() if govde is not None else None,
+                                 method="POST" if govde is not None else "GET",
+                                 headers={"Content-Type": "application/json", "x-goog-api-key": KEY})
+    try:
+        with urllib.request.urlopen(req, timeout=600) as r:
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"HTTP {e.code}: {e.read()[:800]!r}") from None
+
+
+def ses_bul(o):
+    if isinstance(o, dict):
+        if str(o.get("mime_type", o.get("mimeType", ""))).startswith("audio/") and (o.get("data") or o.get("uri")):
+            return o
+        for v in o.values():
+            b = ses_bul(v)
+            if b:
+                return b
+    elif isinstance(o, list):
+        for v in o:
+            b = ses_bul(v)
+            if b:
+                return b
+    return None
+
+
+def main():
+    istem, cikti = open(sys.argv[1], encoding="utf-8").read(), sys.argv[2]
+    model = os.environ.get("LYRIA_MODEL") or "lyria-3.5"
+    govde = {"model": model, "input": istem}
+    if cikti.endswith(".wav"):
+        govde["response_format"] = {"type": "audio", "mime_type": "audio/wav"}
+    try:
+        y = istek(f"{API}/interactions", govde)
+    except RuntimeError as e:
+        if "response_format" in str(e) and "response_format" in govde:
+            del govde["response_format"]
+            y = istek(f"{API}/interactions", govde)
+        else:
+            raise
+    kimlik = y.get("id")
+    for _ in range(90):
+        if y.get("status") in ("completed", "failed", "cancelled") or ses_bul(y.get("steps")):
+            break
+        time.sleep(10)
+        y = istek(f"{API}/interactions/{kimlik}")
+    s = ses_bul(y.get("steps", y))
+    if not s:
+        raise RuntimeError(f"Ses yok, durum {y.get('status')}: {json.dumps(y)[:800]}")
+    veri = base64.b64decode(s["data"]) if s.get("data") else urllib.request.urlopen(s["uri"]).read()
+    if s.get("mime_type", "").endswith("mpeg") and cikti.endswith(".wav"):
+        cikti = cikti[:-4] + ".mp3"
+    open(cikti, "wb").write(veri)
+    metin = " ".join(p.get("text", "") for st in y.get("steps", []) for p in (st.get("content") or []) if isinstance(p, dict))[:500]
+    print(f"::notice title=Lyria bitti::{cikti} ({len(veri)} bayt, {model}) {metin}")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:  # noqa: BLE001
+        print(f"::error title=Lyria::{str(e)[:900]}", flush=True)
+        sys.exit(1)

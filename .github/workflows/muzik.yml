@@ -1,0 +1,28 @@
+# Lyria 3.5 ile şarkı üretir (istem dosyası depoda); sonuçlar muzik-cikti dalına.
+name: Müzik (Lyria)
+on:
+  workflow_dispatch:
+    inputs:
+      istem: {description: "İstem dosyası (depoda)", type: string, required: true}
+      ad: {description: "Çıktı adı (uzantısız)", type: string, default: "sarki"}
+      adet: {description: "Kaç versiyon", type: string, default: "2"}
+permissions:
+  contents: write
+jobs:
+  m:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Üret
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          mkdir -p /tmp/d
+          for i in $(seq 1 ${{ inputs.adet }}); do python scripts/lyria_muzik.py "${{ inputs.istem }}" "/tmp/d/${{ inputs.ad }}-$i.wav" || true; done
+          ls -la /tmp/d; [ -n "$(ls /tmp/d)" ]
+      - name: muzik-cikti dalına koy
+        run: |
+          cd /tmp/d && git init -q && git checkout -q -b muzik-cikti
+          git config user.name "Claude (Hadi-Yürü ekibi)" && git config user.email "noreply@anthropic.com"
+          git add . && git commit -qm "Müzik" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" muzik-cikti
