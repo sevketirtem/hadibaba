@@ -84,4 +84,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:  # noqa: BLE001
+        print(f"::error title=Veo::{str(e)[:900]}", flush=True)
+        sys.exit(1)
