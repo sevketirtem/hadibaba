@@ -55,6 +55,16 @@ def main():
         for i, s in gorulen.items():
             notice("Bota yazan", f"{i} — {s}")
         return
+    if sys.argv[1] == "duyuru":
+        paket = api("getStickerSet", {"name": AD})
+        metin = {"@hadibabacom": "Yaparız baba! 🥳 Hadi ile Yürü artık çıkartma oldu! Maç sonrası grupta kullan, kim haklıysa onu gönder:\nhttps://t.me/addstickers/" + AD,
+                 "@yurubaba": "Görürüz baba. 😏 Hadi'yle ortak çıkartma paketimiz çıktı. \"Ben demiştim\" demenin en kısa yolu:\nhttps://t.me/addstickers/" + AD}
+        ornek = {"@hadibabacom": 0, "@yurubaba": 5}
+        for kanal, m in metin.items():
+            api("sendSticker", {"chat_id": kanal, "sticker": paket["stickers"][ornek[kanal]]["file_id"]})
+            api("sendMessage", {"chat_id": kanal, "text": m})
+            notice("Çıkartma duyurusu", kanal)
+        return
     kullanici = sys.argv[2]
     liste = json.load(open("video/cikartma/liste.json", encoding="utf-8"))
     try:
