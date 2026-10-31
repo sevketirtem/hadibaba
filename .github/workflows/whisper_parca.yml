@@ -1,0 +1,37 @@
+# muzik-cikti dalındaki bir şarkının bir bölümünü Whisper (medium) ile kelime zamanlarıyla çözer.
+name: Whisper parça
+on:
+  workflow_dispatch:
+    inputs:
+      dosya: {description: "muzik-cikti dalındaki dosya", type: string, required: true}
+      bas: {type: string, default: "0"}
+      son: {type: string, default: "40"}
+      ipucu: {description: "Beklenen sözler (ipucu)", type: string, default: ""}
+jobs:
+  w:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          pip install -q faster-whisper numpy
+          git fetch -q --depth 1 origin muzik-cikti && git show "FETCH_HEAD:${{ inputs.dosya }}" > /tmp/s.wav
+      - env:
+          BAS: ${{ inputs.bas }}
+          SON: ${{ inputs.son }}
+          IPUCU: ${{ inputs.ipucu }}
+        run: |
+          python - <<'PY'
+          import os, subprocess, numpy as np
+          from faster_whisper import WhisperModel
+          b, s = float(os.environ["BAS"]), float(os.environ["SON"])
+          ham = subprocess.run(["ffmpeg","-v","error","-ss",str(b),"-t",str(s-b),"-i","/tmp/s.wav","-f","s16le","-ac","1","-ar","16000","-"], capture_output=True, check=True).stdout
+          ses = np.frombuffer(ham, np.int16).astype(np.float32) / 32768.0
+          for ad in ("medium",):
+              m = WhisperModel(ad, device="cpu", compute_type="int8")
+              segs, _ = m.transcribe(ses, language="tr", word_timestamps=True, vad_filter=False, beam_size=5, initial_prompt=os.environ["IPUCU"] or None)
+              k = []
+              for sg in segs:
+                  k += [f"{w.word.strip()}@{w.start + b:.1f}" for w in (sg.words or [])]
+              print(f"::notice title=Whisper {ad}::{' '.join(k)[:3000]}")
+          PY
