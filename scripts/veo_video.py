@@ -27,8 +27,9 @@ def model_sec():
     adlar, sayfa = [], ""
     while True:
         y = json.loads(istek(f"models?pageSize=200{'&pageToken=' + sayfa if sayfa else ''}"))
-        adlar += [m["name"].split("/")[-1] for m in y.get("models", [])
-                  if "veo" in m["name"] and "predictLongRunning" in m.get("supportedGenerationMethods", [])]
+        hepsi = y.get("models", [])
+        adlar += [m["name"].split("/")[-1] for m in hepsi if "veo" in m["name"].lower()]
+        print("::notice title=Tüm modeller::" + ", ".join(m["name"].split("/")[-1] for m in hepsi)[:3000])
         sayfa = y.get("nextPageToken")
         if not sayfa:
             break
