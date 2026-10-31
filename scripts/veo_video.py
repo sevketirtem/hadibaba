@@ -56,6 +56,10 @@ def vertex_veo(resim, cikti, istem):
     referans = "character reference" in istem.lower()
     if referans:  # görsel yalnızca karakter örneği: yeni sahne
         ornek["referenceImages"] = [{"image": {"bytesBase64Encoded": veri, "mimeType": tip}, "referenceType": "asset"}]
+        for ek in [x.strip() for x in os.environ.get("VEO_EK_REFERANS", "").split(",") if x.strip()][:2]:
+            et = "image/png" if ek.lower().endswith(".png") else "image/jpeg"
+            ornek["referenceImages"].append({"image": {"bytesBase64Encoded": base64.b64encode(open(ek, "rb").read()).decode(),
+                                                       "mimeType": et}, "referenceType": "asset"})
     else:         # görsel ilk kare: onu canlandır
         ornek["image"] = {"bytesBase64Encoded": veri, "mimeType": tip}
     oran = os.environ.get("VEO_ORAN", "16:9")

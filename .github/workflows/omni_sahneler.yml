@@ -37,7 +37,9 @@ jobs:
           d = json.load(open("${{ inputs.liste }}", encoding="utf-8"))
           hata = 0
           for s in d["sahneler"]:
-              r = subprocess.run([sys.executable, "scripts/veo_video.py", s.get("referans", d["referans"]), f"/tmp/d/{s['ad']}.mp4", s["istem"]])
+              import os
+              ortam = dict(os.environ, VEO_EK_REFERANS=s.get("ek_referans", d.get("ek_referans", "")))
+              r = subprocess.run([sys.executable, "scripts/veo_video.py", s.get("referans", d["referans"]), f"/tmp/d/{s['ad']}.mp4", s["istem"]], env=ortam)
               hata += r.returncode != 0
           sys.exit(1 if hata == len(d["sahneler"]) else 0)
           PY
