@@ -1,0 +1,58 @@
+# muzik-cikti dalındaki şarkıları çözümler: Whisper kelime zamanları + Gemini dinleme kontrolü; json'lar aynı dala.
+name: Şarkı çözümle
+on:
+  workflow_dispatch:
+    inputs:
+      beklenen: {description: "Beklenen sözler dosyası (depoda)", type: string, required: true}
+permissions:
+  contents: write
+jobs:
+  c:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          pip install -q faster-whisper numpy
+          git fetch -q --depth 1 origin muzik-cikti && mkdir -p /tmp/m && git --work-tree=/tmp/m checkout FETCH_HEAD -- . && ls -la /tmp/m
+      - name: Çözümle
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python - <<'PY'
+          import base64, glob, json, os, subprocess, urllib.request, numpy as np
+          from faster_whisper import WhisperModel
+          beklenen = open("${{ inputs.beklenen }}", encoding="utf-8").read()
+          m = WhisperModel("small", device="cpu", compute_type="int8")
+          for f in sorted(glob.glob("/tmp/m/*.wav")):
+              ham = subprocess.run(["ffmpeg","-v","error","-i",f,"-f","s16le","-ac","1","-ar","16000","-"], capture_output=True, check=True).stdout
+              ses = np.frombuffer(ham, np.int16).astype(np.float32) / 32768.0
+              segs, _ = m.transcribe(ses, language="tr", word_timestamps=True, vad_filter=False, beam_size=1, initial_prompt=beklenen[-400:])
+              sat, kel = [], []
+              for s in segs:
+                  sat.append(f"{s.start:.1f}-{s.end:.1f} {s.text.strip()}")
+                  kel += [[round(w.start,2), round(w.end,2), w.word.strip()] for w in (s.words or [])]
+              mp3 = f[:-4] + ".kucuk.mp3"
+              subprocess.run(["ffmpeg","-v","error","-y","-i",f,"-ac","1","-b:a","64k",mp3], check=True)
+              istem = ("Bu Türkçe bir tribün şarkısı. Beklenen sözler aşağıda. Dinle ve Türkçe JSON ver: "
+                       '{"puan": 1-10 (telaffuz netliği ve sözlere sadakat), "eksik_ya_da_yanlis": "...", "kulup_adi_var_mi": true/false, "kiz_sesi_var_mi": true/false, "genel": "kısa yorum"}\n\n' + beklenen)
+              govde = {"contents":[{"parts":[{"inline_data":{"mime_type":"audio/mp3","data":base64.b64encode(open(mp3,"rb").read()).decode()}},{"text":istem}]}],
+                       "generationConfig":{"responseMimeType":"application/json","temperature":0.1}}
+              try:
+                  req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
+                      data=json.dumps(govde).encode(), headers={"Content-Type":"application/json","x-goog-api-key":os.environ["GEMINI_API_KEY"]})
+                  y = json.loads(urllib.request.urlopen(req, timeout=300).read())
+                  g = "".join(p.get("text","") for p in y["candidates"][0]["content"]["parts"])
+              except Exception as e:
+                  g = f"hata {e}"
+              ad = os.path.basename(f)[:-4]
+              json.dump({"satirlar": sat, "kelimeler": kel, "gemini": g}, open(f"/tmp/m/{ad}.json","w"), ensure_ascii=False)
+              print(f"::notice title=Gemini {ad}::{g.replace(chr(10),' ')[:900]}")
+              print(f"::notice title=Whisper {ad}::{' | '.join(sat)[:2500]}")
+              os.remove(mp3)
+          PY
+      - run: |
+          cd /tmp/m && git init -q && git checkout -q -b muzik-cikti
+          git config user.name "Claude (Hadi-Yürü ekibi)" && git config user.email "noreply@anthropic.com"
+          git add . && git commit -qm "Müzik + çözümleme" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" muzik-cikti
