@@ -1,0 +1,36 @@
+# Bir sahne listesinden (JSON) Gemini Omni Flash ile sırayla video üretir; sonuçlar omni-sahneler dalına.
+name: Omni sahneler
+on:
+  workflow_dispatch:
+    inputs:
+      liste: {description: "Sahne listesi JSON (depoda)", type: string, required: true}
+      oran: {description: "16:9 ya da 9:16", type: string, default: "16:9"}
+permissions:
+  contents: write
+jobs:
+  uret:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Üret
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VEO_ORAN: ${{ inputs.oran }}
+        run: |
+          mkdir -p /tmp/d
+          python - <<'PY'
+          import json, subprocess, sys
+          d = json.load(open("${{ inputs.liste }}", encoding="utf-8"))
+          hata = 0
+          for s in d["sahneler"]:
+              r = subprocess.run([sys.executable, "scripts/veo_video.py", s.get("referans", d["referans"]), f"/tmp/d/{s['ad']}.mp4", s["istem"]])
+              hata += r.returncode != 0
+          sys.exit(1 if hata == len(d["sahneler"]) else 0)
+          PY
+      - name: omni-sahneler dalına koy
+        if: always()
+        run: |
+          cd /tmp/d && ls -la && git init -q && git checkout -q -b omni-sahneler
+          git config user.name "Claude (Hadi-Yürü ekibi)" && git config user.email "noreply@anthropic.com"
+          git add . && git commit -qm "Omni sahneler" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" omni-sahneler
