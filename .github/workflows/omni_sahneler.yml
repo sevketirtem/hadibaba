@@ -5,6 +5,7 @@ on:
     inputs:
       liste: {description: "Sahne listesi JSON (depoda)", type: string, required: true}
       oran: {description: "16:9 ya da 9:16", type: string, default: "16:9"}
+      cozunurluk: {description: "360p (taslak, ucuz) / 720p / 1080p", type: string, default: "720p"}
 permissions:
   contents: write
 jobs:
@@ -17,6 +18,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           VEO_ORAN: ${{ inputs.oran }}
+          VEO_COZUNURLUK: ${{ inputs.cozunurluk }}
         run: |
           mkdir -p /tmp/d
           python - <<'PY'

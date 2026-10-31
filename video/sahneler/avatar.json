@@ -1,0 +1,25 @@
+{
+ "referans": "video/sahneler/hadi-dikey.jpg",
+ "sahneler": [
+  {
+   "ad": "hadi-konusuyor",
+   "referans": "video/sahneler/hadi-dikey.jpg",
+   "istem": "Animate this exact image. The cartoon character (Hadi) is talking excitedly and fast, mouth opening and closing as if speaking, eyebrows up, head bobbing with joy, laughing between words. Keep EXACTLY the same flat 2D cartoon style, colors, face, glasses/hair and the round badge with its background as in the image. Camera completely locked, no zoom, no pan, the round badge stays in exactly the same place and size in the center for the whole video. Only the character's face and head move. Seamless, loopable motion. No text, no new objects, no sound effects, no music."
+  },
+  {
+   "ad": "hadi-dinliyor",
+   "referans": "video/sahneler/hadi-dikey.jpg",
+   "istem": "Animate this exact image. The cartoon character (Hadi) is listening with a big smile, mouth closed, nodding slowly, blinking, eyes curious and impatient as if waiting to speak. Keep EXACTLY the same flat 2D cartoon style, colors, face, glasses/hair and the round badge with its background as in the image. Camera completely locked, no zoom, no pan, the round badge stays in exactly the same place and size in the center for the whole video. Only the character's face and head move. Seamless, loopable motion. No text, no new objects, no sound effects, no music."
+  },
+  {
+   "ad": "yuru-konusuyor",
+   "referans": "video/sahneler/yuru-dikey.jpg",
+   "istem": "Animate this exact image. The cartoon character (Yuru, with glasses) is talking calmly and dryly, mouth opening and closing as if speaking, one eyebrow raised, small sarcastic smirk, slight head tilt. Keep EXACTLY the same flat 2D cartoon style, colors, face, glasses/hair and the round badge with its background as in the image. Camera completely locked, no zoom, no pan, the round badge stays in exactly the same place and size in the center for the whole video. Only the character's face and head move. Seamless, loopable motion. No text, no new objects, no sound effects, no music."
+  },
+  {
+   "ad": "yuru-dinliyor",
+   "referans": "video/sahneler/yuru-dikey.jpg",
+   "istem": "Animate this exact image. The cartoon character (Yuru, with glasses) is listening unimpressed, mouth closed, slowly blinking, raising one eyebrow, pushing up his glasses once, slight skeptical head shake. Keep EXACTLY the same flat 2D cartoon style, colors, face, glasses/hair and the round badge with its background as in the image. Camera completely locked, no zoom, no pan, the round badge stays in exactly the same place and size in the center for the whole video. Only the character's face and head move. Seamless, loopable motion. No text, no new objects, no sound effects, no music."
+  }
+ ]
+}
