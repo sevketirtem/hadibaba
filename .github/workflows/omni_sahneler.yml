@@ -7,6 +7,7 @@ on:
       oran: {description: "16:9 ya da 9:16", type: string, default: "16:9"}
       cozunurluk: {description: "360p (taslak, ucuz) / 720p / 1080p", type: string, default: "720p"}
 permissions:
+  id-token: write
   contents: write
 jobs:
   uret:
@@ -14,9 +15,19 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      - name: Vertex AI kimliği (deneme kredisi; anahtarsız)
+        id: vx
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1001418254189/locations/global/workloadIdentityPools/github/providers/github-oidc
+          service_account: vertex-github@hadi-yuru-ses.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
       - name: Üret
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
           VEO_ORAN: ${{ inputs.oran }}
           VEO_COZUNURLUK: ${{ inputs.cozunurluk }}
         run: |

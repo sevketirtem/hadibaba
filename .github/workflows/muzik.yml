@@ -7,6 +7,7 @@ on:
       ad: {description: "Çıktı adı (uzantısız)", type: string, default: "sarki"}
       adet: {description: "Kaç versiyon", type: string, default: "2"}
 permissions:
+  id-token: write
   contents: write
 jobs:
   m:
@@ -14,9 +15,19 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+      - name: Vertex AI kimliği (deneme kredisi; anahtarsız)
+        id: vx
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1001418254189/locations/global/workloadIdentityPools/github/providers/github-oidc
+          service_account: vertex-github@hadi-yuru-ses.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
       - name: Üret
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
         run: |
           mkdir -p /tmp/d
           for i in $(seq 1 ${{ inputs.adet }}); do python scripts/lyria_muzik.py "${{ inputs.istem }}" "/tmp/d/${{ inputs.ad }}-$i.wav" || true; done

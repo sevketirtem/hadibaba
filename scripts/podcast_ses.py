@@ -9,6 +9,7 @@ import base64, json, os, re, subprocess, sys, tempfile, urllib.error, urllib.req
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(KOK, "video"))
+sys.path.insert(0, os.path.join(KOK, "scripts"))
 API = "https://generativelanguage.googleapis.com/v1beta"
 SES = {"hadi": os.environ.get("GEMINI_SES_HADI", "Umbriel"), "yuru": os.environ.get("GEMINI_SES_YURU", "Algenib")}
 AD = {"hadi": "Hadi", "yuru": "Yürü"}
@@ -25,24 +26,19 @@ def okunus(t):
 
 
 def _gemini(yol, govde):
-    req = urllib.request.Request(f"{API}/{yol}", data=json.dumps(govde).encode(), method="POST",
-                                 headers={"Content-Type": "application/json",
-                                          "x-goog-api-key": os.environ["GEMINI_API_KEY"]})
+    import gapi  # Vertex (deneme kredisi) önce, AI Studio yedek
     try:
-        with urllib.request.urlopen(req, timeout=600) as r:
-            return json.loads(r.read())
-    except urllib.error.HTTPError as e:
-        raise RuntimeError(f"Gemini TTS HTTP {e.code}: {e.read()[:300]!r}") from None
+        return gapi.istek(yol, govde, 600)
+    except gapi.HataHTTP as e:
+        raise RuntimeError(f"Gemini TTS {e}") from None
 
 
 def tts_modeli():
     istenen = os.environ.get("GEMINI_TTS_MODEL", "").strip()
     if istenen:
         return istenen if istenen.startswith("models/") else "models/" + istenen
-    req = urllib.request.Request(f"{API}/models?pageSize=1000",
-                                 headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"]})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        adlar = [m["name"] for m in json.loads(r.read()).get("models", []) if "tts" in m["name"]]
+    import gapi
+    adlar = [m["name"] for m in gapi.istek("models?pageSize=1000", None, 60).get("models", []) if "tts" in m["name"]]
     if not adlar:
         raise RuntimeError("TTS modeli bulunamadı")
     notice("Gemini TTS modelleri", ", ".join(adlar))

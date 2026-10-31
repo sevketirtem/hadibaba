@@ -166,9 +166,9 @@ def replik_bankasi():
 
 
 def sec_gemini(senaryo, rp):
-    anahtar = os.environ.get("GEMINI_API_KEY")
-    if not anahtar:
-        raise RuntimeError("GEMINI_API_KEY yok")
+    import gapi
+    if not gapi.var_mi():
+        raise RuntimeError("GEMINI_API_KEY / GOOGLE_VERTEX_TOKEN yok")
     satirlar = "\n".join(f"[{i}] ({r['son'] - r['bas']:.1f} sn) {'Hadi' if r['kim'] == 'hadi' else 'Yürü'}: {r['metin']}"
                          for i, r in enumerate(rp))
     istem = (
@@ -186,15 +186,10 @@ def sec_gemini(senaryo, rp):
     model = os.environ.get("GEMINI_METIN_MODEL", "gemini-3.8-flash")
     govde = {"contents": [{"parts": [{"text": istem}]}],
              "generationConfig": {"responseMimeType": "application/json", "temperature": 0.4}}
-    req = urllib.request.Request(
-        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-        data=json.dumps(govde).encode(), method="POST",
-        headers={"Content-Type": "application/json", "x-goog-api-key": anahtar})
     try:
-        with urllib.request.urlopen(req, timeout=120) as r:
-            y = json.loads(r.read())
-    except urllib.error.HTTPError as e:
-        raise RuntimeError(f"HTTP {e.code}: {e.read()[:200]!r}") from None
+        y = gapi.istek(f"models/{model}:generateContent", govde, 120)
+    except gapi.HataHTTP as e:
+        raise RuntimeError(str(e)) from None
     metin = "".join(p.get("text", "") for p in y["candidates"][0]["content"]["parts"])
     c = json.loads(re.search(r"\{.*\}", metin, re.S)[0])
     i, j = int(c["bas"]), int(c["son"])

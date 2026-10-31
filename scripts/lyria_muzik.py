@@ -4,18 +4,15 @@ Ortam: GEMINI_API_KEY, LYRIA_MODEL (varsayılan lyria-3.5)
 """
 import base64, json, os, sys, time, urllib.error, urllib.request
 API = "https://generativelanguage.googleapis.com/v1beta"
-KEY = os.environ["GEMINI_API_KEY"]
 
 
-def istek(url, govde=None):
-    req = urllib.request.Request(url, data=json.dumps(govde).encode() if govde is not None else None,
-                                 method="POST" if govde is not None else "GET",
-                                 headers={"Content-Type": "application/json", "x-goog-api-key": KEY})
+def istek(yol, govde=None):
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import gapi  # Vertex (deneme kredisi) önce, AI Studio yedek
     try:
-        with urllib.request.urlopen(req, timeout=600) as r:
-            return json.loads(r.read())
-    except urllib.error.HTTPError as e:
-        raise RuntimeError(f"HTTP {e.code}: {e.read()[:800]!r}") from None
+        return gapi.istek(yol, govde, 600)
+    except gapi.HataHTTP as e:
+        raise RuntimeError(str(e)) from None
 
 
 def ses_bul(o):
@@ -41,11 +38,11 @@ def main():
     if cikti.endswith(".wav"):
         govde["response_format"] = {"type": "audio", "mime_type": "audio/wav"}
     try:
-        y = istek(f"{API}/interactions", govde)
+        y = istek("interactions", govde)
     except RuntimeError as e:
         if "response_format" in str(e) and "response_format" in govde:
             del govde["response_format"]
-            y = istek(f"{API}/interactions", govde)
+            y = istek("interactions", govde)
         else:
             raise
     kimlik = y.get("id")
@@ -53,7 +50,7 @@ def main():
         if y.get("status") in ("completed", "failed", "cancelled") or ses_bul(y.get("steps")):
             break
         time.sleep(10)
-        y = istek(f"{API}/interactions/{kimlik}")
+        y = istek(f"interactions/{kimlik}")
     s = ses_bul(y.get("steps", y))
     if not s:
         raise RuntimeError(f"Ses yok, durum {y.get('status')}: {json.dumps(y)[:800]}")

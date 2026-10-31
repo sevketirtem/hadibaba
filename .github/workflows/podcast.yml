@@ -32,6 +32,7 @@ on:
         default: false
 
 permissions:
+  id-token: write
   contents: write
   actions: write
 
@@ -47,6 +48,15 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
+      - name: Vertex AI kimliği (deneme kredisi; anahtarsız)
+        id: vx
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1001418254189/locations/global/workloadIdentityPools/github/providers/github-oidc
+          service_account: vertex-github@hadi-yuru-ses.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
 
       - name: Senaryoyu seç
         id: sec
@@ -80,6 +90,7 @@ jobs:
         if: steps.sec.outputs.uret == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
           GEMINI_TTS_MODEL: gemini-3.8-flash-tts
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
         run: |
@@ -92,6 +103,7 @@ jobs:
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
         run: |
           python scripts/gemini_gorsel.py gorsel "[
             {\"cikti\":\"/tmp/b/hadi.png\",\"kim\":\"hadi\",\"en_boy\":\"1:1\",\"istem\":\"Hadi Baba bir podcast mikrofonunun başında coşkuyla, gülerek konuşuyor; yakın plan, yüz büyük ve net, karenin ortasında.\"},
@@ -171,6 +183,7 @@ jobs:
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
           GH_TOKEN: ${{ github.token }}
           TIKTOK_VAR: ${{ secrets.TIKTOK_REFRESH_TOKEN != '' }}
         run: |

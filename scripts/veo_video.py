@@ -7,18 +7,15 @@ Ortam: GEMINI_API_KEY, VEO_MODEL (varsayılan gemini-omni-1.1-flash), VEO_ORAN (
 import base64, json, os, sys, time, urllib.error, urllib.request
 
 API = "https://generativelanguage.googleapis.com/v1beta"
-KEY = os.environ["GEMINI_API_KEY"]
 
 
-def istek(url, govde=None):
-    req = urllib.request.Request(url, data=json.dumps(govde).encode() if govde is not None else None,
-                                 method="POST" if govde is not None else "GET",
-                                 headers={"Content-Type": "application/json", "x-goog-api-key": KEY})
+def istek(yol, govde=None):
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import gapi  # Vertex (deneme kredisi) önce, AI Studio yedek
     try:
-        with urllib.request.urlopen(req, timeout=600) as r:
-            return r.read()
-    except urllib.error.HTTPError as e:
-        raise RuntimeError(f"HTTP {e.code}: {e.read()[:800]!r}") from None
+        return gapi.istek(yol, govde, 600)
+    except gapi.HataHTTP as e:
+        raise RuntimeError(str(e)) from None
 
 
 def video_bul(o):
@@ -47,14 +44,14 @@ def main():
                        {"type": "text", "text": istem}],
              "response_format": {"type": "video", "aspect_ratio": os.environ.get("VEO_ORAN", "16:9"),
                                  "resolution": os.environ.get("VEO_COZUNURLUK", "720p")}}
-    y = json.loads(istek(f"{API}/interactions", govde))
+    y = istek("interactions", govde)
     kimlik = y.get("id")
     print(f"::notice title=Omni::{model} · {kimlik} · {y.get('status')}")
     for _ in range(90):
         if y.get("status") in ("completed", "failed", "cancelled") or video_bul(y.get("steps")):
             break
         time.sleep(10)
-        y = json.loads(istek(f"{API}/interactions/{kimlik}"))
+        y = istek(f"interactions/{kimlik}")
     v = video_bul(y.get("steps", y))
     if not v:
         raise RuntimeError(f"Video yok, durum {y.get('status')}: {json.dumps(y)[:800]}")
@@ -62,7 +59,10 @@ def main():
         open(cikti, "wb").write(base64.b64decode(v["data"]))
     else:
         uri = v["uri"]
-        open(cikti, "wb").write(istek(uri + ("&" if "?" in uri else "?") + "alt=media"))
+        b = {"Authorization": "Bearer " + os.environ["GOOGLE_VERTEX_TOKEN"]} if os.environ.get("GOOGLE_VERTEX_TOKEN") \
+            else {"x-goog-api-key": os.environ.get("GEMINI_API_KEY", "")}
+        req = urllib.request.Request(uri + ("&" if "?" in uri else "?") + "alt=media", headers=b)
+        open(cikti, "wb").write(urllib.request.urlopen(req, timeout=300).read())
     print(f"::notice title=Video bitti::{cikti} ({os.path.getsize(cikti)} bayt, {model})")
 
 
