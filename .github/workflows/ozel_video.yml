@@ -1,0 +1,101 @@
+# Hazır üretilmiş özel videoyu (bir daldaki dikey.mp4, sade.mp4, yatay.mp4) siteye koyar ve paylaşır:
+# Telegram, Instagram Reels, Facebook, Threads, TikTok (taslak, sade.mp4), YouTube Shorts (dikey) + YouTube (yatay).
+name: Özel video paylaş
+on:
+  workflow_dispatch:
+    inputs:
+      dal: {description: "Videoların olduğu dal", type: string, required: true}
+      bilgi: {description: "Bilgi JSON (tarih=kayıt anahtarı, mac=başlık, aciklama)", type: string, required: true}
+      yt_baslik: {description: "YouTube başlığı (Shorts için #Shorts eklenir)", type: string, required: true}
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: video
+  cancel-in-progress: false
+jobs:
+  paylas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - name: Videoları al
+        id: al
+        run: |
+          git fetch -q --depth 1 origin "${{ inputs.dal }}"
+          mkdir -p /tmp/v && for f in dikey sade yatay; do git show "FETCH_HEAD:$f.mp4" > /tmp/v/$f.mp4 || true; done
+          ls -la /tmp/v
+          a=$(python -c "import json;print(json.load(open('${{ inputs.bilgi }}'))['tarih'])")
+          echo "anahtar=$a" >> "$GITHUB_OUTPUT"
+          mkdir -p static/video && cp /tmp/v/dikey.mp4 "static/video/$a.mp4"
+      - name: Siteye koy ve yayınla
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "Claude (Hadi-Yürü ekibi)"; git config user.email "noreply@anthropic.com"
+          git add -f "static/video/${{ steps.al.outputs.anahtar }}.mp4"
+          git commit -qm "Video: ${{ steps.al.outputs.anahtar }}" || true
+          git pull -q --rebase origin main && git push -q origin main
+          gh workflow run hugo.yml --ref main
+      - name: Video sitede açılana kadar bekle
+        id: bekle
+        run: |
+          a="${{ steps.al.outputs.anahtar }}"; url="https://hadibaba.com/video/$a.mp4"
+          boy=$(stat -c %s "static/video/$a.mp4")
+          for i in $(seq 1 60); do
+            uz=$(curl -sIL "$url?v=$i" | tr -d '\r' | awk 'tolower($1)=="content-length:"{v=$2} END{print v}')
+            [ "$uz" = "$boy" ] && { echo "url=$url" >> "$GITHUB_OUTPUT"; echo "::notice title=Yayında::$url"; exit 0; }
+            sleep 20
+          done
+          echo "::error::Video 20 dakikada yayına girmedi: $url"; exit 1
+      - name: Paylaş
+        env:
+          DRY_RUN: "false"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_KANALLAR: "@hadibabacom,@yurubaba"
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_SAYFA_ADI: "Hadi Baba"
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          TIKTOK_DOSYA: /tmp/v/sade.mp4
+        run: python video/video_paylas.py "${{ inputs.bilgi }}" "static/video/${{ steps.al.outputs.anahtar }}.mp4" "${{ steps.bekle.outputs.url }}"
+      - name: YouTube (Shorts + yatay)
+        continue-on-error: true
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          BILGI: ${{ inputs.bilgi }}
+          BASLIK: ${{ inputs.yt_baslik }}
+          ANAHTAR: ${{ steps.al.outputs.anahtar }}
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          sys.path.insert(0, "scripts")
+          import youtube_yukle as y
+          b = json.load(open(os.environ["BILGI"], encoding="utf-8"))
+          a, baslik = os.environ["ANAHTAR"], os.environ["BASLIK"]
+          kayit = "video/paylasildi.txt"
+          var = {s.strip() for s in open(kayit, encoding="utf-8")} if os.path.exists(kayit) else set()
+          ortak = b["aciklama"] + "\n\nTam tezahürat: https://youtu.be/l0LhU6i02Xg\nHer gün Süper Lig atışması: \"Hadi vs Yürü\" podcast'i bu kanalda.\n"
+          for platform, dosya, t, ek in (("youtube", f"static/video/{a}.mp4", baslik + " #Shorts", "#Shorts #tezahürat #futbol #babaoğul"),
+                                         ("youtube-yatay", "/tmp/v/yatay.mp4", baslik + " | Hadi vs Yürü", "#tezahürat #futbol #süperlig #babaoğul")):
+              if f"{a} {platform}" in var or not os.path.exists(dosya):
+                  y.notice(f"Video {platform}", "atlandı"); continue
+              govde = {"snippet": {"title": t[:100], "description": (ortak + ek)[:4900], "categoryId": "17",
+                                   "defaultLanguage": "tr", "defaultAudioLanguage": "tr",
+                                   "tags": ["tezahürat", "futbol", "baba oğul", "tribün", "Hadi Baba", "Yürü Baba"]},
+                       "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True}}
+              s = y.yukle(dosya, govde)
+              open(kayit, "a", encoding="utf-8").write(f"{a} {platform}\n")
+              y.notice(f"Video {platform} paylaşıldı", f"https://youtu.be/{s['id']} — {t}")
+          PY
+      - name: Paylaşım kaydını sakla
+        if: always()
+        run: |
+          git config user.name "Claude (Hadi-Yürü ekibi)"; git config user.email "noreply@anthropic.com"
+          git add video/paylasildi.txt 2>/dev/null || exit 0
+          git commit -qm "Video paylaşım kaydı: ${{ steps.al.outputs.anahtar }}" || exit 0
+          git pull -q --rebase origin main && git push -q origin main
