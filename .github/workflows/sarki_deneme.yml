@@ -1,0 +1,28 @@
+name: Şarkı deneme
+on:
+  push:
+    branches: [sarki-deneme]
+jobs:
+  coz:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -q faster-whisper
+      - name: Çöz
+        run: |
+          python - <<'PY'
+          import json
+          from faster_whisper import WhisperModel
+          m = WhisperModel("medium", device="cpu", compute_type="int8")
+          segs, _ = m.transcribe("sarki/sarki.mp3", language="tr", word_timestamps=True, vad_filter=False,
+                                 initial_prompt="Mahalle arasında başladı bu sevda, taş kale, yamalı top, bir de bitmeyen kavga. Hadi baba! Yürü baba!")
+          satir, kel = [], []
+          for s in segs:
+              satir.append(f"{s.start:.1f}-{s.end:.1f} {s.text.strip()}")
+              kel += [[round(w.start,2), round(w.end,2), w.word] for w in s.words]
+          json.dump(kel, open("kelimeler.json","w"), ensure_ascii=False)
+          for i in range(0, len(satir), 12):
+              print("::notice title=Satırlar " + str(i) + "::" + " | ".join(satir[i:i+12]))
+          PY
