@@ -33,16 +33,19 @@ jobs:
               try:
                   with urllib.request.urlopen(req, timeout=300) as r: return r.status, r.read()[:1500].decode("utf-8","replace")
               except urllib.error.HTTPError as e: return e.code, e.read()[:700].decode("utf-8","replace")
-          metin = {"contents":[{"role":"user","parts":[{"text":"Tek kelimeyle cevap ver: Merhaba?"}]}]}
-          for m in ("gemini-3.8-flash", "gemini-3.5-flash", "gemini-2.5-flash"):
-              for host, loc in (("aiplatform.googleapis.com","global"), ("europe-west4-aiplatform.googleapis.com","europe-west4")):
-                  s, b = c(f"https://{host}/v1/projects/{P}/locations/{loc}/publishers/google/models/{m}:generateContent", metin)
-                  print(f"::notice title=Metin {m} {loc}::{s} {b[:300]}")
-                  if s == 200: break
-          for yol in ("v1beta1/projects/%s/locations/global/interactions" % P, "v1/projects/%s/locations/global/interactions" % P):
-              s, b = c(f"https://aiplatform.googleapis.com/{yol}", {"model": "lyria-3-clip-preview", "input": "Short happy stadium drum loop, instrumental"} if os.environ["OMNI"] != "true" else
-                       {"model": "gemini-omni-1.1-flash", "input": "A football rolling slowly on wet grass at night, plain, no text", "response_format": {"type": "video", "resolution": "360p", "aspect_ratio": "16:9"}})
-              print(f"::notice title=Interactions {yol.split('/')[0]}::{s} {b[:400]}")
-          s, b = c(f"https://aiplatform.googleapis.com/v1beta1/publishers/google/models?pageSize=200")
-          print(f"::notice title=Model listesi::{s} {b[:1200]}")
+          import base64
+          s, b = c(f"https://aiplatform.googleapis.com/v1beta1/publishers/google/models?pageSize=300")
+          try:
+              adlar = [m["name"].split("/")[-1] for m in json.loads(b).get("publisherModels", [])]
+          except Exception: adlar = []
+          print("::notice title=Video/müzik modelleri::" + ", ".join(a for a in adlar if any(k in a for k in ("omni","veo","lyria","imagen","image","tts"))))
+          resim = base64.b64encode(open("video/tezahurat/baslangic.jpg","rb").read()).decode()
+          for m in ("gemini-omni-1.1-flash", "veo-3.1-fast-generate-001", "veo-3.1-fast-generate-preview", "veo-3.0-fast-generate-001"):
+              govde = {"instances":[{"prompt":"A football rolling slowly on wet grass at night, no text","image":{"bytesBase64Encoded":resim,"mimeType":"image/jpeg"}}],
+                       "parameters":{"aspectRatio":"16:9","sampleCount":1,"durationSeconds":4,"resolution":"720p","generateAudio":False}}
+              if os.environ["OMNI"] != "true": govde = {"instances":[{"prompt":"x"}],"parameters":{"sampleCount":0}}
+              s, b = c(f"https://aiplatform.googleapis.com/v1/projects/{P}/locations/us-central1/publishers/google/models/{m}:predictLongRunning".replace("aiplatform.googleapis.com/v1/projects/hadi-yuru-ses/locations/us-central1","us-central1-aiplatform.googleapis.com/v1/projects/hadi-yuru-ses/locations/us-central1"), govde)
+              print(f"::notice title=predictLongRunning {m}::{s} {b[:300]}")
+              s, b = c(f"https://aiplatform.googleapis.com/v1/projects/{P}/locations/global/publishers/google/models/{m}:generateContent", {"contents":[{"role":"user","parts":[{"text":"A ball rolling, 3 second video"}]}]} )
+              print(f"::notice title=generateContent {m}::{s} {b[:300]}")
           PY
