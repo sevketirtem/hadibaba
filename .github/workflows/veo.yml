@@ -1,0 +1,31 @@
+# Gemini API (Veo) ile başlangıç görselinden kısa video; sonucu veo-cikti dalına koyar (site yayınına girmez).
+name: Veo video
+on:
+  workflow_dispatch:
+    inputs:
+      resim: {description: "Başlangıç görseli (depoda)", type: string, required: true}
+      istem: {description: "Sahne tarifi (İngilizce)", type: string, required: true}
+      ad: {description: "Çıktı dosya adı (uzantısız)", type: string, default: "veo"}
+      model: {description: "Model (boş = otomatik)", type: string, default: ""}
+      oran: {description: "16:9 ya da 9:16", type: string, default: "16:9"}
+permissions:
+  contents: write
+jobs:
+  veo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Üret
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VEO_MODEL: ${{ inputs.model }}
+          VEO_ORAN: ${{ inputs.oran }}
+        run: python scripts/veo_video.py "${{ inputs.resim }}" "/tmp/${{ inputs.ad }}.mp4" "${{ inputs.istem }}"
+      - name: veo-cikti dalına koy
+        run: |
+          mkdir -p /tmp/d && cp /tmp/${{ inputs.ad }}.mp4 /tmp/d/
+          cd /tmp/d && git init -q && git checkout -q -b veo-cikti
+          git config user.name "Claude (Hadi-Yürü ekibi)" && git config user.email "noreply@anthropic.com"
+          git add . && git commit -qm "Veo: ${{ inputs.ad }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" veo-cikti
