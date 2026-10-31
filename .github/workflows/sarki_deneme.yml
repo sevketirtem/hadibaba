@@ -2,6 +2,9 @@ name: Şarkı deneme
 on:
   push:
     branches: [sarki-deneme]
+    paths: [".github/workflows/sarki_deneme.yml"]
+permissions:
+  contents: write
 jobs:
   coz:
     runs-on: ubuntu-latest
@@ -9,20 +12,48 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: pip install -q faster-whisper
-      - name: Çöz
+      - run: pip install -q faster-whisper numpy
+      - name: Gemini dinlesin
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python - <<'PY'
-          import json
+          import base64, json, os, urllib.request
+          ses = base64.b64encode(open("sarki/sarki.mp3","rb").read()).decode()
+          istem = ("Bu Türkçe bir tribün tezahüratı. Dinle ve şunları Türkçe JSON olarak ver: "
+                   '{"satirlar":[{"bas":sn,"son":sn,"metin":"duyduğun söz"}], "kulup_adi_var_mi":true/false, '
+                   '"duyulan_kulup_adlari":[...], "telaffuz_notu":"bozuk okunan kelimeler", "yapi":"intro/tekrar/outro kısa özet"}. '
+                   "Saniyeleri olabildiğince doğru ver. Beklenen sözler: Mahalle arasında başladı bu sevda / Taş kale, yamalı top, bir de bitmeyen kavga / "
+                   "Yağmur yağsa, kar yağsa, maç varsa oradaydık / Kaybettik mi? Kaybettik. Ama yine de bağırdık / Tribünde yer kalmasa ağaca çıkarız baba / "
+                   "Ağaçtan da düşersin, ben demiştim bak sana / Bu sevdanın adı futbol, rengi yok, takımı yok / Faturası çok ama vazgeçen tek kişi yok / Hadi baba! Yürü baba!")
+          govde = {"contents":[{"parts":[{"inline_data":{"mime_type":"audio/mp3","data":ses}},{"text":istem}]}],
+                   "generationConfig":{"responseMimeType":"application/json","temperature":0.1}}
+          req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
+              data=json.dumps(govde).encode(), headers={"Content-Type":"application/json","x-goog-api-key":os.environ["GEMINI_API_KEY"]})
+          y = json.loads(urllib.request.urlopen(req, timeout=300).read())
+          t = "".join(p.get("text","") for p in y["candidates"][0]["content"]["parts"])
+          open("sarki/gemini.json","w").write(t)
+          print("::notice title=Gemini::" + t.replace("\n"," ")[:3000])
+          PY
+      - name: Whisper
+        run: |
+          python - <<'PY'
+          import json, subprocess, numpy as np
           from faster_whisper import WhisperModel
-          m = WhisperModel("medium", device="cpu", compute_type="int8")
-          segs, _ = m.transcribe("sarki/sarki.mp3", language="tr", word_timestamps=True, vad_filter=False,
-                                 initial_prompt="Mahalle arasında başladı bu sevda, taş kale, yamalı top, bir de bitmeyen kavga. Hadi baba! Yürü baba!")
+          m = WhisperModel("small", device="cpu", compute_type="int8")
+          ham = subprocess.run(["ffmpeg","-v","error","-i","sarki/sarki.mp3","-f","s16le","-ac","1","-ar","16000","-"], capture_output=True, check=True).stdout
+          ses = np.frombuffer(ham, np.int16).astype(np.float32) / 32768.0
+          segs, _ = m.transcribe(ses, language="tr", word_timestamps=True, vad_filter=False, beam_size=1,
+                                 initial_prompt="Mahalle arasında başladı bu sevda, taş kale, yamalı top. Hadi baba! Yürü baba!")
           satir, kel = [], []
           for s in segs:
               satir.append(f"{s.start:.1f}-{s.end:.1f} {s.text.strip()}")
-              kel += [[round(w.start,2), round(w.end,2), w.word] for w in s.words]
-          json.dump(kel, open("kelimeler.json","w"), ensure_ascii=False)
-          for i in range(0, len(satir), 12):
-              print("::notice title=Satırlar " + str(i) + "::" + " | ".join(satir[i:i+12]))
+              kel += [[round(w.start,2), round(w.end,2), w.word.strip()] for w in (s.words or [])]
+          json.dump({"satirlar": satir, "kelimeler": kel}, open("sarki/whisper.json","w"), ensure_ascii=False, indent=0)
+          print("::notice title=Whisper::" + " | ".join(satir)[:3000])
           PY
+      - name: Kaydet
+        if: always()
+        run: |
+          git config user.name "Claude (Hadi-Yürü ekibi)"; git config user.email "noreply@anthropic.com"
+          git add sarki/*.json && git commit -m "Şarkı çözümleme sonuçları" && git push || true
