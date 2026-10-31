@@ -1,0 +1,14 @@
+name: Telegram çıkartma
+on:
+  workflow_dispatch:
+    inputs:
+      islem: {description: "kimlik ya da olustur", type: string, default: "kimlik"}
+      user_id: {description: "Paket sahibinin Telegram kullanıcı kimliği (olustur için)", type: string, default: ""}
+jobs:
+  c:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python scripts/telegram_cikartma.py "${{ inputs.islem }}" "${{ inputs.user_id }}"
