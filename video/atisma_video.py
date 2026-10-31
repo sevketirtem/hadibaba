@@ -226,7 +226,7 @@ class Video:
             dy = -abs(math.sin(yas * 9)) * 18 if hadi else math.sin(yas * 4) * 6
         av = self.av[m["kim"]]
         if self.ha.var:  # hareketli avatar (Gemini Omni Flash klipleri)
-            av = self.ha.kare(m["kim"], konusuyor, t, 170)
+            av = self.ha.kare(m["kim"], konusuyor, t, 170, m.get("duygu"))
             dy *= 0.4
         if p < 1:
             boy = max(1, int(170 * min(1, p)))

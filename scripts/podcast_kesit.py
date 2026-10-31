@@ -127,7 +127,7 @@ def zamanla(senaryo, mp3):
     replikler = []
     for i, r in enumerate(senaryo["replikler"]):
         ks = [(k, z[0], z[1]) for (j, k), z in zip(duz, zaman) if j == i]
-        replikler.append({"kim": r["kim"], "metin": r["metin"], "kelimeler": ks,
+        replikler.append({"kim": r["kim"], "metin": r["metin"], "kelimeler": ks, "duygu": r.get("duygu"),
                           "bas": ks[0][1] if ks else 0, "son": ks[-1][2] if ks else 0})
     return replikler, yontem
 
@@ -339,10 +339,10 @@ class Cizer:
         d.text((W // 2, H - 100), "hadibaba.com · yurubaba.com", font=self.f_kucuk, fill=RENK["yuru_acik"], anchor="mm")
         return im
 
-    def _avatar(self, kim, olcek, aktif, t=None):
+    def _avatar(self, kim, olcek, aktif, t=None, duygu=None):
         if t is not None and self.ha.var:  # hareketli avatar: her karede yeni yüz, çerçeve aynı
             boy = int(380 * olcek)
-            yuz = self.ha.kare(kim, aktif, t, boy)
+            yuz = self.ha.kare(kim, aktif, t, boy, duygu)
             kalip = self._avatar(kim, olcek, aktif)  # çerçeve/ışık katmanı (önbellekli)
             k = kalip.copy()
             pay = (k.width - boy) // 2
@@ -387,7 +387,7 @@ class Cizer:
         for kim, cx, cy in (("hadi", 290, 640), ("yuru", 790, 800)):
             konusan = aktif["kim"] == kim
             olcek = (0.95 + 0.07 * zarf) if konusan else 0.72
-            a = self._avatar(kim, olcek, konusan, t)
+            a = self._avatar(kim, olcek, konusan, t, aktif.get("duygu") if konusan else None)
             im.alpha_composite(a, (cx - a.width // 2, cy - a.height // 2))
         # Konuşan adı
         renk = RENK[aktif["kim"]]

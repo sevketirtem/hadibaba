@@ -5,6 +5,7 @@ klip sonu ile başı arasında sıçrama olmasın.
 Kullanım:
     ha = HareketliAvatar()            # klip yoksa ha.var == False, çağıran duran resme döner
     im = ha.kare("hadi", True, t, 170)  # RGBA daire, boy x boy
+    im = ha.kare("hadi", True, t, 170, duygu="uzgun")  # duygu klibi varsa onu kullanır (sevinc/uzgun)
 """
 import os, subprocess
 from PIL import Image, ImageDraw
@@ -13,6 +14,7 @@ KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KLASOR = os.path.join(KOK, "assets", "avatar")
 KIRP = (17, 151, 321, 455)  # rozetin klip içindeki yeri (360x640)
 FPS = 12                    # bellek için klipten 12 kare/sn alınır
+DUYGULAR = ("sevinc", "uzgun")  # senaryoda replik/mesaj "duygu" alanı
 
 
 class HareketliAvatar:
@@ -30,6 +32,12 @@ class HareketliAvatar:
                         return
                     self.kareler[(kim, durum)] = self._oku(yol)
             self.var = all(len(v) > 10 for v in self.kareler.values())
+            # İsteğe bağlı duygu klipleri (konuşurken): <kim>-sevinc.mp4, <kim>-uzgun.mp4
+            for kim in ("hadi", "yuru"):
+                for duygu in DUYGULAR:
+                    yol = os.path.join(KLASOR, f"{kim}-{duygu}.mp4")
+                    if os.path.exists(yol):
+                        self.kareler[(kim, duygu)] = self._oku(yol)
         except Exception as e:  # noqa: BLE001
             print(f"::warning title=Hareketli avatar::okunamadı, duran resim kullanılacak: {e}", flush=True)
             self.var = False
@@ -52,10 +60,12 @@ class HareketliAvatar:
             self.maskeler[boy] = m.resize((boy, boy), Image.LANCZOS)
         return self.maskeler[boy]
 
-    def kare(self, kim, konusuyor, t, boy):
+    def kare(self, kim, konusuyor, t, boy, duygu=None):
         if not self.var:
             return None
-        liste = self.kareler[(kim, "konusuyor" if konusuyor else "dinliyor")]
+        anahtar = (kim, duygu) if konusuyor and duygu and (kim, duygu) in self.kareler else \
+            (kim, "konusuyor" if konusuyor else "dinliyor")
+        liste = self.kareler[anahtar]
         # iki karakterin klipleri aynı anda aynı yüz ifadesine girmesin diye Yürü'ye küçük kaydırma
         i = int((t + (3.7 if kim == "yuru" else 0)) * FPS) % len(liste)
         im = liste[i].resize((boy, boy), Image.LANCZOS).convert("RGBA")
