@@ -1,0 +1,137 @@
+# Tezahürat videosu ("Mahalle Arasında"): dikey kısa video (52 sn) + tam şarkı (3 dk) üretir,
+# kısa videoyu siteye koyup Telegram, Instagram Reels, Facebook, Threads, TikTok (taslak) ve
+# YouTube Shorts'ta; tam şarkıyı YouTube'da paylaşır. Yalnızca elle çalışır.
+# Kayıt: video/paylasildi.txt ("tezahurat-mahalle <platform>"), aynı yere iki kez gönderilmez.
+name: Tezahürat videosu
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Deneme: yalnızca üret, paylaşma"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: video
+  cancel-in-progress: false
+
+env:
+  ANAHTAR: tezahurat-mahalle
+  SES: video/tezahurat/mahalle-arasinda.mp3
+  BILGI: video/tezahurat/mahalle-arasinda.json
+
+jobs:
+  tezahurat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Araçları kur
+        run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          fc-list | grep -q DejaVuSans-Bold || sudo apt-get install -y -qq fonts-dejavu-core
+          pip install -q pillow
+
+      - name: Videoları üret
+        run: |
+          mkdir -p static/video
+          python video/tezahurat_video.py "$SES" "static/video/$ANAHTAR.mp4" 14.0 66.5
+          TEZAHURAT_SADE=1 python video/tezahurat_video.py "$SES" /tmp/tz-tiktok.mp4 14.0 66.5
+          TEZAHURAT_KANCA="Mahalle Arasında: tam tezahürat!" python video/tezahurat_video.py "$SES" /tmp/tz-tam.mp4 0 181.3
+          ls -la static/video/$ANAHTAR.mp4 /tmp/tz-*.mp4
+
+      - name: Siteye koy ve yayınla
+        if: ${{ !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "Claude (Hadi-Yürü ekibi)"
+          git config user.email "noreply@anthropic.com"
+          git add -f static/video/$ANAHTAR.mp4
+          git commit -qm "Video: tezahürat Mahalle Arasında" || true
+          git pull -q --rebase origin main && git push -q origin main
+          gh workflow run hugo.yml --ref main
+
+      - name: Video sitede açılana kadar bekle
+        if: ${{ !inputs.dry_run }}
+        id: bekle
+        run: |
+          url="https://hadibaba.com/video/$ANAHTAR.mp4"
+          boy=$(stat -c %s "static/video/$ANAHTAR.mp4")
+          for i in $(seq 1 60); do
+            uz=$(curl -sIL "$url?v=$i" | tr -d '\r' | awk 'tolower($1)=="content-length:"{v=$2} END{print v}')
+            [ "$uz" = "$boy" ] && { echo "url=$url" >> "$GITHUB_OUTPUT"; echo "::notice title=Yayında::$url"; exit 0; }
+            sleep 20
+          done
+          echo "::error::Video 20 dakikada yayına girmedi: $url"; exit 1
+
+      - name: Paylaş (Telegram, Instagram, Facebook, Threads, TikTok taslak)
+        if: ${{ !inputs.dry_run }}
+        env:
+          DRY_RUN: "false"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_KANALLAR: "@hadibabacom,@yurubaba"
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_SAYFA_ADI: "Hadi Baba"
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          TIKTOK_DOSYA: /tmp/tz-tiktok.mp4
+        run: python video/video_paylas.py "$BILGI" "static/video/$ANAHTAR.mp4" "${{ steps.bekle.outputs.url }}"
+
+      - name: YouTube (Shorts + tam şarkı)
+        if: ${{ !inputs.dry_run }}
+        continue-on-error: true
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os, sys
+          sys.path.insert(0, "scripts")
+          import youtube_yukle as y
+          kayit = "video/paylasildi.txt"
+          var = {s.strip() for s in open(kayit, encoding="utf-8")} if os.path.exists(kayit) else set()
+          a = os.environ["ANAHTAR"]
+          sozler = ("Mahalle arasında başladı bu sevda,\nTaş kale, yamalı top, bir de bitmeyen kavga.\n"
+                    "Yağmur yağsa, kar yağsa, maç varsa oradaydık,\nKaybettik mi? Kaybettik. Ama yine de bağırdık.\n"
+                    "Tribünde yer kalmasa ağaca çıkarız baba,\nAğaçtan da düşersin, ben demiştim bak sana.\n"
+                    "Bu sevdanın adı futbol, rengi yok, takımı yok,\nFaturası çok ama vazgeçen tek kişi yok!\n\nHadi baba! Yürü baba!")
+          ortak = ("Coşkulu taraftar Hadi Baba ile alaycı abi Yürü Baba'nın tezahüratı. Takımı yok, rengi yok; sadece futbol sevdası. "
+                   "Sözleri ezberle, tribüne taşı!\n\nSÖZLER\n" + sozler +
+                   "\n\nSözler bize ait. Müzik ve görseller yapay zekâ ile üretilmiştir (Google Flow Music); karakterler hayalîdir.\n"
+                   "Her gün Süper Lig atışması: \"Hadi vs Yürü\" podcast'i bu kanalda.\n")
+          isler = [
+              ("youtube", f"static/video/{a}.mp4", "Mahalle Arasında 📣 Hadi ile Yürü'nün tezahüratı #Shorts",
+               ortak + "#Shorts #tezahürat #futbol #süperlig"),
+              ("youtube-tam", "/tmp/tz-tam.mp4", "Mahalle Arasında (Tam Tezahürat) | Hadi vs Yürü",
+               ortak + "#tezahürat #futbol #süperlig #tribün"),
+          ]
+          for platform, dosya, baslik, aciklama in isler:
+              if f"{a} {platform}" in var:
+                  y.notice(f"Video {platform}", "daha önce yüklenmiş"); continue
+              govde = {"snippet": {"title": baslik[:100], "description": aciklama[:4900], "categoryId": "17",
+                                   "defaultLanguage": "tr", "defaultAudioLanguage": "tr",
+                                   "tags": ["tezahürat", "futbol", "süper lig", "tribün", "Hadi Baba", "Yürü Baba"]},
+                       "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True}}
+              s = y.yukle(dosya, govde)
+              open(kayit, "a", encoding="utf-8").write(f"{a} {platform}\n")
+              y.notice(f"Video {platform} paylaşıldı", f"https://youtu.be/{s['id']} — {baslik}")
+          PY
+
+      - name: Paylaşım kaydını sakla
+        if: ${{ always() && !inputs.dry_run }}
+        run: |
+          git config user.name "Claude (Hadi-Yürü ekibi)"
+          git config user.email "noreply@anthropic.com"
+          git add video/paylasildi.txt 2>/dev/null || exit 0
+          git commit -qm "Video paylaşım kaydı: tezahürat" || exit 0
+          git pull -q --rebase origin main && git push -q origin main
