@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-30T16:38:34.257Z",
+ "guncellendi": "2026-10-31T10:26:45.436Z",
  "lig": "203",
  "sezon": "2026",
  "maclar": [
@@ -17,9 +17,9 @@
    "depId": 6343,
    "evGol": 2,
    "depGol": 2,
-   "stat": "Rams Park",
+   "stat": "Rams Park Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "B. Kolak"
+   "hakem": "Batuhan Kolak"
   },
   {
    "id": 1584374,
@@ -35,9 +35,9 @@
    "depId": 1007,
    "evGol": 0,
    "depGol": 1,
-   "stat": "Konya Buyuksehir Belediye Stadium",
+   "stat": "Medas Konya Büyüksehir Belediyesi Stadium",
    "sehir": "Konya",
-   "hakem": "C. Aydin"
+   "hakem": "Cihan Aydin"
   },
   {
    "id": 1584373,
@@ -55,7 +55,7 @@
    "depGol": 1,
    "stat": "Recep Tayyip Erdogan Stadium",
    "sehir": "Istanbul",
-   "hakem": "G. Hasova"
+   "hakem": "Gurcan Hasova"
   },
   {
    "id": 1584372,
@@ -71,9 +71,9 @@
    "depId": 611,
    "evGol": 2,
    "depGol": 1,
-   "stat": "Eryaman Stadium",
+   "stat": "Eryaman Stadyumu",
    "sehir": "Ankara",
-   "hakem": "O. Aksu"
+   "hakem": "Oguzhan Aksu"
   },
   {
    "id": 1584371,
@@ -91,7 +91,7 @@
    "depGol": 1,
    "stat": "Gaziantep Stadyumu",
    "sehir": "Gaziantep",
-   "hakem": "Y. Kol"
+   "hakem": "Yasin Kol"
   },
   {
    "id": 1584368,
@@ -109,7 +109,7 @@
    "depGol": 0,
    "stat": "Basaksehir Fatih Terim Stadium",
    "sehir": "Istanbul",
-   "hakem": "M. Turkmen"
+   "hakem": "Mehmet Turkmen"
   },
   {
    "id": 1584369,
@@ -125,9 +125,9 @@
    "depId": 3588,
    "evGol": 1,
    "depGol": 0,
-   "stat": "Besiktas Park",
+   "stat": "Tüpraş Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "O. Cakir"
+   "hakem": "Oguzhan Cakir"
   },
   {
    "id": 1584367,
@@ -143,9 +143,9 @@
    "depId": 1009,
    "evGol": 3,
    "depGol": 0,
-   "stat": "Diyarbakir Stadium",
+   "stat": "Şilbe Spor Kompleksi",
    "sehir": "Diyarbakır",
-   "hakem": "H. U. Meler"
+   "hakem": "Halil Umut Meler"
   },
   {
    "id": 1584375,
@@ -163,7 +163,7 @@
    "depGol": 3,
    "stat": "Samsun 19 Mayis Stadyumu",
    "sehir": "Samsun",
-   "hakem": "K. Saglam"
+   "hakem": "Kadir Saglam"
   },
   {
    "id": 1584378,
@@ -181,7 +181,7 @@
    "depGol": 4,
    "stat": "Kazim Karabekir Stadyumu",
    "sehir": "Erzurum",
-   "hakem": "C. Altay"
+   "hakem": "Cagdas Altay"
   },
   {
    "id": 1584383,
@@ -199,7 +199,7 @@
    "depGol": 2,
    "stat": "Çaykur Didi Stadyumu",
    "sehir": "Rize",
-   "hakem": "O. Turtay"
+   "hakem": "Omer Faruk Turtay"
   },
   {
    "id": 1584377,
@@ -217,7 +217,7 @@
    "depGol": 1,
    "stat": "Corum Stadyumu",
    "sehir": "Corum",
-   "hakem": "F. Tokail"
+   "hakem": "Fatih Tokail"
   },
   {
    "id": 1584380,
@@ -233,9 +233,9 @@
    "depId": 607,
    "evGol": 4,
    "depGol": 2,
-   "stat": "Chobani Stadium Fenerbahce Sukru Saracoglu",
+   "stat": "Chobani Stadium",
    "sehir": "Istanbul",
-   "hakem": "A. Karaoglan"
+   "hakem": "Atilla Karaoglan"
   },
   {
    "id": 1584384,
@@ -253,7 +253,7 @@
    "depGol": 1,
    "stat": "Papara Park",
    "sehir": "Trabzon",
-   "hakem": "A. Sansalan"
+   "hakem": "Ali Sansalan"
   },
   {
    "id": 1584379,
@@ -271,7 +271,7 @@
    "depGol": 1,
    "stat": "Recep Tayyip Erdogan Stadium",
    "sehir": "Istanbul",
-   "hakem": "R. Coskunses"
+   "hakem": "Resat Onur Coskunses"
   },
   {
    "id": 1584381,
@@ -289,7 +289,7 @@
    "depGol": 1,
    "stat": "Gursel Aksel Stadium",
    "sehir": "Izmir",
-   "hakem": "B. Kolak"
+   "hakem": "Batuhan Kolak"
   },
   {
    "id": 1584376,
@@ -305,9 +305,9 @@
    "depId": 549,
    "evGol": 1,
    "depGol": 0,
-   "stat": "Alanya Oba Stadium",
+   "stat": "Bahcesehir Okullari Stadium",
    "sehir": "Alanya",
-   "hakem": "A. D. Kayatepe"
+   "hakem": "Adnan Deniz Kayatepe"
   },
   {
    "id": 1584382,
@@ -323,9 +323,9 @@
    "depId": 3579,
    "evGol": 2,
    "depGol": 0,
-   "stat": "Turka Arac Muayene Kocaeli Stadyumu",
-   "sehir": "Izmit",
-   "hakem": "U. Ozturk"
+   "stat": "Yildiz Entegre Kocaeli Stadyumu",
+   "sehir": "Kocaeli",
+   "hakem": "Umit Ozturk"
   },
   {
    "id": 1584391,
@@ -341,9 +341,9 @@
    "depId": 1009,
    "evGol": 1,
    "depGol": 1,
-   "stat": "Eryaman Stadium",
+   "stat": "Eryaman Stadyumu",
    "sehir": "Ankara",
-   "hakem": "U. Ozturk"
+   "hakem": "Umit Ozturk"
   },
   {
    "id": 1584392,
@@ -359,9 +359,9 @@
    "depId": 7411,
    "evGol": 1,
    "depGol": 2,
-   "stat": "Konya Buyuksehir Belediye Stadium",
+   "stat": "Medas Konya Büyüksehir Belediyesi Stadium",
    "sehir": "Konya",
-   "hakem": "G. Hasova"
+   "hakem": "Gurcan Hasova"
   },
   {
    "id": 1584389,
@@ -377,9 +377,9 @@
    "depId": 994,
    "evGol": 3,
    "depGol": 2,
-   "stat": "Rams Park",
+   "stat": "Rams Park Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "M. Turkmen"
+   "hakem": "Mehmet Turkmen"
   },
   {
    "id": 1584390,
@@ -397,7 +397,7 @@
    "depGol": 2,
    "stat": "Gaziantep Stadyumu",
    "sehir": "Gaziantep",
-   "hakem": "B. Kolak"
+   "hakem": "Batuhan Kolak"
   },
   {
    "id": 1584388,
@@ -415,7 +415,7 @@
    "depGol": 1,
    "stat": "Recep Tayyip Erdogan Stadium",
    "sehir": "Istanbul",
-   "hakem": "C. Aydin"
+   "hakem": "Cihan Aydin"
   },
   {
    "id": 1584386,
@@ -433,7 +433,7 @@
    "depGol": 1,
    "stat": "Basaksehir Fatih Terim Stadium",
    "sehir": "Istanbul",
-   "hakem": "H. U. Meler"
+   "hakem": "Halil Umut Meler"
   },
   {
    "id": 1584393,
@@ -451,7 +451,7 @@
    "depGol": 2,
    "stat": "Samsun 19 Mayis Stadyumu",
    "sehir": "Samsun",
-   "hakem": "Y. Kol"
+   "hakem": "Yasin Kol"
   },
   {
    "id": 1584387,
@@ -467,9 +467,9 @@
    "depId": 6343,
    "evGol": 6,
    "depGol": 2,
-   "stat": "Besiktas Park",
+   "stat": "Tüpraş Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "C. Altay"
+   "hakem": "Cagdas Altay"
   },
   {
    "id": 1584385,
@@ -485,9 +485,9 @@
    "depId": 998,
    "evGol": 2,
    "depGol": 1,
-   "stat": "Diyarbakir Stadium",
+   "stat": "Şilbe Spor Kompleksi",
    "sehir": "Diyarbakır",
-   "hakem": "A. Karaoglan"
+   "hakem": "Atilla Karaoglan"
   },
   {
    "id": 1584394,
@@ -505,7 +505,7 @@
    "depGol": 3,
    "stat": "Basaksehir Fatih Terim Stadium",
    "sehir": "Istanbul",
-   "hakem": "K. Saglam"
+   "hakem": "Kadir Saglam"
   },
   {
    "id": 1584396,
@@ -523,7 +523,7 @@
    "depGol": 0,
    "stat": "Kazim Karabekir Stadyumu",
    "sehir": "Erzurum",
-   "hakem": "Y. Kol"
+   "hakem": "Yasin Kol"
   },
   {
    "id": 1584397,
@@ -539,9 +539,9 @@
    "depId": 549,
    "evGol": 1,
    "depGol": 2,
-   "stat": "Chobani Stadium Fenerbahce Sukru Saracoglu",
+   "stat": "Chobani Stadium",
    "sehir": "Istanbul",
-   "hakem": "H. U. Meler"
+   "hakem": "Halil Umut Meler"
   },
   {
    "id": 1584399,
@@ -559,7 +559,7 @@
    "depGol": 2,
    "stat": "Recep Tayyip Erdogan Stadium",
    "sehir": "Istanbul",
-   "hakem": "O. Cakir"
+   "hakem": "Oguzhan Cakir"
   },
   {
    "id": 1584395,
@@ -577,7 +577,7 @@
    "depGol": 0,
    "stat": "Corum Stadyumu",
    "sehir": "Corum",
-   "hakem": "D. Celik"
+   "hakem": "Davut Dakul Celik"
   },
   {
    "id": 1584402,
@@ -595,7 +595,7 @@
    "depGol": 0,
    "stat": "Papara Park",
    "sehir": "Trabzon",
-   "hakem": "C. Altay"
+   "hakem": "Cagdas Altay"
   },
   {
    "id": 1584400,
@@ -611,9 +611,9 @@
    "depId": 3603,
    "evGol": 1,
    "depGol": 0,
-   "stat": "Turka Arac Muayene Kocaeli Stadyumu",
-   "sehir": "Izmit",
-   "hakem": "R. Coskunses"
+   "stat": "Yildiz Entegre Kocaeli Stadyumu",
+   "sehir": "Kocaeli",
+   "hakem": "Resat Onur Coskunses"
   },
   {
    "id": 1584398,
@@ -631,7 +631,7 @@
    "depGol": 4,
    "stat": "Gursel Aksel Stadium",
    "sehir": "Izmir",
-   "hakem": "U. Ozturk"
+   "hakem": "Umit Ozturk"
   },
   {
    "id": 1584401,
@@ -649,7 +649,7 @@
    "depGol": 1,
    "stat": "Çaykur Didi Stadyumu",
    "sehir": "Rize",
-   "hakem": "A. B. Taskinsoy"
+   "hakem": "Abdullah Bugra Taskinsoy"
   },
   {
    "id": 1584405,
@@ -665,9 +665,9 @@
    "depId": 1009,
    "evGol": 3,
    "depGol": 0,
-   "stat": "Besiktas Park",
+   "stat": "Tüpraş Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "G. Hasova"
+   "hakem": "Gurcan Hasova"
   },
   {
    "id": 1584406,
@@ -684,8 +684,8 @@
    "evGol": 0,
    "depGol": 2,
    "stat": "Esenyurt Necmi Kadioglu Stadi",
-   "sehir": "Istanbul",
-   "hakem": "O. Aksu"
+   "sehir": "Esenyurt",
+   "hakem": "Oguzhan Aksu"
   },
   {
    "id": 1584411,
@@ -703,7 +703,7 @@
    "depGol": 5,
    "stat": "Samsun 19 Mayis Stadyumu",
    "sehir": "Samsun",
-   "hakem": "A. Sansalan"
+   "hakem": "Ali Sansalan"
   },
   {
    "id": 1584410,
@@ -719,9 +719,9 @@
    "depId": 998,
    "evGol": 1,
    "depGol": 0,
-   "stat": "Konya Buyuksehir Belediye Stadium",
+   "stat": "Medas Konya Büyüksehir Belediyesi Stadium",
    "sehir": "Konya",
-   "hakem": "R. Coskunses"
+   "hakem": "Resat Onur Coskunses"
   },
   {
    "id": 1584403,
@@ -737,9 +737,9 @@
    "depId": 994,
    "evGol": 2,
    "depGol": 2,
-   "stat": "Alanya Oba Stadium",
+   "stat": "Bahcesehir Okullari Stadium",
    "sehir": "Alanya",
-   "hakem": "O. Ergun"
+   "hakem": "Ozan Ergun"
   },
   {
    "id": 1584409,
@@ -755,9 +755,9 @@
    "depId": 1004,
    "evGol": 1,
    "depGol": 2,
-   "stat": "Eryaman Stadium",
+   "stat": "Eryaman Stadyumu",
    "sehir": "Ankara",
-   "hakem": "Y. Kol"
+   "hakem": "Yasin Kol"
   },
   {
    "id": 1584407,
@@ -773,9 +773,9 @@
    "depId": 7411,
    "evGol": 1,
    "depGol": 0,
-   "stat": "Rams Park",
+   "stat": "Rams Park Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "A. Karaoglan"
+   "hakem": "Atilla Karaoglan"
   },
   {
    "id": 1584404,
@@ -791,9 +791,9 @@
    "depId": 564,
    "evGol": 5,
    "depGol": 0,
-   "stat": "Diyarbakir Stadium",
+   "stat": "Şilbe Spor Kompleksi",
    "sehir": "Diyarbakır",
-   "hakem": "C. Aydin"
+   "hakem": "Cihan Aydin"
   },
   {
    "id": 1584408,
@@ -811,7 +811,7 @@
    "depGol": 0,
    "stat": "Gaziantep Stadyumu",
    "sehir": "Gaziantep",
-   "hakem": "M. Turkmen"
+   "hakem": "Mehmet Turkmen"
   },
   {
    "id": 1584418,
@@ -829,7 +829,7 @@
    "depGol": 0,
    "stat": "Recep Tayyip Erdogan Stadium",
    "sehir": "Istanbul",
-   "hakem": "D. Celik"
+   "hakem": "Davut Dakul Celik"
   },
   {
    "id": 1584414,
@@ -847,7 +847,7 @@
    "depGol": 2,
    "stat": "Corum Stadyumu",
    "sehir": "Corum",
-   "hakem": "A. Akarsu"
+   "hakem": "Alper Akarsu"
   },
   {
    "id": 1584419,
@@ -863,9 +863,9 @@
    "depId": 3573,
    "evGol": 2,
    "depGol": 0,
-   "stat": "Turka Arac Muayene Kocaeli Stadyumu",
-   "sehir": "Izmit",
-   "hakem": "H. U. Meler"
+   "stat": "Yildiz Entegre Kocaeli Stadyumu",
+   "sehir": "Kocaeli",
+   "hakem": "Halil Umut Meler"
   },
   {
    "id": 1584413,
@@ -883,7 +883,7 @@
    "depGol": 0,
    "stat": "Basaksehir Fatih Terim Stadium",
    "sehir": "Istanbul",
-   "hakem": "A. Karaoglan"
+   "hakem": "Atilla Karaoglan"
   },
   {
    "id": 1584420,
@@ -901,7 +901,7 @@
    "depGol": 0,
    "stat": "Papara Park",
    "sehir": "Trabzon",
-   "hakem": "B. Kolak"
+   "hakem": "Batuhan Kolak"
   },
   {
    "id": 1584416,
@@ -917,9 +917,9 @@
    "depId": 3588,
    "evGol": 8,
    "depGol": 0,
-   "stat": "Chobani Stadium Fenerbahce Sukru Saracoglu",
+   "stat": "Chobani Stadium",
    "sehir": "Istanbul",
-   "hakem": "K. Saglam"
+   "hakem": "Kadir Saglam"
   },
   {
    "id": 1584415,
@@ -937,7 +937,7 @@
    "depGol": 0,
    "stat": "Kazim Karabekir Stadyumu",
    "sehir": "Erzurum",
-   "hakem": "A. B. Taskinsoy"
+   "hakem": "Abdullah Bugra Taskinsoy"
   },
   {
    "id": 1584417,
@@ -955,7 +955,7 @@
    "depGol": 2,
    "stat": "Gursel Aksel Stadium",
    "sehir": "Izmir",
-   "hakem": "O. Cakir"
+   "hakem": "Oguzhan Cakir"
   },
   {
    "id": 1584412,
@@ -973,7 +973,7 @@
    "depGol": 2,
    "stat": "Diyarbakir Stadium",
    "sehir": "Diyarbakır",
-   "hakem": "A. Sansalan"
+   "hakem": "Ali Sansalan"
   },
   {
    "id": 1584424,
@@ -989,9 +989,9 @@
    "depId": 1004,
    "evGol": 3,
    "depGol": 1,
-   "stat": "Rams Park",
+   "stat": "Rams Park Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "H. U. Meler"
+   "hakem": "Halil Umut Meler"
   },
   {
    "id": 1584426,
@@ -1007,9 +1007,9 @@
    "depId": 3579,
    "evGol": 2,
    "depGol": 2,
-   "stat": "Eryaman Stadium",
+   "stat": "Eryaman Stadyumu",
    "sehir": "Ankara",
-   "hakem": "U. Ozturk"
+   "hakem": "Umit Ozturk"
   },
   {
    "id": 1584421,
@@ -1025,9 +1025,9 @@
    "depId": 1009,
    "evGol": 0,
    "depGol": 0,
-   "stat": "Alanya Oba Stadium",
+   "stat": "Bahcesehir Okullari Stadium",
    "sehir": "Alanya",
-   "hakem": "D. Celik"
+   "hakem": "Davut Dakul Celik"
   },
   {
    "id": 1584429,
@@ -1045,7 +1045,7 @@
    "depGol": 3,
    "stat": "Samsun 19 Mayis Stadyumu",
    "sehir": "Samsun",
-   "hakem": "O. Cakir"
+   "hakem": "Oguzhan Cakir"
   },
   {
    "id": 1584428,
@@ -1063,7 +1063,7 @@
    "depGol": 3,
    "stat": "Çaykur Didi Stadyumu",
    "sehir": "Rize",
-   "hakem": "O. Ergun"
+   "hakem": "Ozan Ergun"
   },
   {
    "id": 1584427,
@@ -1079,9 +1079,9 @@
    "depId": 564,
    "evGol": 0,
    "depGol": 0,
-   "stat": "Konya Buyuksehir Belediye Stadium",
+   "stat": "Medas Konya Büyüksehir Belediyesi Stadium",
    "sehir": "Konya",
-   "hakem": "B. Kolak"
+   "hakem": "Batuhan Kolak"
   },
   {
    "id": 1584425,
@@ -1099,7 +1099,7 @@
    "depGol": 3,
    "stat": "Gaziantep Stadyumu",
    "sehir": "Gaziantep",
-   "hakem": "G. Hasova"
+   "hakem": "Gurcan Hasova"
   },
   {
    "id": 1584422,
@@ -1115,9 +1115,9 @@
    "depId": 7411,
    "evGol": 2,
    "depGol": 1,
-   "stat": "Tupras Stadium",
+   "stat": "Tüpraş Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "A. B. Taskinsoy"
+   "hakem": "Abdullah Bugra Taskinsoy"
   },
   {
    "id": 1584423,
@@ -1134,8 +1134,8 @@
    "evGol": 0,
    "depGol": 4,
    "stat": "Esenyurt Necmi Kadioglu Stadi",
-   "sehir": "Istanbul",
-   "hakem": "A. Karaoglan"
+   "sehir": "Esenyurt",
+   "hakem": "Atilla Karaoglan"
   },
   {
    "id": 1584432,
@@ -1153,7 +1153,7 @@
    "depGol": 1,
    "stat": "Corum Stadyumu",
    "sehir": "Corum",
-   "hakem": "D. Celik"
+   "hakem": "Davut Dakul Celik"
   },
   {
    "id": 1584433,
@@ -1171,7 +1171,7 @@
    "depGol": 0,
    "stat": "Kazim Karabekir Stadyumu",
    "sehir": "Erzurum",
-   "hakem": "E. Mertoglu"
+   "hakem": "Erdem Mertoglu"
   },
   {
    "id": 1584435,
@@ -1187,9 +1187,9 @@
    "depId": 645,
    "evGol": 0,
    "depGol": 1,
-   "stat": "Eryaman Stadium",
+   "stat": "Eryaman Stadyumu",
    "sehir": "Ankara",
-   "hakem": "R. Coskunses"
+   "hakem": "Resat Onur Coskunses"
   },
   {
    "id": 1584430,
@@ -1207,7 +1207,7 @@
    "depGol": 0,
    "stat": "Diyarbakir Stadium",
    "sehir": "Diyarbakır",
-   "hakem": "O. Ergun"
+   "hakem": "Ozan Ergun"
   },
   {
    "id": 1584434,
@@ -1223,9 +1223,9 @@
    "depId": 996,
    "evGol": 3,
    "depGol": 0,
-   "stat": "Chobani Stadium Fenerbahce Sukru Saracoglu",
+   "stat": "Chobani Stadium",
    "sehir": "Istanbul",
-   "hakem": "C. Altay"
+   "hakem": "Cagdas Altay"
   },
   {
    "id": 1584436,
@@ -1243,7 +1243,7 @@
    "depGol": 1,
    "stat": "Recep Tayyip Erdogan Stadium",
    "sehir": "Istanbul",
-   "hakem": "F. Tokail"
+   "hakem": "Fatih Tokail"
   },
   {
    "id": 1584437,
@@ -1259,9 +1259,9 @@
    "depId": 994,
    "evGol": 1,
    "depGol": 2,
-   "stat": "Turka Arac Muayene Kocaeli Stadyumu",
-   "sehir": "Izmit",
-   "hakem": "A. Akarsu"
+   "stat": "Turka Araç Muayene Kocaeli Stadyumu",
+   "sehir": "Kocaeli",
+   "hakem": "Alper Akarsu"
   },
   {
    "id": 1584431,
@@ -1279,7 +1279,7 @@
    "depGol": 1,
    "stat": "Basaksehir Fatih Terim Stadium",
    "sehir": "Istanbul",
-   "hakem": "A. Sen"
+   "hakem": "Alpaslan Sen"
   },
   {
    "id": 1584438,
@@ -1297,7 +1297,7 @@
    "depGol": 0,
    "stat": "Papara Park",
    "sehir": "Trabzon",
-   "hakem": "C. Aydin"
+   "hakem": "Cihan Aydin"
   },
   {
    "id": 1584439,
@@ -1313,9 +1313,9 @@
    "depId": 7411,
    "evGol": 1,
    "depGol": 2,
-   "stat": "Alanya Oba Stadium",
+   "stat": "Bahcesehir Okullari Stadium",
    "sehir": "Alanya",
-   "hakem": "A. Sansalan"
+   "hakem": "Ali Sansalan"
   },
   {
    "id": 1584441,
@@ -1332,8 +1332,8 @@
    "evGol": 0,
    "depGol": 1,
    "stat": "Esenyurt Necmi Kadioglu Stadi",
-   "sehir": "Istanbul",
-   "hakem": "A. Akarsu"
+   "sehir": "Esenyurt",
+   "hakem": "Alper Akarsu"
   },
   {
    "id": 1584443,
@@ -1351,7 +1351,7 @@
    "depGol": 3,
    "stat": "Gaziantep Stadyumu",
    "sehir": "Gaziantep",
-   "hakem": "M. Dakan"
+   "hakem": "Melek Dakan"
   },
   {
    "id": 1584447,
@@ -1369,7 +1369,7 @@
    "depGol": 2,
    "stat": "Samsun 19 Mayis Stadyumu",
    "sehir": "Samsun",
-   "hakem": "K. Saglam"
+   "hakem": "Kadir Saglam"
   },
   {
    "id": 1584445,
@@ -1385,9 +1385,9 @@
    "depId": 997,
    "evGol": 2,
    "depGol": 0,
-   "stat": "Konya Buyuksehir Belediye Stadium",
+   "stat": "Medas Konya Büyüksehir Belediyesi Stadium",
    "sehir": "Konya",
-   "hakem": "O. Cakir"
+   "hakem": "Oguzhan Cakir"
   },
   {
    "id": 1584444,
@@ -1405,7 +1405,7 @@
    "depGol": 0,
    "stat": "Gursel Aksel Stadium",
    "sehir": "Izmir",
-   "hakem": "M. Turkmen"
+   "hakem": "Mehmet Türkmen"
   },
   {
    "id": 1584440,
@@ -1421,9 +1421,9 @@
    "depId": 564,
    "evGol": 2,
    "depGol": 0,
-   "stat": "Tupras Stadium",
+   "stat": "Tüpraş Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "U. Ozturk"
+   "hakem": "Umit Ozturk"
   },
   {
    "id": 1584446,
@@ -1441,7 +1441,7 @@
    "depGol": 4,
    "stat": "Çaykur Didi Stadyumu",
    "sehir": "Rize",
-   "hakem": "H. U. Meler"
+   "hakem": "Halil Umut Meler"
   },
   {
    "id": 1584442,
@@ -1457,15 +1457,15 @@
    "depId": 611,
    "evGol": 2,
    "depGol": 1,
-   "stat": "Rams Park",
+   "stat": "Rams Park Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "A. Karaoglan"
+   "hakem": "Atilla Karaoglan"
   },
   {
    "id": 1584455,
    "tarih": "2026-10-30T20:00:00+03:00",
-   "durum": "NS",
-   "dakika": null,
+   "durum": "FT",
+   "dakika": 90,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "10",
@@ -1473,11 +1473,11 @@
    "dep": "Galatasaray",
    "evId": 607,
    "depId": 645,
-   "evGol": null,
-   "depGol": null,
-   "stat": "Konya Buyuksehir Belediye Stadium",
+   "evGol": 0,
+   "depGol": 4,
+   "stat": "Medas Konya Büyüksehir Belediyesi Stadium",
    "sehir": "Konya",
-   "hakem": "C. Aydin"
+   "hakem": "Cihan Aydin"
   },
   {
    "id": 1584450,

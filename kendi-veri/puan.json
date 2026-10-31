@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-30T16:39:10.070Z",
+ "guncellendi": "2026-10-31T10:26:45.695Z",
  "sezon": "2026",
  "lig": "203",
  "tablo": [
@@ -7,15 +7,15 @@
    "sira": 1,
    "takim": "Galatasaray",
    "id": 645,
-   "o": 9,
-   "g": 7,
+   "o": 10,
+   "g": 8,
    "b": 1,
    "m": 1,
-   "a": 19,
+   "a": 23,
    "y": 12,
-   "av": 7,
-   "p": 22,
-   "form": "WWWLW"
+   "av": 11,
+   "p": 25,
+   "form": "WWWWL"
   },
   {
    "sira": 2,
@@ -187,20 +187,6 @@
   },
   {
    "sira": 14,
-   "takim": "Konyaspor",
-   "id": 607,
-   "o": 9,
-   "g": 2,
-   "b": 2,
-   "m": 5,
-   "a": 6,
-   "y": 9,
-   "av": -3,
-   "p": 8,
-   "form": "WLDDW"
-  },
-  {
-   "sira": 15,
    "takim": "Gaziantep FK",
    "id": 3573,
    "o": 9,
@@ -212,6 +198,20 @@
    "av": -6,
    "p": 8,
    "form": "LLLLD"
+  },
+  {
+   "sira": 15,
+   "takim": "Konyaspor",
+   "id": 607,
+   "o": 10,
+   "g": 2,
+   "b": 2,
+   "m": 6,
+   "a": 6,
+   "y": 13,
+   "av": -7,
+   "p": 8,
+   "form": "LWLDD"
   },
   {
    "sira": 16,

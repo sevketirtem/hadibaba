@@ -1,9 +1,20 @@
 {
- "guncellendi": "2026-10-30T16:39:10.461Z",
+ "guncellendi": "2026-10-31T10:26:45.877Z",
  "sezon": "2026",
  "gol": [
   {
    "sira": 1,
+   "oyuncu": "V. Osimhen",
+   "takim": "Galatasaray",
+   "mac": 8,
+   "dakika": 555,
+   "gol": 9,
+   "asist": 3,
+   "penalti": 1,
+   "sayi": 9
+  },
+  {
+   "sira": 2,
    "oyuncu": "G. Orban",
    "takim": "Amed",
    "mac": 9,
@@ -14,22 +25,11 @@
    "sayi": 8
   },
   {
-   "sira": 2,
+   "sira": 3,
    "oyuncu": "Mohamed Salah",
    "takim": "Trabzonspor",
    "mac": 9,
    "dakika": 734,
-   "gol": 8,
-   "asist": 3,
-   "penalti": 1,
-   "sayi": 8
-  },
-  {
-   "sira": 3,
-   "oyuncu": "V. Osimhen",
-   "takim": "Galatasaray",
-   "mac": 7,
-   "dakika": 494,
    "gol": 8,
    "asist": 3,
    "penalti": 1,
@@ -248,6 +248,17 @@
   },
   {
    "sira": 3,
+   "oyuncu": "Gabriel Sara",
+   "takim": "Galatasaray",
+   "mac": 10,
+   "dakika": 690,
+   "gol": 2,
+   "asist": 4,
+   "penalti": 0,
+   "sayi": 4
+  },
+  {
+   "sira": 4,
    "oyuncu": "O. Aydın",
    "takim": "Fenerbahçe",
    "mac": 9,
@@ -258,7 +269,18 @@
    "sayi": 4
   },
   {
-   "sira": 4,
+   "sira": 5,
+   "oyuncu": "V. Osimhen",
+   "takim": "Galatasaray",
+   "mac": 8,
+   "dakika": 555,
+   "gol": 9,
+   "asist": 3,
+   "penalti": 1,
+   "sayi": 3
+  },
+  {
+   "sira": 6,
    "oyuncu": "G. Orban",
    "takim": "Amed",
    "mac": 9,
@@ -269,7 +291,7 @@
    "sayi": 3
   },
   {
-   "sira": 5,
+   "sira": 7,
    "oyuncu": "Mohamed Salah",
    "takim": "Trabzonspor",
    "mac": 9,
@@ -280,18 +302,7 @@
    "sayi": 3
   },
   {
-   "sira": 6,
-   "oyuncu": "V. Osimhen",
-   "takim": "Galatasaray",
-   "mac": 7,
-   "dakika": 494,
-   "gol": 8,
-   "asist": 3,
-   "penalti": 1,
-   "sayi": 3
-  },
-  {
-   "sira": 7,
+   "sira": 8,
    "oyuncu": "İ. Kahveci",
    "takim": "Fenerbahçe",
    "mac": 8,
@@ -302,7 +313,7 @@
    "sayi": 3
   },
   {
-   "sira": 8,
+   "sira": 9,
    "oyuncu": "K. Aktürkoğlu",
    "takim": "Fenerbahçe",
    "mac": 8,
@@ -313,7 +324,18 @@
    "sayi": 3
   },
   {
-   "sira": 9,
+   "sira": 10,
+   "oyuncu": "A. Batrakov",
+   "takim": "Galatasaray",
+   "mac": 8,
+   "dakika": 464,
+   "gol": 1,
+   "asist": 3,
+   "penalti": 0,
+   "sayi": 3
+  },
+  {
+   "sira": 11,
    "oyuncu": "A. Benedyczak",
    "takim": "Kasımpaşa",
    "mac": 9,
@@ -324,7 +346,7 @@
    "sayi": 2
   },
   {
-   "sira": 10,
+   "sira": 12,
    "oyuncu": "Franculino Djú",
    "takim": "Trabzonspor",
    "mac": 6,
@@ -335,7 +357,7 @@
    "sayi": 2
   },
   {
-   "sira": 11,
+   "sira": 13,
    "oyuncu": "M. Greenwood",
    "takim": "Fenerbahçe",
    "mac": 9,
@@ -346,18 +368,7 @@
    "sayi": 2
   },
   {
-   "sira": 12,
-   "oyuncu": "Gabriel Sara",
-   "takim": "Galatasaray",
-   "mac": 9,
-   "dakika": 629,
-   "gol": 2,
-   "asist": 2,
-   "penalti": 0,
-   "sayi": 2
-  },
-  {
-   "sira": 13,
+   "sira": 14,
    "oyuncu": "O. Kökçü",
    "takim": "Beşiktaş",
    "mac": 7,
@@ -368,7 +379,7 @@
    "sayi": 2
   },
   {
-   "sira": 14,
+   "sira": 15,
    "oyuncu": "M. Diomandé",
    "takim": "Çorum FK",
    "mac": 9,
@@ -379,7 +390,7 @@
    "sayi": 2
   },
   {
-   "sira": 15,
+   "sira": 16,
    "oyuncu": "A. Skov Olsen",
    "takim": "Başakşehir",
    "mac": 9,
@@ -390,7 +401,18 @@
    "sayi": 2
   },
   {
-   "sira": 16,
+   "sira": 17,
+   "oyuncu": "L. Torreira",
+   "takim": "Galatasaray",
+   "mac": 9,
+   "dakika": 718,
+   "gol": 1,
+   "asist": 2,
+   "penalti": 0,
+   "sayi": 2
+  },
+  {
+   "sira": 18,
    "oyuncu": "Cláudio Winck",
    "takim": "Kasımpaşa",
    "mac": 9,
@@ -401,7 +423,7 @@
    "sayi": 2
   },
   {
-   "sira": 17,
+   "sira": 19,
    "oyuncu": "J. Olaitan",
    "takim": "Beşiktaş",
    "mac": 8,
@@ -412,33 +434,11 @@
    "sayi": 2
   },
   {
-   "sira": 18,
-   "oyuncu": "L. Torreira",
-   "takim": "Galatasaray",
-   "mac": 8,
-   "dakika": 657,
-   "gol": 1,
-   "asist": 2,
-   "penalti": 0,
-   "sayi": 2
-  },
-  {
-   "sira": 19,
+   "sira": 20,
    "oyuncu": "A. Antunes",
    "takim": "Göztepe",
    "mac": 7,
    "dakika": 429,
-   "gol": 1,
-   "asist": 2,
-   "penalti": 0,
-   "sayi": 2
-  },
-  {
-   "sira": 20,
-   "oyuncu": "G. Giorbelidze",
-   "takim": "Erzurumspor FK",
-   "mac": 7,
-   "dakika": 628,
    "gol": 1,
    "asist": 2,
    "penalti": 0,
