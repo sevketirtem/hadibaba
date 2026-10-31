@@ -260,6 +260,8 @@ class Cizer:
         self.f_kucuk = ImageFont.truetype(FONT_M, 34)
         self.av = {"hadi": daire(hadi, 380), "yuru": daire(yuru, 380)}
         self.onbellek = {}
+        from hareketli_avatar import HareketliAvatar
+        self.ha = HareketliAvatar()
         self.zemin = self._zemin(baslik or senaryo["baslik"])
         olcu = ImageDraw.Draw(Image.new("RGB", (1, 1)))
         # Her replik için altyazı sayfaları (en fazla 3 satır)
@@ -337,7 +339,19 @@ class Cizer:
         d.text((W // 2, H - 100), "hadibaba.com · yurubaba.com", font=self.f_kucuk, fill=RENK["yuru_acik"], anchor="mm")
         return im
 
-    def _avatar(self, kim, olcek, aktif):
+    def _avatar(self, kim, olcek, aktif, t=None):
+        if t is not None and self.ha.var:  # hareketli avatar: her karede yeni yüz, çerçeve aynı
+            boy = int(380 * olcek)
+            yuz = self.ha.kare(kim, aktif, t, boy)
+            kalip = self._avatar(kim, olcek, aktif)  # çerçeve/ışık katmanı (önbellekli)
+            k = kalip.copy()
+            pay = (k.width - boy) // 2
+            if not aktif:
+                koyu = Image.new("RGBA", yuz.size, (17, 22, 34, 120))
+                koyu.putalpha(Image.eval(yuz.getchannel("A"), lambda v: v * 120 // 255))
+                yuz = Image.alpha_composite(yuz, koyu)
+            k.alpha_composite(yuz, (pay, pay))
+            return k
         anahtar = (kim, round(olcek, 2), aktif)
         if anahtar not in self.onbellek:
             boy = int(380 * olcek)
@@ -373,7 +387,7 @@ class Cizer:
         for kim, cx, cy in (("hadi", 290, 640), ("yuru", 790, 800)):
             konusan = aktif["kim"] == kim
             olcek = (0.95 + 0.07 * zarf) if konusan else 0.72
-            a = self._avatar(kim, olcek, konusan)
+            a = self._avatar(kim, olcek, konusan, t)
             im.alpha_composite(a, (cx - a.width // 2, cy - a.height // 2))
         # Konuşan adı
         renk = RENK[aktif["kim"]]

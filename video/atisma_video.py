@@ -69,6 +69,9 @@ class Video:
             "hadi": daire_avatar(f"{KOK}/hadi.png", 170),
             "yuru": daire_avatar(f"{KOK}/yuru.png", 170),
         }
+        sys.path.insert(0, os.path.join(os.path.dirname(KOK) if os.path.basename(KOK) == "video" else KOK, "scripts"))
+        from hareketli_avatar import HareketliAvatar
+        self.ha = HareketliAvatar(taban=200)
         self.av_buyuk = {
             "hadi": daire_avatar(f"{KOK}/hadi.png", 330),
             "yuru": daire_avatar(f"{KOK}/yuru.png", 330),
@@ -222,6 +225,9 @@ class Video:
         if konusuyor:
             dy = -abs(math.sin(yas * 9)) * 18 if hadi else math.sin(yas * 4) * 6
         av = self.av[m["kim"]]
+        if self.ha.var:  # hareketli avatar (Gemini Omni Flash klipleri)
+            av = self.ha.kare(m["kim"], konusuyor, t, 170)
+            dy *= 0.4
         if p < 1:
             boy = max(1, int(170 * min(1, p)))
             av = av.resize((boy, boy), Image.LANCZOS)

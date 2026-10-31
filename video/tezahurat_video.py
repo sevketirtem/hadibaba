@@ -135,7 +135,7 @@ class TezahuratCizer(pk.Cizer):
         for kim, cx, cy in (("hadi", 290, 560), ("yuru", 790, 640)):
             konusan = aktif["kim"] in (kim, "ikisi")
             olcek = (0.82 + 0.10 * zarf) if konusan else 0.62
-            a = self._avatar(kim, olcek, konusan)
+            a = self._avatar(kim, olcek, konusan, t)
             im.alpha_composite(a, (cx - a.width // 2, cy - a.height // 2))
         d = ImageDraw.Draw(im)
         if aktif["kelimeler"]:
