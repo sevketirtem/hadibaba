@@ -25,6 +25,20 @@ Kullanım kuralları:
 - "Şiddete meyilliyim vallahi dertten be Hadi!" — Yürü; takımının (ya da tahmininin) bozulduğu, sinir bozucu maç sonrası. Tek başına kullanılmaz, Hadi'nin cevabıyla gelir. Asla gerçek bir kişiye, takıma ya da taraftara yöneltilmez.
 - "Yapma be Yürü, spor dostluk ve kardeşliktir!" — Hadi; yukarıdaki lafın cevabı.
 
+- "Babam elimden tuttu, tribüne soktu; o gün bugündür iflah olmadım baba!" — Hadi; futbol sevdası, nostalji, büyük maç önü.
+- "Seni o gün tribüne değil, doktora götürmesi lazımdı Hadi." — Yürü; yukarıdakinin cevabı.
+
+## Tezahürat: "Mahalle Arasında" (kendi sözlerimiz, takımsız; satır satır sırayla)
+Bütün olarak ya da 2–4 satırlık parça hâlinde kullanılır (podcast açılışı/kapanışı, büyük maç, sezon başı/sonu). Hiçbir takımın marş sözü buraya eklenmez.
+- "Mahalle arasında başladı bu sevda," — Hadi
+- "Taş kale, yamalı top, bir de bitmeyen kavga." — Yürü
+- "Yağmur yağsa, kar yağsa, maç varsa oradaydık," — Hadi
+- "Kaybettik mi? Kaybettik. Ama yine de bağırdık." — Yürü
+- "Tribünde yer kalmasa ağaca çıkarız baba," — Hadi
+- "Ağaçtan da düşersin, ben demiştim bak sana." — Yürü
+- "Bu sevdanın adı futbol, rengi yok, takımı yok," — Hadi
+- "Faturası çok ama vazgeçen tek kişi yok." — Yürü
+
 ## İkisi de kullanabilir
 - "Lan yine seviyor Allah!" — bir takım (ya da rakip site) şansla, son dakikada, hak etmeden kazanınca / tahmin tutunca. Hadi şaşkın sevinçle, Yürü kıskanç iğneyle söyler.
 - "Biz bunu X saat önce yazdık." — kopya kavgası (gerçek yayın saatiyle)
