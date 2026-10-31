@@ -9,7 +9,8 @@ kaynaklar: []
 
 Yıllardır tribünde başkalarının bestesine bağırdık, bugün kendi tezahüratımızı yazdık baba! Adı **"Mahalle Arasında"**. Ne bir takımın marşı, ne bir rengin şarkısı. Taş kaleyle, yamalı topla başlayan o sevdanın şarkısı.
 
-![Mahalle Arasında: taş kale, yamalı top ve ağaca çıkan küçük taraftar (yapay zekâ ile üretildi)](/img/mahalle-arasinda.jpg)
+![Ağaçtaki çocuk Hadi, aşağıda bekleyen babası Yürü (yapay zekâ ile üretildi)](/img/mahalle-arasinda.jpg)
+*Ağaçtaki çocuk Hadi, aşağıda gülümseyen babası Yürü. Biri tribüne sığmayınca ağaca çıkar, öbürü "düşersin" der ama yine de bekler. Tezahüratımızın hikâyesi bu.*
 
 👉 **[Videoyu buradan izle](/video/tezahurat-mahalle.mp4)**. YouTube, Instagram, TikTok ve Telegram'da da var. Tam hâli (3 dakika): [YouTube](https://youtu.be/l0LhU6i02Xg).
 
