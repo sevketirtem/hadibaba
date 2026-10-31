@@ -13,6 +13,12 @@ BASLIK = "Hadi vs Yürü"
 
 
 def api(yontem, alanlar=None, dosyalar=None):
+    if not alanlar and not dosyalar:
+        try:
+            with urllib.request.urlopen(f"https://api.telegram.org/bot{T}/{yontem}", timeout=60) as r:
+                return json.loads(r.read())["result"]
+        except urllib.error.HTTPError as e:
+            raise RuntimeError(f"{yontem}: HTTP {e.code} {e.read()[:300]!r}") from None
     sinir = uuid.uuid4().hex
     govde = []
     for k, v in (alanlar or {}).items():
