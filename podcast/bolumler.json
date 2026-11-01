@@ -40,5 +40,20 @@
   "video_url": "https://github.com/sevketirtem/hadibaba/releases/download/podcast-2026-10-31/hadi-vs-yuru-2026-10-31.mp4",
   "boyut": 3263886,
   "sure": 204
+ },
+ {
+  "tarih": "2026-11-01",
+  "no": 4,
+  "baslik": "Kasım'da gaz bitmedi mi? Çorum, Kocaeli ve Pazar akşamı",
+  "aciklama": "Hadi ile Yürü Kasım'a girerken tabloyu, Cumartesi sonuçlarını ve akşam 19.00'daki Kasımpaşa–Beşiktaş maçını tartışıyor.",
+  "yazilar": {
+   "hadi": "https://hadibaba.com/2026/11/kasim-geldi-yuru-hadi-hala-gazda/",
+   "yuru": "https://yurubaba.com/2026/11/kasim-basladi-hadinin-gazi-hala-bedava/"
+  },
+  "yayin": "2026-11-01T05:45:57+00:00",
+  "ses_url": "https://github.com/sevketirtem/hadibaba/releases/download/podcast-2026-11-01/hadi-vs-yuru-2026-11-01.mp3",
+  "video_url": "https://github.com/sevketirtem/hadibaba/releases/download/podcast-2026-11-01/hadi-vs-yuru-2026-11-01.mp4",
+  "boyut": 3825205,
+  "sure": 239
  }
 ]
