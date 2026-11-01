@@ -3,6 +3,9 @@
 Bölüm sesleri GitHub Releases'ta durur (podcast-<tarih> etiketi); besleme hadibaba.com/podcast/feed.xml.
 """
 import email.utils, datetime as dt, json, os
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import kanallar  # noqa: E402
 from xml.sax.saxutils import escape
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,6 +34,7 @@ def main():
         aciklama = b["aciklama"]
         if b.get("yazilar"):
             aciklama += " Yazılar: " + " · ".join(b["yazilar"].values())
+        aciklama += f" ▶️ YouTube: {kanallar.YOUTUBE} · 🎵 TikTok: {kanallar.TIKTOK} · Telegram: https://t.me/hadibabacom · https://t.me/yurubaba"
         ogeler.append(f"""    <item>
       <title>{temiz(b['baslik'])}</title>
       <description>{temiz(aciklama)}</description>

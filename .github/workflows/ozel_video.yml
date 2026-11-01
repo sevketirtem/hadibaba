@@ -79,7 +79,7 @@ jobs:
           a, baslik = os.environ["ANAHTAR"], os.environ["BASLIK"]
           kayit = "video/paylasildi.txt"
           var = {s.strip() for s in open(kayit, encoding="utf-8")} if os.path.exists(kayit) else set()
-          ortak = b["aciklama"] + ("\n\n" + b["yt_ek"] if b.get("yt_ek") else "") + "\n\nHer gün Süper Lig atışması: \"Hadi vs Yürü\" podcast'i bu kanalda.\n"
+          ortak = b["aciklama"] + ("\n\n" + b["yt_ek"] if b.get("yt_ek") else "") + "\n\nHer gün Süper Lig atışması: \"Hadi vs Yürü\" podcast'i bu kanalda.\n\n" + y.kanallar.uzun() + "\n\n"
           for platform, dosya, t, ek in (("youtube", f"static/video/{a}.mp4", baslik + " #Shorts", "#Shorts #tezahürat #futbol #babaoğul"),
                                          ("youtube-yatay", "/tmp/v/yatay.mp4", baslik + " | Hadi vs Yürü", "#tezahürat #futbol #süperlig #babaoğul")):
               if f"{a} {platform}" in var or not os.path.exists(dosya):

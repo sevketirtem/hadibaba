@@ -8,6 +8,7 @@ import json, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import youtube_yukle  # noqa: E402
+import kanallar  # noqa: E402
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KAYIT = os.path.join(KOK, "video", "paylasildi.txt")
@@ -29,6 +30,7 @@ def main():
         s.get("aciklama", ""),
         "\n".join(f"• {u}" for u in y.values()),
         "Uzun bölüm her gün kanalda: Hadi vs Yürü podcast'i. Burada bahis yok, skor tahmini var.",
+        kanallar.uzun(),
         "Sesler ve görseller yapay zekâ ile üretilmiştir; karakterler hayalîdir.",
         "#Shorts #futbol #süperlig") if p)
     govde = {

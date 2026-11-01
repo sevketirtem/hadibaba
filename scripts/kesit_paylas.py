@@ -7,6 +7,7 @@ import json, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import youtube_yukle  # noqa: E402
+import kanallar  # noqa: E402
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KAYIT = os.path.join(KOK, "podcast", "kesit_kayit.txt")
@@ -27,7 +28,7 @@ def aciklama(s, meta, yt_id, etiketler):
         s.get("aciklama", ""), tam,
         "Coşkulu taraftar Hadi Baba ile alaycı abi Yürü Baba her gün Süper Lig'i tartışıyor. "
         "Tahmininizi yorumlara yazın: skor, kupon değil. Burada bahis yok.",
-        "Spotify'da \"Hadi vs Yürü\" · hadibaba.com · yurubaba.com",
+        kanallar.uzun(),
         "Sesler ve görseller yapay zekâ ile üretilmiştir; karakterler hayalîdir.", etiketler])
 
 

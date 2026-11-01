@@ -5,6 +5,8 @@ Ortam: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN (kanal sa
 """
 import json, os, sys, urllib.error, urllib.parse, urllib.request
 
+import kanallar  # noqa: E402
+
 
 def notice(b, m):
     print(f"::notice title={b}::{m}", flush=True)
@@ -27,7 +29,7 @@ def main():
     yazilar = "\n".join(f"• {u}" for u in s.get("yazilar", {}).values())
     aciklama = (f"{s['aciklama']}\n\nCoşkulu taraftar Hadi Baba ile alaycı abi Yürü Baba her gün Süper Lig'i tartışıyor. "
                 f"Tahmininizi yorumlara yazın (skor, kupon değil; burada bahis yok).\n\n{yazilar}\n\n"
-                "Podcast: Spotify'da \"Hadi vs Yürü\" · RSS: https://hadibaba.com/podcast/feed.xml\n"
+                f"{kanallar.uzun()}\n\n"
                 "Sesler ve görseller yapay zekâ ile üretilmiştir; karakterler hayalîdir.\n"
                 "#futbol #süperlig #podcast")
     govde = {

@@ -12,6 +12,7 @@ import json, os, sys, time, uuid, urllib.error, urllib.request
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(KOK, "scripts"))
 import meta  # noqa: E402
+import kanallar  # noqa: E402
 
 KAYIT = os.path.join(KOK, "video", "paylasildi.txt")
 ETIKETLER = "#futbol #süperlig #hadibaba #yurubaba"
@@ -40,6 +41,8 @@ def metin(s, uzun=True):
             f"🔥 Hadi: {y['hadi']}" if y.get("hadi") else "",
             f"🧮 Yürü: {y['yuru']}" if y.get("yuru") else "") if x))
     parcalar.append(ETIKETLER)
+    # uzun = Telegram altyazısı (1024 sınırı) + Facebook; kısa = Instagram/Threads
+    parcalar.append(kanallar.duz_kisa() if uzun else kanallar.kisa())
     return "\n\n".join(p for p in parcalar if p)
 
 
@@ -132,7 +135,7 @@ def main():
             notice("Video Meta", f"Sayfa bulunamadı: {e}", "warning")
             k = None
         if k:
-            calistir("facebook", lambda: facebook_video(k["page_token"], k["page_id"], video_url, metin(s),
+            calistir("facebook", lambda: facebook_video(k["page_token"], k["page_id"], video_url, metin(s) + "\n\n" + kanallar.uzun(),
                                                         f"Hadi vs Yürü: {s['mac']}"))
             if k.get("ig_id"):
                 calistir("instagram", lambda: instagram_reels(k["page_token"], k["ig_id"], video_url, metin(s, uzun=False)))
