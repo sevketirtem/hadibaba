@@ -1,7 +1,7 @@
 {
   "tarih": "2026-11-01",
-  "baslik": "Kasım'da gaz bitmedi mi? Çorum, Kocaeli ve Pazar akşamı",
-  "aciklama": "Hadi ile Yürü Kasım'a girerken tabloyu, Cumartesi sonuçlarını ve akşam 19.00'daki Kasımpaşa–Beşiktaş maçını tartışıyor.",
+  "baslik": "Yürü tam skoru bildi: 1-2! Kasım'da gaz bitmedi mi?",
+  "aciklama": "Manşet: Yürü Baba, Fenerbahçe–Göztepe maçını tam skor bildi (1-2). Gerekçesi: Fener çok atıyor ama dokuz maçta sekiz gol yemişti, üstüne derbi yorgunluğu. Tahmin ligi Yürü 3 · Hadi 2. Ayrıca Çorum, Kocaeli ve Pazar akşamı Kasımpaşa–Beşiktaş. Hadi ile Yürü Kasım'a girerken tabloyu, Cumartesi sonuçlarını ve akşam 19.00'daki Kasımpaşa–Beşiktaş maçını tartışıyor.",
   "yazilar": {
     "hadi": "https://hadibaba.com/2026/11/kasim-geldi-yuru-hadi-hala-gazda/",
     "yuru": "https://yurubaba.com/2026/11/kasim-basladi-hadinin-gazi-hala-bedava/"
@@ -17,19 +17,30 @@
     },
     {
       "kim": "hadi",
-      "metin": "Dün gece Yürü yazmış, bu sezon başka lafı başka sezona kalmış! Kıyamam sana!"
+      "metin": "Ama önce manşet! Ben söylemek zorundayım: Yürü, Fenerbahçe Göztepe maçını tam skor bildi. Bire iki!",
+      "duygu": "uzgun"
     },
     {
       "kim": "yuru",
-      "metin": "Kıyma. Fenerbahçe Göztepe'ye 1-2 kaybetti, ben tam skoru bildim. Üç puan."
+      "metin": "Cumartesi sabahı yazdım. Fenerbahçe ligin en çok gol atan takımı, doğru. Ama dokuz maçta sekiz gol de yemişti. Çok atan, çok yiyen takım.",
+      "duygu": "sevinc"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Üstüne bir de derbinin yorgunluğu vardı. Kolay yol beraberlikti, ben riske girdim: Göztepe deplasmanda bire iki. Akşam maç bire iki bitti."
     },
     {
       "kim": "hadi",
-      "metin": "Ben iki puandayım, fark bir puan! Hemen kapatırız baba!"
+      "metin": "Ben üçe bir demiştim, ne skor ne sonuç! Tamam, kabul ediyorum, bu hafta senin haftan baba!"
     },
     {
       "kim": "yuru",
-      "metin": "Tablo şöyle: Yürü üç, Hadi iki. Not ettim, yazmıyorum bile, zaten yazdım."
+      "metin": "Tam skor üç puan. Tahmin ligi şimdi Yürü üç, Hadi iki. Manşet bu, gerisi detay.",
+      "duygu": "sevinc"
+    },
+    {
+      "kim": "hadi",
+      "metin": "Bir puan fark! Bu akşam Beşiktaş maçında kapatırız baba!"
     },
     {
       "kim": "hadi",
