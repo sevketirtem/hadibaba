@@ -1,0 +1,37 @@
+{
+  "tarih": "2026-11-01",
+  "mac": "Kasımpaşa – Beşiktaş",
+  "mac_alt": "10. hafta · Pazar 19.00",
+  "kanca": "Kasım'da şampiyon olunur mu?",
+  "tablo": "Tahmin ligi: Hadi 2 · Yürü 3",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Kasım geldi ama gaz bitmedi! Beşiktaş bu akşam 1-2 alır baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kasım'da şampiyon olunmaz. Dört takım 16 puanda baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Bu lig karışık, bu sezon başka! Hissediyorum, gol geliyor baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Ben 1-1 diyorum, bir puan öndeyim. Görürüz baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "TAHMİNLER",
+    "hadi": "1-2",
+    "yuru": "1-1",
+    "hadi_soz": "Yaparız baba!",
+    "yuru_soz": "Görürüz baba."
+  },
+  "aciklama": "Hadi Beşiktaş 1-2 diyor, Yürü 1-1. Maç bu akşam 19.00'da. Sen kimden yanasın?",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/kasim-geldi-yuru-hadi-hala-gazda/",
+    "yuru": "https://yurubaba.com/2026/11/kasim-basladi-hadinin-gazi-hala-bedava/"
+  }
+}
