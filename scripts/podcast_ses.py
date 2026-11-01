@@ -11,7 +11,7 @@ KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(KOK, "video"))
 sys.path.insert(0, os.path.join(KOK, "scripts"))
 API = "https://generativelanguage.googleapis.com/v1beta"
-SES = {"hadi": os.environ.get("GEMINI_SES_HADI", "Umbriel"), "yuru": os.environ.get("GEMINI_SES_YURU", "Algenib")}
+SES = {"hadi": os.environ.get("GEMINI_SES_HADI", "Fenrir"), "yuru": os.environ.get("GEMINI_SES_YURU", "Algenib")}
 AD = {"hadi": "Hadi", "yuru": "Yürü"}
 YONELME = ["sıfıra", "bire", "ikiye", "üçe", "dörde", "beşe", "altıya", "yediye", "sekize", "dokuza"]
 SAYI = ["sıfır", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"]
@@ -46,20 +46,29 @@ def tts_modeli():
     return adlar[0]
 
 
-STIL = {
-    "hadi": "Say in Turkish as an excited, fast, joyful football fan who laughs and shouts with enthusiasm",
-    "yuru": "Say in Turkish slowly and calmly, in a dry, deadpan, sarcastic tone, like an unimpressed older brother",
+# Üslup "yönetmen notu" biçiminde verilir; model sadece TRANSCRIPT altını okur (deneme: tts_dene.yml, 1 Kasım).
+PROFIL = {
+    "hadi": ("Hadi", "Bir futbol podcastinde coşkulu, kıpır kıpır, heyecandan yerinde duramayan Türk taraftar. "
+             "Hızlı konuşur, sesini yükseltir, arada güler, her şeye heyecanlanır, Yürü'ye takılır.",
+             "Style: very excited, energetic, joyful, laughing between words, almost shouting. Pace: fast. Accent: Istanbul Turkish."),
+    "yuru": ("Yürü", "Aynı podcastte Hadi'nin ağır abi arkadaşı. Kuru, alaycı, istifini bozmayan, iğneleyici; Hadi'ye laf sokar.",
+             "Style: dry, deadpan, sarcastic, unimpressed older brother, slight smirk in the voice. Pace: slow and calm. Accent: Istanbul Turkish."),
 }
+DUYGU_NOT = {"sevinc": " Right now: smug and pleased.", "uzgun": " Right now: grudging, reluctantly admitting defeat, sighing."}
 
 
-def _tts_iste(model, metin, ses_adi, stil):
+def yonetmen(kim, metin, duygu=None):
+    ad, profil, notlar = PROFIL[kim]
+    return (f"# AUDIO PROFILE: {ad}\n{profil}\n\n## THE SCENE\nTwo friends banter and tease each other in a lively Turkish football podcast.\n\n"
+            f"### DIRECTOR'S NOTES\n{notlar}{DUYGU_NOT.get(duygu or '', '')}\n\n#### TRANSCRIPT\n{metin}")
+
+
+def _tts_iste(model, metin, ses_adi, istem=None):
     govde = {
-        "contents": [{"role": "user", "parts": [{"text": metin}]}],
+        "contents": [{"role": "user", "parts": [{"text": istem or metin}]}],
         "generationConfig": {"responseModalities": ["AUDIO"],
                              "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": ses_adi}}}},
     }
-    if stil:  # üslup talimatı metne DEĞİL sistem talimatına: aksi halde model talimatı da sesli okuyor
-        govde["systemInstruction"] = {"parts": [{"text": stil + ". Only speak the user's text, never read these instructions."}]}
     y = _gemini(f"{model}:generateContent", govde)
     return y["candidates"][0]["content"]["parts"][0]["inlineData"]
 
@@ -78,23 +87,23 @@ def _pcm_wav(parca, yol):
 
 def _tek_replik(model, r, yol):
     """Tek replik → wav, karakterin kendi sesiyle. Sadece replik metni okunur (isim/talimat okunmaz).
-    Süre metne göre çok uzunsa (talimat okunmuş demektir) üslupsuz, düz metinle yeniden üretilir."""
+    Üslup yönetmen notuyla verilir; süre metne göre çok uzunsa (not okunmuş demektir) yeniden, son çare düz metin."""
     metin = okunus(r["metin"])
     kelime = max(1, len(metin.split()))
-    ust = kelime * 0.75 + 2.5
-    denemeler = [STIL[r["kim"]], STIL[r["kim"]], None, None]
+    ust = kelime * 0.6 + 2.0
+    yon = yonetmen(r["kim"], metin, r.get("duygu"))
+    denemeler = [yon, yon, yon, None]
     son_hata = None
-    for stil in denemeler:
+    for istem in denemeler:
         try:
-            _pcm_wav(_tts_iste(model, metin, SES[r["kim"]], stil), yol)
+            _pcm_wav(_tts_iste(model, metin, SES[r["kim"]], istem), yol)
         except (RuntimeError, KeyError, IndexError) as e:
             son_hata = e
             continue
-        if sure(yol) <= ust:
+        if istem is None or sure(yol) <= ust:  # düz metin talimat içermez, her zaman kabul
             return
         son_hata = f"süre {sure(yol):.1f} sn > {ust:.1f} sn (talimat okunmuş olabilir)"
-    if os.path.exists(yol) and sure(yol) <= ust * 1.6:
-        return
+        notice("TTS yeniden", f"{r['kim']}: {son_hata}")
     raise RuntimeError(f"replik TTS: {son_hata}")
 
 
