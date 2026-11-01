@@ -1,0 +1,47 @@
+# Canlı yayın kaydından dikey kesitler (Whisper + Gemini seçimi). Sonuçlar canli-kesit-cikti dalına (inceleme için).
+name: Canlı yayın kesitleri
+on:
+  workflow_dispatch:
+    inputs:
+      url: {description: "YouTube adresi (ya da doğrudan mp4 adresi)", type: string, required: true}
+      adet: {description: "Kaç kesit", type: string, default: "4"}
+permissions:
+  contents: write
+  id-token: write
+jobs:
+  k:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - name: Vertex AI kimliği (deneme kredisi; anahtarsız)
+        id: vx
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1001418254189/locations/global/workloadIdentityPools/github/providers/github-oidc
+          service_account: vertex-github@hadi-yuru-ses.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
+      - name: Araçlar
+        run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          pip install -q faster-whisper numpy yt-dlp
+      - name: İndir
+        run: |
+          u="${{ inputs.url }}"
+          if [[ "$u" == *.mp4 ]]; then curl -sSL "$u" -o /tmp/yayin.mp4; else
+            yt-dlp -f "bv*[height<=720][ext=mp4]+ba[ext=m4a]/b[height<=720]/b" --merge-output-format mp4 -o /tmp/yayin.mp4 "$u" 2>&1 | tail -5; fi
+          ls -la /tmp/yayin.mp4 && ffprobe -v error -show_entries format=duration -of csv=p=0 /tmp/yayin.mp4
+      - name: Kesitler
+        env:
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/canli_kesit.py /tmp/yayin.mp4 /tmp/k "${{ inputs.adet }}"
+      - name: canli-kesit-cikti dalına koy
+        if: always()
+        run: |
+          [ -d /tmp/k ] || exit 0
+          cd /tmp/k && git init -q && git checkout -q -b canli-kesit-cikti
+          git config user.name "Claude (Hadi-Yürü ekibi)" && git config user.email "noreply@anthropic.com"
+          git add . && git commit -qm "Canlı yayın kesitleri" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" canli-kesit-cikti
