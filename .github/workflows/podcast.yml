@@ -155,7 +155,7 @@ jobs:
         if: inputs.sadece_youtube
         run: |
           mkdir -p /tmp/b
-          gh release download "podcast-${{ steps.sec.outputs.tarih }}" -p "*.mp4" -O /tmp/b/video.mp4
+          gh release download "podcast-${{ steps.sec.outputs.tarih }}" -p "hadi-vs-yuru-${{ steps.sec.outputs.tarih }}.mp4" -O /tmp/b/video.mp4
 
       - name: YouTube'a yükle
         if: steps.sec.outputs.uret == 'true' || inputs.sadece_youtube
