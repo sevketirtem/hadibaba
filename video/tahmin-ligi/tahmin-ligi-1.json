@@ -1,0 +1,18 @@
+{
+  "tarih": "tahmin-ligi-1",
+  "seri_no": 1,
+  "mac": "Fenerbahçe - Göztepe",
+  "skor": "1-2",
+  "bilen": "yuru",
+  "puan": {"yuru": 3, "hadi": 2},
+  "replikler": [
+    {"kim": "hadi", "duygu": "uzgun", "metin": "Tahmin Ligi'nde tam skor alarmı! Ah be... Yürü yine bildi: Fenerbahçe Göztepe, bire iki!"},
+    {"kim": "yuru", "duygu": "sevinc", "metin": "Dokuz maçta sekiz gol yemişlerdi, üstüne derbi yorgunluğu. Herkes beraberlik dedi, ben riske girdim."},
+    {"kim": "hadi", "metin": "Ben üçe bir demiştim! Ne skor ne sonuç... Tamam, bu hafta senin haftan baba!"},
+    {"kim": "yuru", "duygu": "sevinc", "metin": "Tam skor üç puan. Yürü üç, Hadi iki. Hesap makinesi bende."},
+    {"kim": "hadi", "duygu": "sevinc", "metin": "Daha bitmedi! Sıradaki tam skoru ben bileceğim! Sen de tahminini yorumlara yaz!"}
+  ],
+  "aciklama": "🎯 TAHMİN LİGİ #1 · TAM SKOR!\nYürü, Fenerbahçe-Göztepe maçını cumartesi sabahı 1-2 yazdı ve tuttu! Dokuz maçta sekiz gol yiyen Fenerbahçe, derbi yorgunluğu… Herkes beraberlik derken Yürü riske girdi. Hadi'nin 3-1'i ise ne skor ne sonuç. 😅\n\nPuan durumu: Yürü 3 – Hadi 2\nSen de bu haftanın maçlarına skor tahminini yorumlara yaz! Burada bahis yok, sadece futbol ve laf var.",
+  "yt_ek": "Seri: #TahminLigi",
+  "yt_baslik": "TAM SKOR! Yürü Fenerbahçe-Göztepe'yi 1-2 bildi · Tahmin Ligi #1"
+}

@@ -1,0 +1,45 @@
+# TAHMİN LİGİ · TAM SKOR! Shorts: video/tahmin-ligi/<anahtar>.json → Gemini TTS + hareketli avatar videosu.
+# Çıktı tahmin-ligi-cikti dalına; yayinla=true ise ozel_video.yml ile her yerde paylaşılır.
+name: Tahmin Ligi
+on:
+  workflow_dispatch:
+    inputs:
+      bilgi: {description: "video/tahmin-ligi/<anahtar>.json", type: string, required: true}
+      yayinla: {type: boolean, default: false}
+permissions:
+  contents: write
+  actions: write
+  id-token: write
+jobs:
+  uret:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - id: vx
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1001418254189/locations/global/workloadIdentityPools/github/providers/github-oidc
+          service_account: vertex-github@hadi-yuru-ses.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
+      - run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          pip install -q pillow
+      - env:
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TTS_MODEL: gemini-3.8-flash-tts
+        run: python scripts/tahmin_ligi.py "${{ inputs.bilgi }}" /tmp/cikti
+      - name: Dala koy
+        run: |
+          cd /tmp/cikti && git init -q && git checkout -q -b tahmin-ligi-cikti && git add dikey.mp4 sade.mp4
+          git -c user.name=bot -c user.email=noreply@anthropic.com commit -qm "${{ inputs.bilgi }}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" tahmin-ligi-cikti
+      - if: inputs.yayinla
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          b=$(python -c "import json;print(json.load(open('${{ inputs.bilgi }}'))['yt_baslik'])")
+          gh workflow run ozel_video.yml --ref main -f dal=tahmin-ligi-cikti -f bilgi="${{ inputs.bilgi }}" -f yt_baslik="$b"
