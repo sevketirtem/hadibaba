@@ -26,12 +26,15 @@ jobs:
       - name: Araçlar
         run: |
           which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
-          pip install -q faster-whisper numpy yt-dlp
+          pip install -q faster-whisper numpy yt-dlp gdown
       - name: İndir
         run: |
           u="${{ inputs.url }}"
-          if [[ "$u" == *.mp4 ]]; then curl -sSL "$u" -o /tmp/yayin.mp4; else
-            yt-dlp -f "bv*[height<=720][ext=mp4]+ba[ext=m4a]/b[height<=720]/b" --merge-output-format mp4 -o /tmp/yayin.mp4 "$u" 2>&1 | tail -5; fi
+          if [[ "$u" == *drive.google.com* ]]; then gdown --fuzzy "$u" -O /tmp/indirilen 2>&1 | tail -2; ffmpeg -v error -y -i /tmp/indirilen -c copy /tmp/yayin.mp4 || mv /tmp/indirilen /tmp/yayin.mp4
+          elif [[ "$u" == *.mp4* ]]; then curl -sSL "$u" -o /tmp/yayin.mp4
+          else
+            yt-dlp -f "bv*[height<=720][ext=mp4]+ba[ext=m4a]/b[height<=720]/b" --merge-output-format mp4 -o /tmp/yayin.mp4 "$u" > /tmp/ytdlp.log 2>&1 || { echo "::error title=YouTube indirme::$(tail -3 /tmp/ytdlp.log | tr '\n' ' ' | cut -c1-400)"; exit 1; }
+          fi
           ls -la /tmp/yayin.mp4 && ffprobe -v error -show_entries format=duration -of csv=p=0 /tmp/yayin.mp4
       - name: Kesitler
         env:
