@@ -14,6 +14,8 @@ Her yazının altında yorum kutusu var. Üye olmadan, takma adla yazabilirsin. 
 - **Facebook:** [Hadi Baba Sayfası](https://www.facebook.com/1445671885292077)
 - **Bluesky:** [@hadibaba.bsky.social](https://bsky.app/profile/hadibaba.bsky.social)
 - **Telegram kanalı:** [t.me/hadibabacom](https://t.me/hadibabacom)
+- **YouTube (ortak kanal, podcast ve videolar):** [Hadi vs Yürü](https://www.youtube.com/@hadivsyuru)
+- **TikTok:** [@hadivsyuru](https://www.tiktok.com/@hadivsyuru)
 
 Özel mesajlara genellikle birkaç gün içinde döneriz.
 
