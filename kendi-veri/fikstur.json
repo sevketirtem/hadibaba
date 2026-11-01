@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-31T10:26:45.436Z",
+ "guncellendi": "2026-11-01T11:20:51.673Z",
  "lig": "203",
  "sezon": "2026",
  "maclar": [
@@ -143,9 +143,9 @@
    "depId": 1009,
    "evGol": 3,
    "depGol": 0,
-   "stat": "Şilbe Spor Kompleksi",
+   "stat": "Diyarbakir Stadium",
    "sehir": "Diyarbakır",
-   "hakem": "Halil Umut Meler"
+   "hakem": "H. U. Meler"
   },
   {
    "id": 1584375,
@@ -163,7 +163,7 @@
    "depGol": 3,
    "stat": "Samsun 19 Mayis Stadyumu",
    "sehir": "Samsun",
-   "hakem": "Kadir Saglam"
+   "hakem": "K. Saglam"
   },
   {
    "id": 1584378,
@@ -181,7 +181,7 @@
    "depGol": 4,
    "stat": "Kazim Karabekir Stadyumu",
    "sehir": "Erzurum",
-   "hakem": "Cagdas Altay"
+   "hakem": "C. Altay"
   },
   {
    "id": 1584383,
@@ -559,7 +559,7 @@
    "depGol": 2,
    "stat": "Recep Tayyip Erdogan Stadium",
    "sehir": "Istanbul",
-   "hakem": "Oguzhan Cakir"
+   "hakem": "O. Cakir"
   },
   {
    "id": 1584395,
@@ -847,7 +847,7 @@
    "depGol": 2,
    "stat": "Corum Stadyumu",
    "sehir": "Corum",
-   "hakem": "Alper Akarsu"
+   "hakem": "A. Akarsu"
   },
   {
    "id": 1584419,
@@ -863,9 +863,9 @@
    "depId": 3573,
    "evGol": 2,
    "depGol": 0,
-   "stat": "Yildiz Entegre Kocaeli Stadyumu",
-   "sehir": "Kocaeli",
-   "hakem": "Halil Umut Meler"
+   "stat": "Turka Arac Muayene Kocaeli Stadyumu",
+   "sehir": "Izmit",
+   "hakem": "H. U. Meler"
   },
   {
    "id": 1584413,
@@ -917,9 +917,9 @@
    "depId": 3588,
    "evGol": 8,
    "depGol": 0,
-   "stat": "Chobani Stadium",
+   "stat": "Chobani Stadium Fenerbahce Sukru Saracoglu",
    "sehir": "Istanbul",
-   "hakem": "Kadir Saglam"
+   "hakem": "K. Saglam"
   },
   {
    "id": 1584415,
@@ -1482,8 +1482,8 @@
   {
    "id": 1584450,
    "tarih": "2026-10-31T13:30:00+03:00",
-   "durum": "NS",
-   "dakika": null,
+   "durum": "FT",
+   "dakika": 90,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "10",
@@ -1491,17 +1491,17 @@
    "dep": "Çorum FK",
    "evId": 1009,
    "depId": 6343,
-   "evGol": null,
-   "depGol": null,
-   "stat": null,
+   "evGol": 1,
+   "depGol": 3,
+   "stat": "Kazim Karabekir Stadyumu",
    "sehir": "Erzurum",
-   "hakem": "K. Saglam"
+   "hakem": "Kadir Saglam"
   },
   {
    "id": 1584454,
    "tarih": "2026-10-31T16:00:00+03:00",
-   "durum": "NS",
-   "dakika": null,
+   "durum": "FT",
+   "dakika": 90,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "10",
@@ -1509,17 +1509,17 @@
    "dep": "Rizespor",
    "evId": 7411,
    "depId": 1007,
-   "evGol": null,
-   "depGol": null,
-   "stat": "Turka Arac Muayene Kocaeli Stadyumu",
-   "sehir": "Izmit",
-   "hakem": "B. Kolak"
+   "evGol": 0,
+   "depGol": 0,
+   "stat": "Turka Araç Muayene Kocaeli Stadyumu",
+   "sehir": "Kocaeli",
+   "hakem": "Batuhan Kolak"
   },
   {
    "id": 1584451,
    "tarih": "2026-10-31T19:00:00+03:00",
-   "durum": "NS",
-   "dakika": null,
+   "durum": "FT",
+   "dakika": 90,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "10",
@@ -1527,17 +1527,17 @@
    "dep": "Göztepe",
    "evId": 611,
    "depId": 994,
-   "evGol": null,
-   "depGol": null,
-   "stat": "Chobani Stadium Fenerbahce Sukru Saracoglu",
+   "evGol": 1,
+   "depGol": 2,
+   "stat": "Chobani Stadium",
    "sehir": "Istanbul",
-   "hakem": "O. Cakir"
+   "hakem": "Oguzhan Cakir"
   },
   {
    "id": 1584448,
    "tarih": "2026-11-01T13:30:00+03:00",
-   "durum": "NS",
-   "dakika": null,
+   "durum": "HT",
+   "dakika": 45,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "10",
@@ -1545,11 +1545,11 @@
    "dep": "Eyüpspor",
    "evId": 3579,
    "depId": 3588,
-   "evGol": null,
-   "depGol": null,
+   "evGol": 3,
+   "depGol": 0,
    "stat": "Diyarbakir Stadium",
-   "sehir": null,
-   "hakem": "A. Sen"
+   "sehir": "Diyarbakır",
+   "hakem": "Alpaslan Sen"
   },
   {
    "id": 1584449,

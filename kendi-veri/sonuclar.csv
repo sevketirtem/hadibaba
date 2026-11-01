@@ -81,9 +81,9 @@ tarih,hafta,ev,dep,ev_gol,dep_gol,durum,id
 2026-10-26 19:00,9,Rizespor,Trabzonspor,3,4,bitti,1584446
 2026-10-26 21:30,9,Galatasaray,Fenerbahçe,2,1,bitti,1584442
 2026-10-30 20:00,10,Konyaspor,Galatasaray,0,4,bitti,1584455
-2026-10-31 13:30,10,Erzurumspor FK,Çorum FK,,,,1584450
-2026-10-31 16:00,10,Kocaelispor,Rizespor,,,,1584454
-2026-10-31 19:00,10,Fenerbahçe,Göztepe,,,,1584451
+2026-10-31 13:30,10,Erzurumspor FK,Çorum FK,1,3,bitti,1584450
+2026-10-31 16:00,10,Kocaelispor,Rizespor,0,0,bitti,1584454
+2026-10-31 19:00,10,Fenerbahçe,Göztepe,1,2,bitti,1584451
 2026-11-01 13:30,10,Amed,Eyüpspor,,,,1584448
 2026-11-01 16:00,10,Başakşehir,Samsunspor,,,,1584449
 2026-11-01 16:00,10,Trabzonspor,Gaziantep FK,,,,1584456
