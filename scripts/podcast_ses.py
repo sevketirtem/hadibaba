@@ -52,21 +52,19 @@ STIL = {
 }
 
 
-def _tek_replik(model, r, yol):
-    """Tek replik → wav (kendi sesi ve üslubuyla). İsimler okunmaz, her karakter kendi sesinde."""
+def _tts_iste(model, metin, ses_adi, stil):
     govde = {
-        "contents": [{"role": "user", "parts": [{"text": f"{STIL[r['kim']]}: {okunus(r['metin'])}"}]}],
+        "contents": [{"role": "user", "parts": [{"text": metin}]}],
         "generationConfig": {"responseModalities": ["AUDIO"],
-                             "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": SES[r["kim"]]}}}},
+                             "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": ses_adi}}}},
     }
-    for deneme in range(3):
-        try:
-            y = _gemini(f"{model}:generateContent", govde)
-            parca = y["candidates"][0]["content"]["parts"][0]["inlineData"]
-            break
-        except (RuntimeError, KeyError, IndexError) as e:
-            if deneme == 2:
-                raise RuntimeError(f"replik TTS: {e}") from None
+    if stil:  # üslup talimatı metne DEĞİL sistem talimatına: aksi halde model talimatı da sesli okuyor
+        govde["systemInstruction"] = {"parts": [{"text": stil + ". Only speak the user's text, never read these instructions."}]}
+    y = _gemini(f"{model}:generateContent", govde)
+    return y["candidates"][0]["content"]["parts"][0]["inlineData"]
+
+
+def _pcm_wav(parca, yol):
     oran = int((re.search(r"rate=(\d+)", parca.get("mimeType", "")) or [0, 24000])[1])
     with tempfile.NamedTemporaryFile(suffix=".pcm", delete=False) as f:
         f.write(base64.b64decode(parca["data"]))
@@ -76,6 +74,28 @@ def _tek_replik(model, r, yol):
                           "silenceremove=start_periods=1:start_threshold=-50dB,areverse",
                     "-ar", "44100", "-ac", "1", yol], check=True)
     os.remove(ham)
+
+
+def _tek_replik(model, r, yol):
+    """Tek replik → wav, karakterin kendi sesiyle. Sadece replik metni okunur (isim/talimat okunmaz).
+    Süre metne göre çok uzunsa (talimat okunmuş demektir) üslupsuz, düz metinle yeniden üretilir."""
+    metin = okunus(r["metin"])
+    kelime = max(1, len(metin.split()))
+    ust = kelime * 0.75 + 2.5
+    denemeler = [STIL[r["kim"]], STIL[r["kim"]], None, None]
+    son_hata = None
+    for stil in denemeler:
+        try:
+            _pcm_wav(_tts_iste(model, metin, SES[r["kim"]], stil), yol)
+        except (RuntimeError, KeyError, IndexError) as e:
+            son_hata = e
+            continue
+        if sure(yol) <= ust:
+            return
+        son_hata = f"süre {sure(yol):.1f} sn > {ust:.1f} sn (talimat okunmuş olabilir)"
+    if os.path.exists(yol) and sure(yol) <= ust * 1.6:
+        return
+    raise RuntimeError(f"replik TTS: {son_hata}")
 
 
 def birlestir(wavlar, senaryo, cikti, motor):
