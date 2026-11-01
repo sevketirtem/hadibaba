@@ -9,15 +9,15 @@
   "replikler": [
     {
       "kim": "hadi",
-      "metin": "Ahali merhaba! Hadi vs Yürü'ye hoş geldiniz! Kasım geldi, ben hazırım!"
+      "metin": "Ahali merhaba! Hadi vs Yürü'ye hoş geldiniz! Kasım geldi, ben hazırım! Yürü, sen hazır mısın, yoksa yine uyuyor musun?"
     },
     {
       "kim": "yuru",
-      "metin": "Ben de hazırım. Kasım'da şampiyon olunmaz ama olsun, başlayalım."
+      "metin": "Uyumuyorum, düşünüyorum. Senin için ikisi aynı şey, biliyorum. Kasım'da şampiyon olunmaz ama olsun, başlayalım."
     },
     {
       "kim": "hadi",
-      "metin": "Ama önce manşet! Ben söylemek zorundayım: Yürü, Fenerbahçe Göztepe maçını tam skor bildi. Bire iki!",
+      "metin": "Ama önce manşet! Ah be, söylemek zorundayım... Yürü, Fenerbahçe Göztepe maçını tam skor bildi. Bire iki! Of of!",
       "duygu": "uzgun"
     },
     {
@@ -31,11 +31,11 @@
     },
     {
       "kim": "hadi",
-      "metin": "Ben üçe bir demiştim, ne skor ne sonuç! Tamam, kabul ediyorum, bu hafta senin haftan baba!"
+      "metin": "Ben üçe bir demiştim, ne skor ne sonuç! Tamam, kabul ediyorum, bu hafta senin haftan baba! Ama şımarma!"
     },
     {
       "kim": "yuru",
-      "metin": "Tam skor üç puan. Tahmin ligi şimdi Yürü üç, Hadi iki. Manşet bu, gerisi detay.",
+      "metin": "Şımarmıyorum, hesaplıyorum. Tahmin ligi şimdi Yürü üç, Hadi iki. Manşet bu, gerisi detay.",
       "duygu": "sevinc"
     },
     {
@@ -84,7 +84,7 @@
     },
     {
       "kim": "hadi",
-      "metin": "Ben Galatasaray'ı doğru okudum, galibiyet tahmini bir puan getirdi! Rahmetli heyecan yok burada!"
+      "metin": "Ben Galatasaray'ı doğru okudum, galibiyet tahmini bir puan getirdi! Bir puan da puandır baba!"
     },
     {
       "kim": "yuru",
@@ -124,11 +124,11 @@
     },
     {
       "kim": "hadi",
-      "metin": "Hesapla maç kazanılmıyor, yürekle kazanılıyor! Beşiktaş deplasmanda alır baba! Bu cümleyi her hafta başka takımın şampiyonluğu için kuruyorsun, farkındasın değil mi?"
+      "metin": "Hesapla maç kazanılmıyor, yürekle kazanılıyor! Beşiktaş deplasmanda alır baba!"
     },
     {
       "kim": "yuru",
-      "metin": "Yürekle puan alınıyor ama gol de atmak lazım. İki takımın hücumu da kanıt istiyor. Beşiktaş'ın da Kasımpaşa'nın da hücumu bu akşam kanıt vermek zorunda."
+      "metin": "Bu cümleyi her hafta başka bir takım için kuruyorsun, farkında mısın? Yürek güzel ama gol de atmak lazım. Beşiktaş'ın da Kasımpaşa'nın da hücumu bu akşam kanıt vermek zorunda."
     },
     {
       "kim": "hadi",
@@ -140,7 +140,7 @@
     },
     {
       "kim": "hadi",
-      "metin": "Kopyacı dedim ama sevdim seni. Yine de akşam Beşiktaş kazanırsa bana bir tezahürat borçlusun!"
+      "metin": "Kopyacı demiyorum ama... neyse, sevdim seni yine de! Akşam Beşiktaş kazanırsa bana bir tezahürat borçlusun!"
     },
     {
       "kim": "yuru",
@@ -152,7 +152,7 @@
     },
     {
       "kim": "yuru",
-      "metin": "Görürüz baba."
+      "metin": "Görürüz baba. Hadi, mikrofonu bırak artık."
     }
   ]
 }
