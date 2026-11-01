@@ -46,66 +46,81 @@ def tts_modeli():
     return adlar[0]
 
 
-def gemini_ses(senaryo, cikti):
-    model = tts_modeli()
-    satirlar = "\n".join(f"{AD[r['kim']]}: {okunus(r['metin'])}" for r in senaryo["replikler"])
-    metin = ("Aşağıdaki Türkçe futbol podcast'ini iki kişi seslendirsin. "
-             "Hadi: coşkulu taraftar; hızlı, enerjik, gülerek ve ünlemle konuşur. "
-             "Yürü: alaycı abi; sakin, ağır, kuru ve iğneleyici konuşur, acele etmez.\n\n" + satirlar)
+STIL = {
+    "hadi": "Say in Turkish as an excited, fast, joyful football fan who laughs and shouts with enthusiasm",
+    "yuru": "Say in Turkish slowly and calmly, in a dry, deadpan, sarcastic tone, like an unimpressed older brother",
+}
+
+
+def _tek_replik(model, r, yol):
+    """Tek replik → wav (kendi sesi ve üslubuyla). İsimler okunmaz, her karakter kendi sesinde."""
     govde = {
-        "contents": [{"parts": [{"text": metin}]}],
-        "generationConfig": {
-            "responseModalities": ["AUDIO"],
-            "speechConfig": {"multiSpeakerVoiceConfig": {"speakerVoiceConfigs": [
-                {"speaker": AD[k], "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": SES[k]}}}
-                for k in ("hadi", "yuru")]}},
-        },
+        "contents": [{"role": "user", "parts": [{"text": f"{STIL[r['kim']]}: {okunus(r['metin'])}"}]}],
+        "generationConfig": {"responseModalities": ["AUDIO"],
+                             "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": SES[r["kim"]]}}}},
     }
-    try:
-        y = _gemini(f"{model}:generateContent", govde)
-    except RuntimeError as e:
-        if "speech_metadata" not in str(e):
-            raise
-        # Yeni modeller: her replik ayrı parça + konuşmacı bilgisi; üslup sistem talimatında
-        govde["systemInstruction"] = {"parts": [{"text": metin.split("\n\n")[0]}]}
-        govde["contents"] = [{"parts": [{"text": okunus(r["metin"]), "speechMetadata": {"speaker": AD[r["kim"]]}}
-                                        for r in senaryo["replikler"]]}]
+    for deneme in range(3):
         try:
             y = _gemini(f"{model}:generateContent", govde)
-        except RuntimeError as e2:
-            if "HTTP 400" not in str(e2):
-                raise
-            govde.pop("systemInstruction")  # bazı modeller sistem talimatı kabul etmiyor
-            y = _gemini(f"{model}:generateContent", govde)
-    parca = y["candidates"][0]["content"]["parts"][0]["inlineData"]
+            parca = y["candidates"][0]["content"]["parts"][0]["inlineData"]
+            break
+        except (RuntimeError, KeyError, IndexError) as e:
+            if deneme == 2:
+                raise RuntimeError(f"replik TTS: {e}") from None
     oran = int((re.search(r"rate=(\d+)", parca.get("mimeType", "")) or [0, 24000])[1])
     with tempfile.NamedTemporaryFile(suffix=".pcm", delete=False) as f:
         f.write(base64.b64decode(parca["data"]))
         ham = f.name
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "s16le", "-ar", str(oran), "-ac", "1", "-i", ham,
-                    "-af", "loudnorm=I=-16:TP=-1.5", "-ar", "44100", "-b:a", "128k", cikti], check=True)
+                    "-af", "silenceremove=start_periods=1:start_threshold=-50dB,areverse,"
+                          "silenceremove=start_periods=1:start_threshold=-50dB,areverse",
+                    "-ar", "44100", "-ac", "1", yol], check=True)
     os.remove(ham)
-    notice("Podcast sesi", f"{os.path.basename(cikti)} (Gemini {model}, {SES['hadi']}/{SES['yuru']})")
+
+
+def birlestir(wavlar, senaryo, cikti, motor):
+    """Replik seslerini 0,35 sn araliklarla birleştirir; replik zamanlarını <çıktı>.zaman.json'a yazar."""
+    d = tempfile.mkdtemp()
+    sus = os.path.join(d, "sus.wav")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono",
+                    "-t", "0.35", sus], check=True)
+    liste = os.path.join(d, "liste.txt")
+    zaman, t = [], 0.0
+    with open(liste, "w") as lf:
+        for w, r in zip(wavlar, senaryo["replikler"]):
+            sn = sure(w)
+            zaman.append({"kim": r["kim"], "bas": round(t, 3), "son": round(t + sn, 3), "metin": r["metin"],
+                          "duygu": r.get("duygu")})
+            t += sn + 0.35
+            lf.write(f"file '{w}'\nfile '{sus}'\n")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", liste,
+                    "-af", "loudnorm=I=-16:TP=-1.5", "-ar", "44100", "-b:a", "128k", cikti], check=True)
+    json.dump(zaman, open(cikti + ".zaman.json", "w"), ensure_ascii=False)
+    notice("Podcast sesi", f"{os.path.basename(cikti)} ({motor}; {len(wavlar)} replik, replik replik)")
+
+
+def gemini_ses(senaryo, cikti):
+    model = tts_modeli()
+    d = tempfile.mkdtemp()
+    from concurrent.futures import ThreadPoolExecutor
+    wavlar = [os.path.join(d, f"{i:03d}.wav") for i in range(len(senaryo["replikler"]))]
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        list(ex.map(lambda ir: _tek_replik(model, ir[1], wavlar[ir[0]]), enumerate(senaryo["replikler"])))
+    birlestir(wavlar, senaryo, cikti, f"Gemini {model}, {SES['hadi']}/{SES['yuru']}")
 
 
 def google_ses(senaryo, cikti):
     import seslendir
     d = tempfile.mkdtemp()
-    liste = os.path.join(d, "liste.txt")
-    sus = os.path.join(d, "sus.wav")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono",
-                    "-t", "0.35", sus], check=True)
-    with open(liste, "w") as lf:
-        for i, r in enumerate(senaryo["replikler"]):
-            wav = seslendir.seslendir(r["metin"], r["kim"], os.path.join(d, f"{i:03d}.mp3"))
-            if not wav:
-                raise RuntimeError("GOOGLE_TTS_KEY yok")
-            norm = os.path.join(d, f"{i:03d}n.wav")
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-ac", "1", "-ar", "44100", norm], check=True)
-            lf.write(f"file '{norm}'\nfile '{sus}'\n")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", liste,
-                    "-af", "loudnorm=I=-16:TP=-1.5", "-ar", "44100", "-b:a", "128k", cikti], check=True)
-    notice("Podcast sesi", f"{os.path.basename(cikti)} (Google Chirp3-HD)")
+    wavlar = []
+    for i, r in enumerate(senaryo["replikler"]):
+        wav = seslendir.seslendir(r["metin"], r["kim"], os.path.join(d, f"{i:03d}.mp3"))
+        if not wav:
+            raise RuntimeError("GOOGLE_TTS_KEY yok")
+        norm = os.path.join(d, f"{i:03d}n.wav")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-ac", "1", "-ar", "44100", norm], check=True)
+        wavlar.append(norm)
+    birlestir(wavlar, senaryo, cikti, "Google Chirp3-HD")
 
 
 def sure(yol):

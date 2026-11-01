@@ -18,6 +18,10 @@ on:
         description: "Bölüm zaten varsa yeniden üret"
         type: boolean
         default: false
+      youtube_yok:
+        description: "Bölümü üret ama YouTube'a yükleme (önizleme için)"
+        type: boolean
+        default: false
       sadece_youtube:
         description: "Yalnızca var olan bölümün videosunu YouTube'a yükle"
         type: boolean
@@ -158,7 +162,7 @@ jobs:
           gh release download "podcast-${{ steps.sec.outputs.tarih }}" -p "hadi-vs-yuru-${{ steps.sec.outputs.tarih }}.mp4" -O /tmp/b/video.mp4
 
       - name: YouTube'a yükle
-        if: steps.sec.outputs.uret == 'true' || inputs.sadece_youtube
+        if: (steps.sec.outputs.uret == 'true' && !inputs.youtube_yok) || inputs.sadece_youtube
         continue-on-error: true
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
