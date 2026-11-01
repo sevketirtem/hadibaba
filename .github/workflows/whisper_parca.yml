@@ -7,6 +7,7 @@ on:
       bas: {type: string, default: "0"}
       son: {type: string, default: "40"}
       ipucu: {description: "Beklenen sözler (ipucu)", type: string, default: ""}
+      dil: {description: "tr veya bos (otomatik)", type: string, default: "tr"}
 jobs:
   w:
     runs-on: ubuntu-latest
@@ -15,11 +16,15 @@ jobs:
       - run: |
           which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
           pip install -q faster-whisper numpy
-          git fetch -q --depth 1 origin muzik-cikti && git show "FETCH_HEAD:${{ inputs.dosya }}" > /tmp/s.wav
+          D="${{ inputs.dosya }}"
+          if [[ "$D" == *"::"* ]]; then gh release download "${D%%::*}" -p "${D##*::}" -O /tmp/s.wav; else git fetch -q --depth 1 origin muzik-cikti && git show "FETCH_HEAD:$D" > /tmp/s.wav; fi
+        env:
+          GH_TOKEN: ${{ github.token }}
       - env:
           BAS: ${{ inputs.bas }}
           SON: ${{ inputs.son }}
           IPUCU: ${{ inputs.ipucu }}
+          DIL: ${{ inputs.dil }}
         run: |
           python - <<'PY'
           import os, subprocess, numpy as np
@@ -29,7 +34,7 @@ jobs:
           ses = np.frombuffer(ham, np.int16).astype(np.float32) / 32768.0
           for ad in ("medium",):
               m = WhisperModel(ad, device="cpu", compute_type="int8")
-              segs, _ = m.transcribe(ses, language="tr", word_timestamps=True, vad_filter=False, beam_size=5, initial_prompt=os.environ["IPUCU"] or None)
+              segs, _ = m.transcribe(ses, language=(os.environ.get("DIL") or None), word_timestamps=True, vad_filter=False, beam_size=5, initial_prompt=os.environ["IPUCU"] or None)
               k = []
               for sg in segs:
                   k += [f"{w.word.strip()}@{w.start + b:.1f}" for w in (sg.words or [])]
