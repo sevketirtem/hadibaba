@@ -23,7 +23,7 @@ jobs:
         id: al
         run: |
           git fetch -q --depth 1 origin "${{ inputs.dal }}"
-          mkdir -p /tmp/v && for f in dikey sade yatay; do git show "FETCH_HEAD:$f.mp4" > /tmp/v/$f.mp4 || true; done
+          mkdir -p /tmp/v && for f in dikey sade yatay; do git show "FETCH_HEAD:$f.mp4" > /tmp/v/$f.mp4 2>/dev/null || rm -f /tmp/v/$f.mp4; [ -s /tmp/v/$f.mp4 ] || rm -f /tmp/v/$f.mp4; done
           ls -la /tmp/v
           a=$(python -c "import json;print(json.load(open('${{ inputs.bilgi }}'))['tarih'])")
           echo "anahtar=$a" >> "$GITHUB_OUTPUT"
