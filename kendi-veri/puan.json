@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-01T11:20:51.993Z",
+ "guncellendi": "2026-11-02T12:34:36.845Z",
  "sezon": "2026",
  "lig": "203",
  "tablo": [
@@ -21,46 +21,60 @@
    "sira": 2,
    "takim": "Amed",
    "id": 3579,
-   "o": 9,
-   "g": 6,
+   "o": 10,
+   "g": 7,
    "b": 2,
    "m": 1,
-   "a": 20,
-   "y": 10,
-   "av": 10,
-   "p": 20,
-   "form": "WWDWW"
+   "a": 25,
+   "y": 11,
+   "av": 14,
+   "p": 23,
+   "form": "WWWDW"
   },
   {
    "sira": 3,
    "takim": "Trabzonspor",
    "id": 998,
-   "o": 9,
-   "g": 6,
+   "o": 10,
+   "g": 7,
    "b": 1,
    "m": 2,
-   "a": 22,
+   "a": 24,
    "y": 8,
-   "av": 14,
-   "p": 19,
-   "form": "WWWWL"
+   "av": 16,
+   "p": 22,
+   "form": "WWWWW"
   },
   {
    "sira": 4,
    "takim": "Beşiktaş",
    "id": 549,
-   "o": 9,
+   "o": 10,
    "g": 6,
-   "b": 0,
+   "b": 1,
    "m": 3,
-   "a": 18,
-   "y": 10,
+   "a": 20,
+   "y": 12,
    "av": 8,
-   "p": 18,
-   "form": "WLWLW"
+   "p": 19,
+   "form": "DWLWL"
   },
   {
    "sira": 5,
+   "takim": "Kasımpaşa",
+   "id": 1004,
+   "o": 10,
+   "g": 4,
+   "b": 5,
+   "m": 1,
+   "a": 15,
+   "y": 11,
+   "av": 4,
+   "p": 17,
+   "form": "DWWLD"
+  },
+  {
+   "sira": 6,
    "takim": "Fenerbahçe",
    "id": 611,
    "o": 10,
@@ -74,7 +88,7 @@
    "form": "LLWWW"
   },
   {
-   "sira": 6,
+   "sira": 7,
    "takim": "Çorum FK",
    "id": 6343,
    "o": 10,
@@ -86,20 +100,6 @@
    "av": 5,
    "p": 16,
    "form": "WLWWL"
-  },
-  {
-   "sira": 7,
-   "takim": "Kasımpaşa",
-   "id": 1004,
-   "o": 9,
-   "g": 4,
-   "b": 4,
-   "m": 1,
-   "a": 13,
-   "y": 9,
-   "av": 4,
-   "p": 16,
-   "form": "WWLDW"
   },
   {
    "sira": 8,
@@ -131,6 +131,20 @@
   },
   {
    "sira": 10,
+   "takim": "Başakşehir",
+   "id": 564,
+   "o": 10,
+   "g": 4,
+   "b": 2,
+   "m": 4,
+   "a": 17,
+   "y": 16,
+   "av": 1,
+   "p": 14,
+   "form": "WLWDW"
+  },
+  {
+   "sira": 11,
    "takim": "Erzurumspor FK",
    "id": 1009,
    "o": 10,
@@ -144,7 +158,7 @@
    "form": "LWWDW"
   },
   {
-   "sira": 11,
+   "sira": 12,
    "takim": "Alanyaspor",
    "id": 996,
    "o": 9,
@@ -156,20 +170,6 @@
    "av": -2,
    "p": 12,
    "form": "LLDWD"
-  },
-  {
-   "sira": 12,
-   "takim": "Başakşehir",
-   "id": 564,
-   "o": 9,
-   "g": 3,
-   "b": 2,
-   "m": 4,
-   "a": 12,
-   "y": 14,
-   "av": -2,
-   "p": 11,
-   "form": "LWDWL"
   },
   {
    "sira": 13,
@@ -187,20 +187,6 @@
   },
   {
    "sira": 14,
-   "takim": "Gaziantep FK",
-   "id": 3573,
-   "o": 9,
-   "g": 2,
-   "b": 2,
-   "m": 5,
-   "a": 9,
-   "y": 15,
-   "av": -6,
-   "p": 8,
-   "form": "LLLLD"
-  },
-  {
-   "sira": 15,
    "takim": "Konyaspor",
    "id": 607,
    "o": 10,
@@ -212,6 +198,20 @@
    "av": -7,
    "p": 8,
    "form": "LWLDD"
+  },
+  {
+   "sira": 15,
+   "takim": "Gaziantep FK",
+   "id": 3573,
+   "o": 10,
+   "g": 2,
+   "b": 2,
+   "m": 6,
+   "a": 9,
+   "y": 17,
+   "av": -8,
+   "p": 8,
+   "form": "LLLLL"
   },
   {
    "sira": 16,
@@ -231,13 +231,13 @@
    "sira": 17,
    "takim": "Samsunspor",
    "id": 3603,
-   "o": 9,
+   "o": 10,
    "g": 1,
    "b": 1,
-   "m": 7,
-   "a": 8,
-   "y": 21,
-   "av": -13,
+   "m": 8,
+   "a": 10,
+   "y": 26,
+   "av": -16,
    "p": 4,
    "form": "LLLLL"
   },
@@ -245,13 +245,13 @@
    "sira": 18,
    "takim": "Eyüpspor",
    "id": 3588,
-   "o": 9,
+   "o": 10,
    "g": 1,
    "b": 0,
-   "m": 8,
-   "a": 2,
-   "y": 23,
-   "av": -21,
+   "m": 9,
+   "a": 3,
+   "y": 28,
+   "av": -25,
    "p": 3,
    "form": "LLLLL"
   }
