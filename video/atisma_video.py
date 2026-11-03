@@ -340,13 +340,31 @@ def sure_olc(dosya):
     return float(r.stdout.strip())
 
 
+def kurmanci_ses(m, yol):
+    """"dil": "ku" mesajı: Google Cloud TTS'te Kürtçe ses yok → Gemini TTS (Vertex) düz metin.
+    Olmazsa None döner, Türkçe sesle okunur (video yine çıkar)."""
+    try:
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
+        import gapi, podcast_ses
+        if not gapi.var_mi():
+            return None
+        podcast_ses._tek_replik(podcast_ses.tts_modeli(), m, yol)
+        print(f"::notice title=Kurmancî ses::{m['kim']}: Gemini TTS")
+        return yol
+    except Exception as e:  # noqa: BLE001
+        print(f"::warning title=Kurmancî ses::Gemini olmadı, Türkçe sesle okunacak: {str(e)[:200]}")
+        return None
+
+
 def zamanla(s, klasor):
     """Mesajları seslendirir (anahtar varsa) ve başlangıç sürelerini ses uzunluğuna göre hesaplar."""
     import seslendir
     t = 2.2
     for i, m in enumerate(s["mesajlar"]):
         m["bas"] = t
-        dosya = seslendir.seslendir(m.get("ses") or m["metin"], m["kim"], f"{klasor}/m{i}.mp3")
+        dosya = kurmanci_ses(m, f"{klasor}/m{i}.wav") if m.get("dil") == "ku" else None
+        if not dosya:
+            dosya = seslendir.seslendir(m.get("ses") or m["metin"], m["kim"], f"{klasor}/m{i}.mp3")
         if dosya:
             m["ses_dosyasi"] = dosya
             uzunluk = sure_olc(dosya)

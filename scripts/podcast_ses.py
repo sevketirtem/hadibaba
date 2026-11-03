@@ -88,11 +88,18 @@ def _pcm_wav(parca, yol):
 def _tek_replik(model, r, yol):
     """Tek replik → wav, karakterin kendi sesiyle. Sadece replik metni okunur (isim/talimat okunmaz).
     Üslup yönetmen notuyla verilir; süre metne göre çok uzunsa (not okunmuş demektir) yeniden, son çare düz metin."""
-    metin = okunus(r["metin"])
-    kelime = max(1, len(metin.split()))
-    ust = kelime * 0.6 + 2.0
-    yon = yonetmen(r["kim"], metin, r.get("duygu"))
-    denemeler = [yon, yon, yon, None]
+    if r.get("dil") == "ku":
+        # Kurmancî replik: düz metin (kurtce_dene.yml, 3 Kasım: düz metin 9/10, yönetmen notu 5–6/10).
+        # Türkçe skor okunuşu uygulanmaz; skorları yazıyla yaz (ör. "du-yek").
+        metin = r["metin"]
+        denemeler = [None, None]
+        ust = 0
+    else:
+        metin = okunus(r["metin"])
+        kelime = max(1, len(metin.split()))
+        ust = kelime * 0.6 + 2.0
+        yon = yonetmen(r["kim"], metin, r.get("duygu"))
+        denemeler = [yon, yon, yon, None]
     son_hata = None
     for istem in denemeler:
         try:

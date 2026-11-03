@@ -27,6 +27,7 @@ on:
 permissions:
   contents: write
   actions: write
+  id-token: write  # Vertex (Kurmancî replikler için Gemini TTS)
 
 concurrency:
   group: video
@@ -38,6 +39,16 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+
+      # Kurmancî ("dil": "ku") mesajlar Gemini TTS ile okunur (Vertex deneme kredisi, anahtarsız)
+      - id: vx
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1001418254189/locations/global/workloadIdentityPools/github/providers/github-oidc
+          service_account: vertex-github@hadi-yuru-ses.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
 
       - name: Senaryoyu seç
         id: sec
@@ -62,6 +73,8 @@ jobs:
         if: steps.sec.outputs.uret == 'true'
         env:
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
+          GEMINI_TTS_MODEL: gemini-3.8-flash-tts
           ATISMA_SADE_CIKTI: /tmp/atisma-tiktok.mp4  # alan adı yazısız kopya (TikTok)
         run: |
           mkdir -p static/video
