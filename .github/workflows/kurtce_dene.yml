@@ -1,0 +1,29 @@
+name: Kurmancî TTS denemesi
+on:
+  workflow_dispatch:
+  push:
+    branches: ["kurtce-dene"]
+permissions:
+  contents: write
+  id-token: write
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: vx
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1001418254189/locations/global/workloadIdentityPools/github/providers/github-oidc
+          service_account: vertex-github@hadi-yuru-ses.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
+      - run: which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - env:
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/kurtce_dene.py
+      - run: |
+          cd kurtce-dene && git init -q && git checkout -q -b kurtce-dene-cikti && git add . && git -c user.name=bot -c user.email=bot@x commit -qm dene
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" kurtce-dene-cikti
