@@ -1,0 +1,17 @@
+{
+  "tarih": "ornek",
+  "seri_no": 0,
+  "konu": "Kasımpaşa 2-2 Beşiktaş",
+  "alt": "Süper Lig · 10. hafta",
+  "kz_baslik": "Футбол айтысы · dombra düellosu",
+  "kitalar": [
+    {"kim": "hadi", "satirlar": ["İki sıfır öndeydik, sesim göğe çıktı,", "Vlahovic attı, tribün yerinden kalktı,", "Kırk yedide dedim ki bu iş bitti,", "Yürü sus otur, bu sezon başka baba!"]},
+    {"kim": "yuru", "satirlar": ["Seksen yedide kafa geldi, sesin nereye gitti?", "Bire bir dedim, sonuç tuttu, hesap bitti,", "Pembe gözlüğün kırk dakika iyi gösterdi,", "Dört ikiyim tabloda, görürüz baba."]},
+    {"kim": "hadi", "satirlar": ["Bir puan aldın diye taç mı giydin başına?", "Sezon uzun, otuz dört hafta var daha,", "Gençlerbirliği maçı geliyor pazara,", "Tam skoru ben vuracağım, yaparız baba!"]},
+    {"kim": "yuru", "satirlar": ["Hissettin, hissettin, hep böyle hissettin,", "Rakama bakmadan şampiyon seçtin,", "Ben doksan dakika izlerim, sonra yazarım,", "Hesap makinesi bende, yürü baba."]}
+  ],
+  "nakarat": ["Hadi vs Yürü, dombra çalsın,", "Sen de tahminini yorumlara yaz!"],
+  "aciklama": "🎻⚽ FUTBOL AYTISI · ÖRNEK DOSYA (yayınlanmaz; biçim için).",
+  "yt_ek": "Seri: #FutbolAytısı",
+  "yt_baslik": "Örnek"
+}

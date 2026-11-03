@@ -395,6 +395,12 @@ def main():
         p.wait()
     sesdosya = cikti + ".ses.m4a"
     efektler(s, sure, sesdosya)
+    try:  # kısık dombra fonu (marka sesi; dosya yoksa atlanır, hata asıl sesi bozmaz)
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
+        import dombra
+        dombra.bindir("fon", sesdosya)
+    except Exception as e:  # noqa: BLE001
+        print(f"Dombra fonu eklenemedi: {e}")
     for _, hedef in hedefler:
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", hedef + ".video.mp4", "-i", sesdosya,
                         "-c:v", "copy", "-c:a", "copy", "-shortest", "-movflags", "+faststart", hedef], check=True)

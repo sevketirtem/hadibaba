@@ -159,6 +159,11 @@ def main():
     os.makedirs(klasor, exist_ok=True)
     tmp = tempfile.mkdtemp()
     ses, zaman = ses_uret(bilgi, tmp)
+    try:  # başta kısa dombra tıngırtısı (marka sesi)
+        import dombra
+        dombra.bindir("sting", ses)
+    except Exception as e:  # noqa: BLE001
+        print(f"::warning title=Dombra::{e}")
     dikey = os.path.join(klasor, "dikey.mp4")
     render(bilgi, ses, zaman, dikey)
     shutil.copy(dikey, os.path.join(klasor, "sade.mp4"))

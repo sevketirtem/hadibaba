@@ -1,0 +1,41 @@
+# Dombra marka sesi: Lyria 3.5 ile adaylar üretir, Whisper (vokal yok mu) + Gemini (dinleyip puanlar) ile seçer,
+# giris/sting/kapanis/fon parçalarını assets/ses/'e koyar. Podcast, Tahmin Ligi, atışma videosu ve Futbol Aytısı kullanır.
+name: Dombra jingle
+on:
+  workflow_dispatch:
+    inputs:
+      adet: {description: "Kaç Lyria adayı", type: string, default: "3"}
+permissions:
+  id-token: write
+  contents: write
+jobs:
+  j:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - id: vx
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1001418254189/locations/global/workloadIdentityPools/github/providers/github-oidc
+          service_account: vertex-github@hadi-yuru-ses.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
+      - run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          pip install -q faster-whisper numpy
+      - env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
+        run: |
+          mkdir -p /tmp/d
+          for i in $(seq 1 ${{ inputs.adet }}); do python scripts/lyria_muzik.py muzik/dombra-jingle.txt "/tmp/d/aday-$i.wav" || true; done
+          ls -la /tmp/d
+          python scripts/dombra.py sec /tmp/d/*
+      - name: Kaydet
+        run: |
+          git config user.name "Claude (Hadi-Yürü ekibi)"; git config user.email "noreply@anthropic.com"
+          git add assets/ses/dombra-*.mp3
+          git commit -qm "Dombra marka sesi (Lyria) [skip ci]" || exit 0
+          git pull -q --rebase origin main && git push -q origin main

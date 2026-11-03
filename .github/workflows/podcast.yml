@@ -101,6 +101,7 @@ jobs:
           mkdir -p /tmp/b
           python scripts/podcast_ses.py "${{ steps.sec.outputs.dosya }}" /tmp/b/ses.mp3 gemini \
             || python scripts/podcast_ses.py "${{ steps.sec.outputs.dosya }}" /tmp/b/ses.mp3 google
+          python scripts/dombra.py podcast /tmp/b/ses.mp3 || true
 
       - name: Sahne görselleri (Gemini)
         if: steps.sec.outputs.uret == 'true'
