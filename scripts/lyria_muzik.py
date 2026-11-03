@@ -33,18 +33,31 @@ def ses_bul(o):
 
 def main():
     istem, cikti = open(sys.argv[1], encoding="utf-8").read(), sys.argv[2]
-    model = os.environ.get("LYRIA_MODEL") or "lyria-3.5"
-    govde = {"model": model, "input": istem}
-    if cikti.endswith(".wav"):
-        govde["response_format"] = {"type": "audio", "mime_type": "audio/wav"}
-    try:
-        y = istek("interactions", govde)
-    except RuntimeError as e:
-        if "response_format" in str(e) and "response_format" in govde:
-            del govde["response_format"]
-            y = istek("interactions", govde)
-        else:
-            raise
+    # Vertex (deneme kredisi) Lyria 3.5'i Interactions'ta desteklemiyor → Lyria 3 Pro (vokal + söz, 3 dk'ya kadar).
+    modeller = [m for m in (os.environ.get("LYRIA_MODEL"), "lyria-3.5", "lyria-3-pro-preview") if m]
+    son_hata = None
+    for model in dict.fromkeys(modeller):
+        for bicim in (("liste", "metin") if "preview" in model else ("metin", "liste")):
+            govde = {"model": model, "input": istem if bicim == "metin" else [{"type": "text", "text": istem}]}
+            if cikti.endswith(".wav"):
+                govde["response_format"] = {"type": "audio", "mime_type": "audio/wav"}
+            try:
+                try:
+                    y = istek("interactions", govde)
+                except RuntimeError as e:
+                    if "response_format" not in str(e):
+                        raise
+                    del govde["response_format"]
+                    y = istek("interactions", govde)
+                break
+            except RuntimeError as e:
+                son_hata = e
+                print(f"::warning title=Lyria {model} ({bicim})::{str(e)[:300]}", flush=True)
+                y = None
+        if y is not None:
+            break
+    if y is None:
+        raise son_hata
     kimlik = y.get("id")
     for _ in range(90):
         if y.get("status") in ("completed", "failed", "cancelled") or ses_bul(y.get("steps")):
