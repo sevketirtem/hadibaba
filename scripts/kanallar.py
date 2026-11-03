@@ -15,6 +15,8 @@ TIKTOK = "https://www.tiktok.com/@hadivsyuru"
 
 def uzun():
     return "\n".join([
+        "🔮 Okur Kâhini: Maçtan önce skor tahminini YouTube yorumlarına yaz (ör. 2-1). Tam bilenin YouTube adını Hadi ile Yürü bir sonraki videoda anar! Burada bahis yok, sadece futbol ve laf var.",
+        "",
         "📢 Bizi takip et",
         f"🎧 Podcast (Spotify): {SPOTIFY}",
         f"▶️ YouTube: {YOUTUBE}",
