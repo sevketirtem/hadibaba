@@ -39,7 +39,7 @@ def istem(b):
         "with a short dombra riff between verses. Two clearly different voices: "
         + SES_TARIFI["hadi"] + "; " + SES_TARIFI["yuru"] + ". "
         "Each verse is sung ONLY by the singer named in its tag. Lyrics are in Turkish; pronounce them clearly in Turkish. "
-        "Use exactly these lyrics, in this order, do not add, repeat or drop any words. Original melody, do not quote any "
+        "These are fictional cartoon characters, not real people. Use exactly these lyrics, in this order, do not add, repeat or drop any words. Original melody, do not quote any "
         "existing song. No real club anthems. Total length about 60 to 80 seconds, end with one final dombra strum.\n\n"
         + "\n\n".join(parcalar))
 
