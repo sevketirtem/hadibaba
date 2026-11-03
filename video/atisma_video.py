@@ -356,22 +356,27 @@ def kurmanci_ses(m, yol):
         return None
 
 
+def gemini_ses(m, yol):
+    """Tüm seslendirme YALNIZCA Gemini TTS ile (sahibinin kararı, 3 Kasım: Google Chirp sesi kötü).
+    Başarısız olursa yedek ses KULLANILMAZ; hata verir, video yayınlanmaz."""
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
+    import gapi, podcast_ses
+    if not gapi.var_mi():
+        raise RuntimeError("Gemini TTS erişimi yok (Vertex/GEMINI_API_KEY); yedek ses kullanılmıyor")
+    podcast_ses._tek_replik(podcast_ses.tts_modeli(), m, yol)
+    return yol
+
+
 def zamanla(s, klasor):
-    """Mesajları seslendirir (anahtar varsa) ve başlangıç sürelerini ses uzunluğuna göre hesaplar."""
-    import seslendir
+    """Mesajları Gemini TTS ile seslendirir ve başlangıç sürelerini ses uzunluğuna göre hesaplar."""
     t = 2.2
     for i, m in enumerate(s["mesajlar"]):
         m["bas"] = t
-        dosya = kurmanci_ses(m, f"{klasor}/m{i}.wav") if m.get("dil") == "ku" else None
-        if not dosya:
-            dosya = seslendir.seslendir(m.get("ses") or m["metin"], m["kim"], f"{klasor}/m{i}.mp3")
-        if dosya:
-            m["ses_dosyasi"] = dosya
-            uzunluk = sure_olc(dosya)
-            m["sure"] = uzunluk + 0.35
-            t += max(3.2, uzunluk + 0.9)
-        else:
-            t += 4.0
+        dosya = gemini_ses(m, f"{klasor}/m{i}.wav")
+        m["ses_dosyasi"] = dosya
+        uzunluk = sure_olc(dosya)
+        m["sure"] = uzunluk + 0.35
+        t += max(3.2, uzunluk + 0.9)
     b = s["bitis_karti"]
     b["bas"] = t + 0.1
     # Bitiş kartında imza sözleri: önce Hadi, sonra Yürü
@@ -380,10 +385,9 @@ def zamanla(s, klasor):
     son = b["bas"] + 1.6
     b["sozler"] = []
     for kim in ("hadi", "yuru"):
-        dosya = seslendir.seslendir(b[f"{kim}_soz"], kim, f"{klasor}/soz_{kim}.mp3")
-        if dosya:
-            b["sozler"].append({"kim": kim, "bas": son, "dosya": dosya})
-            son += sure_olc(dosya) + 0.35
+        dosya = gemini_ses({"kim": kim, "metin": b[f"{kim}_soz"]}, f"{klasor}/soz_{kim}.wav")
+        b["sozler"].append({"kim": kim, "bas": son, "dosya": dosya})
+        son += sure_olc(dosya) + 0.35
     s["sure"] = round(max(b["bas"] + 4.2, son + 1.2), 2)
     return s
 

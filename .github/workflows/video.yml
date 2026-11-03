@@ -72,7 +72,6 @@ jobs:
       - name: Videoyu üret
         if: steps.sec.outputs.uret == 'true'
         env:
-          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
           GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
           GEMINI_TTS_MODEL: gemini-3.8-flash-tts
           ATISMA_SADE_CIKTI: /tmp/atisma-tiktok.mp4  # alan adı yazısız kopya (TikTok)

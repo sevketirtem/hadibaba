@@ -96,11 +96,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
           GEMINI_TTS_MODEL: gemini-3.8-flash-tts
-          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
         run: |
           mkdir -p /tmp/b
-          python scripts/podcast_ses.py "${{ steps.sec.outputs.dosya }}" /tmp/b/ses.mp3 gemini \
-            || python scripts/podcast_ses.py "${{ steps.sec.outputs.dosya }}" /tmp/b/ses.mp3 google
+          python scripts/podcast_ses.py "${{ steps.sec.outputs.dosya }}" /tmp/b/ses.mp3 gemini
           python scripts/dombra.py podcast /tmp/b/ses.mp3 || true
 
       - name: Sahne görselleri (Gemini)
