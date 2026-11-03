@@ -34,7 +34,7 @@ def ses_bul(o):
 def main():
     istem, cikti = open(sys.argv[1], encoding="utf-8").read(), sys.argv[2]
     # Vertex (deneme kredisi) Lyria 3.5'i Interactions'ta desteklemiyor → Lyria 3 Pro (vokal + söz, 3 dk'ya kadar).
-    modeller = [m for m in (os.environ.get("LYRIA_MODEL"), "lyria-3.5", "lyria-3-pro-preview") if m]
+    modeller = [m for m in (os.environ.get("LYRIA_MODEL"), "lyria-3-pro-preview", "lyria-3.5") if m]
     son_hata = None
     for model in dict.fromkeys(modeller):
         for bicim in (("liste", "metin") if "preview" in model else ("metin", "liste")):
