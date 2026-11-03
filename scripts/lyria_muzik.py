@@ -39,7 +39,7 @@ def main():
     for model in dict.fromkeys(modeller):
         for bicim in (("liste", "metin") if "preview" in model else ("metin", "liste")):
             govde = {"model": model, "input": istem if bicim == "metin" else [{"type": "text", "text": istem}]}
-            if cikti.endswith(".wav"):
+            if cikti.endswith(".wav") and "preview" not in model:
                 govde["response_format"] = {"type": "audio", "mime_type": "audio/wav"}
             try:
                 try:
