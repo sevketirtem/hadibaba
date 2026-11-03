@@ -20,28 +20,27 @@ from hareketli_avatar import HareketliAvatar  # noqa: E402
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ESIK_IYI, ESIK_MIN, MAKS_SN = 0.50, 0.30, 95.0
 
-SES_TARIFI = {
-    "hadi": "HADİ: a bright, excited, high-energy male tenor, almost shouting with joy",
-    "yuru": "YÜRÜ: a dry, calm, deadpan low male baritone, sarcastic and slow",
-}
+SES = {"hadi": "a bright, excited, high-energy male tenor", "yuru": "a dry, calm, deadpan low male baritone"}
 
 
 def istem(b):
-    parcalar = []
+    # Not: Lyria 3 Pro, köşeli etiketlerde karakter adı görünce istemi reddedebiliyor → etiketler adsız,
+    # kim söyleyecek talimatta kıta numarasıyla verilir.
+    parcalar, atama = [], []
     for i, k in enumerate(b["kitalar"], 1):
-        parcalar.append(f"[Verse {i} - {AD[k['kim']]}]\n" + "\n".join(k["satirlar"]))
+        parcalar.append(f"[Verse {i}]\n" + "\n".join(k["satirlar"]))
+        atama.append(f"verse {i}: {SES[k['kim']]}")
     if b.get("nakarat"):
-        parcalar.append("[Final - both together]\n" + "\n".join(b["nakarat"]))
+        parcalar.append("[Outro]\n" + "\n".join(b["nakarat"]))
+        atama.append("outro: both voices together")
     return (
-        "Kazakh aitys-style musical duel: two male singers take turns, each answering the other with a witty rhymed "
-        "verse, accompanied by a solo Kazakh dombra (fast bright strumming, steppe kui feel) and a light frame drum. "
-        "Playful, teasing, energetic, about 112 BPM. Short dombra intro of at most 3 seconds, then the verses back to back "
-        "with a short dombra riff between verses. Two clearly different voices: "
-        + SES_TARIFI["hadi"] + "; " + SES_TARIFI["yuru"] + ". "
-        "Each verse is sung ONLY by the singer named in its tag. Lyrics are in Turkish; pronounce them clearly in Turkish. "
-        "These are fictional cartoon characters, not real people. Use exactly these lyrics, in this order, do not add, repeat or drop any words. Original melody, do not quote any "
-        "existing song. No real club anthems. Total length about 60 to 80 seconds, end with one final dombra strum.\n\n"
-        + "\n\n".join(parcalar))
+        "Kazakh folk song in the style of a playful sung duel between two friends: they take turns, each answering "
+        "the other with a witty rhymed verse, accompanied by a solo Kazakh dombra (fast bright strumming, steppe feel) "
+        "and a light frame drum. Cheerful, cheeky, energetic, about 112 BPM. Short dombra intro of at most 3 seconds, "
+        "then the verses back to back with a short dombra riff between verses. Two clearly different voices: "
+        + "; ".join(atama) + ". Lyrics are in Turkish; sing them clearly in Turkish. Use exactly these lyrics, in this "
+        "order, do not add, repeat or drop any words. Original melody. Total length about 60 to 80 seconds, end with "
+        "one final dombra strum.\n\n" + "\n\n".join(parcalar))
 
 
 def norm(s):
