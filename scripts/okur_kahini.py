@@ -176,6 +176,10 @@ def tara(ev, dep, skor, basla, gun=7):
     os.makedirs("okur-kahini", exist_ok=True)
     ad = re.sub(r"[^a-z0-9]+", "-", sade(f"{ev}-{dep}-{basla.date()}")).strip("-")
     yol = f"okur-kahini/{ad}.json"
+    if os.path.exists(yol):  # yeniden taramada "anildi" bilgisi kaybolmasın
+        eski = json.load(open(yol, encoding="utf-8"))
+        if "anildi" in eski:
+            sonuc["anildi"] = eski["anildi"]
     json.dump(sonuc, open(yol, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     adlar = ", ".join(b["ad"] for b in bilenler) or "kimse"
     notice("Okur kâhini", f"{ev} {skor} {dep}: {len(vids)} video, {len(son)} tahmin tarandı; tam bilen {len(bilenler)}: {adlar} → {yol}")
