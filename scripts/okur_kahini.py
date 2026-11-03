@@ -65,7 +65,29 @@ def tahmin_bul(metin, ev, dep):
     return a, b
 
 
+def anahtarla(yol, **p):
+    """Herkese açık veriyi API anahtarıyla okur (OAuth gerekmez)."""
+    p["key"] = os.environ["YOUTUBE_API_KEY"]
+    try:
+        with urllib.request.urlopen(API + yol + "?" + urllib.parse.urlencode(p), timeout=60) as r:
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"{yol}: HTTP {e.code} {e.read()[:300]!r}")
+
+
+def tani_anahtar(video="Ap9oWA9ykS0"):
+    try:
+        v = anahtarla("videos", part="snippet", id=video)["items"][0]["snippet"]
+        notice("Okur kâhini · anahtar/kanal", f"{v['channelTitle']} ({v['channelId']})")
+        y = anahtarla("commentThreads", part="snippet", videoId=video, maxResults=5)
+        notice("Okur kâhini · anahtarla yorum okuma", f"ÇALIŞIYOR — {len(y.get('items', []))} yorum")
+    except Exception as e:  # noqa: BLE001
+        notice("Okur kâhini · anahtarla yorum okuma", f"ÇALIŞMIYOR: {e}")
+
+
 def tani():
+    if os.environ.get("YOUTUBE_API_KEY"):
+        tani_anahtar()
     tok = anahtar()
     with urllib.request.urlopen(f"https://oauth2.googleapis.com/tokeninfo?access_token={tok}", timeout=30) as r:
         bilgi = json.loads(r.read())
