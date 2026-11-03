@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-02T12:34:37.140Z",
+ "guncellendi": "2026-11-03T12:00:25.532Z",
  "sezon": "2026",
  "gol": [
   {
@@ -413,6 +413,17 @@
   },
   {
    "sira": 18,
+   "oyuncu": "F. Tongya",
+   "takim": "Gençlerbirliği S.K.",
+   "mac": 10,
+   "dakika": 866,
+   "gol": 2,
+   "asist": 2,
+   "penalti": 0,
+   "sayi": 2
+  },
+  {
+   "sira": 19,
    "oyuncu": "Cláudio Winck",
    "takim": "Kasımpaşa",
    "mac": 10,
@@ -423,7 +434,7 @@
    "sayi": 2
   },
   {
-   "sira": 19,
+   "sira": 20,
    "oyuncu": "O. Kökçü",
    "takim": "Beşiktaş",
    "mac": 7,
@@ -431,17 +442,6 @@
    "gol": 2,
    "asist": 2,
    "penalti": 1,
-   "sayi": 2
-  },
-  {
-   "sira": 20,
-   "oyuncu": "M. Diomandé",
-   "takim": "Çorum FK",
-   "mac": 10,
-   "dakika": 682,
-   "gol": 1,
-   "asist": 2,
-   "penalti": 0,
    "sayi": 2
   }
  ]
