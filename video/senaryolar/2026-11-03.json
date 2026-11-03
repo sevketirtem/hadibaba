@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-03",
+  "mac": "Galatasaray – Amedspor",
+  "mac_alt": "11. hafta · Cumartesi 19.00",
+  "kanca": "Zirve düellosu, kim haklı?",
+  "tablo": "Tahmin ligi: Hadi 2 · Yürü 4",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Lider ikinciyle karşılaşıyor! Amedspor 1-2 alır baba!"},
+    {"kim": "yuru", "metin": "Fark iki puan. Evinde Galatasaray 2-1. Görürüz baba."},
+    {"kim": "hadi", "metin": "Hissediyorum, gol geliyor! Bu sezon başka baba!"},
+    {"kim": "yuru", "metin": "Kasım'da şampiyon olunmaz. Sakin ol baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "1-2", "yuru": "2-1",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Zirvede Galatasaray ile Amedspor karşı karşıya. Hadi 1-2, Yürü 2-1 diyor. Sen kimden yanasın?",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/galatasaray-amedspor-onu-hadi-1-2-yuru-2-1/",
+              "yuru": "https://yurubaba.com/2026/11/galatasaray-amedspor-onu-yuru-2-1/"}
+}
