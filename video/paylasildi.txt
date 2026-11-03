@@ -71,3 +71,10 @@ tahmin-ligi-1 instagram
 tahmin-ligi-1 threads
 tahmin-ligi-1 tiktok
 tahmin-ligi-1 youtube
+tahmin-ligi-2 telegram@hadibabacom
+tahmin-ligi-2 telegram@yurubaba
+tahmin-ligi-2 facebook
+tahmin-ligi-2 instagram
+tahmin-ligi-2 threads
+tahmin-ligi-2 tiktok
+tahmin-ligi-2 youtube
