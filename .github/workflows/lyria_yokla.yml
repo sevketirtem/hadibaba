@@ -26,12 +26,13 @@ jobs:
           b = json.load(open("video/aytis/ornek.json", encoding="utf-8"))
           tam = aytis.istem(b)
           talimat, sozler = tam.split("\n\n", 1)
-          deneme = {"talimat": talimat, "sozler": "Folk song with dombra. Lyrics:\n" + sozler}
-          deneme["tam"] = tam
+          deneme = {"etiketsiz": "Folk song with dombra. Lyrics:\n" + "\n".join(l for l in sozler.splitlines() if not l.startswith("["))}
+          for i, k in enumerate(b["kitalar"]):
+              deneme[f"kita{i}"] = "Folk song with dombra. Lyrics:\n" + "\n".join(k["satirlar"])
           for i, k in enumerate([]):
               for j, s in enumerate(k["satirlar"]):
                   deneme[f"k{i}s{j}"] = "Folk song with dombra. Lyrics:\n" + s
-          # deneme["nakarat"] = "Folk song with dombra. Lyrics:\n" + "\n".join(b["nakarat"])
+          deneme["nakarat"] = "Folk song with dombra. Lyrics:\n" + "\n".join(b["nakarat"])
           url = "https://aiplatform.googleapis.com/v1beta1/projects/hadi-yuru-ses/locations/global/interactions"
           for ad, metin in deneme.items():
               req = urllib.request.Request(url, data=json.dumps({"model": "lyria-3-pro-preview", "input": [{"type": "text", "text": metin}]}).encode(),
