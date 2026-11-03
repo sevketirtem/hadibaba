@@ -1,0 +1,35 @@
+name: Okur kâhini
+# YouTube yorumlarındaki skor tahminlerinden tam bilenleri bulur (yalnızca okur; yayın yapmaz).
+on:
+  workflow_dispatch:
+    inputs:
+      mod: {description: "tani ya da tara", default: tani}
+      ev: {description: "Ev sahibi (ör. Beşiktaş)", default: ""}
+      dep: {description: "Deplasman (ör. Gençlerbirliği)", default: ""}
+      skor: {description: "Maç skoru ev-dep (ör. 2-1)", default: ""}
+      basla: {description: "Başlama saati ISO (ör. 2026-11-08T21:00:00+03:00)", default: ""}
+      gun: {description: "Kaç gün geriye taransın", default: "7"}
+permissions:
+  contents: write
+concurrency: {group: okur-kahini, cancel-in-progress: false}
+jobs:
+  kahin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Çalıştır
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          if [ "${{ inputs.mod }}" = "tani" ]; then
+            python scripts/okur_kahini.py tani
+          else
+            python scripts/okur_kahini.py tara "${{ inputs.ev }}" "${{ inputs.dep }}" "${{ inputs.skor }}" "${{ inputs.basla }}" "${{ inputs.gun }}"
+          fi
+      - name: Sonucu kaydet
+        if: inputs.mod != 'tani'
+        run: |
+          git config user.name "Claude (Hadi-Yürü ekibi)"; git config user.email "noreply@anthropic.com"
+          git add okur-kahini/ && git commit -m "Okur kâhini: ${{ inputs.ev }} ${{ inputs.skor }} ${{ inputs.dep }} [skip ci]" && git push || echo "değişiklik yok"
