@@ -1,0 +1,16 @@
+{
+  "tarih": "2026-11-03-gs-stuttgart-sonu",
+  "mac": "Galatasaray 2-0 Stuttgart",
+  "mac_alt": "Şampiyonlar Ligi · 4. hafta",
+  "kanca": "Batrakov üç dakikada işi bitirdi",
+  "tablo": "Tahmin ligi: Hadi 3 · Yürü 4",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Batrakov on ikide, on beşte vurdu. Galatasaray Stuttgart'ı 2-0 yendi baba!"},
+    {"kim": "yuru", "metin": "Üç dakikada iki gol, sonra kapattılar. Ne 3-1 oldu ne 2-2 baba."},
+    {"kim": "hadi", "metin": "Galibiyeti bildim ya! Bir puan benim, hesap tutuyor baba!"},
+    {"kim": "yuru", "metin": "Bir puana bu kadar sevinme. Tablo Yürü dört, Hadi üç. Görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "SKOR 2-0", "hadi": "3-1", "yuru": "2-2",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Galatasaray Stuttgart'ı 2-0 yendi, iki golü de Batrakov attı. Hadi 3-1, Yürü 2-2 demişti. Sen kaç demiştin? Yoruma yaz!"
+}
