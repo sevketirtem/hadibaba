@@ -11,11 +11,16 @@ import html
 SPOTIFY = "https://open.spotify.com/show/63Xz9bgfflG26ysr8xr2fW"
 YOUTUBE = "https://www.youtube.com/@hadivsyuru"
 TIKTOK = "https://www.tiktok.com/@hadivsyuru"
+# Sinan'ın kanalı (canlı maç önü/sonu yayınları). Yeni yayın gelince yalnızca SINAN_YAYIN'ı değiştir.
+SINAN_KANAL = "https://www.youtube.com/channel/UCKzFD2DLKCZZdzwVl0szTOw"
+SINAN_YAYIN = "https://www.youtube.com/live/wWsKtOdMhIo"
 
 
 def uzun():
     return "\n".join([
         "🔮 Okur Kâhini: Maçtan önce skor tahminini YouTube yorumlarına yaz (ör. 2-1). Tam bilenin YouTube adını Hadi ile Yürü bir sonraki videoda anar! Burada bahis yok, sadece futbol ve laf var.",
+        "",
+        f"🔴 Canlı yayın: Sinan'la Futbol kanalında maç önü/sonu canlı sohbet. Son yayın: {SINAN_YAYIN} · Kanal: {SINAN_KANAL}",
         "",
         "📢 Bizi takip et",
         f"🎧 Podcast (Spotify): {SPOTIFY}",
@@ -28,7 +33,7 @@ def uzun():
 
 def telegram_html():
     a = lambda u, t: f'<a href="{html.escape(u, quote=True)}">{t}</a>'  # noqa: E731
-    return f"🎧 {a(SPOTIFY, 'Spotify')} · ▶️ {a(YOUTUBE, 'YouTube')} · 🎵 {a(TIKTOK, 'TikTok')}"
+    return f"🎧 {a(SPOTIFY, 'Spotify')} · ▶️ {a(YOUTUBE, 'YouTube')} · 🎵 {a(TIKTOK, 'TikTok')} · 🔴 {a(SINAN_KANAL, "Sinan'la Futbol canlı")}"
 
 
 def duz_kisa():
