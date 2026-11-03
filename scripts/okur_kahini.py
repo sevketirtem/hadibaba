@@ -6,7 +6,7 @@ Kullanım:
   python scripts/okur_kahini.py tara "<Ev>" "<Deplasman>" <ev_gol>-<dep_gol> <başlama, ISO, ör. 2026-11-08T21:00:00+03:00> [gün=7]
       Kanalın son <gün> günde yüklenen videolarının yorumlarını tarar. Maç BAŞLAMADAN önce yazılmış,
       skoru tam tutan yorumları bulur; okur-kahini/<ev>-<dep>-<tarih>.json dosyasına yazar.
-Ortam: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN.
+Ortam: tara → YOUTUBE_API_KEY (YouTube Data API v3'e izinli API anahtarı; herkese açık yorumları okur).\n      tani → ayrıca YOUTUBE_CLIENT_ID/SECRET/REFRESH_TOKEN (yalnızca izin kontrolü).
 
 Kurallar: bir yorumcu yalnızca bir kez sayılır (maçtan önceki SON tahmini geçerlidir; maçtan sonra yazılan/düzenlenen yorum sayılmaz).
 Yorumcunun adı yalnızca kanal adı (authorDisplayName) olarak saklanır; başka kişisel bilgi tutulmaz.
@@ -101,53 +101,73 @@ def tani():
         notice("Okur kâhini · yorum okuma", f"ÇALIŞMIYOR: {e}")
 
 
+def videolar(gun_sinir):
+    """Kanalın son yüklemeleri (yükleme listesi UU...). Kanal kimliği bilinen bir videodan bulunur."""
+    kanal = anahtarla("videos", part="snippet", id=os.environ.get("KANAL_ORNEK_VIDEO", "Ap9oWA9ykS0"))["items"][0]["snippet"]["channelId"]
+    liste, sayfa = [], None
+    while True:
+        p = dict(part="contentDetails", playlistId="UU" + kanal[2:], maxResults=50)
+        if sayfa:
+            p["pageToken"] = sayfa
+        r = anahtarla("playlistItems", **p)
+        for it in r.get("items", []):
+            yuk = zaman(it["contentDetails"].get("videoPublishedAt", "1970-01-01T00:00:00Z"))
+            if yuk < gun_sinir:
+                return liste
+            liste.append(it["contentDetails"]["videoId"])
+        sayfa = r.get("nextPageToken")
+        if not sayfa:
+            return liste
+
+
+def yorumlar(video):
+    sayfa = None
+    while True:
+        p = dict(part="snippet", videoId=video, maxResults=100, textFormat="plainText")
+        if sayfa:
+            p["pageToken"] = sayfa
+        try:
+            r = anahtarla("commentThreads", **p)
+        except RuntimeError as e:
+            if "commentsDisabled" in str(e):
+                return
+            raise
+        for it in r.get("items", []):
+            yield it["snippet"]["topLevelComment"]["snippet"], video
+        sayfa = r.get("nextPageToken")
+        if not sayfa:
+            return
+
+
 def tara(ev, dep, skor, basla, gun=7):
     hedef = tuple(int(x) for x in skor.split("-"))
     basla = zaman(basla)
-    tok = anahtar()
-    kanal = cagir(tok, "channels", part="id", mine="true")["items"][0]["id"]
     sinir = basla - dt.timedelta(days=gun)
-    bilenler, gorulen, toplam, sayfa = {}, set(), 0, None
-    while True:
-        p = dict(part="snippet", allThreadsRelatedToChannelId=kanal, maxResults=100, order="time")
-        if sayfa:
-            p["pageToken"] = sayfa
-        r = cagir(tok, "commentThreads", **p)
-        bitti = False
-        for it in r.get("items", []):
-            s = it["snippet"]["topLevelComment"]["snippet"]
+    son = {}  # kişi -> (zaman, tahmin, snippet, video): maçtan önceki SON tahmini
+    vids = videolar(sinir)
+    for v in vids:
+        for s, vid in yorumlar(v):
             yazildi = zaman(s["publishedAt"])
-            if yazildi < sinir:
-                bitti = True
-                break
-            if yazildi >= basla:
-                continue  # maç başladıktan sonra yazılan tahmin sayılmaz
-            if s.get("updatedAt") and zaman(s["updatedAt"]) >= basla:
-                continue  # maçtan sonra düzenlenmiş
-            kim = s.get("authorChannelId", {}).get("value") or s.get("authorDisplayName")
-            if kim in gorulen:
-                continue
+            if yazildi >= basla or (s.get("updatedAt") and zaman(s["updatedAt"]) >= basla):
+                continue  # maç başladıktan sonra yazılan/düzenlenen tahmin sayılmaz
             t = tahmin_bul(s.get("textOriginal") or s.get("textDisplay", ""), ev, dep)
             if t is None:
                 continue
-            gorulen.add(kim)
-            toplam += 1
-            if t == hedef:
-                bilenler[kim] = {"ad": s.get("authorDisplayName", "?"), "yorum": (s.get("textOriginal") or "")[:200],
-                                 "zaman": s["publishedAt"], "video": it["snippet"].get("videoId")}
-        sayfa = r.get("nextPageToken")
-        if bitti or not sayfa:
-            break
-    # Yorumlar yeniden eskiye gelir: kişinin ilk görülen yorumu = maçtan önceki son tahmini.
-    sonuc = {"mac": f"{ev} - {dep}", "skor": skor, "basla": basla.isoformat(), "taranan_tahmin": toplam,
-             "bilenler": list(bilenler.values()),
+            kim = s.get("authorChannelId", {}).get("value") or s.get("authorDisplayName")
+            if kim not in son or yazildi > son[kim][0]:
+                son[kim] = (yazildi, t, s, vid)
+    bilenler = [{"ad": s.get("authorDisplayName", "?"), "yorum": (s.get("textOriginal") or "")[:200],
+                 "zaman": s["publishedAt"], "video": vid}
+                for (_, t, s, vid) in son.values() if t == hedef]
+    sonuc = {"mac": f"{ev} - {dep}", "skor": skor, "basla": basla.isoformat(), "taranan_video": len(vids),
+             "taranan_tahmin": len(son), "bilenler": bilenler,
              "not": "Kişi başı tek tahmin (maçtan önceki son yorumu). Maçtan sonra yazılan/düzenlenen yorum sayılmaz."}
     os.makedirs("okur-kahini", exist_ok=True)
     ad = re.sub(r"[^a-z0-9]+", "-", sade(f"{ev}-{dep}-{basla.date()}")).strip("-")
     yol = f"okur-kahini/{ad}.json"
     json.dump(sonuc, open(yol, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-    adlar = ", ".join(b["ad"] for b in sonuc["bilenler"]) or "kimse"
-    notice("Okur kâhini", f"{ev} {skor} {dep}: {toplam} tahmin tarandı, tam bilen {len(bilenler)}: {adlar} → {yol}")
+    adlar = ", ".join(b["ad"] for b in bilenler) or "kimse"
+    notice("Okur kâhini", f"{ev} {skor} {dep}: {len(vids)} video, {len(son)} tahmin tarandı; tam bilen {len(bilenler)}: {adlar} → {yol}")
 
 
 if __name__ == "__main__":
