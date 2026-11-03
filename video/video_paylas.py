@@ -35,7 +35,7 @@ def kaydet(anahtar):
 
 def metin(s, uzun=True):
     y = s.get("yazilar", {})
-    parcalar = [s.get("aciklama", s["mac"])]
+    parcalar = [s.get("aciklama") or s.get("mac") or s.get("konu", "")]
     if uzun and y:
         parcalar.append("\n".join(x for x in (
             f"🔥 Hadi: {y['hadi']}" if y.get("hadi") else "",
@@ -136,7 +136,7 @@ def main():
             k = None
         if k:
             calistir("facebook", lambda: facebook_video(k["page_token"], k["page_id"], video_url, metin(s) + "\n\n" + kanallar.uzun(),
-                                                        f"Hadi vs Yürü: {s['mac']}"))
+                                                        f"Hadi vs Yürü: {s.get('mac') or s.get('konu', '')}"))
             if k.get("ig_id"):
                 calistir("instagram", lambda: instagram_reels(k["page_token"], k["ig_id"], video_url, metin(s, uzun=False)))
     th = os.environ.get("THREADS_TOKEN")
@@ -147,7 +147,7 @@ def main():
         if tt_dosya and os.path.exists(tt_dosya):
             import tiktok_yukle
             # TikTok kuralı: API videosunun açıklamasında bağlantı/alan adı yok
-            tt_metin = f"{s.get('aciklama', s['mac'])} {ETIKETLER} #podcast"
+            tt_metin = f"{(s.get('aciklama') or s.get('mac') or s.get('konu', ''))} {ETIKETLER} #podcast"
             calistir("tiktok", lambda: tiktok_yukle.gonder(tt_dosya, tt_metin))
         elif f"{gun} tiktok" not in yapilan:
             notice("Video tiktok", "yazısız kopya yok (video bu çalıştırmada üretilmedi), atlandı")
