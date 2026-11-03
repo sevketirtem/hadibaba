@@ -99,13 +99,6 @@ aytis-1 instagram
 aytis-1 threads
 aytis-1 tiktok
 aytis-1 youtube
-2026-11-03-gs-stuttgart-sonu telegram@hadibabacom
-2026-11-03-gs-stuttgart-sonu telegram@yurubaba
-2026-11-03-gs-stuttgart-sonu facebook
-2026-11-03-gs-stuttgart-sonu instagram
-2026-11-03-gs-stuttgart-sonu threads
-2026-11-03-gs-stuttgart-sonu tiktok
-2026-11-03-gs-stuttgart-sonu youtube
 aytis-2 telegram@hadibabacom
 aytis-2 telegram@yurubaba
 aytis-2 facebook
