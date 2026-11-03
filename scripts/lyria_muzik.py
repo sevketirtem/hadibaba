@@ -45,7 +45,7 @@ def main():
                 try:
                     y = istek("interactions", govde)
                 except RuntimeError as e:
-                    if "response_format" not in str(e):
+                    if "response_format" not in str(e) and "bit_rate" not in str(e):
                         raise
                     del govde["response_format"]
                     y = istek("interactions", govde)
