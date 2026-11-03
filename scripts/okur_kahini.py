@@ -145,12 +145,23 @@ def tara(ev, dep, skor, basla, gun=7):
     sinir = basla - dt.timedelta(days=gun)
     son = {}  # kişi -> (zaman, tahmin, snippet, video): maçtan önceki SON tahmini
     vids = videolar(sinir)
+    e_ad, d_ad = sade(ev).split()[0], sade(dep).split()[0]
+    basliklar = {}
+    for i in range(0, len(vids), 50):
+        for it in anahtarla("videos", part="snippet", id=",".join(vids[i:i + 50])).get("items", []):
+            sn = it["snippet"]
+            basliklar[it["id"]] = sade(sn.get("title", "") + " " + sn.get("description", "")[:300])
     for v in vids:
+        video_bu_mac = e_ad in basliklar.get(v, "") or d_ad in basliklar.get(v, "")
         for s, vid in yorumlar(v):
             yazildi = zaman(s["publishedAt"])
             if yazildi >= basla or (s.get("updatedAt") and zaman(s["updatedAt"]) >= basla):
                 continue  # maç başladıktan sonra yazılan/düzenlenen tahmin sayılmaz
-            t = tahmin_bul(s.get("textOriginal") or s.get("textDisplay", ""), ev, dep)
+            metin = s.get("textOriginal") or s.get("textDisplay", "")
+            # Tahmin bu maça ait olmalı: yorumda takım adı geçmeli ya da video bu maçla ilgili olmalı
+            if not (video_bu_mac or e_ad in sade(metin) or d_ad in sade(metin)):
+                continue
+            t = tahmin_bul(metin, ev, dep)
             if t is None:
                 continue
             kim = s.get("authorChannelId", {}).get("value") or s.get("authorDisplayName")
