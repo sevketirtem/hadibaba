@@ -27,13 +27,14 @@ jobs:
           tam = aytis.istem(b)
           talimat, sozler = tam.split("\n\n", 1)
           deneme = {"talimat": talimat, "sozler": "Folk song with dombra. Lyrics:\n" + sozler}
-          for i, k in enumerate(b["kitalar"]):
+          deneme["tam"] = tam
+          for i, k in enumerate([]):
               for j, s in enumerate(k["satirlar"]):
                   deneme[f"k{i}s{j}"] = "Folk song with dombra. Lyrics:\n" + s
-          deneme["nakarat"] = "Folk song with dombra. Lyrics:\n" + "\n".join(b["nakarat"])
+          # deneme["nakarat"] = "Folk song with dombra. Lyrics:\n" + "\n".join(b["nakarat"])
           url = "https://aiplatform.googleapis.com/v1beta1/projects/hadi-yuru-ses/locations/global/interactions"
           for ad, metin in deneme.items():
-              req = urllib.request.Request(url, data=json.dumps({"model": "lyria-3-clip-preview", "input": [{"type": "text", "text": metin}]}).encode(),
+              req = urllib.request.Request(url, data=json.dumps({"model": "lyria-3-pro-preview", "input": [{"type": "text", "text": metin}]}).encode(),
                     headers={"Authorization": "Bearer " + os.environ["T"], "Content-Type": "application/json"})
               try:
                   urllib.request.urlopen(req, timeout=120).read(); s = "KABUL"
