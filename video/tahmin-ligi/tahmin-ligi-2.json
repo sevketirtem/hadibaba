@@ -1,0 +1,21 @@
+{
+  "tarih": "tahmin-ligi-2",
+  "seri_no": 2,
+  "mac": "Kasımpaşa - Beşiktaş",
+  "skor": "2-2",
+  "bilen": "yuru",
+  "etiket": "SONUÇ BİLDİ!",
+  "kart_ust": "YÜRÜ 1-1 DEDİ · BERABERLİĞİ BİLDİ",
+  "puan_etiket": "+1 PUAN",
+  "puan": {"yuru": 4, "hadi": 2},
+  "replikler": [
+    {"kim": "hadi", "duygu": "uzgun", "metin": "Tahmin Ligi'nde yine Yürü alarmı! Kasımpaşa Beşiktaş iki iki bitti, Yürü beraberliği bildi!"},
+    {"kim": "yuru", "duygu": "sevinc", "metin": "Kasımpaşa on altı, Beşiktaş on sekiz puandaydı. Fark küçüktü, ben de bire bir yazdım. Skor bir gol fazla geldi, sonuç tam yerinde."},
+    {"kim": "hadi", "metin": "Ben bire iki dedim, kırk yedinci dakikada haklıydım baba! Sonra iki kafa golü geldi, sesim gitti."},
+    {"kim": "yuru", "duygu": "sevinc", "metin": "Doğru sonuç bir puan. Yürü dört, Hadi iki. Pembe gözlük kırk dakika iyi gösteriyor, doksan dakika göstermiyor."},
+    {"kim": "hadi", "duygu": "sevinc", "metin": "Şımarma! Sıradaki maçta tam skoru ben vuracağım. Sen de tahminini yorumlara yaz!"}
+  ],
+  "aciklama": "🎯 TAHMİN LİGİ #2 · SONUÇ BİLDİ!\nYürü, Kasımpaşa-Beşiktaş maçına 1-1 dedi; maç 2-2 bitti, beraberlik tuttu ve +1 puan geldi. Beşiktaş 2-0 öndeydi, Kasımpaşa 60 ve 87'de iki kafa golüyle döndü. Hadi'nin 1-2'si ise 47. dakikada haklıydı, 87'de değil. 😅\n\nPuan durumu: Yürü 4 – Hadi 2\nSen de bu haftanın maçlarına skor tahminini yorumlara yaz! Burada bahis yok, sadece futbol ve laf var.",
+  "yt_ek": "Seri: #TahminLigi",
+  "yt_baslik": "Yürü Kasımpaşa-Beşiktaş beraberliğini bildi! 2-2 · Tahmin Ligi #2"
+}

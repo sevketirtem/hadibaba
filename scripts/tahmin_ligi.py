@@ -5,6 +5,7 @@ Girdi JSON:
   {"tarih": "tahmin-ligi-1", "seri_no": 1, "mac": "Fenerbahçe - Göztepe", "skor": "1-2", "bilen": "yuru",
    "puan": {"yuru": 3, "hadi": 2}, "replikler": [{"kim": "hadi", "metin": "...", "duygu": "uzgun"}, ...],
    "aciklama": "...", "yt_baslik": "..."}
+  İsteğe bağlı (sonuç bilindiğinde): "etiket": "SONUÇ BİLDİ!", "kart_ust": "YÜRÜ 1-1 DEDİ · BERABERLİK BİLDİ", "puan_etiket": "+1 PUAN"
 Ses: Gemini TTS (podcast_ses: yönetmen notu, Hadi coşkulu / Yürü alaycı). Görüntü: hareketli avatarlar + skor kartı.
 Çıktı: <klasör>/dikey.mp4 ve sade.mp4 (TikTok taslağı için aynı video).
 """
@@ -106,11 +107,12 @@ def render(bilgi, ses, zaman, cikti):
         d.text((W // 2, 105), f"TAHMİN LİGİ · #{bilgi.get('seri_no', 1)}", font=f(40), fill="white", anchor="mm")
         # TAM SKOR! — ilk 1 sn büyüyerek gelir, sonra hafif nabız
         olc = min(1.0, t / 0.6) * (1 + 0.04 * (1 + math.sin(t * 6)))
-        fs = max(10, int(118 * olc))
-        d.text((W // 2, 235), "TAM SKOR!", font=f(fs), fill=SARI, anchor="mm", stroke_width=6, stroke_fill=(20, 24, 40))
+        etiket = bilgi.get("etiket", "TAM SKOR!")
+        fs = max(10, int(118 * min(1.0, 9 / max(9, len(etiket))) * olc))
+        d.text((W // 2, 235), etiket, font=f(fs), fill=SARI, anchor="mm", stroke_width=6, stroke_fill=(20, 24, 40))
         # Skor kartı
         d.rounded_rectangle([90, 330, 990, 560], 30, fill=(255, 255, 255))
-        d.text((W // 2, 375), f"{AD[bilen]} BİLDİ", font=f(34), fill=RENK[bilen], anchor="mm")
+        d.text((W // 2, 375), bilgi.get("kart_ust", f"{AD[bilen]} BİLDİ"), font=f(34), fill=RENK[bilen], anchor="mm")
         d.text((250, 470), ev, font=f(44 if len(ev) < 12 else 34), fill=LACI, anchor="mm")
         d.text((830, 470), dep, font=f(44 if len(dep) < 12 else 34), fill=LACI, anchor="mm")
         d.text((W // 2, 470), f"{s1}-{s2}", font=f(96), fill=TURUNCU, anchor="mm")
@@ -125,7 +127,7 @@ def render(bilgi, ses, zaman, cikti):
             if yuz is not None:
                 im.alpha_composite(yuz, (cx - boy // 2, cy - boy // 2))
             if kim == bilen:
-                d.text((cx, cy - boy // 2 - 50), "+3 PUAN", font=f(40), fill=SARI, anchor="mm",
+                d.text((cx, cy - boy // 2 - 50), bilgi.get("puan_etiket", "+3 PUAN"), font=f(40), fill=SARI, anchor="mm",
                        stroke_width=4, stroke_fill=(20, 24, 40))
         # Altyazı
         if aktif is not None:
