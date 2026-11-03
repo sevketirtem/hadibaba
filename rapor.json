@@ -1,0 +1,67 @@
+[
+ {
+  "dosya": "kurtce-dene/hadi-yonetmen-Fenrir.wav",
+  "replik": "Silav hevalno! Vê şemiyê Amed li Stenbolê ye. Ez pir kêfxweş im, dilê min lê dixe! Werin em bi hev re temaşe bikin!",
+  "sure": 7.6,
+  "gemini": {
+   "duyulan": "Silav hevalno, vê şemiyê Amed li Stenbolê ye, ez pir kêfxweş im, dilê min lêtxo, werin em bi hev re temaşe bikin!",
+   "dil": "Kürtçe (Kurmancî)",
+   "kurmanci_puan": 5,
+   "turk_aksani": false,
+   "talimat_okundu": false,
+   "not": "Yabancı/robotik bir TTS sesi kullanılmış, Kürtçe sesletimi doğal değil; 'lê dixe' ifadesini 'lêtxo' şeklinde yanlış telaffuz ediyor."
+  }
+ },
+ {
+  "dosya": "kurtce-dene/hadi-duz-Fenrir.wav",
+  "replik": "Silav hevalno! Vê şemiyê Amed li Stenbolê ye. Ez pir kêfxweş im, dilê min lê dixe! Werin em bi hev re temaşe bikin!",
+  "sure": 8.2,
+  "gemini": {
+   "duyulan": "Slav hevalno! Vê şemiya Amed li Stenbolê ye. Ez pir kêfxweş im, dilê min lê dixe. Werin em pêvre temaşe bikin!",
+   "dil": "Kürtçe (Kurmancî)",
+   "kurmanci_puan": 9,
+   "turk_aksani": false,
+   "talimat_okundu": false,
+   "not": "Doğal ve akıcı bir Kurmancî telaffuzu var; 'bi hev re' yerine yöresel olarak 'pêvre' denmiş, 'vê şemiyê' yerine 'vê şemiya' telaffuz edilmiş."
+  }
+ },
+ {
+  "dosya": "kurtce-dene/yuru-yonetmen-Algenib.wav",
+  "replik": "Hêdî hêdî Hadî. Maç hê dest pê nekiriye, tu ji niha ve gol davêjî.",
+  "sure": 5.6,
+  "gemini": {
+   "duyulan": "Hêdî hêdî Hadî, maç hê dest pê nekiriye, tu ji niha ve gol davêjî.",
+   "dil": "Kürtçe (Kurmancca)",
+   "kurmanci_puan": 6,
+   "turk_aksani": true,
+   "talimat_okundu": false,
+   "not": "Metin eksiksiz ve anlaşılır okunmuş ancak telaffuzda belirgin bir yapay/aksanlı okuma tonu mevcut."
+  }
+ },
+ {
+  "dosya": "kurtce-dene/yuru-duz-Algenib.wav",
+  "replik": "Hêdî hêdî Hadî. Maç hê dest pê nekiriye, tu ji niha ve gol davêjî.",
+  "sure": 5.9,
+  "gemini": {
+   "duyulan": "Hêdî hêdî Hadî! Maç hê dest pê nekiriye, tu ji niha ve gol dedevêjî.",
+   "dil": "ku",
+   "kurmanci_puan": 9,
+   "turk_aksani": false,
+   "talimat_okundu": false,
+   "not": "Metindeki 'davêjî' yerine 'dedevêjî' denmiş, onun dışında telaffuz ve tonlama oldukça doğal."
+  }
+ },
+ {
+  "dosya": "kurtce-dene/hadi-karisik-yonetmen-Fenrir.wav",
+  "replik": "Yürü, bu akşam Amed taraftarına bir selam verelim mi? Silav li we be, Amedî! Bi xêr hatin!",
+  "sure": 7.3,
+  "gemini": {
+   "duyulan": "Yürü, bu akşam Amed taraftarına bir selam verelim mi? Silav li we be, Amedî! Bi xêr hatin!",
+   "dil": "Türkçe, Kurmancî",
+   "kurmanci_puan": 8,
+   "turk_aksani": false,
+   "talimat_okundu": false,
+   "not": "Kürtçe telaffuz ve tonlama oldukça anlaşılır ve doğaldır, metin eksiksiz okunmuştur."
+  }
+ }
+]
