@@ -135,10 +135,13 @@ def sure(yol):
 def render(b, muzik, bas, cikti):
     sat = satirlar(b)
     toplam = sure(muzik)
-    son = min(toplam, bas[-1] + 7.0, MAKS_SN)
+    # Uzun dombra girişini kırp: ilk sözden 2,5 sn önce başla (Shorts'ta ilk saniyeler önemli)
+    kay = max(0.0, bas[0] - 2.5)
+    bas = [x - kay for x in bas]
+    son = min(toplam - kay, bas[-1] + 7.0, MAKS_SN)
     ses = cikti + ".ses.m4a"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", muzik, "-t", f"{son:.2f}",
-                    "-af", f"afade=t=out:st={max(0, son - 2):.2f}:d=2,loudnorm=I=-14:TP=-1.5", "-c:a", "aac", "-b:a", "192k", ses],
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{kay:.2f}", "-i", muzik, "-t", f"{son:.2f}",
+                    "-af", f"afade=t=in:d=0.4,afade=t=out:st={max(0, son - 2):.2f}:d=2,loudnorm=I=-14:TP=-1.5", "-c:a", "aac", "-b:a", "192k", ses],
                    check=True)
     n = int(son * FPS)
     zarf = zarf_hesapla(ses, n)
