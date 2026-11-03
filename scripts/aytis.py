@@ -33,14 +33,16 @@ def istem(b):
     if b.get("nakarat"):
         parcalar.append("[Outro]\n" + "\n".join(b["nakarat"]))
         atama.append("outro: both voices together")
-    return (
+    giris = b.get("stil_istemi") or (
         "Kazakh folk song in the style of a playful sung duel between two friends: they take turns, each answering "
         "the other with a witty rhymed verse, accompanied by a solo Kazakh dombra (fast bright strumming, steppe feel) "
         "and a light frame drum. Cheerful, cheeky, energetic, about 112 BPM. Short dombra intro of at most 3 seconds, "
-        "then the verses back to back with a short dombra riff between verses. Two clearly different voices: "
+        "then the verses back to back with a short dombra riff between verses. ")
+    return (
+        giris + "Two clearly different voices: "
         + "; ".join(atama) + ". Lyrics are in Turkish; sing them clearly in Turkish. Use exactly these lyrics, in this "
         "order, do not add, repeat or drop any words. Original melody. Total length about 60 to 80 seconds, end with "
-        "one final dombra strum.\n\n" + "\n\n".join(parcalar))
+        "one final strum.\n\n" + "\n\n".join(parcalar))
 
 
 def norm(s):

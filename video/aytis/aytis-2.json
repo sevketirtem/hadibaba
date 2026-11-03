@@ -1,0 +1,34 @@
+{
+  "tarih": "aytis-2",
+  "seri_no": 2,
+  "konu": "Galatasaray 2-0 Stuttgart",
+  "alt": "Şampiyonlar Ligi · 4. hafta",
+  "kz_baslik": "Футбол айтысы · Rus ezgisi düellosu",
+  "stil_istemi": "Original Russian folk style song, a playful sung duel between two friends: they take turns, each answering the other with a witty rhymed verse, accompanied by a fast balalaika, a bright button accordion and a tambourine, clapping and a stomping beat. Cheerful, cheeky, energetic, accelerating, about 120 BPM, like a lively village dance. Short balalaika intro of at most 3 seconds, then the verses back to back with a short accordion riff between verses. ",
+  "kitalar": [
+    {"kim": "hadi", "satirlar": [
+      "Gece tribünler yandı,",
+      "On ikide ilk gol geldi,",
+      "On beşte yine vurdu,",
+      "İki sıfır, yaparız baba!"]},
+    {"kim": "yuru", "satirlar": [
+      "Üç dakikada iş bitti,",
+      "Sonra kimse kaleye gitmedi,",
+      "Ben iki iki yazmıştım,",
+      "Tutmadı, görürüz baba."]},
+    {"kim": "hadi", "satirlar": [
+      "Galibiyeti bildim ben,",
+      "Bir puanı cebe koydum,",
+      "Tam skor çıkmadı ama,",
+      "Sevinçten oynuyorum baba!"]},
+    {"kim": "yuru", "satirlar": [
+      "Bir puana kimse kasılmaz,",
+      "Tablo bende dört, sende üç,",
+      "Rövanşı sana bırakırım,",
+      "Hesap bende, görürüz baba."]}
+  ],
+  "nakarat": ["Hadi ile Yürü, çalsın akordeon,", "Sen de tahminini yorumlara yaz!"],
+  "aciklama": "🎻⚽ FUTBOL AYTISI #2 · Galatasaray 2-0 Stuttgart. Şampiyonlar Ligi'nde iki gol de ilk 15 dakikada geldi. Hadi 3-1, Yürü 2-2 demişti; bu sefer Rus halk ezgisi tarzında atışıyorlar! Sen kaç demiştin? Yoruma yaz.\n\nСлова наши, музыка и видео созданы искусственным интеллектом. Sözler bizim; müzik ve görüntüler yapay zekâ ile üretildi, karakterler hayalîdir. Burada bahis yok, sadece futbol ve laf var.",
+  "yt_ek": "Seri: #FutbolAytısı #aytıs #akordeon",
+  "yt_baslik": "Hadi vs Yürü Rus ezgisi düellosu: Galatasaray 2-0 Stuttgart · Futbol Aytısı #2"
+}
