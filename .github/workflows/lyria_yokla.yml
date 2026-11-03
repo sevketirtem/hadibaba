@@ -15,6 +15,7 @@ jobs:
           workload_identity_provider: projects/1001418254189/locations/global/workloadIdentityPools/github/providers/github-oidc
           service_account: vertex-github@hadi-yuru-ses.iam.gserviceaccount.com
           token_format: access_token
+      - run: pip install -q pillow numpy
       - env:
           T: ${{ steps.vx.outputs.access_token }}
         run: |
