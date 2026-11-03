@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-03-gs-stuttgart",
+  "mac": "Galatasaray – Stuttgart",
+  "mac_alt": "Şampiyonlar Ligi · Bu akşam 20.45",
+  "kanca": "Devler Ligi gecesi: 3-1 mi, 2-2 mi?",
+  "tablo": "Tahmin ligi: Hadi 2 · Yürü 4",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Bu akşam RAMS Park'ta Devler Ligi! Galatasaray 3-1 alır baba!"},
+    {"kim": "yuru", "metin": "Üç maçta dokuz gol yemiş savunma. Ben 2-2 diyorum. Görürüz baba."},
+    {"kim": "hadi", "metin": "Lille'de dört attık! Hissediyorum, gol geliyor! Yaparız baba!"},
+    {"kim": "yuru", "metin": "Stuttgart'ın yedi puanı var. Pembe gözlüğünü çıkar baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "3-1", "yuru": "2-2",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Galatasaray–Stuttgart bu akşam 20.45'te! Hadi 3-1, Yürü 2-2 diyor. Senin skor tahminin ne? Yoruma yaz!",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/galatasaray-stuttgart-onu-hadi-3-1/",
+              "yuru": "https://yurubaba.com/2026/11/galatasaray-stuttgart-onu-yuru-2-2/"}
+}
