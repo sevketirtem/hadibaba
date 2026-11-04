@@ -74,6 +74,13 @@ details summary{cursor:pointer;color:var(--soluk);font-size:13px;margin-top:6px}
 .soru button{background:#2b241a;color:#fff;padding:4px 10px;font-size:12px;margin-top:6px}
 .soru button.ikinci{background:#e6dac6;color:#2b241a}
 #odadetay{display:none}
+.harita.uc-boyut::after{display:none}
+.etiket3d{position:absolute;left:0;top:0;background:#fffaf2;border:1px solid #e2d6c2;border-radius:8px;padding:3px 8px;white-space:nowrap;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.etiket3d b{display:block;font-size:12.5px;color:#2b241a}
+.etiket3d small{display:block;font-size:10.5px;color:#8a7d68}
+.etiket3d small.calis{color:#d9731f;font-weight:700}.etiket3d small.hata{color:#d63c3c;font-weight:700}
+@media(max-width:700px){.etiket3d{padding:2px 5px}.etiket3d b{font-size:10px}.etiket3d small{font-size:8.5px}}
+.maliyet td{padding:5px 4px;border-top:1px solid var(--cizgi)}.maliyet{width:100%;border-collapse:collapse;font-size:14px}.maliyet td:last-child{text-align:right;white-space:nowrap}
 .canli{color:#d9731f;font-size:12px}
 </style>
 </head>
@@ -106,6 +113,17 @@ details summary{cursor:pointer;color:var(--soluk);font-size:13px;margin-top:6px}
     </div>
   </div>
 
+  <div class="kart"><h2>Maliyet (aylık)</h2>
+    <table class="maliyet">
+      <tr><td>Claude Pro</td><td>250 kr</td></tr>
+      <tr><td>Gemini AI Pro (öğrenci)</td><td>65 kr</td></tr>
+      <tr><td>API-Football Pro <span class="etiket">25 Kasım'da bitiyor</span></td><td>19 $ ≈ 210 kr</td></tr>
+      <tr><td>Vertex AI (Gemini API, Veo, Lyria) <span class="etiket">deneme kredisi, 28 Ocak 2027'ye kadar</span></td><td>0 kr</td></tr>
+      <tr><td>GitHub, Vercel, GoatCounter, Neon</td><td>0 kr</td></tr>
+      <tr><td><b>Toplam</b> <span class="etiket">Aralık'tan itibaren ≈ 315 kr</span></td><td><b>≈ 525 kr</b></td></tr>
+      <tr><td>Reklam geliri <span class="etiket">reklam henüz açık değil</span></td><td>0 kr</td></tr>
+    </table>
+  </div>
   <div class="kart"><h2>Takvim</h2><ul id="takvim"></ul></div>
 
   <div class="kart"><h2>İş akışları (son çalışma)</h2>
@@ -123,7 +141,7 @@ details summary{cursor:pointer;color:var(--soluk);font-size:13px;margin-top:6px}
       <li><span class="ad"><a href="https://console.cloud.google.com/billing">Google Cloud · Faturalandırma (Vertex kredisi)</a></span></li>
     </ul>
   </div>
-  <p class="alt">Veri GitHub'dan canlı okunur; ofis 5 dakikada bir kendini yeniler. Bu sayfa arama motorlarına kapalıdır.</p>
+  <p class="alt">Ofisi parmakla döndür, iki parmakla yakınlaştır; odaya ya da kediye dokun. Veri GitHub'dan canlı okunur, 5 dakikada bir yenilenir. Fikir: selmakcby/ajan-ofisi (kod özgündür). Bu sayfa arama motorlarına kapalıdır.</p>
 </main>
 <script>
 const SAHIP="sevketirtem", DEPOLAR=["hadibaba","yurubaba2027"], API="https://api.github.com";
@@ -376,11 +394,18 @@ function selamCiz(){
   $("s-metin").append("Bugün ajanlar ",b(is+" iş")," yaptı. Ofiste ",b(cal+" ajan")," koşuyor, ",b(uy+" ajan")," uyuyor",ha?el("span",{},"; ",el("b",{style:"color:#d63c3c"},ha+" odada hata")," var"):"",". ",
     /\d/.test(zh)?el("span",{},"Dün siteler ",b((+zh+(+zy||0))+" görüntüleme")," aldı. "):"","CEO'nun ",b((sorulariCiz.n||0)+" sorusu")," var.");
 }
+async function adimlariGetir(){
+  for(const o of ODALAR){o._adim=null;const r=o._du&&o._du.runs.find(x=>x.status!=="completed");if(!r)continue;
+    try{const j=await getir(`/repos/${SAHIP}/${r._d}/actions/runs/${r.id}/jobs`,0.5);
+      const job=(j.jobs||[]).find(x=>x.status==="in_progress")||(j.jobs||[])[0];
+      const st=job&&(job.steps||[]).find(x=>x.status==="in_progress");
+      o._adim=st?st.name.replace(/^Run /,"").slice(0,40):(job?job.name:null);}catch(e){}}
+}
 async function yukle(zorla){
   getir.zorla=!!zorla;$("durumsatiri").textContent="Yükleniyor…";
   try{
     for(const d of DEPOLAR){const v=await getir(`/repos/${SAHIP}/${d}/actions/runs?per_page=100`);sonCalisma[d]=v.workflow_runs||[];}
-    ofisCiz();akisCiz();{const h=document.querySelector(".harita");if(h.scrollWidth>h.clientWidth&&!yukle.kaydi){h.scrollLeft=(h.scrollWidth-h.clientWidth)/2;yukle.kaydi=1;}}genelCiz();akislariCiz(document.querySelector(".sekme .secili").dataset.r);takvimCiz();
+    ofisCiz();await adimlariGetir();window.dispatchEvent(new Event("ofis-veri"));akisCiz();{const h=document.querySelector(".harita");if(h.scrollWidth>h.clientWidth&&!yukle.kaydi){h.scrollLeft=(h.scrollWidth-h.clientWidth)/2;yukle.kaydi=1;}}genelCiz();akislariCiz(document.querySelector(".sekme .secili").dataset.r);takvimCiz();
     notlar.hata=null;
     const sonuc=await Promise.allSettled([bugunCiz(),ziyaretciCiz()]);
     sonuc.filter(x=>x.status==="rejected").forEach(x=>{console.error(x.reason);$("bugun").append(el("li",{class:"hatamesaj"},"Bölüm yüklenemedi: "+x.reason.message));});
@@ -394,5 +419,7 @@ $("yenile").onclick=()=>yukle(true);
 yukle(false);
 setInterval(()=>{if(!document.hidden)yukle(false);},5*60000);
 </script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<script type="module" src="ofis3d.js"></script>
 </body>
 </html>
