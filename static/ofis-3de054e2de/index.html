@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Ofis Paneli · Hadi vs Yürü</title>
+<style>
+:root{--bg:#0f1420;--kart:#182033;--cizgi:#2a3550;--yazi:#e8ecf4;--soluk:#8d98b3;--hadi:#ff8a2a;--yuru:#4c7dff;--ok:#2ecc71;--hata:#ff5a5a;--bekle:#f1c40f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--yazi);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:16px 16px 8px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+h1{font-size:19px;margin:0}
+h1 span.h{color:var(--hadi)} h1 span.y{color:var(--yuru)}
+.alt{color:var(--soluk);font-size:12px}
+button{background:var(--cizgi);color:var(--yazi);border:0;border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer}
+button:active{opacity:.7}
+main{padding:0 12px 40px;max-width:900px;margin:0 auto}
+.kart{background:var(--kart);border:1px solid var(--cizgi);border-radius:12px;padding:12px 14px;margin:10px 0}
+.kart h2{font-size:14px;margin:0 0 8px;color:var(--soluk);text-transform:uppercase;letter-spacing:.04em}
+.ozet{font-size:17px;font-weight:600}
+.ozet.ok{color:var(--ok)} .ozet.hata{color:var(--hata)}
+.ikili{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.ikili{grid-template-columns:1fr}}
+.sayi{font-size:26px;font-weight:700}
+.hadi .sayi{color:var(--hadi)} .yuru .sayi{color:var(--yuru)}
+ul{list-style:none;margin:0;padding:0}
+li{padding:6px 0;border-top:1px solid var(--cizgi);display:flex;gap:8px;align-items:baseline}
+li:first-child{border-top:0}
+.nokta{flex:0 0 auto;width:10px;height:10px;border-radius:50%;display:inline-block;transform:translateY(1px)}
+.n-ok{background:var(--ok)} .n-hata{background:var(--hata)} .n-bekle{background:var(--bekle)} .n-gri{background:var(--soluk)}
+.ad{flex:1;min-width:0}
+.ad small{display:block;color:var(--soluk);font-size:12px;overflow-wrap:anywhere}
+.zaman{color:var(--soluk);font-size:12px;white-space:nowrap}
+a{color:#9fc0ff}
+.etiket{font-size:11px;padding:1px 6px;border-radius:6px;background:var(--cizgi);color:var(--soluk);margin-left:4px}
+.sekme{display:flex;gap:6px;margin-bottom:8px}
+.sekme button.secili{background:var(--yuru)}
+.sekme button.secili.h{background:var(--hadi);color:#111}
+details summary{cursor:pointer;color:var(--soluk);font-size:13px;margin-top:6px}
+.uyari{color:var(--bekle)}
+.hatamesaj{color:var(--hata);font-size:13px}
+.gun{font-weight:700;font-size:18px;min-width:52px;text-align:right}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>🏢 Ofis Paneli · <span class="h">Hadi</span> vs <span class="y">Yürü</span></h1>
+    <div class="alt" id="durumsatiri">Yükleniyor…</div>
+  </div>
+  <button id="yenile">↻ Yenile</button>
+</header>
+<main>
+  <div class="kart"><h2>Genel durum</h2><div id="genel" class="ozet">…</div><div id="hatalar"></div></div>
+
+  <div class="kart"><h2>Bugünün işleri</h2><ul id="bugun"></ul></div>
+
+  <div class="kart"><h2>Dünün ziyaretçileri</h2>
+    <div class="ikili">
+      <div class="hadi"><div class="alt">Hadi Baba</div><div class="sayi" id="z-hadi">–</div><div class="alt" id="z-hadi-top"></div></div>
+      <div class="yuru"><div class="alt">Yürü Baba</div><div class="sayi" id="z-yuru">–</div><div class="alt" id="z-yuru-top"></div></div>
+    </div>
+  </div>
+
+  <div class="kart"><h2>Takvim</h2><ul id="takvim"></ul></div>
+
+  <div class="kart"><h2>İş akışları (son çalışma)</h2>
+    <div class="sekme"><button data-r="hadibaba" class="secili h">Hadi deposu</button><button data-r="yurubaba2027">Yürü deposu</button></div>
+    <ul id="akislar"></ul>
+    <details><summary>Deneme iş akışları</summary><ul id="denemeler"></ul></details>
+  </div>
+
+  <div class="kart"><h2>Hızlı bağlantılar</h2>
+    <ul>
+      <li><span class="ad"><a href="https://github.com/sevketirtem/hadibaba/actions">Hadi deposu · Actions</a></span></li>
+      <li><span class="ad"><a href="https://github.com/sevketirtem/yurubaba2027/actions">Yürü deposu · Actions</a></span></li>
+      <li><span class="ad"><a href="https://studio.youtube.com/">YouTube Studio</a></span></li>
+      <li><span class="ad"><a href="https://hadibaba.goatcounter.com/">GoatCounter · Hadi</a> · <a href="https://yurubaba.goatcounter.com/">Yürü</a></span></li>
+      <li><span class="ad"><a href="https://console.cloud.google.com/billing">Google Cloud · Faturalandırma (Vertex kredisi)</a></span></li>
+    </ul>
+  </div>
+  <p class="alt">Veri GitHub'dan canlı okunur (saatte en fazla ~60 istek; panel 10 dakika önbellek tutar). Bu sayfa arama motorlarına kapalıdır.</p>
+</main>
+<script>
+const SAHIP="sevketirtem", DEPOLAR=["hadibaba","yurubaba2027"], API="https://api.github.com";
+const ONBELLEK_DK=10, TZ="Europe/Oslo";
+const ANA={ // önemli iş akışları ve sırası
+ "hugo.yml":"Siteyi yayınla","video.yml":"Atışma videosu","podcast.yml":"Podcast","bluesky.yml":"Sosyal medyada paylaş",
+ "video_yuru.yml":"Videoları Yürü'de paylaş","ziyaretci.yml":"Ziyaretçi raporu","veri_yedek.yml":"Veri yedeği",
+ "meta_yenile.yml":"Meta anahtarlarını yenile","tahmin_ligi.yml":"Tahmin Ligi","aytis.yml":"Futbol Aytısı",
+ "okur_kahini.yml":"Okur Kâhini","ozel_video.yml":"Özel video paylaş","canli_kesit.yml":"Canlı yayın kesitleri","zamanli.yml":"Zamanı gelince yayınla"};
+const DENEME=/(deneme|dene|yokla|katalog|jingle|whisper|sarki|gecmis|sil)/i;
+const TAKVIM=[
+ ["2026-11-06","GS–Amedspor maç önü + Kurmancî kontrolü"],
+ ["2026-11-08","BJK–Gençlerbirliği · Okur Kâhini ilk gerçek tarama"],
+ ["2026-11-20","İstatistik Motoru v0 son tarih"],
+ ["2026-11-22","veri_cek.py kendi-veri moduna geçiş"],
+ ["2026-11-25","API-Football aboneliği bitiyor (yenilenmeyecek)"],
+ ["2026-12-25","Yürü'nün THREADS_TOKEN'ı biter (~)"],
+ ["2027-01-14","Cloud Upgrade kararı"],
+ ["2027-01-28","Vertex deneme kredisi biter"],
+ ["2027-01-29","Gemini Pro 3. ay değerlendirmesi"]];
+
+const $=id=>document.getElementById(id);
+function el(tag,attrs={},...cocuk){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="class")e.className=v;else e.setAttribute(k,v);}for(const c of cocuk){if(c==null)continue;e.append(c.nodeType?c:document.createTextNode(String(c)));}return e;}
+function onceSure(iso){const dk=Math.round((Date.now()-new Date(iso))/60000);if(dk<1)return"şimdi";if(dk<60)return dk+" dk önce";const s=Math.round(dk/60);if(s<48)return s+" sa önce";return Math.round(s/24)+" gün önce";}
+function saat(iso){return new Date(iso).toLocaleString("tr-TR",{timeZone:TZ,day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});}
+function bugunMu(iso){const f=d=>new Date(d).toLocaleDateString("sv-SE",{timeZone:TZ});return f(iso)===f(Date.now());}
+function nokta(run){if(!run)return"n-gri";if(run.status!=="completed")return"n-bekle";return run.conclusion==="success"?"n-ok":(run.conclusion==="skipped"||run.conclusion==="cancelled")?"n-gri":"n-hata";}
+function durumYazi(run){if(run.status!=="completed")return"sürüyor";return{success:"başarılı",failure:"HATA",cancelled:"iptal",skipped:"atlandı"}[run.conclusion]||run.conclusion;}
+
+async function getir(yol){
+  const anahtar="ofis:"+yol;
+  try{const k=JSON.parse(localStorage.getItem(anahtar)||"null");if(k&&Date.now()-k.t<ONBELLEK_DK*60000&&!getir.zorla)return k.v;}catch(e){}
+  const r=await fetch(API+yol,{headers:{Accept:"application/vnd.github+json"}});
+  if(r.status===403||r.status===429){const s=r.headers.get("x-ratelimit-reset");throw new Error("GitHub istek sınırı doldu"+(s?" · "+saat(new Date(s*1000).toISOString())+" sonra açılır":""));}
+  if(!r.ok)throw new Error("GitHub "+r.status+" · "+yol);
+  const v=await r.json();
+  try{localStorage.setItem(anahtar,JSON.stringify({t:Date.now(),v}));}catch(e){}
+  return v;
+}
+async function notlar(depo,runId){ // bir çalışmanın annotations satırları
+  try{return await notlarHam(depo,runId);}catch(e){console.warn("notlar",depo,runId,e.message);notlar.hata=e.message;return[];}
+}
+async function notlarHam(depo,runId){
+  const j=await getir(`/repos/${SAHIP}/${depo}/actions/runs/${runId}/jobs`);
+  let hepsi=[];
+  for(const job of (j.jobs||[]).slice(0,3)){const a=await getir(`/repos/${SAHIP}/${depo}/check-runs/${job.id}/annotations`);hepsi=hepsi.concat(a);}
+  return hepsi.filter(a=>a.title).map(a=>({b:a.title,m:a.message||""}));
+}
+const sonCalisma={};
+function akisListesi(depo){
+  const runs=sonCalisma[depo]||[];const son={};
+  for(const r of runs){const p=r.path.split("/").pop();if(!son[p])son[p]=r;}
+  return son;
+}
+function akislariCiz(depo){
+  const son=akisListesi(depo);const ana=$("akislar"),den=$("denemeler");ana.textContent="";den.textContent="";
+  const sirali=Object.keys(son).sort((a,b)=>{const ia=Object.keys(ANA).indexOf(a),ib=Object.keys(ANA).indexOf(b);return(ia<0?99:ia)-(ib<0?99:ib)||new Date(son[b].created_at)-new Date(son[a].created_at);});
+  for(const p of sirali){const r=son[p];
+    const li=el("li",{},el("span",{class:"nokta "+nokta(r)}),
+      el("span",{class:"ad"},el("a",{href:r.html_url},ANA[p]||r.name),el("small",{},durumYazi(r)+" · "+({schedule:"zamanlı",push:"push",workflow_dispatch:"elle",workflow_run:"zincir"}[r.event]||r.event))),
+      el("span",{class:"zaman",title:saat(r.created_at)},onceSure(r.created_at)));
+    ((DENEME.test(p)||DENEME.test(r.name))&&!ANA[p]?den:ana).append(li);}
+  if(!ana.children.length)ana.append(el("li",{},"Çalışma yok"));
+}
+function takvimCiz(){
+  const ul=$("takvim");ul.textContent="";const bugun=new Date(new Date().toLocaleDateString("sv-SE",{timeZone:TZ}));
+  for(const[t,ad]of TAKVIM){const g=Math.round((new Date(t)-bugun)/86400000);if(g<-1)continue;
+    ul.append(el("li",{},el("span",{class:"ad"},ad,el("small",{},new Date(t).toLocaleDateString("tr-TR",{day:"numeric",month:"long",year:"numeric"}))),
+      el("span",{class:"gun",style:g<=3?"color:var(--bekle)":""},g===0?"bugün":g<0?"dün":g+" gün")));}
+}
+async function bugunCiz(){
+  const ul=$("bugun");ul.textContent="";
+  const son=akisListesi("hadibaba");
+  const satir=(ad,run,alt,link)=>ul.append(el("li",{},el("span",{class:"nokta "+(run?nokta(run):"n-gri")}),
+     el("span",{class:"ad"},link?el("a",{href:link},ad):ad,alt?el("small",{},alt):null),
+     el("span",{class:"zaman"},run?onceSure(run.created_at):"bugün yok")));
+  // Atışma videosu
+  const v=son["video.yml"];
+  if(v&&bugunMu(v.created_at)){const n=await notlar("hadibaba",v.id);
+    const yt=n.find(a=>/Video youtube/i.test(a.b));const pl=n.filter(a=>/^Video (instagram|facebook|threads|telegram|tiktok)/i.test(a.b));
+    const ok=pl.filter(a=>/paylaşıldı/i.test(a.m)).length;
+    satir("Atışma videosu",v,`${ok}/${pl.length} platform`+(pl.some(a=>!/paylaşıldı/i.test(a.m))?" · sorunlu: "+pl.filter(a=>!/paylaşıldı/i.test(a.m)).map(a=>a.b.replace("Video ","")).join(", "):""),yt?yt.m.split(" ")[0]:v.html_url);
+  }else satir("Atışma videosu",null,"Bugün henüz çalışmadı");
+  // Podcast
+  const p=son["podcast.yml"];
+  if(p&&bugunMu(p.created_at)){const n=await notlar("hadibaba",p.id);
+    const yt=n.find(a=>/YouTube'a yüklendi/i.test(a.b));const ks=n.find(a=>/Kesit YouTube/i.test(a.b));const tt=n.find(a=>/Kesit TikTok/i.test(a.b));
+    const ses=n.find(a=>/^Podcast sesi/i.test(a.b));
+    let alt=yt?yt.m.split(" — ").slice(1).join(" — "):"YouTube bağlantısı yok";
+    if(ses&&!/gemini/i.test(ses.m))alt+=" · yedek ses!";
+    satir("Podcast",p,alt,yt?yt.m.split(" ")[0]:p.html_url);
+    if(ks)satir("Podcast kesiti (Shorts)",p,ks.m.split(" — ").slice(1).join(" — "),ks.m.split(" ")[0]);
+    if(tt&&/pending_share/.test(tt.m))ul.append(el("li",{},el("span",{class:"nokta n-bekle"}),el("span",{class:"ad uyari"},"TikTok: bekleyen taslak çok birikti",el("small",{},"Telefonda TikTok gelen kutusundaki taslakları paylaşın ya da silin; yoksa yeni taslak gitmez."))));
+  }else satir("Podcast",null,"Bugün henüz çalışmadı");
+  // Sabah yazısı / site
+  for(const d of DEPOLAR){const h=akisListesi(d)["hugo.yml"];satir((d==="hadibaba"?"Hadi":"Yürü")+" sitesi derlemesi",h,h?durumYazi(h)+" · "+saat(h.created_at):"",h&&h.html_url);}
+  const vy=akisListesi("yurubaba2027")["video_yuru.yml"];satir("Yürü'nün video paylaşımı",vy,vy?durumYazi(vy):"",vy&&vy.html_url);
+}
+async function ziyaretciCiz(){
+  for(const d of DEPOLAR){const k=d==="hadibaba"?"hadi":"yuru";const r=akisListesi(d)["ziyaretci.yml"];if(!r)continue;
+    try{const n=await notlar(d,r.id);const z=n.find(a=>/^Ziyaretçi/.test(a.b));if(!z)continue;
+      const top=z.m.match(/Toplam (\d+)/);$("z-"+k).textContent=top?top[1]:"?";
+      const en=z.m.split("En çok:")[1];$("z-"+k+"-top").textContent=(z.b.split(" ").pop())+(en?" · En çok: "+en.split(" | ")[0].trim().slice(0,90):"");
+    }catch(e){$("z-"+k+"-top").textContent=e.message;}}
+}
+function genelCiz(){
+  const hatalar=[];const gun=Date.now()-24*3600e3;
+  for(const d of DEPOLAR){const son=akisListesi(d);for(const[p,r]of Object.entries(son)){if(r.status==="completed"&&r.conclusion==="failure"&&new Date(r.created_at)>gun&&!(DENEME.test(p)&&!ANA[p]))hatalar.push([d,r]);}}
+  const g=$("genel"),h=$("hatalar");h.textContent="";
+  if(!hatalar.length){g.textContent="✅ Her şey çalışıyor";g.className="ozet ok";}
+  else{g.textContent=`❌ Son 24 saatte ${hatalar.length} iş akışı hata verdi`;g.className="ozet hata";
+    const ul=el("ul");for(const[d,r]of hatalar)ul.append(el("li",{},el("span",{class:"nokta n-hata"}),el("span",{class:"ad"},el("a",{href:r.html_url},r.name),el("small",{},(d==="hadibaba"?"Hadi":"Yürü")+" deposu · "+saat(r.created_at)))));h.append(ul);}
+}
+async function yukle(zorla){
+  getir.zorla=!!zorla;$("durumsatiri").textContent="Yükleniyor…";
+  try{
+    for(const d of DEPOLAR){const v=await getir(`/repos/${SAHIP}/${d}/actions/runs?per_page=100`);sonCalisma[d]=v.workflow_runs||[];}
+    genelCiz();akislariCiz(document.querySelector(".sekme .secili").dataset.r);takvimCiz();
+    notlar.hata=null;
+    const sonuc=await Promise.allSettled([bugunCiz(),ziyaretciCiz()]);
+    sonuc.filter(x=>x.status==="rejected").forEach(x=>{console.error(x.reason);$("bugun").append(el("li",{class:"hatamesaj"},"Bölüm yüklenemedi: "+x.reason.message));});
+    if(notlar.hata)$("bugun").append(el("li",{class:"hatamesaj"},"Ayrıntılar kısmen yüklenemedi: "+notlar.hata));
+    $("durumsatiri").textContent="Güncellendi: "+new Date().toLocaleTimeString("tr-TR",{timeZone:TZ,hour:"2-digit",minute:"2-digit"})+" (Oslo)";
+  }catch(e){$("durumsatiri").textContent="";$("genel").append(el("div",{class:"hatamesaj"},e.message));takvimCiz();}
+}
+document.querySelectorAll(".sekme button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".sekme button").forEach(x=>x.classList.remove("secili","h"));b.classList.add("secili");if(b.dataset.r==="hadibaba")b.classList.add("h");akislariCiz(b.dataset.r);});
+$("yenile").onclick=()=>yukle(true);
+yukle(false);
+</script>
+</body>
+</html>
