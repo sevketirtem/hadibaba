@@ -1,0 +1,39 @@
+{
+  "tarih": "2026-11-04",
+  "mac": "Fenerbahçe – Liverpool",
+  "mac_alt": "Şampiyonlar Ligi · Bugün 20.45",
+  "kanca": "Kadıköy'de kim haklı çıkacak?",
+  "tablo": "Tahmin ligi: Hadi 3 · Yürü 4",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Silav hevalno! Îro şev Kadıköy'de maç heye, 2-1 baba!",
+      "dil": "ku"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kürtçe selam verdi, maçı 2-1 yazdı. Ben 1-2 diyorum baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Hissediyorum, gol geliyor! Kadıköy ayağa kalkar baba!",
+      "duygu": "sevinc"
+    },
+    {
+      "kim": "yuru",
+      "metin": "İki puan, otuz birinci sıra. Hesap makinesi bende baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "TAHMİNLER",
+    "hadi": "2-1",
+    "yuru": "1-2",
+    "hadi_soz": "Yaparız baba!",
+    "yuru_soz": "Görürüz baba."
+  },
+  "aciklama": "Fenerbahçe bu akşam 20.45'te Kadıköy'de Liverpool'u ağırlıyor. Hadi 2-1, Yürü 1-2 diyor. Sen kimden yanasın? Tu çi dibêjî? Pêşbîniya xwe binivîse!",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/fenerbahce-liverpool-onu-hadi-2-1/",
+    "yuru": "https://yurubaba.com/2026/11/fenerbahce-liverpool-onu-yuru-1-2/"
+  }
+}
