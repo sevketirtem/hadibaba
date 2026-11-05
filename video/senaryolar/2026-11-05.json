@@ -1,0 +1,39 @@
+{
+  "tarih": "2026-11-05",
+  "mac": "Trabzonspor – Freiburg",
+  "mac_alt": "Konferans Ligi · Bu akşam",
+  "kanca": "Trabzon'da hesap mı, gaz mı?",
+  "tablo": "Tahmin ligi: Hadi 4 · Yürü 4",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Silav hevalno! Îro şev Trabzon'da Avrupa heye, kêfxweş im baba!",
+      "dil": "ku"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kürtçe selam verdi, Trabzon'u hatırladı. Ligin en az gol yiyeni, hak veririm baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Konferans'ta 2 maçta 6 puan, bu sezon başka baba!",
+      "duygu": "sevinc"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Üç maç şampiyonluk değil. Hesap makinesi bende baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "KİM HAKLI?",
+    "hadi": "HADİ",
+    "yuru": "YÜRÜ",
+    "soru": "SEN KİMDEN YANASIN?",
+    "alt": "Yoruma yaz"
+  },
+  "aciklama": "Trabzonspor bu akşam Konferans Ligi'nde Freiburg'u ağırlıyor. Hadi gazda, Yürü rakamda. Sen kimden yanasın? Tu çi dibêjî? Pêşbîniya xwe binivîse!",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/trabzonspor-freiburg-onu-3te-3-bu-sezon-baska/",
+    "yuru": "https://yurubaba.com/2026/11/trabzonspor-freiburg-onu-yuru-hesap/"
+  }
+}
