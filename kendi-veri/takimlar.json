@@ -4,7 +4,7 @@
   "takim": "Galatasaray",
   "slug": "galatasaray",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:50.521Z",
+   "guncellendi": "2026-11-05T12:29:14.806Z",
    "takim": {
     "id": 645,
     "ad": "Galatasaray",
@@ -324,7 +324,7 @@
      "ad": "Rafael Leão",
      "no": 27,
      "yas": 27,
-     "mevki": "Orta saha"
+     "mevki": "Forvet"
     },
     {
      "ad": "Berat Luş",
@@ -348,7 +348,7 @@
      "ad": "B. Yılmaz",
      "no": 53,
      "yas": 25,
-     "mevki": "Forvet"
+     "mevki": "Orta saha"
     },
     {
      "ad": "A. Yuzgec",
@@ -831,7 +831,7 @@
   "takim": "Amed",
   "slug": "amedspor",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:50.819Z",
+   "guncellendi": "2026-11-05T12:29:15.103Z",
    "takim": {
     "id": 3579,
     "ad": "Amed",
@@ -1722,7 +1722,7 @@
   "takim": "Trabzonspor",
   "slug": "trabzonspor",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:51.106Z",
+   "guncellendi": "2026-11-05T12:29:15.430Z",
    "takim": {
     "id": 998,
     "ad": "Trabzonspor",
@@ -2643,7 +2643,7 @@
   "takim": "Beşiktaş",
   "slug": "besiktas",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:51.390Z",
+   "guncellendi": "2026-11-05T12:29:15.695Z",
    "takim": {
     "id": 549,
     "ad": "Beşiktaş",
@@ -3639,7 +3639,7 @@
   "takim": "Kasımpaşa",
   "slug": "kasimpasa",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:51.679Z",
+   "guncellendi": "2026-11-05T12:29:15.972Z",
    "takim": {
     "id": 1004,
     "ad": "Kasımpaşa",
@@ -4559,7 +4559,7 @@
   "takim": "Fenerbahçe",
   "slug": "fenerbahce",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:51.958Z",
+   "guncellendi": "2026-11-05T12:29:16.239Z",
    "takim": {
     "id": 611,
     "ad": "Fenerbahçe",
@@ -4571,6 +4571,21 @@
     "kapasite": 47834
    },
    "son": [
+    {
+     "id": 1635658,
+     "tarih": "2026-11-04T20:45:00+03:00",
+     "durum": "FT",
+     "dakika": 90,
+     "lig": "UEFA Champions League",
+     "ligId": 2,
+     "hafta": "League Stage - 4",
+     "ev": "Fenerbahçe",
+     "dep": "Liverpool",
+     "evId": 611,
+     "depId": 40,
+     "evGol": 3,
+     "depGol": 2
+    },
     {
      "id": 1584451,
      "tarih": "2026-10-31T19:00:00+03:00",
@@ -4630,39 +4645,9 @@
      "depId": 996,
      "evGol": 3,
      "depGol": 0
-    },
-    {
-     "id": 1635620,
-     "tarih": "2026-10-14T22:00:00+03:00",
-     "durum": "FT",
-     "dakika": 90,
-     "lig": "UEFA Champions League",
-     "ligId": 2,
-     "hafta": "League Stage - 2",
-     "ev": "Aston Villa",
-     "dep": "Fenerbahçe",
-     "evId": 66,
-     "depId": 611,
-     "evGol": 6,
-     "depGol": 0
     }
    ],
    "sonraki": [
-    {
-     "id": 1635658,
-     "tarih": "2026-11-04T20:45:00+03:00",
-     "durum": "NS",
-     "dakika": null,
-     "lig": "UEFA Champions League",
-     "ligId": 2,
-     "hafta": "League Stage - 4",
-     "ev": "Fenerbahçe",
-     "dep": "Liverpool",
-     "evId": 611,
-     "depId": 40,
-     "evGol": null,
-     "depGol": null
-    },
     {
      "id": 1584459,
      "tarih": "2026-11-08T16:00:00+03:00",
@@ -4689,6 +4674,21 @@
      "ev": "Kocaelispor",
      "dep": "Fenerbahçe",
      "evId": 7411,
+     "depId": 611,
+     "evGol": null,
+     "depGol": null
+    },
+    {
+     "id": 1635724,
+     "tarih": "2026-11-25T23:00:00+03:00",
+     "durum": "NS",
+     "dakika": null,
+     "lig": "UEFA Champions League",
+     "ligId": 2,
+     "hafta": "League Stage - 5",
+     "ev": "Shakhtar Donetsk",
+     "dep": "Fenerbahçe",
+     "evId": 550,
      "depId": 611,
      "evGol": null,
      "depGol": null
@@ -4870,50 +4870,7 @@
      "mevki": "Forvet"
     }
    ],
-   "sakatlar": [
-    {
-     "oyuncu": "N. Ake",
-     "tur": "Missing Fixture",
-     "sebep": "Muscle Injury",
-     "mac": "2026-11-04T20:45:00+03:00"
-    },
-    {
-     "oyuncu": "M. Asensio",
-     "tur": "Missing Fixture",
-     "sebep": "Knee Injury",
-     "mac": "2026-11-04T20:45:00+03:00"
-    },
-    {
-     "oyuncu": "A. Diouf",
-     "tur": "Missing Fixture",
-     "sebep": "Off the roster",
-     "mac": "2026-11-04T20:45:00+03:00"
-    },
-    {
-     "oyuncu": "A. Fall",
-     "tur": "Missing Fixture",
-     "sebep": "Off the roster",
-     "mac": "2026-11-04T20:45:00+03:00"
-    },
-    {
-     "oyuncu": "J. Oosterwolde",
-     "tur": "Missing Fixture",
-     "sebep": "Achilles Tendon Injury",
-     "mac": "2026-11-04T20:45:00+03:00"
-    },
-    {
-     "oyuncu": "M. Yandas",
-     "tur": "Missing Fixture",
-     "sebep": "Off the roster",
-     "mac": "2026-11-04T20:45:00+03:00"
-    },
-    {
-     "oyuncu": "K. Peprah",
-     "tur": "Questionable",
-     "sebep": "Injury",
-     "mac": "2026-11-04T20:45:00+03:00"
-    }
-   ],
+   "sakatlar": [],
    "transferler": [
     {
      "oyuncu": "Rodrigo Becão",
@@ -5491,7 +5448,7 @@
   "takim": "Çorum FK",
   "slug": "corum-fk",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:52.257Z",
+   "guncellendi": "2026-11-05T12:29:16.526Z",
    "takim": {
     "id": 6343,
     "ad": "Çorum FK",
@@ -6538,7 +6495,7 @@
   "takim": "Kocaelispor",
   "slug": "kocaelispor",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:52.531Z",
+   "guncellendi": "2026-11-05T12:29:16.808Z",
    "takim": {
     "id": 7411,
     "ad": "Kocaelispor",
@@ -7349,7 +7306,7 @@
   "takim": "Göztepe",
   "slug": "goztepe",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:52.784Z",
+   "guncellendi": "2026-11-05T12:29:17.102Z",
    "takim": {
     "id": 994,
     "ad": "Göztepe",
@@ -7594,8 +7551,14 @@
      "mevki": "Orta saha"
     },
     {
+     "ad": "B. Sarigul",
+     "no": 2,
+     "yas": 19,
+     "mevki": "Orta saha"
+    },
+    {
      "ad": "Y. Sirin",
-     "no": 25,
+     "no": 10,
      "yas": 18,
      "mevki": "Orta saha"
     },
@@ -8030,7 +7993,7 @@
   "takim": "Başakşehir",
   "slug": "basaksehir",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:53.054Z",
+   "guncellendi": "2026-11-05T12:29:17.364Z",
    "takim": {
     "id": 564,
     "ad": "Başakşehir",
@@ -8837,7 +8800,7 @@
   "takim": "Erzurumspor FK",
   "slug": "erzurumspor",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:53.326Z",
+   "guncellendi": "2026-11-05T12:29:17.651Z",
    "takim": {
     "id": 1009,
     "ad": "Erzurumspor FK",
@@ -9612,7 +9575,7 @@
   "takim": "Alanyaspor",
   "slug": "alanyaspor",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:53.602Z",
+   "guncellendi": "2026-11-05T12:29:53.353Z",
    "takim": {
     "id": 996,
     "ad": "Alanyaspor",
@@ -9773,12 +9736,6 @@
      "mevki": "Defans"
     },
     {
-     "ad": "B. Demirag",
-     "no": null,
-     "yas": 17,
-     "mevki": "Defans"
-    },
-    {
      "ad": "E. Karatas",
      "no": 93,
      "yas": 18,
@@ -9830,7 +9787,7 @@
      "ad": "I. Hagi",
      "no": 10,
      "yas": 27,
-     "mevki": "Forvet"
+     "mevki": "Orta saha"
     },
     {
      "ad": "Hwang Ui-Jo",
@@ -10257,7 +10214,7 @@
   "takim": "Rizespor",
   "slug": "rizespor",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:53.898Z",
+   "guncellendi": "2026-11-05T12:29:53.672Z",
    "takim": {
     "id": 1007,
     "ad": "Rizespor",
@@ -10994,7 +10951,7 @@
   "takim": "Gençlerbirliği S.K.",
   "slug": "genclerbirligi",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:54.177Z",
+   "guncellendi": "2026-11-05T12:29:53.986Z",
    "takim": {
     "id": 997,
     "ad": "Gençlerbirliği S.K.",
@@ -11837,7 +11794,7 @@
   "takim": "Konyaspor",
   "slug": "konyaspor",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:54.434Z",
+   "guncellendi": "2026-11-05T12:29:54.283Z",
    "takim": {
     "id": 607,
     "ad": "Konyaspor",
@@ -12738,7 +12695,7 @@
   "takim": "Gaziantep FK",
   "slug": "gaziantep-fk",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:54.737Z",
+   "guncellendi": "2026-11-05T12:29:54.541Z",
    "takim": {
     "id": 3573,
     "ad": "Gaziantep FK",
@@ -12983,6 +12940,12 @@
      "mevki": "Orta saha"
     },
     {
+     "ad": "Mehmet Genc",
+     "no": 93,
+     "yas": 17,
+     "mevki": "Orta saha"
+    },
+    {
      "ad": "V. Gidado",
      "no": 8,
      "yas": 21,
@@ -13016,6 +12979,12 @@
      "ad": "O. Özçiçek",
      "no": 61,
      "yas": 27,
+     "mevki": "Orta saha"
+    },
+    {
+     "ad": "Eren Sirma",
+     "no": 79,
+     "yas": 17,
      "mevki": "Orta saha"
     },
     {
@@ -13612,7 +13581,7 @@
   "takim": "Samsunspor",
   "slug": "samsunspor",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:54.982Z",
+   "guncellendi": "2026-11-05T12:30:30.102Z",
    "takim": {
     "id": 3603,
     "ad": "Samsunspor",
@@ -13825,6 +13794,12 @@
      "no": 17,
      "yas": 25,
      "mevki": "Orta saha"
+    },
+    {
+     "ad": "Yusuf Yurtsever",
+     "no": 44,
+     "yas": 19,
+     "mevki": "Defans"
     },
     {
      "ad": "Y. Kayan",
@@ -14385,7 +14360,7 @@
   "takim": "Eyüpspor",
   "slug": "eyupspor",
   "veri": {
-   "guncellendi": "2026-11-04T12:15:55.251Z",
+   "guncellendi": "2026-11-05T12:30:30.366Z",
    "takim": {
     "id": 3588,
     "ad": "Eyüpspor",
@@ -14525,6 +14500,12 @@
      "ad": "E. Bilgin",
      "no": 1,
      "yas": 21,
+     "mevki": "Kaleci"
+    },
+    {
+     "ad": "U. Keseci",
+     "no": 23,
+     "yas": 22,
      "mevki": "Kaleci"
     },
     {
