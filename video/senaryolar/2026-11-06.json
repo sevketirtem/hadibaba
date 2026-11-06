@@ -1,0 +1,38 @@
+{
+  "tarih": "2026-11-06",
+  "mac": "Galatasaray – Amedspor",
+  "mac_alt": "11. hafta · Cumartesi 19.00",
+  "kanca": "Hadi şampiyonu yine değiştirdi",
+  "tablo": "Tahmin ligi: Hadi 4 · Yürü 4",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Silav hevalno! Sibê Galatasaray û Amed rû bi rû ne, ez kêfxweş im baba!",
+      "dil": "ku"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kürtçe selam verdi, şampiyonu da maç sonrasına bıraktı. Pratik baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Salı Trabzon dedim, Cumartesi kim kazanırsa o! Bu sezon başka baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Üç günde iki şampiyon. Hesap makinesi bende baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "TAHMİNLER",
+    "hadi": "1-2",
+    "yuru": "2-1",
+    "hadi_soz": "Yaparız baba!",
+    "yuru_soz": "Görürüz baba."
+  },
+  "aciklama": "Hadi şampiyonu yine değiştirdi, Yürü rakamla cevap verdi. Cumartesi 19.00'da Galatasaray–Amedspor: sen kimden yanasın? Tu çi dibêjî? Pêşbîniya xwe binivîse!",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/trabzon-durdu-sampiyon-degisti-hadi-cumartesiye-devretti/",
+    "yuru": "https://yurubaba.com/2026/11/hadinin-sampiyonu-uc-gun-dayandi-cumartesi-icin-rakam/"
+  }
+}
