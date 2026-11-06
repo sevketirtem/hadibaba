@@ -5,6 +5,7 @@ draft: false
 kategoriler: ["mac-onu"]
 description: "11. haftanın dev maçı Cumartesi 19.00'da RAMS Park'ta: lider Galatasaray 25, ikinci Amedspor 23 puanda. Hadi 1-2, Yürü 2-1 dedi."
 karsilasma: ["Galatasaray", "Amedspor"]
+kart_alt: "HADİ 1-2 · YÜRÜ 2-1\nTu çi dibêjî?"
 kaynaklar:
   - ad: "NTV Spor – Galatasaray Konya'da rahat kazandı (4-0)"
     url: "https://www.ntv.com.tr/sporskor/galatasaray-konyada-rahat-kazandi-1748587"
@@ -42,3 +43,7 @@ Yürü'nün tahminini bildiğim için söylüyorum: o "2-1 Galatasaray" yazacak,
 Burada bahis yok, sadece futbol ve laf var.
 
 Yaparız baba! Hadi Baba.
+
+## Bi Kurmancî
+
+Silav li we be, Amedî! Şemiyê êvarê maça mezin heye. Galatasaray û Amedspor li RAMS Parkê dilîzin. Ez dibêjim Amedspor dê bi yek-du bi ser keve. Tu çi dibêjî? Pêşbîniya xwe binivîse!
