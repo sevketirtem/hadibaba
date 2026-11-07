@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-06T12:13:06.117Z",
+ "guncellendi": "2026-11-07T11:09:33.213Z",
  "sezon": "2026",
  "gol": [
   {
@@ -59,6 +59,17 @@
   },
   {
    "sira": 6,
+   "oyuncu": "A. Benedyczak",
+   "takim": "Kasımpaşa",
+   "mac": 11,
+   "dakika": 951,
+   "gol": 7,
+   "asist": 2,
+   "penalti": 2,
+   "sayi": 7
+  },
+  {
+   "sira": 7,
    "oyuncu": "D. Vlahović",
    "takim": "Beşiktaş",
    "mac": 8,
@@ -67,17 +78,6 @@
    "asist": 0,
    "penalti": 2,
    "sayi": 7
-  },
-  {
-   "sira": 7,
-   "oyuncu": "A. Benedyczak",
-   "takim": "Kasımpaşa",
-   "mac": 10,
-   "dakika": 865,
-   "gol": 6,
-   "asist": 2,
-   "penalti": 1,
-   "sayi": 6
   },
   {
    "sira": 8,
@@ -147,6 +147,17 @@
   },
   {
    "sira": 14,
+   "oyuncu": "B. Kutlu",
+   "takim": "Kocaelispor",
+   "mac": 10,
+   "dakika": 828,
+   "gol": 4,
+   "asist": 1,
+   "penalti": 0,
+   "sayi": 4
+  },
+  {
+   "sira": 15,
    "oyuncu": "M. Greenwood",
    "takim": "Fenerbahçe",
    "mac": 9,
@@ -157,7 +168,7 @@
    "sayi": 4
   },
   {
-   "sira": 15,
+   "sira": 16,
    "oyuncu": "André Henrique",
    "takim": "Göztepe",
    "mac": 10,
@@ -168,22 +179,11 @@
    "sayi": 4
   },
   {
-   "sira": 16,
+   "sira": 17,
    "oyuncu": "S. Ballet",
    "takim": "Amed",
    "mac": 10,
    "dakika": 780,
-   "gol": 4,
-   "asist": 1,
-   "penalti": 1,
-   "sayi": 4
-  },
-  {
-   "sira": 17,
-   "oyuncu": "B. Kutlu",
-   "takim": "Kocaelispor",
-   "mac": 10,
-   "dakika": 828,
    "gol": 4,
    "asist": 1,
    "penalti": 1,
@@ -360,11 +360,11 @@
    "sira": 13,
    "oyuncu": "A. Benedyczak",
    "takim": "Kasımpaşa",
-   "mac": 10,
-   "dakika": 865,
-   "gol": 6,
+   "mac": 11,
+   "dakika": 951,
+   "gol": 7,
    "asist": 2,
-   "penalti": 1,
+   "penalti": 2,
    "sayi": 2
   },
   {
@@ -402,6 +402,17 @@
   },
   {
    "sira": 17,
+   "oyuncu": "Cláudio Winck",
+   "takim": "Kasımpaşa",
+   "mac": 11,
+   "dakika": 985,
+   "gol": 2,
+   "asist": 2,
+   "penalti": 0,
+   "sayi": 2
+  },
+  {
+   "sira": 18,
    "oyuncu": "A. Skov Olsen",
    "takim": "Başakşehir",
    "mac": 10,
@@ -412,22 +423,11 @@
    "sayi": 2
   },
   {
-   "sira": 18,
+   "sira": 19,
    "oyuncu": "F. Tongya",
    "takim": "Gençlerbirliği S.K.",
    "mac": 10,
    "dakika": 866,
-   "gol": 2,
-   "asist": 2,
-   "penalti": 0,
-   "sayi": 2
-  },
-  {
-   "sira": 19,
-   "oyuncu": "Cláudio Winck",
-   "takim": "Kasımpaşa",
-   "mac": 10,
-   "dakika": 895,
    "gol": 2,
    "asist": 2,
    "penalti": 0,
