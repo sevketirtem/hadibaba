@@ -1,0 +1,38 @@
+{
+  "tarih": "2026-11-07",
+  "mac": "Galatasaray – Amedspor",
+  "mac_alt": "11. hafta · Bugün 19.00",
+  "kanca": "Bu akşam eşitlik bozulacak",
+  "tablo": "Tahmin ligi: Hadi 4 · Yürü 4",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Silav hevalno! Îro êvarê maça mezin heye, ez kêfxweş im baba!",
+      "dil": "ku"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kürtçe selam verdi, maçı hatırlattı. Puanlar dört dört, eşitlik bozulacak baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Ben bir iki dedim, tam skoru istiyorum! Hissediyorum, gol geliyor baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Ben iki bir dedim. Hissetmek güzel ama tabloya skor girer baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "TAHMİNLER",
+    "hadi": "1-2",
+    "yuru": "2-1",
+    "hadi_soz": "Yaparız baba!",
+    "yuru_soz": "Görürüz baba."
+  },
+  "aciklama": "Bugün 19.00'da Galatasaray–Amedspor: Hadi 1-2, Yürü 2-1, tahmin ligi 4-4. Sen kimden yanasın? Tu çi dibêjî? Pêşbîniya xwe binivîse!",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/galatasaray-amedspor-bu-aksam-hadi-kasimpasa-2-0/",
+    "yuru": "https://yurubaba.com/2026/11/galatasaray-amedspor-bugun-yuru-kasimpasa-hesap/"
+  }
+}
