@@ -139,6 +139,10 @@ def main():
                                                         f"Hadi vs Yürü: {s.get('mac') or s.get('konu', '')}"))
             if k.get("ig_id"):
                 calistir("instagram", lambda: instagram_reels(k["page_token"], k["ig_id"], video_url, metin(s, uzun=False)))
+            # Hikâyeler (en iyi çaba; kayıt ayrı anahtarla tutulur)
+            calistir("facebook-story", lambda: meta.facebook_hikaye_video(k["page_token"], k["page_id"], video_url))
+            if k.get("ig_id"):
+                calistir("instagram-story", lambda: meta.instagram_hikaye(k["page_token"], k["ig_id"], video_url, video=True))
     th = os.environ.get("THREADS_TOKEN")
     if th:
         calistir("threads", lambda: threads_video(th, video_url, metin(s, uzun=False)))
