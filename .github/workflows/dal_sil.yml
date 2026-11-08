@@ -1,0 +1,20 @@
+# Geçici kesit dallarını siler (yalnızca kesit-girdi, kesit-N-dal, canli-kesit-cikti, kesit-deneme).
+name: Geçici dalları sil
+on:
+  workflow_dispatch:
+    inputs:
+      dallar: {description: "Boşlukla ayrılmış dal adları", type: string, required: true}
+permissions:
+  contents: write
+jobs:
+  sil:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for d in ${{ inputs.dallar }}; do
+            if [[ "$d" =~ ^(kesit-girdi|kesit-[0-9]+-dal|canli-kesit-cikti|kesit-deneme)$ ]]; then
+              git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" --delete "$d" && echo "::notice title=Silindi::$d" || echo "::warning title=Silinemedi::$d"
+            else
+              echo "::warning title=İzin yok::$d silinemez"
+            fi
+          done
