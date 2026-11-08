@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-07T11:09:32.630Z",
+ "guncellendi": "2026-11-08T11:21:45.396Z",
  "lig": "203",
  "sezon": "2026",
  "maclar": [
@@ -91,7 +91,7 @@
    "depGol": 1,
    "stat": "Gaziantep Stadyumu",
    "sehir": "Gaziantep",
-   "hakem": "Yasin Kol"
+   "hakem": "Y. Kol"
   },
   {
    "id": 1584368,
@@ -359,9 +359,9 @@
    "depId": 7411,
    "evGol": 1,
    "depGol": 2,
-   "stat": "Medas Konya Büyüksehir Belediyesi Stadium",
+   "stat": "Konya Buyuksehir Belediye Stadium",
    "sehir": "Konya",
-   "hakem": "Gurcan Hasova"
+   "hakem": "G. Hasova"
   },
   {
    "id": 1584389,
@@ -1385,9 +1385,9 @@
    "depId": 997,
    "evGol": 2,
    "depGol": 0,
-   "stat": "Medas Konya Büyüksehir Belediyesi Stadium",
+   "stat": "Konya Buyuksehir Belediye Stadium",
    "sehir": "Konya",
-   "hakem": "Oguzhan Cakir"
+   "hakem": "O. Cakir"
   },
   {
    "id": 1584444,
@@ -1405,7 +1405,7 @@
    "depGol": 0,
    "stat": "Gursel Aksel Stadium",
    "sehir": "Izmir",
-   "hakem": "Mehmet Türkmen"
+   "hakem": "M. Turkmen"
   },
   {
    "id": 1584440,
@@ -1495,7 +1495,7 @@
    "depGol": 3,
    "stat": "Kazim Karabekir Stadyumu",
    "sehir": "Erzurum",
-   "hakem": "Kadir Saglam"
+   "hakem": "K. Saglam"
   },
   {
    "id": 1584454,
@@ -1644,8 +1644,8 @@
   {
    "id": 1584460,
    "tarih": "2026-11-07T13:30:00+03:00",
-   "durum": "1H",
-   "dakika": 39,
+   "durum": "FT",
+   "dakika": 90,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "11",
@@ -1662,8 +1662,8 @@
   {
    "id": 1584465,
    "tarih": "2026-11-07T16:00:00+03:00",
-   "durum": "NS",
-   "dakika": null,
+   "durum": "FT",
+   "dakika": 90,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "11",
@@ -1671,17 +1671,17 @@
    "dep": "Konyaspor",
    "evId": 3603,
    "depId": 607,
-   "evGol": null,
-   "depGol": null,
+   "evGol": 1,
+   "depGol": 0,
    "stat": "Samsun 19 Mayis Stadyumu",
    "sehir": "Samsun",
-   "hakem": "G. Hasova"
+   "hakem": "Gurcan Hasova"
   },
   {
    "id": 1584461,
    "tarih": "2026-11-07T19:00:00+03:00",
-   "durum": "NS",
-   "dakika": null,
+   "durum": "FT",
+   "dakika": 90,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "11",
@@ -1689,17 +1689,17 @@
    "dep": "Amed",
    "evId": 645,
    "depId": 3579,
-   "evGol": null,
-   "depGol": null,
-   "stat": "Rams Park",
+   "evGol": 4,
+   "depGol": 3,
+   "stat": "Rams Park Stadyumu",
    "sehir": "Istanbul",
-   "hakem": "H. U. Meler"
+   "hakem": "Halil Umut Meler"
   },
   {
    "id": 1584463,
    "tarih": "2026-11-07T19:00:00+03:00",
-   "durum": "NS",
-   "dakika": null,
+   "durum": "FT",
+   "dakika": 90,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "11",
@@ -1707,17 +1707,17 @@
    "dep": "Başakşehir",
    "evId": 994,
    "depId": 564,
-   "evGol": null,
-   "depGol": null,
-   "stat": null,
+   "evGol": 1,
+   "depGol": 2,
+   "stat": "Gursel Aksel Stadium",
    "sehir": "Izmir",
-   "hakem": "C. Altay"
+   "hakem": "Cagdas Altay"
   },
   {
    "id": 1584464,
    "tarih": "2026-11-08T13:30:00+03:00",
-   "durum": "NS",
-   "dakika": null,
+   "durum": "HT",
+   "dakika": 45,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "11",
@@ -1725,11 +1725,11 @@
    "dep": "Erzurumspor FK",
    "evId": 1007,
    "depId": 1009,
-   "evGol": null,
-   "depGol": null,
-   "stat": null,
+   "evGol": 1,
+   "depGol": 1,
+   "stat": "Çaykur Didi Stadyumu",
    "sehir": "Rize",
-   "hakem": "D. Tonusluoglu"
+   "hakem": "Direnc Tonusluoglu"
   },
   {
    "id": 1584459,
