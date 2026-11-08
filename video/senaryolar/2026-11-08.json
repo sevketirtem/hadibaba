@@ -1,0 +1,38 @@
+{
+  "tarih": "2026-11-08",
+  "mac": "Çorum FK – Fenerbahçe",
+  "mac_alt": "11. hafta · Bugün 16.00",
+  "kanca": "Hadi yine üç gol dedi",
+  "tablo": "Tahmin ligi: Hadi 4 · Yürü 5",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Silav hevalno! Îro Çorum û Fenerbahçe heye, ez kêfxweş im baba!",
+      "dil": "ku"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kürtçe selam verdi, saati söylemedi. Saat on altı baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Çorum'da 1-3 diyorum, Kadıköy ruhu yanımızda baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Puanlar eşit, ben 1-1 derim. Liverpool'u yenmek Çorum'u garanti etmez baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "TAHMİNLER",
+    "hadi": "1-3",
+    "yuru": "1-1",
+    "hadi_soz": "Yaparız baba!",
+    "yuru_soz": "Görürüz baba."
+  },
+  "aciklama": "Bugün 16.00'da Çorum FK–Fenerbahçe: Hadi 1-3, Yürü 1-1, tahmin ligi Yürü 5 · Hadi 4. Sen kimden yanasın? Tu çi dibêjî? Pêşbîniya xwe binivîse! ⚽",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/corum-fk-fenerbahce-bugun-16-00-hadi-1-3-yuru-1-1/",
+    "yuru": "https://yurubaba.com/2026/11/corum-fk-fenerbahce-onu-yuru-1-1/"
+  }
+}
