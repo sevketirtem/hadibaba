@@ -155,3 +155,10 @@ canli-kesit-gs-amed-1 instagram
 canli-kesit-gs-amed-1 threads
 canli-kesit-gs-amed-1 tiktok
 canli-kesit-gs-amed-1 youtube
+canli-kesit-gs-amed-3 telegram@hadibabacom
+canli-kesit-gs-amed-3 telegram@yurubaba
+canli-kesit-gs-amed-3 facebook
+canli-kesit-gs-amed-3 instagram
+canli-kesit-gs-amed-3 threads
+canli-kesit-gs-amed-3 tiktok
+canli-kesit-gs-amed-3 youtube
