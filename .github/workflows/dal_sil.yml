@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          git init -q .
           for d in ${{ inputs.dallar }}; do
             if [[ "$d" =~ ^(kesit-girdi|kesit-[0-9]+-dal|canli-kesit-cikti|kesit-deneme)$ ]]; then
               git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" --delete "$d" && echo "::notice title=Silindi::$d" || echo "::warning title=Silinemedi::$d"
