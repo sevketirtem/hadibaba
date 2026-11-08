@@ -171,3 +171,12 @@ canli-kesit-gs-amed-2 instagram-story
 canli-kesit-gs-amed-2 threads
 canli-kesit-gs-amed-2 tiktok
 canli-kesit-gs-amed-2 youtube
+canli-kesit-gs-amed-4 telegram@hadibabacom
+canli-kesit-gs-amed-4 telegram@yurubaba
+canli-kesit-gs-amed-4 facebook
+canli-kesit-gs-amed-4 instagram
+canli-kesit-gs-amed-4 facebook-story
+canli-kesit-gs-amed-4 instagram-story
+canli-kesit-gs-amed-4 threads
+canli-kesit-gs-amed-4 tiktok
+canli-kesit-gs-amed-4 youtube
