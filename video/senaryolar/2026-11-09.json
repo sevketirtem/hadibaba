@@ -1,0 +1,19 @@
+{
+  "tarih": "2026-11-09",
+  "mac": "Milli ara şampiyonu",
+  "mac_alt": "Lig 21 Kasım'a kadar tatilde",
+  "kanca": "Hadi on iki gün bekleyemedi",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Lig durdu ama şampiyon hazır, Trabzon baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe selam verdi, sonra şampiyon ilan etti. Üç puan geride baba."},
+    {"kim": "hadi", "metin": "Altı galibiyet üst üste, bu sezon başka, yaparız baba!"},
+    {"kim": "yuru", "metin": "Galatasaray 28, Trabzon 25. Kasım'da şampiyon olunmaz baba."}
+  ],
+  "bitis_karti": {"baslik": "KİM HAKLI?", "hadi": "HADİ", "yuru": "YÜRÜ", "soru": "SEN KİMDEN YANASIN?", "alt": "Yoruma yaz"},
+  "aciklama": "Lig 21 Kasım'a kadar tatilde; Hadi Trabzonspor'u şampiyon ilan etti, Yürü tabloyu gösterdi. Sen kimden yanasın? Tu çi dibêjî? Pêşbîniya xwe binivîse! ⚽",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/milli-ara-12-gun-hadi-sampiyonu-trabzon-ilan-etti/",
+    "yuru": "https://yurubaba.com/2026/11/milli-ara-on-iki-gun-hadi-trabzonu-sampiyon-yapti/"
+  }
+}
