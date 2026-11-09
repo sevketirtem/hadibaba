@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-08T11:21:45.864Z",
+ "guncellendi": "2026-11-09T12:59:13.428Z",
  "sezon": "2026",
  "gol": [
   {
@@ -15,6 +15,17 @@
   },
   {
    "sira": 2,
+   "oyuncu": "Mohamed Salah",
+   "takim": "Trabzonspor",
+   "mac": 11,
+   "dakika": 913,
+   "gol": 9,
+   "asist": 3,
+   "penalti": 1,
+   "sayi": 9
+  },
+  {
+   "sira": 3,
    "oyuncu": "V. Osimhen",
    "takim": "Galatasaray",
    "mac": 8,
@@ -25,18 +36,18 @@
    "sayi": 9
   },
   {
-   "sira": 3,
-   "oyuncu": "Mohamed Salah",
-   "takim": "Trabzonspor",
-   "mac": 10,
-   "dakika": 824,
-   "gol": 8,
-   "asist": 3,
-   "penalti": 1,
-   "sayi": 8
+   "sira": 4,
+   "oyuncu": "D. Vlahović",
+   "takim": "Beşiktaş",
+   "mac": 9,
+   "dakika": 725,
+   "gol": 9,
+   "asist": 0,
+   "penalti": 2,
+   "sayi": 9
   },
   {
-   "sira": 4,
+   "sira": 5,
    "oyuncu": "E. Shomurodov",
    "takim": "Başakşehir",
    "mac": 11,
@@ -47,35 +58,24 @@
    "sayi": 8
   },
   {
-   "sira": 5,
+   "sira": 6,
    "oyuncu": "V. Muriqi",
    "takim": "Fenerbahçe",
-   "mac": 10,
-   "dakika": 439,
+   "mac": 11,
+   "dakika": 472,
    "gol": 7,
    "asist": 1,
    "penalti": 0,
    "sayi": 7
   },
   {
-   "sira": 6,
+   "sira": 7,
    "oyuncu": "A. Benedyczak",
    "takim": "Kasımpaşa",
    "mac": 11,
    "dakika": 950,
    "gol": 7,
    "asist": 2,
-   "penalti": 2,
-   "sayi": 7
-  },
-  {
-   "sira": 7,
-   "oyuncu": "D. Vlahović",
-   "takim": "Beşiktaş",
-   "mac": 8,
-   "dakika": 639,
-   "gol": 7,
-   "asist": 0,
    "penalti": 2,
    "sayi": 7
   },
@@ -92,6 +92,28 @@
   },
   {
    "sira": 9,
+   "oyuncu": "M. Greenwood",
+   "takim": "Fenerbahçe",
+   "mac": 10,
+   "dakika": 716,
+   "gol": 6,
+   "asist": 2,
+   "penalti": 1,
+   "sayi": 6
+  },
+  {
+   "sira": 10,
+   "oyuncu": "C. Ramírez",
+   "takim": "Çorum FK",
+   "mac": 11,
+   "dakika": 900,
+   "gol": 6,
+   "asist": 1,
+   "penalti": 1,
+   "sayi": 6
+  },
+  {
+   "sira": 11,
    "oyuncu": "D. Sabia",
    "takim": "Amed",
    "mac": 11,
@@ -102,18 +124,18 @@
    "sayi": 6
   },
   {
-   "sira": 10,
-   "oyuncu": "C. Ramírez",
-   "takim": "Çorum FK",
+   "sira": 12,
+   "oyuncu": "İ. Kahveci",
+   "takim": "Fenerbahçe",
    "mac": 10,
-   "dakika": 810,
-   "gol": 6,
-   "asist": 1,
-   "penalti": 1,
-   "sayi": 6
+   "dakika": 631,
+   "gol": 5,
+   "asist": 3,
+   "penalti": 0,
+   "sayi": 5
   },
   {
-   "sira": 11,
+   "sira": 13,
    "oyuncu": "B. Kutlu",
    "takim": "Kocaelispor",
    "mac": 11,
@@ -124,29 +146,29 @@
    "sayi": 5
   },
   {
-   "sira": 12,
+   "sira": 14,
    "oyuncu": "A. Kyziridis",
    "takim": "Çorum FK",
-   "mac": 8,
-   "dakika": 646,
+   "mac": 9,
+   "dakika": 736,
    "gol": 4,
    "asist": 4,
    "penalti": 0,
    "sayi": 4
   },
   {
-   "sira": 13,
+   "sira": 15,
    "oyuncu": "C. Ünder",
    "takim": "Çorum FK",
-   "mac": 8,
-   "dakika": 586,
+   "mac": 9,
+   "dakika": 647,
    "gol": 4,
    "asist": 2,
    "penalti": 0,
    "sayi": 4
   },
   {
-   "sira": 14,
+   "sira": 16,
    "oyuncu": "Franculino Djú",
    "takim": "Trabzonspor",
    "mac": 6,
@@ -157,18 +179,18 @@
    "sayi": 4
   },
   {
-   "sira": 15,
-   "oyuncu": "M. Greenwood",
-   "takim": "Fenerbahçe",
-   "mac": 9,
-   "dakika": 652,
+   "sira": 17,
+   "oyuncu": "A. Sowe",
+   "takim": "Rizespor",
+   "mac": 11,
+   "dakika": 846,
    "gol": 4,
-   "asist": 2,
-   "penalti": 1,
+   "asist": 0,
+   "penalti": 0,
    "sayi": 4
   },
   {
-   "sira": 16,
+   "sira": 18,
    "oyuncu": "André Henrique",
    "takim": "Göztepe",
    "mac": 11,
@@ -179,7 +201,7 @@
    "sayi": 4
   },
   {
-   "sira": 17,
+   "sira": 19,
    "oyuncu": "S. Ballet",
    "takim": "Amed",
    "mac": 10,
@@ -190,35 +212,13 @@
    "sayi": 4
   },
   {
-   "sira": 18,
+   "sira": 20,
    "oyuncu": "E. Muçi",
    "takim": "Trabzonspor",
-   "mac": 9,
-   "dakika": 629,
+   "mac": 10,
+   "dakika": 709,
    "gol": 3,
    "asist": 6,
-   "penalti": 0,
-   "sayi": 3
-  },
-  {
-   "sira": 19,
-   "oyuncu": "İ. Kahveci",
-   "takim": "Fenerbahçe",
-   "mac": 9,
-   "dakika": 574,
-   "gol": 3,
-   "asist": 3,
-   "penalti": 0,
-   "sayi": 3
-  },
-  {
-   "sira": 20,
-   "oyuncu": "E. Tozlu",
-   "takim": "Erzurumspor FK",
-   "mac": 10,
-   "dakika": 766,
-   "gol": 3,
-   "asist": 1,
    "penalti": 0,
    "sayi": 3
   }
@@ -228,8 +228,8 @@
    "sira": 1,
    "oyuncu": "E. Muçi",
    "takim": "Trabzonspor",
-   "mac": 9,
-   "dakika": 629,
+   "mac": 10,
+   "dakika": 709,
    "gol": 3,
    "asist": 6,
    "penalti": 0,
@@ -237,6 +237,17 @@
   },
   {
    "sira": 2,
+   "oyuncu": "O. Aydın",
+   "takim": "Fenerbahçe",
+   "mac": 11,
+   "dakika": 630,
+   "gol": 3,
+   "asist": 5,
+   "penalti": 0,
+   "sayi": 5
+  },
+  {
+   "sira": 3,
    "oyuncu": "Gabriel Sara",
    "takim": "Galatasaray",
    "mac": 11,
@@ -247,7 +258,7 @@
    "sayi": 5
   },
   {
-   "sira": 3,
+   "sira": 4,
    "oyuncu": "G. Orban",
    "takim": "Amed",
    "mac": 11,
@@ -258,29 +269,40 @@
    "sayi": 4
   },
   {
-   "sira": 4,
+   "sira": 5,
    "oyuncu": "A. Kyziridis",
    "takim": "Çorum FK",
-   "mac": 8,
-   "dakika": 646,
+   "mac": 9,
+   "dakika": 736,
    "gol": 4,
    "asist": 4,
    "penalti": 0,
    "sayi": 4
   },
   {
-   "sira": 5,
-   "oyuncu": "O. Aydın",
-   "takim": "Fenerbahçe",
+   "sira": 6,
+   "oyuncu": "L. Trossard",
+   "takim": "Beşiktaş",
    "mac": 10,
-   "dakika": 540,
+   "dakika": 828,
    "gol": 2,
    "asist": 4,
    "penalti": 0,
    "sayi": 4
   },
   {
-   "sira": 6,
+   "sira": 7,
+   "oyuncu": "K. Aktürkoğlu",
+   "takim": "Fenerbahçe",
+   "mac": 10,
+   "dakika": 512,
+   "gol": 1,
+   "asist": 4,
+   "penalti": 0,
+   "sayi": 4
+  },
+  {
+   "sira": 8,
    "oyuncu": "I. Brnić",
    "takim": "Başakşehir",
    "mac": 9,
@@ -291,7 +313,18 @@
    "sayi": 4
   },
   {
-   "sira": 7,
+   "sira": 9,
+   "oyuncu": "Mohamed Salah",
+   "takim": "Trabzonspor",
+   "mac": 11,
+   "dakika": 913,
+   "gol": 9,
+   "asist": 3,
+   "penalti": 1,
+   "sayi": 3
+  },
+  {
+   "sira": 10,
    "oyuncu": "V. Osimhen",
    "takim": "Galatasaray",
    "mac": 8,
@@ -302,29 +335,18 @@
    "sayi": 3
   },
   {
-   "sira": 8,
-   "oyuncu": "Mohamed Salah",
-   "takim": "Trabzonspor",
-   "mac": 10,
-   "dakika": 824,
-   "gol": 8,
-   "asist": 3,
-   "penalti": 1,
-   "sayi": 3
-  },
-  {
-   "sira": 9,
+   "sira": 11,
    "oyuncu": "İ. Kahveci",
    "takim": "Fenerbahçe",
-   "mac": 9,
-   "dakika": 574,
-   "gol": 3,
+   "mac": 10,
+   "dakika": 631,
+   "gol": 5,
    "asist": 3,
    "penalti": 0,
    "sayi": 3
   },
   {
-   "sira": 10,
+   "sira": 12,
    "oyuncu": "A. Batrakov",
    "takim": "Galatasaray",
    "mac": 9,
@@ -335,7 +357,18 @@
    "sayi": 3
   },
   {
-   "sira": 11,
+   "sira": 13,
+   "oyuncu": "R. Lukaku",
+   "takim": "Fenerbahçe",
+   "mac": 10,
+   "dakika": 483,
+   "gol": 1,
+   "asist": 3,
+   "penalti": 0,
+   "sayi": 3
+  },
+  {
+   "sira": 14,
    "oyuncu": "L. Torreira",
    "takim": "Galatasaray",
    "mac": 10,
@@ -346,18 +379,7 @@
    "sayi": 3
   },
   {
-   "sira": 12,
-   "oyuncu": "K. Aktürkoğlu",
-   "takim": "Fenerbahçe",
-   "mac": 9,
-   "dakika": 486,
-   "gol": 1,
-   "asist": 3,
-   "penalti": 0,
-   "sayi": 3
-  },
-  {
-   "sira": 13,
+   "sira": 15,
    "oyuncu": "R. Raveloson",
    "takim": "Amed",
    "mac": 11,
@@ -368,7 +390,29 @@
    "sayi": 3
   },
   {
-   "sira": 14,
+   "sira": 16,
+   "oyuncu": "L. Mercan",
+   "takim": "Fenerbahçe",
+   "mac": 8,
+   "dakika": 446,
+   "gol": 0,
+   "asist": 3,
+   "penalti": 0,
+   "sayi": 3
+  },
+  {
+   "sira": 17,
+   "oyuncu": "Adedire Emmanuel  Awokoya-Mebude",
+   "takim": "Rizespor",
+   "mac": 8,
+   "dakika": 502,
+   "gol": 0,
+   "asist": 3,
+   "penalti": 0,
+   "sayi": 3
+  },
+  {
+   "sira": 18,
    "oyuncu": "A. Benedyczak",
    "takim": "Kasımpaşa",
    "mac": 11,
@@ -379,67 +423,23 @@
    "sayi": 2
   },
   {
-   "sira": 15,
-   "oyuncu": "C. Ünder",
-   "takim": "Çorum FK",
-   "mac": 8,
-   "dakika": 586,
-   "gol": 4,
-   "asist": 2,
-   "penalti": 0,
-   "sayi": 2
-  },
-  {
-   "sira": 16,
-   "oyuncu": "Franculino Djú",
-   "takim": "Trabzonspor",
-   "mac": 6,
-   "dakika": 375,
-   "gol": 4,
-   "asist": 2,
-   "penalti": 0,
-   "sayi": 2
-  },
-  {
-   "sira": 17,
+   "sira": 19,
    "oyuncu": "M. Greenwood",
    "takim": "Fenerbahçe",
-   "mac": 9,
-   "dakika": 652,
-   "gol": 4,
+   "mac": 10,
+   "dakika": 716,
+   "gol": 6,
    "asist": 2,
    "penalti": 1,
    "sayi": 2
   },
   {
-   "sira": 18,
-   "oyuncu": "A. Skov Olsen",
-   "takim": "Başakşehir",
-   "mac": 11,
-   "dakika": 838,
-   "gol": 2,
-   "asist": 2,
-   "penalti": 0,
-   "sayi": 2
-  },
-  {
-   "sira": 19,
-   "oyuncu": "Cláudio Winck",
-   "takim": "Kasımpaşa",
-   "mac": 11,
-   "dakika": 985,
-   "gol": 2,
-   "asist": 2,
-   "penalti": 0,
-   "sayi": 2
-  },
-  {
    "sira": 20,
-   "oyuncu": "F. Tongya",
-   "takim": "Gençlerbirliği S.K.",
-   "mac": 10,
-   "dakika": 866,
-   "gol": 2,
+   "oyuncu": "C. Ünder",
+   "takim": "Çorum FK",
+   "mac": 9,
+   "dakika": 647,
+   "gol": 4,
    "asist": 2,
    "penalti": 0,
    "sayi": 2
