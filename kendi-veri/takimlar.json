@@ -4,7 +4,7 @@
   "takim": "Galatasaray",
   "slug": "galatasaray",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:13.837Z",
+   "guncellendi": "2026-11-10T12:44:55.935Z",
    "takim": {
     "id": 645,
     "ad": "Galatasaray",
@@ -831,7 +831,7 @@
   "takim": "Trabzonspor",
   "slug": "trabzonspor",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:14.226Z",
+   "guncellendi": "2026-11-10T12:44:56.230Z",
    "takim": {
     "id": 998,
     "ad": "Trabzonspor",
@@ -1752,7 +1752,7 @@
   "takim": "Amed",
   "slug": "amedspor",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:14.648Z",
+   "guncellendi": "2026-11-10T12:44:56.472Z",
    "takim": {
     "id": 3579,
     "ad": "Amed",
@@ -2643,7 +2643,7 @@
   "takim": "Beşiktaş",
   "slug": "besiktas",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:15.027Z",
+   "guncellendi": "2026-11-10T12:44:56.744Z",
    "takim": {
     "id": 549,
     "ad": "Beşiktaş",
@@ -2903,13 +2903,13 @@
      "ad": "V. Černý",
      "no": 18,
      "yas": 28,
-     "mevki": "Orta saha"
+     "mevki": "Forvet"
     },
     {
      "ad": "I. Fakili",
      "no": 29,
      "yas": 19,
-     "mevki": "Forvet"
+     "mevki": "Orta saha"
     },
     {
      "ad": "M. Hekimoğlu",
@@ -2939,7 +2939,7 @@
      "ad": "E. Poku",
      "no": 17,
      "yas": 21,
-     "mevki": "Orta saha"
+     "mevki": "Forvet"
     },
     {
      "ad": "M. Rashica",
@@ -3608,7 +3608,7 @@
   "takim": "Kasımpaşa",
   "slug": "kasimpasa",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:15.317Z",
+   "guncellendi": "2026-11-10T12:44:57.154Z",
    "takim": {
     "id": 1004,
     "ad": "Kasımpaşa",
@@ -3964,22 +3964,6 @@
      "karsi": "Sarıyer"
     },
     {
-     "oyuncu": "M. Fall",
-     "tarih": "2026-09-02",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Kasımpaşa",
-     "karsi": "İstanbulspor"
-    },
-    {
-     "oyuncu": "Ö. Bayram",
-     "tarih": "2026-09-02",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Sarıyer"
-    },
-    {
      "oyuncu": "Burak Gültekin",
      "tarih": "2026-08-25",
      "tur": "Loan",
@@ -3996,14 +3980,6 @@
      "karsi": "Lausanne"
     },
     {
-     "oyuncu": "K. Mouanga",
-     "tarih": "2026-08-23",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Lausanne"
-    },
-    {
      "oyuncu": "Y. Barası",
      "tarih": "2026-08-12",
      "tur": "Transfer",
@@ -4012,14 +3988,6 @@
      "karsi": "Eyüpspor"
     },
     {
-     "oyuncu": "Y. Barası",
-     "tarih": "2026-08-11",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Kasımpaşa",
-     "karsi": "Eyüpspor"
-    },
-    {
      "oyuncu": "Berkay Muratoğlu",
      "tarih": "2026-08-11",
      "tur": "Transfer",
@@ -4030,22 +3998,6 @@
     {
      "oyuncu": "K. Kanatsızkuş",
      "tarih": "2026-08-10",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Kasımpaşa",
-     "karsi": "Esenler Erokspor"
-    },
-    {
-     "oyuncu": "Berkay Muratoğlu",
-     "tarih": "2026-08-10",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Kasımpaşa",
-     "karsi": "12 Bingölspor"
-    },
-    {
-     "oyuncu": "K. Kanatsızkuş",
-     "tarih": "2026-08-09",
      "tur": "Transfer",
      "yon": "giden",
      "takim": "Kasımpaşa",
@@ -4092,22 +4044,6 @@
      "karsi": "AEL"
     },
     {
-     "oyuncu": "N. Opoku",
-     "tarih": "2026-08-05",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Kasımpaşa",
-     "karsi": "Las Palmas"
-    },
-    {
-     "oyuncu": "Cafú",
-     "tarih": "2026-08-04",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Kasımpaşa",
-     "karsi": "AEL"
-    },
-    {
      "oyuncu": "O. Yılmaz",
      "tarih": "2026-08-03",
      "tur": "Free agent",
@@ -4148,22 +4084,6 @@
      "karsi": "Parma"
     },
     {
-     "oyuncu": "G. Yalçın",
-     "tarih": "2026-07-27",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Alanyaspor"
-    },
-    {
-     "oyuncu": "A. Benedyczak",
-     "tarih": "2026-07-26",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Parma"
-    },
-    {
      "oyuncu": "P. Guèye",
      "tarih": "2026-07-20",
      "tur": "Loan",
@@ -4174,14 +4094,6 @@
     {
      "oyuncu": "Yasin Eratilla",
      "tarih": "2026-07-17",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Kasımpaşa",
-     "karsi": "Sakaryaspor"
-    },
-    {
-     "oyuncu": "Yasin Eratilla",
-     "tarih": "2026-07-16",
      "tur": "Transfer",
      "yon": "giden",
      "takim": "Kasımpaşa",
@@ -4204,24 +4116,8 @@
      "karsi": "Reims"
     },
     {
-     "oyuncu": "T. Diarra",
-     "tarih": "2026-07-14",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Reims"
-    },
-    {
      "oyuncu": "J. Jessen",
      "tarih": "2026-07-13",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "FC Fredericia"
-    },
-    {
-     "oyuncu": "J. Jessen",
-     "tarih": "2026-07-12",
      "tur": "Transfer",
      "yon": "gelen",
      "takim": "Kasımpaşa",
@@ -4252,14 +4148,6 @@
      "karsi": "Fatih Karagümrük"
     },
     {
-     "oyuncu": "A. Karapo",
-     "tarih": "2026-07-06",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Manisa F.K."
-    },
-    {
      "oyuncu": "K. Kurtovic",
      "tarih": "2026-07-01",
      "tur": "Loan",
@@ -4282,22 +4170,6 @@
      "yon": "gelen",
      "takim": "Kasımpaşa",
      "karsi": "CFR 1907 Cluj"
-    },
-    {
-     "oyuncu": "M. Rafferty",
-     "tarih": "2026-06-30",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Degerfors IF"
-    },
-    {
-     "oyuncu": "Elson Mendes",
-     "tarih": "2026-06-30",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Sochaux"
     },
     {
      "oyuncu": "Elysee Dalo Stann",
@@ -4330,6 +4202,22 @@
      "yon": "gelen",
      "takim": "Kasımpaşa",
      "karsi": "Mura"
+    },
+    {
+     "oyuncu": "M. Rafferty",
+     "tarih": "2026-06-30",
+     "tur": "Transfer",
+     "yon": "gelen",
+     "takim": "Kasımpaşa",
+     "karsi": "Degerfors IF"
+    },
+    {
+     "oyuncu": "Elson Mendes",
+     "tarih": "2026-06-30",
+     "tur": "Transfer",
+     "yon": "gelen",
+     "takim": "Kasımpaşa",
+     "karsi": "Sochaux"
     },
     {
      "oyuncu": "M. Fall",
@@ -4458,30 +4346,6 @@
      "yon": "gelen",
      "takim": "Kasımpaşa",
      "karsi": "Yeni Orduspor"
-    },
-    {
-     "oyuncu": "M. Rafferty",
-     "tarih": "2026-06-29",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Degerfors IF"
-    },
-    {
-     "oyuncu": "Elson Mendes",
-     "tarih": "2026-06-29",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Sochaux"
-    },
-    {
-     "oyuncu": "K. Kurtovic",
-     "tarih": "2026-06-29",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Kasımpaşa",
-     "karsi": "Mura"
     }
    ]
   }
@@ -4491,7 +4355,7 @@
   "takim": "Fenerbahçe",
   "slug": "fenerbahce",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:15.630Z",
+   "guncellendi": "2026-11-10T12:44:57.417Z",
    "takim": {
     "id": 611,
     "ad": "Fenerbahçe",
@@ -4769,19 +4633,19 @@
      "ad": "O. Aydın",
      "no": 70,
      "yas": 25,
-     "mevki": "Forvet"
+     "mevki": "Orta saha"
     },
     {
      "ad": "M. Greenwood",
      "no": 11,
      "yas": 24,
-     "mevki": "Forvet"
+     "mevki": "Orta saha"
     },
     {
      "ad": "İ. Kahveci",
      "no": 17,
      "yas": 30,
-     "mevki": "Forvet"
+     "mevki": "Orta saha"
     },
     {
      "ad": "R. Lukaku",
@@ -5380,7 +5244,7 @@
   "takim": "Kocaelispor",
   "slug": "kocaelispor",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:15.964Z",
+   "guncellendi": "2026-11-10T12:44:57.680Z",
    "takim": {
     "id": 7411,
     "ad": "Kocaelispor",
@@ -6191,7 +6055,7 @@
   "takim": "Başakşehir",
   "slug": "basaksehir",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:16.250Z",
+   "guncellendi": "2026-11-10T12:44:58.111Z",
    "takim": {
     "id": 564,
     "ad": "Başakşehir",
@@ -6485,512 +6349,7 @@
     }
    ],
    "sakatlar": [],
-   "transferler": [
-    {
-     "oyuncu": "Nuno da Costa",
-     "tarih": "2026-09-01",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Antalyaspor"
-    },
-    {
-     "oyuncu": "Nuno da Costa",
-     "tarih": "2026-08-31",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Antalyaspor"
-    },
-    {
-     "oyuncu": "T. Turhan",
-     "tarih": "2026-08-31",
-     "tur": "Loan",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Stevenage"
-    },
-    {
-     "oyuncu": "M. Fofana",
-     "tarih": "2026-08-27",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Chaves"
-    },
-    {
-     "oyuncu": "M. Fofana",
-     "tarih": "2026-08-26",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Chaves"
-    },
-    {
-     "oyuncu": "Doğukan Tuzcu",
-     "tarih": "2026-08-26",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Adana 01 FK"
-    },
-    {
-     "oyuncu": "Ö. Beyaz",
-     "tarih": "2026-08-25",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Antalyaspor"
-    },
-    {
-     "oyuncu": "Doğukan Tuzcu",
-     "tarih": "2026-08-25",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Adana 01 FK"
-    },
-    {
-     "oyuncu": "E. Koyuncu",
-     "tarih": "2026-08-19",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Akşehirspor"
-    },
-    {
-     "oyuncu": "Berkay Aslan",
-     "tarih": "2026-08-14",
-     "tur": "Loan",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Bodrum FK"
-    },
-    {
-     "oyuncu": "Matchoi Djaló",
-     "tarih": "2026-08-12",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Nacional"
-    },
-    {
-     "oyuncu": "Matchoi Djaló",
-     "tarih": "2026-08-11",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Nacional"
-    },
-    {
-     "oyuncu": "Abdoulaye Yoro",
-     "tarih": "2026-08-11",
-     "tur": "Loan",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Dundee Utd"
-    },
-    {
-     "oyuncu": "B. Özdemir",
-     "tarih": "2026-08-08",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Çorum FK"
-    },
-    {
-     "oyuncu": "B. Özdemir",
-     "tarih": "2026-08-07",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Çorum FK"
-    },
-    {
-     "oyuncu": "F. Ebosele",
-     "tarih": "2026-08-06",
-     "tur": "Loan",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Erzurumspor FK"
-    },
-    {
-     "oyuncu": "Y. Dilek",
-     "tarih": "2026-08-03",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Beyoğlu Yeni Çarşı"
-    },
-    {
-     "oyuncu": "Y. Dilek",
-     "tarih": "2026-08-02",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Beyoğlu Yeni Çarşı"
-    },
-    {
-     "oyuncu": "H. Acun",
-     "tarih": "2026-08-02",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Sebat Gençlikspor"
-    },
-    {
-     "oyuncu": "H. Acun",
-     "tarih": "2026-08-01",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Sebat Gençlikspor"
-    },
-    {
-     "oyuncu": "U. Bozok",
-     "tarih": "2026-07-28",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Eyüpspor"
-    },
-    {
-     "oyuncu": "B. Aydoğmuş",
-     "tarih": "2026-07-27",
-     "tur": "Loan",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Güzide Gebzespor"
-    },
-    {
-     "oyuncu": "E. Kaplan",
-     "tarih": "2026-07-27",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Bodrum FK"
-    },
-    {
-     "oyuncu": "A. Skov Olsen",
-     "tarih": "2026-07-27",
-     "tur": "Loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "VfL Wolfsburg"
-    },
-    {
-     "oyuncu": "E. Kaplan",
-     "tarih": "2026-07-26",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Bodrum FK"
-    },
-    {
-     "oyuncu": "O. Inan",
-     "tarih": "2026-07-22",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Kütahyaspor"
-    },
-    {
-     "oyuncu": "E. Karaağaç",
-     "tarih": "2026-07-21",
-     "tur": "Loan",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Sebat Gençlikspor"
-    },
-    {
-     "oyuncu": "Miguel Crespo",
-     "tarih": "2026-07-21",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Al Khaleej Saihat"
-    },
-    {
-     "oyuncu": "F. Nzaba",
-     "tarih": "2026-07-20",
-     "tur": "-",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Antalyaspor"
-    },
-    {
-     "oyuncu": "A. Kaygısız",
-     "tarih": "2026-07-19",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Balıkesirspor"
-    },
-    {
-     "oyuncu": "H. Ljukovac",
-     "tarih": "2026-07-08",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Zrinjski"
-    },
-    {
-     "oyuncu": "E. Bayram",
-     "tarih": "2026-07-08",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "KVC Westerlo"
-    },
-    {
-     "oyuncu": "D. Alemdar",
-     "tarih": "2026-07-07",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Beşiktaş"
-    },
-    {
-     "oyuncu": "E. Bayram",
-     "tarih": "2026-07-07",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "KVC Westerlo"
-    },
-    {
-     "oyuncu": "M. Fofana",
-     "tarih": "2026-06-30",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Sakaryaspor"
-    },
-    {
-     "oyuncu": "Léo Duarte",
-     "tarih": "2026-06-30",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Atletico-MG"
-    },
-    {
-     "oyuncu": "E. Višća",
-     "tarih": "2026-06-30",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Trabzonspor"
-    },
-    {
-     "oyuncu": "E. Shomurodov",
-     "tarih": "2026-06-30",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "AS Roma"
-    },
-    {
-     "oyuncu": "Ege Ozturk",
-     "tarih": "2026-06-30",
-     "tur": "-",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "İstanbul Başakşehir U19"
-    },
-    {
-     "oyuncu": "M. Karbownik",
-     "tarih": "2026-06-30",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Hertha BSC"
-    },
-    {
-     "oyuncu": "B. Çelik",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Ümraniyespor"
-    },
-    {
-     "oyuncu": "B. Aydoğmuş",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Sarıyer"
-    },
-    {
-     "oyuncu": "E. Kaplan",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Ümraniyespor"
-    },
-    {
-     "oyuncu": "F. Nzaba",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Esenler Erokspor"
-    },
-    {
-     "oyuncu": "E. Karaağaç",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Galata"
-    },
-    {
-     "oyuncu": "Matchoi Djaló",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Wisla Plock"
-    },
-    {
-     "oyuncu": "Ö. Şahiner",
-     "tarih": "2026-06-29",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Sahiner Omer"
-    },
-    {
-     "oyuncu": "B. Özcan",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Fatih Karagümrük"
-    },
-    {
-     "oyuncu": "O. Ergün",
-     "tarih": "2026-06-29",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Ergun Onur"
-    },
-    {
-     "oyuncu": "M. Fofana",
-     "tarih": "2026-06-29",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Sakaryaspor"
-    },
-    {
-     "oyuncu": "Ö. Beyaz",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Esenler Erokspor"
-    },
-    {
-     "oyuncu": "Abdoulaye Yoro",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Dinamo Tbilisi"
-    },
-    {
-     "oyuncu": "H. Ljukovac",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Mura"
-    },
-    {
-     "oyuncu": "E. Koyuncu",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Galata"
-    },
-    {
-     "oyuncu": "Y. Dilek",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Kırklarelispor"
-    },
-    {
-     "oyuncu": "O. Inan",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Karsiyaka"
-    },
-    {
-     "oyuncu": "Doğukan Tuzcu",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Sakaryaspor"
-    },
-    {
-     "oyuncu": "H. Acun",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Alanya 1221 FK"
-    },
-    {
-     "oyuncu": "A. Harit",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Marseille"
-    },
-    {
-     "oyuncu": "E. Shomurodov",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "AS Roma"
-    },
-    {
-     "oyuncu": "V. Babacan",
-     "tarih": "2026-06-29",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Babacan Volkan"
-    },
-    {
-     "oyuncu": "K. Karataş",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "giden",
-     "takim": "Başakşehir",
-     "karsi": "Galatasaray"
-    },
-    {
-     "oyuncu": "D. Dilmen",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Başakşehir",
-     "karsi": "Pendikspor"
-    }
-   ]
+   "transferler": []
   }
  },
  {
@@ -6998,7 +6357,7 @@
   "takim": "Çorum FK",
   "slug": "corum-fk",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:16.508Z",
+   "guncellendi": "2026-11-10T12:44:58.516Z",
    "takim": {
     "id": 6343,
     "ad": "Çorum FK",
@@ -8045,7 +7404,7 @@
   "takim": "Göztepe",
   "slug": "goztepe",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:16.778Z",
+   "guncellendi": "2026-11-10T12:45:34.089Z",
    "takim": {
     "id": 994,
     "ad": "Göztepe",
@@ -8732,7 +8091,7 @@
   "takim": "Rizespor",
   "slug": "rizespor",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:17.057Z",
+   "guncellendi": "2026-11-10T12:45:34.342Z",
    "takim": {
     "id": 1007,
     "ad": "Rizespor",
@@ -9430,6 +8789,14 @@
      "karsi": "AEK Athens FC"
     },
     {
+     "oyuncu": "H. Özbakır",
+     "tarih": "2026-06-29",
+     "tur": "Return from loan",
+     "yon": "gelen",
+     "takim": "Rizespor",
+     "karsi": "Çayelispor"
+    },
+    {
      "oyuncu": "S. Bakayoko",
      "tarih": "2026-06-29",
      "tur": "Transfer",
@@ -9452,14 +8819,6 @@
      "yon": "gelen",
      "takim": "Rizespor",
      "karsi": "Beykoz İshaklıspor"
-    },
-    {
-     "oyuncu": "H. Özbakır",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "gelen",
-     "takim": "Rizespor",
-     "karsi": "Çayelispor"
     }
    ]
   }
@@ -9469,7 +8828,7 @@
   "takim": "Erzurumspor FK",
   "slug": "erzurumspor",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:17.314Z",
+   "guncellendi": "2026-11-10T12:45:34.595Z",
    "takim": {
     "id": 1009,
     "ad": "Erzurumspor FK",
@@ -9789,22 +9148,6 @@
      "karsi": "Bodrum FK"
     },
     {
-     "oyuncu": "Taha Rençber",
-     "tarih": "2026-09-03",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Erzurumspor FK",
-     "karsi": "Çorum FK"
-    },
-    {
-     "oyuncu": "E. Acar",
-     "tarih": "2026-09-03",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Erzurumspor FK",
-     "karsi": "Bandırmaspor"
-    },
-    {
      "oyuncu": "L. Agyekum",
      "tarih": "2026-09-03",
      "tur": "Loan",
@@ -9813,20 +9156,20 @@
      "karsi": "Cercle Brugge"
     },
     {
-     "oyuncu": "M. Akpınar",
-     "tarih": "2026-09-02",
-     "tur": "Free agent",
-     "yon": "giden",
+     "oyuncu": "E. Acar",
+     "tarih": "2026-09-03",
+     "tur": "Transfer",
+     "yon": "gelen",
      "takim": "Erzurumspor FK",
-     "karsi": "Kayserispor"
+     "karsi": "Bandırmaspor"
     },
     {
-     "oyuncu": "Fernando Andrade",
-     "tarih": "2026-09-02",
+     "oyuncu": "Taha Rençber",
+     "tarih": "2026-09-03",
      "tur": "Free agent",
-     "yon": "giden",
+     "yon": "gelen",
      "takim": "Erzurumspor FK",
-     "karsi": "Bodrum FK"
+     "karsi": "Çorum FK"
     },
     {
      "oyuncu": "Enes Yigit",
@@ -9835,22 +9178,6 @@
      "yon": "giden",
      "takim": "Erzurumspor FK",
      "karsi": "Anadolu Üniversitesi"
-    },
-    {
-     "oyuncu": "Taha Rençber",
-     "tarih": "2026-09-02",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Erzurumspor FK",
-     "karsi": "Çorum FK"
-    },
-    {
-     "oyuncu": "E. Acar",
-     "tarih": "2026-09-02",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Erzurumspor FK",
-     "karsi": "Bandırmaspor"
     },
     {
      "oyuncu": "S. Karakaş",
@@ -9893,14 +9220,6 @@
      "karsi": "Kütahyaspor"
     },
     {
-     "oyuncu": "S. Kose",
-     "tarih": "2026-08-22",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Erzurumspor FK",
-     "karsi": "Kütahyaspor"
-    },
-    {
      "oyuncu": "Ö. Sert",
      "tarih": "2026-08-20",
      "tur": "Free agent",
@@ -9917,14 +9236,6 @@
      "karsi": "Vanspor FK"
     },
     {
-     "oyuncu": "Ö. Sert",
-     "tarih": "2026-08-19",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Erzurumspor FK",
-     "karsi": "Şanlıurfaspor"
-    },
-    {
      "oyuncu": "E. Owusu",
      "tarih": "2026-08-17",
      "tur": "Transfer",
@@ -9935,22 +9246,6 @@
     {
      "oyuncu": "Miguel Cardoso",
      "tarih": "2026-08-17",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Erzurumspor FK",
-     "karsi": "Kayserispor"
-    },
-    {
-     "oyuncu": "E. Owusu",
-     "tarih": "2026-08-16",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Erzurumspor FK",
-     "karsi": "Auxerre"
-    },
-    {
-     "oyuncu": "Miguel Cardoso",
-     "tarih": "2026-08-16",
      "tur": "Transfer",
      "yon": "gelen",
      "takim": "Erzurumspor FK",
@@ -9989,14 +9284,6 @@
      "karsi": "Bandırmaspor"
     },
     {
-     "oyuncu": "A. Ülgen",
-     "tarih": "2026-07-23",
-     "tur": "-",
-     "yon": "giden",
-     "takim": "Erzurumspor FK",
-     "karsi": "Bandırmaspor"
-    },
-    {
      "oyuncu": "E. Taşkıran",
      "tarih": "2026-07-16",
      "tur": "Free agent",
@@ -10007,14 +9294,6 @@
     {
      "oyuncu": "N. Mujakić",
      "tarih": "2026-07-14",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Erzurumspor FK",
-     "karsi": "FK Partizan"
-    },
-    {
-     "oyuncu": "N. Mujakić",
-     "tarih": "2026-07-13",
      "tur": "Transfer",
      "yon": "gelen",
      "takim": "Erzurumspor FK",
@@ -10244,7 +9523,7 @@
   "takim": "Alanyaspor",
   "slug": "alanyaspor",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:17.608Z",
+   "guncellendi": "2026-11-10T12:45:34.852Z",
    "takim": {
     "id": 996,
     "ad": "Alanyaspor",
@@ -10572,32 +9851,8 @@
      "karsi": "Beşiktaş"
     },
     {
-     "oyuncu": "Y. Karagöz",
-     "tarih": "2026-09-01",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Alanyaspor",
-     "karsi": "12 Bingölspor"
-    },
-    {
-     "oyuncu": "Ü. Akdağ",
-     "tarih": "2026-08-31",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Alanyaspor",
-     "karsi": "Beşiktaş"
-    },
-    {
      "oyuncu": "E. Demir",
      "tarih": "2026-08-24",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Alanyaspor",
-     "karsi": "Fenerbahçe"
-    },
-    {
-     "oyuncu": "E. Demir",
-     "tarih": "2026-08-23",
      "tur": "Free agent",
      "yon": "gelen",
      "takim": "Alanyaspor",
@@ -10620,36 +9875,12 @@
      "karsi": "12 Bingölspor"
     },
     {
-     "oyuncu": "E. Çavuş",
-     "tarih": "2026-08-20",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Alanyaspor",
-     "karsi": "12 Bingölspor"
-    },
-    {
      "oyuncu": "Iván Cédric",
      "tarih": "2026-08-20",
      "tur": "Transfer",
      "yon": "gelen",
      "takim": "Alanyaspor",
      "karsi": "Vanspor FK"
-    },
-    {
-     "oyuncu": "Iván Cédric",
-     "tarih": "2026-08-19",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Alanyaspor",
-     "karsi": "Vanspor FK"
-    },
-    {
-     "oyuncu": "B. Gezek",
-     "tarih": "2026-08-07",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Alanyaspor",
-     "karsi": "Kayserispor"
     },
     {
      "oyuncu": "Ş. Dik",
@@ -10661,7 +9892,7 @@
     },
     {
      "oyuncu": "B. Gezek",
-     "tarih": "2026-08-06",
+     "tarih": "2026-08-07",
      "tur": "Transfer",
      "yon": "gelen",
      "takim": "Alanyaspor",
@@ -10678,14 +9909,6 @@
     {
      "oyuncu": "N. Janvier",
      "tarih": "2026-08-03",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Alanyaspor",
-     "karsi": "Esenler Erokspor"
-    },
-    {
-     "oyuncu": "N. Janvier",
-     "tarih": "2026-08-02",
      "tur": "Free agent",
      "yon": "giden",
      "takim": "Alanyaspor",
@@ -10726,14 +9949,6 @@
     {
      "oyuncu": "G. Yalçın",
      "tarih": "2026-07-28",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Alanyaspor",
-     "karsi": "Kasımpaşa"
-    },
-    {
-     "oyuncu": "G. Yalçın",
-     "tarih": "2026-07-27",
      "tur": "Free agent",
      "yon": "giden",
      "takim": "Alanyaspor",
@@ -10860,20 +10075,20 @@
      "karsi": "FC Augsburg"
     },
     {
-     "oyuncu": "B. Moğultay",
-     "tarih": "2026-06-29",
-     "tur": "Return from loan",
-     "yon": "giden",
-     "takim": "Alanyaspor",
-     "karsi": "Borussia Dortmund II"
-    },
-    {
      "oyuncu": "Muhammet Apaydin",
      "tarih": "2026-06-29",
      "tur": "Return from loan",
      "yon": "gelen",
      "takim": "Alanyaspor",
      "karsi": "Amasyaspor 1968"
+    },
+    {
+     "oyuncu": "B. Moğultay",
+     "tarih": "2026-06-29",
+     "tur": "Return from loan",
+     "yon": "giden",
+     "takim": "Alanyaspor",
+     "karsi": "Borussia Dortmund II"
     }
    ]
   }
@@ -10883,7 +10098,7 @@
   "takim": "Gençlerbirliği S.K.",
   "slug": "genclerbirligi",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:17.876Z",
+   "guncellendi": "2026-11-10T12:46:10.359Z",
    "takim": {
     "id": 997,
     "ad": "Gençlerbirliği S.K.",
@@ -11247,14 +10462,6 @@
      "karsi": "Amed"
     },
     {
-     "oyuncu": "Rafael LuÃ­s",
-     "tarih": "2026-09-03",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Gençlerbirliği S.K.",
-     "karsi": "Benfica"
-    },
-    {
      "oyuncu": "Pedro Mendes",
      "tarih": "2026-09-03",
      "tur": "Transfer",
@@ -11263,12 +10470,12 @@
      "karsi": "Modena"
     },
     {
-     "oyuncu": "E. Kemaloğlu",
-     "tarih": "2026-09-02",
+     "oyuncu": "Rafael LuÃ­s",
+     "tarih": "2026-09-03",
      "tur": "Free agent",
-     "yon": "giden",
+     "yon": "gelen",
      "takim": "Gençlerbirliği S.K.",
-     "karsi": "Kayserispor"
+     "karsi": "Benfica"
     },
     {
      "oyuncu": "Berat Can Sebat",
@@ -11277,30 +10484,6 @@
      "yon": "giden",
      "takim": "Gençlerbirliği S.K.",
      "karsi": "Karabük İdman Yurdu"
-    },
-    {
-     "oyuncu": "Dilhan Demir",
-     "tarih": "2026-09-02",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Gençlerbirliği S.K.",
-     "karsi": "Amed"
-    },
-    {
-     "oyuncu": "Rafael LuÃ­s",
-     "tarih": "2026-09-02",
-     "tur": "Free agent",
-     "yon": "gelen",
-     "takim": "Gençlerbirliği S.K.",
-     "karsi": "Benfica"
-    },
-    {
-     "oyuncu": "Pedro Mendes",
-     "tarih": "2026-09-02",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Gençlerbirliği S.K.",
-     "karsi": "Modena"
     },
     {
      "oyuncu": "Zahid Saglam",
@@ -11321,14 +10504,6 @@
     {
      "oyuncu": "Ž. Žužek",
      "tarih": "2026-09-01",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Gençlerbirliği S.K.",
-     "karsi": "Celje"
-    },
-    {
-     "oyuncu": "Ž. Žužek",
-     "tarih": "2026-08-31",
      "tur": "Free agent",
      "yon": "giden",
      "takim": "Gençlerbirliği S.K.",
@@ -11369,14 +10544,6 @@
     {
      "oyuncu": "Ousmane Diabate",
      "tarih": "2026-08-24",
-     "tur": "-",
-     "yon": "giden",
-     "takim": "Gençlerbirliği S.K.",
-     "karsi": "Newcastle United U21"
-    },
-    {
-     "oyuncu": "Ousmane Diabate",
-     "tarih": "2026-08-23",
      "tur": "-",
      "yon": "giden",
      "takim": "Gençlerbirliği S.K.",
@@ -11481,14 +10648,6 @@
     {
      "oyuncu": "G. Altıparmak",
      "tarih": "2026-07-05",
-     "tur": "Free agent",
-     "yon": "giden",
-     "takim": "Gençlerbirliği S.K.",
-     "karsi": "Batman Petrolspor"
-    },
-    {
-     "oyuncu": "G. Altıparmak",
-     "tarih": "2026-07-04",
      "tur": "Free agent",
      "yon": "giden",
      "takim": "Gençlerbirliği S.K.",
@@ -11615,14 +10774,6 @@
      "karsi": "CSKA Moscow"
     },
     {
-     "oyuncu": "S. Koïta",
-     "tarih": "2026-06-29",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Gençlerbirliği S.K.",
-     "karsi": "CSKA Moscow"
-    },
-    {
      "oyuncu": "Dilhan Demir",
      "tarih": "2026-06-29",
      "tur": "Return from loan",
@@ -11726,7 +10877,7 @@
   "takim": "Konyaspor",
   "slug": "konyaspor",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:18.152Z",
+   "guncellendi": "2026-11-10T12:46:10.647Z",
    "takim": {
     "id": 607,
     "ad": "Konyaspor",
@@ -12627,7 +11778,7 @@
   "takim": "Gaziantep FK",
   "slug": "gaziantep-fk",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:18.416Z",
+   "guncellendi": "2026-11-10T12:46:10.893Z",
    "takim": {
     "id": 3573,
     "ad": "Gaziantep FK",
@@ -13464,7 +12615,7 @@
   "takim": "Samsunspor",
   "slug": "samsunspor",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:18.702Z",
+   "guncellendi": "2026-11-10T12:46:11.144Z",
    "takim": {
     "id": 3603,
     "ad": "Samsunspor",
@@ -13796,14 +12947,6 @@
      "karsi": "Al-Qadisiyah FC"
     },
     {
-     "oyuncu": "M. Bayo",
-     "tarih": "2026-09-03",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Samsunspor",
-     "karsi": "Lille"
-    },
-    {
      "oyuncu": "S. Eraković",
      "tarih": "2026-09-03",
      "tur": "Loan",
@@ -13820,12 +12963,12 @@
      "karsi": "Şanlıurfaspor"
     },
     {
-     "oyuncu": "Badra Diabbate Ali",
-     "tarih": "2026-09-02",
+     "oyuncu": "M. Bayo",
+     "tarih": "2026-09-03",
      "tur": "Transfer",
-     "yon": "giden",
+     "yon": "gelen",
      "takim": "Samsunspor",
-     "karsi": "Al-Qadisiyah FC"
+     "karsi": "Lille"
     },
     {
      "oyuncu": "Cheick Diabate",
@@ -13834,14 +12977,6 @@
      "yon": "giden",
      "takim": "Samsunspor",
      "karsi": "Rudes"
-    },
-    {
-     "oyuncu": "M. Bayo",
-     "tarih": "2026-09-02",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Samsunspor",
-     "karsi": "Lille"
     },
     {
      "oyuncu": "Eyup Degirmenci",
@@ -13884,14 +13019,6 @@
      "karsi": "Fredrikstad"
     },
     {
-     "oyuncu": "O. Øhlenschlæger",
-     "tarih": "2026-08-22",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Samsunspor",
-     "karsi": "Fredrikstad"
-    },
-    {
      "oyuncu": "C. Ndiaye",
      "tarih": "2026-08-16",
      "tur": "Loan",
@@ -13902,14 +13029,6 @@
     {
      "oyuncu": "A. Muja",
      "tarih": "2026-08-13",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Samsunspor",
-     "karsi": "St. Truiden"
-    },
-    {
-     "oyuncu": "A. Muja",
-     "tarih": "2026-08-12",
      "tur": "Transfer",
      "yon": "giden",
      "takim": "Samsunspor",
@@ -13932,24 +13051,8 @@
      "karsi": "Empoli"
     },
     {
-     "oyuncu": "G. Guarino",
-     "tarih": "2026-08-09",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Samsunspor",
-     "karsi": "Empoli"
-    },
-    {
      "oyuncu": "I. Drapiński",
      "tarih": "2026-08-07",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Samsunspor",
-     "karsi": "Piast Gliwice"
-    },
-    {
-     "oyuncu": "I. Drapiński",
-     "tarih": "2026-08-06",
      "tur": "Transfer",
      "yon": "gelen",
      "takim": "Samsunspor",
@@ -13966,14 +13069,6 @@
     {
      "oyuncu": "Y. Sekongo",
      "tarih": "2026-07-31",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Samsunspor",
-     "karsi": "Dunkerque"
-    },
-    {
-     "oyuncu": "Y. Sekongo",
-     "tarih": "2026-07-30",
      "tur": "Transfer",
      "yon": "gelen",
      "takim": "Samsunspor",
@@ -14004,14 +13099,6 @@
      "karsi": "FC Bocholt"
     },
     {
-     "oyuncu": "C. Holse",
-     "tarih": "2026-07-26",
-     "tur": "Transfer",
-     "yon": "giden",
-     "takim": "Samsunspor",
-     "karsi": "St. Louis City"
-    },
-    {
      "oyuncu": "M. Özbaskıcı",
      "tarih": "2026-07-23",
      "tur": "Transfer",
@@ -14030,14 +13117,6 @@
     {
      "oyuncu": "E. Watt",
      "tarih": "2026-07-17",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Samsunspor",
-     "karsi": "Motherwell"
-    },
-    {
-     "oyuncu": "E. Watt",
-     "tarih": "2026-07-16",
      "tur": "Transfer",
      "yon": "gelen",
      "takim": "Samsunspor",
@@ -14084,20 +13163,20 @@
      "karsi": "Dunkerque"
     },
     {
-     "oyuncu": "F. Kaya",
-     "tarih": "2026-06-30",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Samsunspor",
-     "karsi": "SV Wehen"
-    },
-    {
      "oyuncu": "B. Bayazıt",
      "tarih": "2026-06-30",
      "tur": "Free agent",
      "yon": "gelen",
      "takim": "Samsunspor",
      "karsi": "Kayserispor"
+    },
+    {
+     "oyuncu": "F. Kaya",
+     "tarih": "2026-06-30",
+     "tur": "Transfer",
+     "yon": "gelen",
+     "takim": "Samsunspor",
+     "karsi": "SV Wehen"
     },
     {
      "oyuncu": "A. Muja",
@@ -14226,14 +13305,6 @@
      "yon": "gelen",
      "takim": "Samsunspor",
      "karsi": "Gençlerbirliği S.K."
-    },
-    {
-     "oyuncu": "F. Kaya",
-     "tarih": "2026-06-29",
-     "tur": "Transfer",
-     "yon": "gelen",
-     "takim": "Samsunspor",
-     "karsi": "SV Wehen"
     }
    ]
   }
@@ -14243,7 +13314,7 @@
   "takim": "Eyüpspor",
   "slug": "eyupspor",
   "veri": {
-   "guncellendi": "2026-11-09T12:59:19.039Z",
+   "guncellendi": "2026-11-10T12:46:11.402Z",
    "takim": {
     "id": 3588,
     "ad": "Eyüpspor",
