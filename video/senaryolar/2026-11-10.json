@@ -1,0 +1,38 @@
+{
+  "tarih": "2026-11-10",
+  "mac": "Türkiye – Belçika",
+  "mac_alt": "Uluslar Ligi · Perşembe 20.00 · İzmir",
+  "kanca": "Belçika'ya rövanş vakti!",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Silav hevalno! Pêncşem maça netewî heye, ez pir kêfxweş im baba!",
+      "dil": "ku"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kürtçe selam verdi, Belçika'daki 3-0'ı unuttu baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Bu sefer evimizde, İzmir'de, rövanş zamanı! Yaparız baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Üç golün borcu gol atarak ödenir. Sakin ol baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "KİM HAKLI?",
+    "hadi": "HADİ",
+    "yuru": "YÜRÜ",
+    "soru": "SEN KİMDEN YANASIN?",
+    "alt": "Yoruma yaz"
+  },
+  "aciklama": "Türkiye Perşembe 20.00'de İzmir'de Belçika'yı ağırlıyor; Hadi rövanş diyor, Yürü Ekim'deki 3-0'ı hatırlatıyor. Sen kimden yanasın? Tu çi dibêjî? Pêşbîniya xwe binivîse! ⚽",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/turkiye-belcika-12-kasim-hadi-izmir-yaparsak-yapariz/",
+    "yuru": "https://yurubaba.com/2026/11/turkiye-belcika-3-0-hesap-hadi-milli-aradaki-gaz/"
+  }
+}
