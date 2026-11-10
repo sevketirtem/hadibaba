@@ -99,3 +99,18 @@ jobs:
           git add video/paylasildi.txt 2>/dev/null || exit 0
           git commit -qm "Video paylaşım kaydı: ${{ steps.al.outputs.anahtar }}" || exit 0
           git pull -q --rebase origin main && git push -q origin main
+      # Yürü'nün Facebook/Instagram/Threads'ine hemen aktar (yurubaba2027 video_yuru.yml). Yürü'nün saatlik
+      # zamanlayıcısı GitHub'da saatlerce gecikebiliyor; bu adım beklemeyi kaldırır.
+      # Gerekli secret: YURU_PAT = fine-grained token, yalnızca sevketirtem/yurubaba2027, izin "Actions: Read and write".
+      - name: Yürü'nün hesaplarına aktar
+        if: success()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.YURU_PAT }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning title=Yürü aktarımı tetiklenmedi::YURU_PAT secret'ı yok; Yürü'nün saatlik görevi videoyu gecikmeli alır."; exit 0
+          fi
+          gh api -X POST repos/sevketirtem/yurubaba2027/actions/workflows/video_yuru.yml/dispatches \
+            -f ref=main -F 'inputs[dry_run]=false' \
+            && echo "::notice title=Yürü aktarımı tetiklendi::yurubaba2027 video_yuru.yml başlatıldı"
