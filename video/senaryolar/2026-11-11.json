@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-11",
+  "mac": "Türkiye – Belçika",
+  "mac_alt": "Uluslar Ligi · Perşembe 20.00 · İzmir",
+  "kanca": "Sıfır puan, Hadi'ye göre kâr!",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Sibê li Îzmîrê maç heye, hêviya me pir mezin e baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Umudu büyükmüş. Dört maçta sıfır puan, iki gol. Sakin ol baba."},
+    {"kim": "hadi", "metin": "Sıfırın altı yok, gerisi kâr! Yarın 20.00'de İzmir'de 2-1 alırız baba!"},
+    {"kim": "yuru", "metin": "Averaj eksi dokuz. Ben 1-1 diyorum, Kasım'da mucize beklenmez baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "2-1", "yuru": "1-1",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Türkiye yarın 20.00'de İzmir'de Belçika'yı ağırlıyor; Hadi sıfır puana kâr diyor, Yürü averajı hatırlatıyor. Sen kaç kaç diyorsun? Tu çi dibêjî? Pêşbîniya xwe binivîse! ⚽",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/yuru-sampiyon-omrumu-hesapladi-ben-de-umudun-omrunu/",
+              "yuru": "https://yurubaba.com/2026/11/turkiye-belcika-yarin-dort-mac-sifir-puan-hadi-kar-diyor/"}
+}
