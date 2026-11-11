@@ -175,5 +175,20 @@
   "video_url": "https://github.com/sevketirtem/hadibaba/releases/download/podcast-2026-11-10/hadi-vs-yuru-2026-11-10.mp4",
   "boyut": 5983546,
   "sure": 249
+ },
+ {
+  "tarih": "2026-11-11",
+  "no": 13,
+  "baslik": "Dört maçta sıfır puan: Hadi'ye göre kâr, Yürü'ye göre averaj",
+  "aciklama": "Türkiye yarın akşam İzmir'de Belçika'yı ağırlıyor. Hadi sıfırın altı yok diyor, Yürü eksi dokuzluk averajı masaya koyuyor.",
+  "yazilar": {
+   "hadi": "https://hadibaba.com/2026/11/yuru-sampiyon-omrumu-hesapladi-ben-de-umudun-omrunu/",
+   "yuru": "https://yurubaba.com/2026/11/turkiye-belcika-yarin-dort-mac-sifir-puan-hadi-kar-diyor/"
+  },
+  "yayin": "2026-11-11T05:50:02+00:00",
+  "ses_url": "https://github.com/sevketirtem/hadibaba/releases/download/podcast-2026-11-11/hadi-vs-yuru-2026-11-11.mp3",
+  "video_url": "https://github.com/sevketirtem/hadibaba/releases/download/podcast-2026-11-11/hadi-vs-yuru-2026-11-11.mp4",
+  "boyut": 5858785,
+  "sure": 244
  }
 ]
