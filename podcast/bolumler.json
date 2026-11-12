@@ -190,5 +190,20 @@
   "video_url": "https://github.com/sevketirtem/hadibaba/releases/download/podcast-2026-11-11/hadi-vs-yuru-2026-11-11.mp4",
   "boyut": 5858785,
   "sure": 244
+ },
+ {
+  "tarih": "2026-11-12",
+  "no": 14,
+  "baslik": "Maç günü: Sergen'in ilk sınavı, Enes Ünal forvette",
+  "aciklama": "Türkiye bu akşam 20.00'de İzmir'de Belçika'yı ağırlıyor. Hadi santrfor haberiyle uçuyor, Yürü dört maçta iki golü hatırlatıyor.",
+  "yazilar": {
+   "hadi": "https://hadibaba.com/2026/11/turkiye-belcika-bu-aksam-sergen-ilk-mac-enes-unal-basliyor/",
+   "yuru": "https://yurubaba.com/2026/11/turkiye-belcika-bu-aksam-santrfor-geldi-gol-gelir-mi/"
+  },
+  "yayin": "2026-11-12T05:47:21+00:00",
+  "ses_url": "https://github.com/sevketirtem/hadibaba/releases/download/podcast-2026-11-12/hadi-vs-yuru-2026-11-12.mp3",
+  "video_url": "https://github.com/sevketirtem/hadibaba/releases/download/podcast-2026-11-12/hadi-vs-yuru-2026-11-12.mp4",
+  "boyut": 6021790,
+  "sure": 251
  }
 ]
