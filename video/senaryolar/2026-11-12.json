@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-12",
+  "mac": "Türkiye – Belçika",
+  "mac_alt": "Uluslar Ligi · Bu akşam 20.00 · İzmir",
+  "kanca": "Santrfor geldi, gol gelecek mi?",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Îro êvarê maç heye, golek tê, ez bawer dikim baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Bu akşam gol gelecek diyor. Dört maçta iki gol attık, sakin ol baba."},
+    {"kim": "hadi", "metin": "Sergen Hoca'nın ilk maçı, Enes Ünal başlıyor! 20.00'de 2-1 alırız baba!"},
+    {"kim": "yuru", "metin": "Santrfor tek başına gol atmaz, top gelmeli. Ben 1-1 diyorum, görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "2-1", "yuru": "1-1",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Türkiye bu akşam 20.00'de İzmir'de Belçika'yla oynuyor; Sergen Yalçın ilk maçında Enes Ünal'la başlıyor. Hadi 2-1, Yürü 1-1 diyor, sen ne diyorsun? Tu çi dibêjî? Pêşbîniya xwe binivîse! ⚽",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/turkiye-belcika-bu-aksam-sergen-ilk-mac-enes-unal-basliyor/",
+              "yuru": "https://yurubaba.com/2026/11/turkiye-belcika-bu-aksam-santrfor-geldi-gol-gelir-mi/"}
+}
