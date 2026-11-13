@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-13",
+  "mac": "Fransa – Türkiye",
+  "mac_alt": "Uluslar Ligi · Pazar 22.45 · Bordeaux",
+  "kanca": "Hadi: Hakem biziz! Yürü: Seyirciyiz!",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Îtalya Fransa şikand, niha dora me ye baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe İtalya'yı kutladı. İtalya Fransa'yı 3-1 yendi, doğru, sakin ol baba."},
+    {"kim": "hadi", "metin": "Grup karıştı, Fransa'nın hesabı bizde! Pazar 22.45'te 1-2 alırız baba!"},
+    {"kim": "yuru", "metin": "Beş maçta sıfır puan, eksi on averaj. Hakem değil seyirciyiz. 2-0 Fransa, görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "1-2", "yuru": "2-0",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "İtalya Fransa'yı 3-1 yendi, grup karıştı; Fransa–Türkiye Pazar 22.45'te Bordeaux'da. Hadi 1-2 Türkiye, Yürü 2-0 Fransa diyor, sen ne diyorsun? Tu çi dibêjî? Pêşbîniya xwe binivîse! ⚽",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/fransa-turkiye-pazar-grubun-kaderi-bizde-hadi/",
+              "yuru": "https://yurubaba.com/2026/11/fransa-turkiye-pazar-hesap-onlarin-bizim-defter-kapali/"}
+}
