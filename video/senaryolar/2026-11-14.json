@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-14",
+  "mac": "Gol krallığı yarışı",
+  "mac_alt": "Milli ara · 11 hafta sonra",
+  "kanca": "Tahtta Orban, peşinde üç dev!",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Orban deh gol avêtin, şampiyonê min ê vê hefteyê Amed e baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe Amed'i şampiyon ilan etti. Beş günde yeni şampiyon, sakin ol baba."},
+    {"kim": "hadi", "metin": "Orban 10 gol, üç dev 9'da kaldı! Tahtta Amed'in golcüsü oturuyor, alırız baba!"},
+    {"kim": "yuru", "metin": "Osimhen 8 maçta 9 attı, 62 dakikada bir gol. Kasım'da kral olunmaz baba."}
+  ],
+  "bitis_karti": {"baslik": "KİM HAKLI?", "hadi": "HADİ", "yuru": "YÜRÜ",
+                  "soru": "SEN KİMDEN YANASIN?", "alt": "Yoruma yaz"},
+  "aciklama": "Gol krallığında Orban 10 golle zirvede, Osimhen, Salah ve Vlahović 9'ar golde. Hadi tacı Orban'a taktı, Yürü dakika hesabıyla Osimhen diyor; sence sezon sonunda gol kralı kim olur?",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/gol-kralligi-orban-on-gol-bu-hafta-sampiyon-amed/",
+              "yuru": "https://yurubaba.com/2026/11/gol-kralligi-osimhen-dakikada-onde-hadi-amed-dedi/"}
+}
