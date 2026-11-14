@@ -287,3 +287,12 @@ aytis-3 youtube
 2026-11-13 threads
 2026-11-13 tiktok
 2026-11-13 youtube
+2026-11-14 telegram@hadibabacom
+2026-11-14 telegram@yurubaba
+2026-11-14 facebook
+2026-11-14 instagram
+2026-11-14 facebook-story
+2026-11-14 instagram-story
+2026-11-14 threads
+2026-11-14 tiktok
+2026-11-14 youtube
