@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-15",
+  "mac": "Fransa – Türkiye",
+  "mac_alt": "Uluslar Ligi · Pazar 22.45",
+  "kanca": "Bordeaux'da 1-2 mi, 2-0 mı?",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Îro şev Fransa heye, ez bawer dikim em ê bi ser bikevin baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe kazanırız dedi. Fransa evinde, puana muhtaç; benim 2-0 yerinde, sakin ol baba."},
+    {"kim": "hadi", "metin": "Sergen altı değişiklik yapıyor, forvetsiz de oynamıyoruz! Bordeaux'da 1-2, alırız baba!"},
+    {"kim": "yuru", "metin": "Beş maçta üç gol attık. Bir gecede iki gol mü? Görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "1-2", "yuru": "2-0",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Fransa–Türkiye bu akşam 22.45'te Bordeaux'da. Hadi 1-2 Türkiye diyor, Yürü 2-0 Fransa; sence skor ne olur?",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/fransa-turkiye-bu-aksam-sergen-alti-degisiklik-hadi-bir-iki/",
+              "yuru": "https://yurubaba.com/2026/11/fransa-turkiye-bu-aksam-alti-degisiklik-iki-sifir-yerinde/"}
+}
