@@ -4,7 +4,7 @@
   "takim": "Galatasaray",
   "slug": "galatasaray",
   "veri": {
-   "guncellendi": "2026-11-14T11:35:27.692Z",
+   "guncellendi": "2026-11-15T12:00:37.262Z",
    "takim": {
     "id": 645,
     "ad": "Galatasaray",
@@ -759,7 +759,7 @@
   "takim": "Trabzonspor",
   "slug": "trabzonspor",
   "veri": {
-   "guncellendi": "2026-11-14T11:35:28.100Z",
+   "guncellendi": "2026-11-15T12:00:38.000Z",
    "takim": {
     "id": 998,
     "ad": "Trabzonspor",
@@ -1582,7 +1582,7 @@
   "takim": "Amed",
   "slug": "amedspor",
   "veri": {
-   "guncellendi": "2026-11-14T11:35:28.397Z",
+   "guncellendi": "2026-11-15T12:00:38.321Z",
    "takim": {
     "id": 3579,
     "ad": "Amed",
@@ -2337,7 +2337,7 @@
   "takim": "Beşiktaş",
   "slug": "besiktas",
   "veri": {
-   "guncellendi": "2026-11-14T11:35:28.783Z",
+   "guncellendi": "2026-11-15T12:01:13.809Z",
    "takim": {
     "id": 549,
     "ad": "Beşiktaş",
@@ -3206,7 +3206,7 @@
   "takim": "Kasımpaşa",
   "slug": "kasimpasa",
   "veri": {
-   "guncellendi": "2026-11-14T11:35:29.080Z",
+   "guncellendi": "2026-11-15T12:01:14.257Z",
    "takim": {
     "id": 1004,
     "ad": "Kasımpaşa",
@@ -3953,7 +3953,7 @@
   "takim": "Fenerbahçe",
   "slug": "fenerbahce",
   "veri": {
-   "guncellendi": "2026-11-14T11:35:29.410Z",
+   "guncellendi": "2026-11-15T12:01:14.776Z",
    "takim": {
     "id": 611,
     "ad": "Fenerbahçe",
@@ -4746,7 +4746,7 @@
   "takim": "Kocaelispor",
   "slug": "kocaelispor",
   "veri": {
-   "guncellendi": "2026-11-14T11:35:29.779Z",
+   "guncellendi": "2026-11-15T12:01:15.203Z",
    "takim": {
     "id": 7411,
     "ad": "Kocaelispor",
@@ -5453,7 +5453,7 @@
   "takim": "Başakşehir",
   "slug": "basaksehir",
   "veri": {
-   "guncellendi": "2026-11-14T11:35:30.179Z",
+   "guncellendi": "2026-11-15T12:01:15.698Z",
    "takim": {
     "id": 564,
     "ad": "Başakşehir",
@@ -6180,7 +6180,7 @@
   "takim": "Çorum FK",
   "slug": "corum-fk",
   "veri": {
-   "guncellendi": "2026-11-14T11:35:30.471Z",
+   "guncellendi": "2026-11-15T12:01:16.080Z",
    "takim": {
     "id": 6343,
     "ad": "Çorum FK",
@@ -7067,7 +7067,7 @@
   "takim": "Göztepe",
   "slug": "goztepe",
   "veri": {
-   "guncellendi": "2026-11-14T11:36:06.122Z",
+   "guncellendi": "2026-11-15T12:01:16.372Z",
    "takim": {
     "id": 994,
     "ad": "Göztepe",
@@ -7688,7 +7688,7 @@
   "takim": "Rizespor",
   "slug": "rizespor",
   "veri": {
-   "guncellendi": "2026-11-14T11:36:06.403Z",
+   "guncellendi": "2026-11-15T12:01:16.606Z",
    "takim": {
     "id": 1007,
     "ad": "Rizespor",
@@ -7823,182 +7823,7 @@
      "depGol": null
     }
    ],
-   "kadro": [
-    {
-     "ad": "E. Doğan",
-     "no": 97,
-     "yas": 21,
-     "mevki": "Kaleci"
-    },
-    {
-     "ad": "H. Done",
-     "no": null,
-     "yas": 15,
-     "mevki": "Kaleci"
-    },
-    {
-     "ad": "Y. Fofana",
-     "no": 75,
-     "yas": 25,
-     "mevki": "Kaleci"
-    },
-    {
-     "ad": "Z. Görgen",
-     "no": 30,
-     "yas": 25,
-     "mevki": "Kaleci"
-    },
-    {
-     "ad": "Z. Ariss",
-     "no": 17,
-     "yas": 21,
-     "mevki": "Defans"
-    },
-    {
-     "ad": "Y. Ayan",
-     "no": 94,
-     "yas": 17,
-     "mevki": "Defans"
-    },
-    {
-     "ad": "S. Bakayoko",
-     "no": 21,
-     "yas": 20,
-     "mevki": "Defans"
-    },
-    {
-     "ad": "U. Erdem",
-     "no": 19,
-     "yas": 21,
-     "mevki": "Defans"
-    },
-    {
-     "ad": "A. Mocsi",
-     "no": 4,
-     "yas": 25,
-     "mevki": "Defans"
-    },
-    {
-     "ad": "M. Pala",
-     "no": 54,
-     "yas": 25,
-     "mevki": "Defans"
-    },
-    {
-     "ad": "M. Sagnan",
-     "no": 93,
-     "yas": 27,
-     "mevki": "Defans"
-    },
-    {
-     "ad": "T. Şahin",
-     "no": 37,
-     "yas": 25,
-     "mevki": "Defans"
-    },
-    {
-     "ad": "T. Sanuç",
-     "no": 5,
-     "yas": 26,
-     "mevki": "Defans"
-    },
-    {
-     "ad": "T. Antalyalı",
-     "no": 14,
-     "yas": 31,
-     "mevki": "Orta saha"
-    },
-    {
-     "ad": "C. Bozdoğan",
-     "no": 70,
-     "yas": 24,
-     "mevki": "Orta saha"
-    },
-    {
-     "ad": "B. Capoglu",
-     "no": 90,
-     "yas": 17,
-     "mevki": "Orta saha"
-    },
-    {
-     "ad": "M. Diakité",
-     "no": 6,
-     "yas": 22,
-     "mevki": "Orta saha"
-    },
-    {
-     "ad": "Q. Laçi",
-     "no": 20,
-     "yas": 30,
-     "mevki": "Orta saha"
-    },
-    {
-     "ad": "I. Olawoyin",
-     "no": 10,
-     "yas": 28,
-     "mevki": "Orta saha"
-    },
-    {
-     "ad": "D. Varešanović",
-     "no": 8,
-     "yas": 24,
-     "mevki": "Orta saha"
-    },
-    {
-     "ad": "E. Yilmaz",
-     "no": 47,
-     "yas": 22,
-     "mevki": "Orta saha"
-    },
-    {
-     "ad": "G. Borrelli",
-     "no": 29,
-     "yas": 25,
-     "mevki": "Forvet"
-    },
-    {
-     "ad": "E. Bulut",
-     "no": 99,
-     "yas": 23,
-     "mevki": "Forvet"
-    },
-    {
-     "ad": "Iustin Doicaru",
-     "no": 79,
-     "yas": 18,
-     "mevki": "Forvet"
-    },
-    {
-     "ad": "A. Kutucu",
-     "no": 23,
-     "yas": 25,
-     "mevki": "Orta saha"
-    },
-    {
-     "ad": "Adedire Emmanuel  Awokoya-Mebude",
-     "no": 11,
-     "yas": 21,
-     "mevki": "Orta saha"
-    },
-    {
-     "ad": "V. Mihăilă",
-     "no": 7,
-     "yas": 26,
-     "mevki": "Forvet"
-    },
-    {
-     "ad": "A. Sowe",
-     "no": 9,
-     "yas": 31,
-     "mevki": "Forvet"
-    },
-    {
-     "ad": "Coskun Tosun Mustafa",
-     "no": 80,
-     "yas": 17,
-     "mevki": "Forvet"
-    }
-   ],
+   "kadro": [],
    "sakatlar": [],
    "transferler": [
     {
@@ -8353,7 +8178,7 @@
   "takim": "Erzurumspor FK",
   "slug": "erzurumspor",
   "veri": {
-   "guncellendi": "2026-11-14T11:36:06.707Z",
+   "guncellendi": "2026-11-15T12:01:52.291Z",
    "takim": {
     "id": 1009,
     "ad": "Erzurumspor FK",
@@ -9048,7 +8873,7 @@
   "takim": "Alanyaspor",
   "slug": "alanyaspor",
   "veri": {
-   "guncellendi": "2026-11-14T11:36:07.012Z",
+   "guncellendi": "2026-11-15T12:01:52.895Z",
    "takim": {
     "id": 996,
     "ad": "Alanyaspor",
@@ -9617,7 +9442,7 @@
   "takim": "Gençlerbirliği S.K.",
   "slug": "genclerbirligi",
   "veri": {
-   "guncellendi": "2026-11-14T11:36:07.350Z",
+   "guncellendi": "2026-11-15T12:01:53.226Z",
    "takim": {
     "id": 997,
     "ad": "Gençlerbirliği S.K.",
@@ -10396,7 +10221,7 @@
   "takim": "Konyaspor",
   "slug": "konyaspor",
   "veri": {
-   "guncellendi": "2026-11-14T11:36:43.124Z",
+   "guncellendi": "2026-11-15T12:01:53.531Z",
    "takim": {
     "id": 607,
     "ad": "Konyaspor",
@@ -11225,7 +11050,7 @@
   "takim": "Gaziantep FK",
   "slug": "gaziantep-fk",
   "veri": {
-   "guncellendi": "2026-11-14T11:36:43.397Z",
+   "guncellendi": "2026-11-15T12:01:53.916Z",
    "takim": {
     "id": 3573,
     "ad": "Gaziantep FK",
@@ -11974,7 +11799,7 @@
   "takim": "Samsunspor",
   "slug": "samsunspor",
   "veri": {
-   "guncellendi": "2026-11-14T11:36:43.687Z",
+   "guncellendi": "2026-11-15T12:01:54.162Z",
    "takim": {
     "id": 3603,
     "ad": "Samsunspor",
@@ -12673,7 +12498,7 @@
   "takim": "Eyüpspor",
   "slug": "eyupspor",
   "veri": {
-   "guncellendi": "2026-11-14T11:36:44.010Z",
+   "guncellendi": "2026-11-15T12:01:54.806Z",
    "takim": {
     "id": 3588,
     "ad": "Eyüpspor",
