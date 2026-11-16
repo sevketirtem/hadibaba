@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-16",
+  "mac": "Yunanistan – Sırbistan",
+  "mac_alt": "Uluslar Ligi · Pazartesi 22.45",
+  "kanca": "Volos'ta beş fark gelir mi?",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Îşev em hemû li Volosê ne, ez bi hêvî me baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe bu akşam hepimiz Volos'tayız dedi. Sırbistan beş farkla kaybetmeli baba."},
+    {"kim": "hadi", "metin": "Bizim ligde sekiz gol gördük, beş gol gördük! Volos'ta 5-0 neden olmasın, alırız baba!"},
+    {"kim": "yuru", "metin": "Ligde 99 maçta beş fark beş kez çıktı. Yüzde beş. Ben 2-0 diyorum, görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "5-0", "yuru": "2-0",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Milli Takım'ın play-off umudu bu akşam 22.45'teki Yunanistan–Sırbistan maçında. Hadi 5-0 diyor, Yürü 2-0; sence beş fark gelir mi?",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/yunanistan-sirbistan-bu-aksam-hadi-volosa-bes-gol-diyor/",
+              "yuru": "https://yurubaba.com/2026/11/yunanistan-sirbistan-bes-fark-yuzde-bes-hadi-sakin-ol/"}
+}
