@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-16T12:52:48.453Z",
+ "guncellendi": "2026-11-17T13:12:51.225Z",
  "lig": "203",
  "sezon": "2026",
  "maclar": [
@@ -1817,7 +1817,7 @@
    "depId": 3603,
    "evGol": null,
    "depGol": null,
-   "stat": "Rams Park",
+   "stat": "Basaksehir Fatih Terim Stadium",
    "sehir": "Istanbul",
    "hakem": null
   },
@@ -2213,7 +2213,7 @@
    "depId": 3603,
    "evGol": null,
    "depGol": null,
-   "stat": "Besiktas Park",
+   "stat": "Tupras Stadium",
    "sehir": "Istanbul",
    "hakem": null
   },
