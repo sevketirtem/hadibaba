@@ -323,3 +323,12 @@ aytis-3 youtube
 2026-11-17 threads
 2026-11-17 tiktok
 2026-11-17 youtube
+aytis-4 telegram@hadibabacom
+aytis-4 telegram@yurubaba
+aytis-4 facebook
+aytis-4 instagram
+aytis-4 facebook-story
+aytis-4 instagram-story
+aytis-4 threads
+aytis-4 tiktok
+aytis-4 youtube
