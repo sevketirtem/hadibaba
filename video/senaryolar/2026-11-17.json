@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-17",
+  "mac": "Yunanistan – Sırbistan",
+  "mac_alt": "Uluslar Ligi · Volos'ta 1-0",
+  "kanca": "Beş fark lazımdı, bir geldi!",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Em ketin, lê dilê me hîn jî xurt e baba!", "dil": "ku", "duygu": "uzgun"},
+    {"kim": "yuru", "metin": "Kürtçe düştük ama kalbimiz sağlam dedi. Volos 1-0 bitti, B Ligi'ndeyiz baba."},
+    {"kim": "hadi", "metin": "Sonucu bildim, sadece dört gol eksik! Cumartesi lig dönüyor, alırız baba!"},
+    {"kim": "yuru", "metin": "Dört gol eksik tahmine dilek denir. Kocaeli'de 19'a 19 var, görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "KİM HAKLI?", "hadi": "HADİ", "yuru": "YÜRÜ",
+                  "soru": "SEN KİMDEN YANASIN?", "alt": "Yoruma yaz"},
+  "aciklama": "Volos'ta Yunanistan 1-0 kazandı, Milli Takım B Ligi'ne düştü. Hadi gözünü Cumartesi'ye çevirdi, Yürü defteri açtı; sence Kocaelispor–Fenerbahçe'de kim güler?",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/yunanistan-sirbistan-1-0-b-ligi-ama-lig-donuyor-hadi/",
+              "yuru": "https://yurubaba.com/2026/11/volosta-tek-gol-hadi-bes-istedi-masouras-bir-verdi/"}
+}
