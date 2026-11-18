@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-18",
+  "mac": "Amedspor – Çaykur Rizespor",
+  "mac_alt": "12. hafta · Cumartesi 16.00",
+  "kanca": "Altıda altı mı, Rize'nin bavulu mu?",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Amed li malê şeş ji şeşan e! Şemiyê em ê bikin baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe altıda altı dedi. Doğru, ama Rize deplasmanda 11 puan topladı baba."},
+    {"kim": "hadi", "metin": "Evinde 19 gol attık, 4 yedik! Orban 10 golde, Cumartesi 3-1 alırız baba!"},
+    {"kim": "yuru", "metin": "Ben 2-1 diyorum. Yine aynı taraf, kim kopyaladı saate bak. Görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "3-1", "yuru": "2-1",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Amedspor evinde altıda altı yaptı, Rizespor deplasmanda sağlam. Cumartesi 16.00'da Diyarbakır'da sence skor ne olur? Tu çi dibêjî? Pêşbîniya xwe binivîse!",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/amedspor-rizespor-cumartesi-diyarbakirda-yedinci-kapi/",
+              "yuru": "https://yurubaba.com/2026/11/amedspor-rizespor-evde-alti-ama-rize-yolda-rahat/"}
+}
