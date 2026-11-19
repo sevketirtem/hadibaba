@@ -13,9 +13,18 @@
    "istem": "Character reference: Hadi (the cheerful round-faced man with a black mustache) in a small crow's nest at the top of a ship mast, in a sailor's striped shirt, fast asleep on a pile of simit with binoculars hanging from his neck. He suddenly jerks awake in panic, grabs the binoculars upside down, looks, then jumps up with both arms in the air shouting in excitement with a wide open mouth. The sea behind him with a tiny strip of land far away. Comedic, energetic, quick motion. No speech, no text, no subtitles, no music."
   },
   {
-   "ad": "c",
-   "sure": 8,
-   "istem": "Character reference: Yuru (serious man with glasses and white captain's cap) at the ship's wheel on the bridge, in the big window behind him the ship has already run gently onto a sandy beach full of beach umbrellas and astonished tourists. Yuru slowly turns his head toward the camera with a deadpan stare and a long weary sigh. Then Hadi (cheerful man with a black mustache, striped sailor shirt) climbs down into the frame from above, laughs nervously and shrugs with open palms, scratching his head. Comedic, static medium shot. No speech, no text, no subtitles, no music."
+   "ad": "c2",
+   "sure": 5.5,
+   "ana": "yuru",
+   "ek": "",
+   "istem": "Character reference: Yuru (the serious man with glasses, grey temples, black mustache and a flat mouth) wearing a white ship captain's cap with a gold anchor and a white captain's uniform with gold epaulettes, alone at the wheel on the bridge of a small cargo ship. In the big window behind him the ship has already run gently onto a sandy beach full of beach umbrellas and astonished tourists. He slowly turns his head toward the camera with a deadpan stare, gives a long weary sigh, then rolls his eyes up toward the ceiling as if looking at the mast above. Only this one character in the frame, his face, glasses, mustache, cap and uniform stay exactly the same throughout. Static medium shot. No speech, no text, no subtitles, no music."
+  },
+  {
+   "ad": "d",
+   "sure": 5.5,
+   "ana": "hadi",
+   "ek": "",
+   "istem": "Character reference: Hadi (the cheerful round-faced man with a black mustache) in a small crow's nest at the top of a ship mast, in a sailor's striped shirt, surrounded by a pile of simit, binoculars hanging from his neck. He laughs nervously, scratches his head and shrugs with open palms, sheepish and guilty. Only this one character in the frame, his face and clothes stay exactly the same throughout. Sea and a sandy beach with umbrellas in the background. Comedic, static medium shot. No speech, no text, no subtitles, no music."
   }
  ],
  "replikler": {
@@ -24,8 +33,8 @@
     "kim": "yuru",
     "sahne": "a",
     "bas": 0.6,
-    "duygu": "cagir",
-    "metin": "Kara göründü müüü?"
+    "duygu": "bagir_yuru",
+    "metin": "Kara göründü muuuuu?!"
    },
    {
     "kim": "hadi",
@@ -36,15 +45,15 @@
    },
    {
     "kim": "yuru",
-    "sahne": "c",
+    "sahne": "c2",
     "bas": 1.0,
     "duygu": "uzgun",
     "metin": "Ulan sormasak…"
    },
    {
     "kim": "hadi",
-    "sahne": "c",
-    "bas": 4.2,
+    "sahne": "d",
+    "bas": 0.8,
     "duygu": "kikir",
     "metin": "Yok valla, denk geldi lan!"
    }
@@ -54,8 +63,8 @@
     "kim": "yuru",
     "sahne": "a",
     "bas": 0.6,
-    "duygu": "cagir",
-    "metin": "Do we see land yeeet?"
+    "duygu": "bagir_yuru",
+    "metin": "Do we see laaaand yet?!"
    },
    {
     "kim": "hadi",
@@ -66,15 +75,15 @@
    },
    {
     "kim": "yuru",
-    "sahne": "c",
+    "sahne": "c2",
     "bas": 1.0,
     "duygu": "uzgun",
     "metin": "Man... we really shouldn't have asked."
    },
    {
     "kim": "hadi",
-    "sahne": "c",
-    "bas": 4.2,
+    "sahne": "d",
+    "bas": 0.8,
     "duygu": "kikir",
     "metin": "Swear to God, man, it was just a coincidence!"
    }

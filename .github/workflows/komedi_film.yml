@@ -21,6 +21,11 @@ jobs:
           token_format: access_token
           access_token_lifetime: 3600s
       - run: which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg); fc-list | grep -qi dejavu || sudo apt-get install -y -qq fonts-dejavu-core
+      - name: Onaylanan sahneleri geri getir (a, b)
+        run: |
+          mkdir -p /tmp/film/ara
+          git fetch -q --depth=1 origin film-cikti || true
+          for n in a b; do git show FETCH_HEAD:sahne-$n.mp4 > /tmp/film/ara/sahne-$n.mp4 || rm -f /tmp/film/ara/sahne-$n.mp4; done
       - env:
           GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
         run: mkdir -p /tmp/film && python scripts/komedi_film.py "${{ inputs.bilgi }}" /tmp/film

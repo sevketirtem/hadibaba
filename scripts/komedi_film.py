@@ -18,7 +18,7 @@ EN_PROFIL = {
              "Style: dry, deadpan, weary. Pace: slow and calm. Accent: light Turkish accent in English."),
 }
 DUYGU = {"cagir": " Right now: bellowing at the top of his lungs up to a lookout far above, cupped hands, gruff captain voice, long drawn-out last syllable, very loud and projected.", "sakin": " Right now: perfectly calm, flat.", "bagir": " Right now: shouting at the top of his lungs in sudden panic, stretching the long vowels.",
-         "uzgun": " Right now: very tired, sighing, resigned.", "kikir": " Right now: nervous giggling, guilty, defensive, fast."}
+         "uzgun": " Right now: very tired, sighing, resigned.", "bagir_yuru": " Right now: IGNORE the calm style above. He YELLS this line at the top of his lungs, very loud, desperate, long stretched last vowels, like calling across a stormy sea.", "kikir": " Right now: nervous giggling, guilty, defensive, fast."}
 
 
 def sh(*a):
@@ -36,10 +36,12 @@ def sahne_uret(s, stil, d):
         return yol
     for deneme in range(3):
         try:
-            os.environ["VEO_EK_REFERANS"] = REF_HADI
+            ref = {"yuru": REF_YURU, "hadi": REF_HADI}
+            ana = ref[s.get("ana", "yuru")]
+            os.environ["VEO_EK_REFERANS"] = s["ek"] if "ek" in s and not s["ek"] else REF_HADI
             if deneme >= 1:
                 os.environ["VEO_COZUNURLUK"] = "720p"  # referans + 1080p desteklenmezse
-            veo_video.vertex_veo(REF_YURU, yol, f"{s['istem']} Style: {stil}")
+            veo_video.vertex_veo(ana, yol, f"{s['istem']} Style: {stil}")
             return yol
         except RuntimeError as e:
             print(f"::warning title=Veo {s['ad']} deneme {deneme+1}::{str(e)[:300]}", flush=True)
