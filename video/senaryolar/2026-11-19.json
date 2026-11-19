@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-19",
+  "mac": "Kocaelispor – Fenerbahçe",
+  "mac_alt": "12. hafta · Cumartesi 19.00",
+  "kanca": "19'a 19: kim tabloyu bozacak?",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Fenerbahçe sê golan diavêje, ez pir kêfxweş im baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe üç gol dedi. Kocaeli evinde beş maçta iki gol yedi, sakin ol baba."},
+    {"kim": "hadi", "metin": "Fener ligde 29 gol attı, Muriqi yedi golde! Körfez'den 1-3 alırız baba!"},
+    {"kim": "yuru", "metin": "29'un sekizi Eyüp'e. Ben 1-1 diyorum, satranç bu. Görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "1-3", "yuru": "1-1",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Kocaelispor ile Fenerbahçe 19'ar puanla Cumartesi 19.00'da karşılaşıyor, Tahmin Ligi 5-5. Hadi 1-3, Yürü 1-1 dedi; sence skor ne olur? Tu çi dibêjî?",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/kocaelispor-fenerbahce-cumartesi-hadi-bir-uc-diyor/",
+              "yuru": "https://yurubaba.com/2026/11/kocaelispor-fenerbahce-satranc-bir-bir-hadi-uc-gol-istiyor/"}
+}
