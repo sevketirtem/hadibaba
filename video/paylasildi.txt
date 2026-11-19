@@ -360,3 +360,13 @@ komedi-kara-gorundu-tr threads
 komedi-kara-gorundu-tr tiktok
 komedi-kara-gorundu-tr youtube
 komedi-kara-gorundu-tr youtube-yatay
+komedi-kara-gorundu-en telegram@hadibabacom
+komedi-kara-gorundu-en telegram@yurubaba
+komedi-kara-gorundu-en facebook
+komedi-kara-gorundu-en instagram
+komedi-kara-gorundu-en facebook-story
+komedi-kara-gorundu-en instagram-story
+komedi-kara-gorundu-en threads
+komedi-kara-gorundu-en tiktok
+komedi-kara-gorundu-en youtube
+komedi-kara-gorundu-en youtube-yatay
