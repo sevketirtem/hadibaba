@@ -46,6 +46,15 @@ def sahne_uret(s, stil, d):
     raise SystemExit(f"Sahne {s['ad']} üretilemedi")
 
 
+def tek(model, r, yol):
+    for deneme in range(5):
+        try:
+            return podcast_ses._tek_replik(model, r, yol)
+        except Exception as e:  # zaman aşımı dahil
+            print(f"::warning title=TTS deneme {deneme+1}::{str(e)[:200]}", flush=True)
+    raise SystemExit("TTS üretilemedi")
+
+
 def seslendir(dil, replikler, d):
     podcast_ses.DUYGU_NOT.update(DUYGU)
     if dil == "en":
@@ -57,7 +66,7 @@ def seslendir(dil, replikler, d):
     model = podcast_ses.tts_modeli()
     yollar = [f"{d}/{dil}-{i}.wav" for i in range(len(replikler))]
     with ThreadPoolExecutor(max_workers=4) as ex:
-        list(ex.map(lambda ir: podcast_ses._tek_replik(model, ir[1], yollar[ir[0]]), enumerate(replikler)))
+        list(ex.map(lambda ir: tek(model, ir[1], yollar[ir[0]]), enumerate(replikler)))
     return yollar
 
 
