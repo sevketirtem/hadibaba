@@ -1,0 +1,32 @@
+# Komedi film: Veo sahneleri + Gemini TTS + ffmpeg → TR/EN, yatay/dikey; sonucu film-cikti dalına koyar (yayına girmez).
+name: Komedi film
+on:
+  workflow_dispatch:
+    inputs:
+      bilgi: {description: "Film JSON (depoda)", type: string, default: "video/film/kara-gorundu.json"}
+permissions:
+  id-token: write
+  contents: write
+jobs:
+  film:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - id: vx
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1001418254189/locations/global/workloadIdentityPools/github/providers/github-oidc
+          service_account: vertex-github@hadi-yuru-ses.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
+      - run: which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg); fc-list | grep -qi dejavu || sudo apt-get install -y -qq fonts-dejavu-core
+      - env:
+          GOOGLE_VERTEX_TOKEN: ${{ steps.vx.outputs.access_token }}
+        run: mkdir -p /tmp/film && python scripts/komedi_film.py "${{ inputs.bilgi }}" /tmp/film
+      - run: |
+          mkdir -p /tmp/d && cp /tmp/film/*.mp4 /tmp/film/baslik.json /tmp/d/ && cp /tmp/film/ara/sahne-*.mp4 /tmp/d/
+          cd /tmp/d && git init -q && git checkout -q -b film-cikti
+          git config user.name "Claude (Hadi-Yürü ekibi)" && git config user.email "noreply@anthropic.com"
+          git add . && git commit -qm "Komedi film"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" film-cikti
