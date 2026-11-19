@@ -1,27 +1,87 @@
 {
-  "ad": "kara-gorundu",
-  "stil": "Flat 2D vector cartoon animation in the exact art style of the character reference images: round faces, simple flat colors, thick friendly shapes, bright warm colors, comedy short film look.",
-  "sahneler": [
-    {"ad": "a", "sure": 6.5,
-     "istem": "Character reference: Yuru (the serious man with glasses, grey temples and a flat mouth) wearing a white ship captain's cap with a gold anchor, standing at the wheel on the bridge of a small cargo ship, sea visible through the big bridge windows, calm blue ocean to the horizon. He stares at the horizon deadpan, then slowly looks at his wristwatch, drums his fingers on the wheel, taps his foot, sighs and waits. A seagull walks along the window ledge. Static medium shot, slight ship rocking. No speech, no text, no subtitles, no music."},
-    {"ad": "b", "sure": 8,
-     "istem": "Character reference: Hadi (the cheerful round-faced man with a black mustache) in a small crow's nest at the top of a ship mast, in a sailor's striped shirt, fast asleep on a pile of simit with binoculars hanging from his neck. He suddenly jerks awake in panic, grabs the binoculars upside down, looks, then jumps up with both arms in the air shouting in excitement with a wide open mouth. The sea behind him with a tiny strip of land far away. Comedic, energetic, quick motion. No speech, no text, no subtitles, no music."},
-    {"ad": "c", "sure": 8,
-     "istem": "Character reference: Yuru (serious man with glasses and white captain's cap) at the ship's wheel on the bridge, in the big window behind him the ship has already run gently onto a sandy beach full of beach umbrellas and astonished tourists. Yuru slowly turns his head toward the camera with a deadpan stare and a long weary sigh. Then Hadi (cheerful man with a black mustache, striped sailor shirt) climbs down into the frame from above, laughs nervously and shrugs with open palms, scratching his head. Comedic, static medium shot. No speech, no text, no subtitles, no music."}
-  ],
-  "replikler": {
-    "tr": [
-      {"kim": "yuru", "sahne": "a", "bas": 0.8, "duygu": "sakin", "metin": "Kara göründü mü?"},
-      {"kim": "hadi", "sahne": "b", "bas": 1.3, "duygu": "bagir", "metin": "Kara göründüüüü!!!"},
-      {"kim": "yuru", "sahne": "c", "bas": 1.0, "duygu": "uzgun", "metin": "Ulan sormasak…"},
-      {"kim": "hadi", "sahne": "c", "bas": 4.2, "duygu": "kikir", "metin": "Yok valla, denk geldi lan!"}
-    ],
-    "en": [
-      {"kim": "yuru", "sahne": "a", "bas": 0.8, "duygu": "sakin", "metin": "Do we see land yet?"},
-      {"kim": "hadi", "sahne": "b", "bas": 1.3, "duygu": "bagir", "metin": "Laaaand! I see laaaand!!!"},
-      {"kim": "yuru", "sahne": "c", "bas": 1.0, "duygu": "uzgun", "metin": "Man... we really shouldn't have asked."},
-      {"kim": "hadi", "sahne": "c", "bas": 4.2, "duygu": "kikir", "metin": "Swear to God, man, it was just a coincidence!"}
-    ]
+ "ad": "kara-gorundu",
+ "stil": "Flat 2D vector cartoon animation in the exact art style of the character reference images: round faces, simple flat colors, thick friendly shapes, bright warm colors, comedy short film look.",
+ "sahneler": [
+  {
+   "ad": "a",
+   "sure": 6.5,
+   "istem": "Character reference: Yuru (the serious man with glasses, grey temples and a flat mouth) wearing a white ship captain's cap with a gold anchor, standing on the deck at the foot of the tall ship's mast, calm blue ocean behind him. He cups both hands around his mouth and shouts loudly upward toward the crow's nest high above, head tilted far back, then lowers his hands, folds his arms and waits deadpan, looks at his wristwatch, taps his foot, sighs. A seagull lands on the railing. Static medium-wide shot. No speech, no text, no subtitles, no music."
   },
-  "baslik": {"tr": "Kara göründü mü? | Hadi vs Yürü komedi", "en": "Land ahoy? | Hadi vs Yürü comedy"}
+  {
+   "ad": "b",
+   "sure": 8,
+   "istem": "Character reference: Hadi (the cheerful round-faced man with a black mustache) in a small crow's nest at the top of a ship mast, in a sailor's striped shirt, fast asleep on a pile of simit with binoculars hanging from his neck. He suddenly jerks awake in panic, grabs the binoculars upside down, looks, then jumps up with both arms in the air shouting in excitement with a wide open mouth. The sea behind him with a tiny strip of land far away. Comedic, energetic, quick motion. No speech, no text, no subtitles, no music."
+  },
+  {
+   "ad": "c",
+   "sure": 8,
+   "istem": "Character reference: Yuru (serious man with glasses and white captain's cap) at the ship's wheel on the bridge, in the big window behind him the ship has already run gently onto a sandy beach full of beach umbrellas and astonished tourists. Yuru slowly turns his head toward the camera with a deadpan stare and a long weary sigh. Then Hadi (cheerful man with a black mustache, striped sailor shirt) climbs down into the frame from above, laughs nervously and shrugs with open palms, scratching his head. Comedic, static medium shot. No speech, no text, no subtitles, no music."
+  }
+ ],
+ "replikler": {
+  "tr": [
+   {
+    "kim": "yuru",
+    "sahne": "a",
+    "bas": 0.6,
+    "duygu": "cagir",
+    "metin": "Kara göründü müüü?"
+   },
+   {
+    "kim": "hadi",
+    "sahne": "b",
+    "bas": 1.3,
+    "duygu": "bagir",
+    "metin": "Kara göründüüüü!!!"
+   },
+   {
+    "kim": "yuru",
+    "sahne": "c",
+    "bas": 1.0,
+    "duygu": "uzgun",
+    "metin": "Ulan sormasak…"
+   },
+   {
+    "kim": "hadi",
+    "sahne": "c",
+    "bas": 4.2,
+    "duygu": "kikir",
+    "metin": "Yok valla, denk geldi lan!"
+   }
+  ],
+  "en": [
+   {
+    "kim": "yuru",
+    "sahne": "a",
+    "bas": 0.6,
+    "duygu": "cagir",
+    "metin": "Do we see land yeeet?"
+   },
+   {
+    "kim": "hadi",
+    "sahne": "b",
+    "bas": 1.3,
+    "duygu": "bagir",
+    "metin": "Laaaand! I see laaaand!!!"
+   },
+   {
+    "kim": "yuru",
+    "sahne": "c",
+    "bas": 1.0,
+    "duygu": "uzgun",
+    "metin": "Man... we really shouldn't have asked."
+   },
+   {
+    "kim": "hadi",
+    "sahne": "c",
+    "bas": 4.2,
+    "duygu": "kikir",
+    "metin": "Swear to God, man, it was just a coincidence!"
+   }
+  ]
+ },
+ "baslik": {
+  "tr": "Kara göründü mü? | Hadi vs Yürü komedi",
+  "en": "Land ahoy? | Hadi vs Yürü comedy"
+ }
 }

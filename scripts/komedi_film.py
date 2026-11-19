@@ -17,7 +17,7 @@ EN_PROFIL = {
     "yuru": ("Yuru", "The ship's deadpan captain in a comedy short film. Dry, sarcastic, unimpressed.",
              "Style: dry, deadpan, weary. Pace: slow and calm. Accent: light Turkish accent in English."),
 }
-DUYGU = {"sakin": " Right now: perfectly calm, flat.", "bagir": " Right now: shouting at the top of his lungs in sudden panic, stretching the long vowels.",
+DUYGU = {"cagir": " Right now: bellowing at the top of his lungs up to a lookout far above, cupped hands, gruff captain voice, long drawn-out last syllable, very loud and projected.", "sakin": " Right now: perfectly calm, flat.", "bagir": " Right now: shouting at the top of his lungs in sudden panic, stretching the long vowels.",
          "uzgun": " Right now: very tired, sighing, resigned.", "kikir": " Right now: nervous giggling, guilty, defensive, fast."}
 
 
