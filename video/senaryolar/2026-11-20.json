@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-20",
+  "mac": "Galatasaray – Samsunspor",
+  "mac_alt": "12. hafta · Cumartesi 16.00",
+  "kanca": "Lider evinden çıktı, fark ne olur?",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Galatasaray çar gol diavêje, ez pir kêfxweş im baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe dört gol dedi. Osimhen yok, tribün de 17 bine indi. Sakin ol baba."},
+    {"kim": "hadi", "metin": "Lider evinde altı maçta yenilmedi, Samsun 17. sırada! 4-0 alırız baba!"},
+    {"kim": "yuru", "metin": "Samsun deplasmanda beş maçta dört yenildi, doğru. Ama ben 2-0 diyorum. Görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "4-0", "yuru": "2-0",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Galatasaray–Samsunspor maçı Cumartesi 16.00'da Başakşehir Fatih Terim Stadı'nda; Hadi 4-0, Yürü 2-0 dedi. Sence lider farkı kaç atar? Tu çi dibêjî? Pêşbîniya xwe binivîse!",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/galatasaray-samsunspor-cumartesi-hadi-dort-sifir-diyor/",
+              "yuru": "https://yurubaba.com/2026/11/galatasaray-samsunspor-on-yedi-bin-kisilik-ev-hadi-dort-istiyor/"}
+}
