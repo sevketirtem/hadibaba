@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-20T13:06:01.633Z",
+ "guncellendi": "2026-11-21T12:46:01.239Z",
  "lig": "203",
  "sezon": "2026",
  "maclar": [
@@ -1788,8 +1788,8 @@
   {
    "id": 1584470,
    "tarih": "2026-11-21T13:30:00+03:00",
-   "durum": "NS",
-   "dakika": null,
+   "durum": "FT",
+   "dakika": 90,
    "lig": "Süper Lig",
    "ligId": 203,
    "hafta": "12",
@@ -1797,11 +1797,11 @@
    "dep": "Gaziantep FK",
    "evId": 997,
    "depId": 3573,
-   "evGol": null,
-   "depGol": null,
-   "stat": "Eryaman Stadium",
+   "evGol": 1,
+   "depGol": 0,
+   "stat": "Eryaman Stadyumu",
    "sehir": "Ankara",
-   "hakem": null
+   "hakem": "Halil Umut Meler"
   },
   {
    "id": 1584469,
@@ -1819,7 +1819,7 @@
    "depGol": null,
    "stat": "Basaksehir Fatih Terim Stadium",
    "sehir": "Istanbul",
-   "hakem": null
+   "hakem": "A. Sansalan"
   },
   {
    "id": 1584466,
@@ -1837,7 +1837,7 @@
    "depGol": null,
    "stat": "Diyarbakir Stadium",
    "sehir": null,
-   "hakem": null
+   "hakem": "U. Ozturk"
   },
   {
    "id": 1584472,
@@ -1855,7 +1855,7 @@
    "depGol": null,
    "stat": "Turka Arac Muayene Kocaeli Stadyumu",
    "sehir": "Izmit",
-   "hakem": null
+   "hakem": "K. Saglam"
   },
   {
    "id": 1584468,
@@ -1873,7 +1873,7 @@
    "depGol": null,
    "stat": null,
    "sehir": "Erzurum",
-   "hakem": null
+   "hakem": "A. Akarsu"
   },
   {
    "id": 1584473,
@@ -1891,7 +1891,7 @@
    "depGol": null,
    "stat": "Konya Buyuksehir Belediye Stadium",
    "sehir": "Konya",
-   "hakem": null
+   "hakem": "C. Altay"
   },
   {
    "id": 1584471,
@@ -1909,7 +1909,7 @@
    "depGol": null,
    "stat": null,
    "sehir": "Istanbul",
-   "hakem": null
+   "hakem": "D. Celik"
   },
   {
    "id": 1584474,
@@ -1927,7 +1927,7 @@
    "depGol": null,
    "stat": "Papara Park",
    "sehir": "Trabzon",
-   "hakem": null
+   "hakem": "G. Hasova"
   },
   {
    "id": 1584467,
@@ -1945,7 +1945,7 @@
    "depGol": null,
    "stat": "Basaksehir Fatih Terim Stadium",
    "sehir": "Istanbul",
-   "hakem": null
+   "hakem": "D. Tonusluoglu"
   },
   {
    "id": 1584475,
