@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-21",
+  "mac": "Kocaelispor – Fenerbahçe",
+  "mac_alt": "12. hafta · Cumartesi 19.00",
+  "kanca": "Hadi 15 gol diyor, Yürü 8",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 5",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Îro çar maç hene, ez pir kêfxweş im baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe dört maç var dedi. Sonra dört maça 15 gol yazdı. Sakin ol baba."},
+    {"kim": "hadi", "metin": "Lig döndü! Körfez'de Muriqi var, Fener 1-3 alır baba!"},
+    {"kim": "yuru", "metin": "Lig ortalaması dört maça 12 gol. Kocaeli evde beş maçta 2 yedi. 1-1 baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "1-3", "yuru": "1-1",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Kocaelispor–Fenerbahçe bu akşam 19.00'da, Tahmin Ligi 5-5: Hadi 1-3, Yürü 1-1 dedi. Sence bugünün dört maçında kaç gol çıkar? Tu çi dibêjî? Pêşbîniya xwe binivîse!",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/kocaelispor-fenerbahce-super-cumartesi-hadi-on-bes-gol/",
+              "yuru": "https://yurubaba.com/2026/11/kocaelispor-fenerbahce-hadi-on-bes-gol-ben-sekiz/"}
+}
