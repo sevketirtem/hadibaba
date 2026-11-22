@@ -99,10 +99,10 @@ tarih,hafta,ev,dep,ev_gol,dep_gol,durum,id
 2026-11-08 18:30,11,Alanyaspor,Trabzonspor,0,2,bitti,1584457
 2026-11-08 21:00,11,Beşiktaş,Gençlerbirliği S.K.,3,0,bitti,1584458
 2026-11-21 13:30,12,Gençlerbirliği S.K.,Gaziantep FK,1,0,bitti,1584470
-2026-11-21 16:00,12,Galatasaray,Samsunspor,,,,1584469
-2026-11-21 16:00,12,Amed,Rizespor,,,,1584466
-2026-11-21 19:00,12,Kocaelispor,Fenerbahçe,,,,1584472
-2026-11-22 13:30,12,Erzurumspor FK,Göztepe,,,,1584468
+2026-11-21 16:00,12,Galatasaray,Samsunspor,2,1,bitti,1584469
+2026-11-21 16:00,12,Amed,Rizespor,0,2,bitti,1584466
+2026-11-21 19:00,12,Kocaelispor,Fenerbahçe,2,2,bitti,1584472
+2026-11-22 13:30,12,Erzurumspor FK,Göztepe,0,1,bitti,1584468
 2026-11-22 16:00,12,Konyaspor,Beşiktaş,,,,1584473
 2026-11-22 16:00,12,Kasımpaşa,Alanyaspor,,,,1584471
 2026-11-22 19:00,12,Trabzonspor,Eyüpspor,,,,1584474
