@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-22",
+  "mac": "Trabzonspor – Eyüpspor",
+  "mac_alt": "12. hafta · Pazar 19.00",
+  "kanca": "Hadi bu hafta Trabzon'u seçti",
+  "tablo": "Tahmin ligi: Hadi 5 · Yürü 6",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Îro Trabzon şampiyon e, ez pir kêfxweş im baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe Trabzon şampiyon dedi. Galatasaray 31 puanda. Kasım'da şampiyon olunmaz baba."},
+    {"kim": "hadi", "metin": "Fırtına altı maçtır kazanıyor! Eyüp'e 4-0! Konya'da da Kartal 1-3 alır baba!"},
+    {"kim": "yuru", "metin": "Eyüp 11 maçta 3 gol attı, Konya 6. Bana 2-0 ve 0-1 yeter. Görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "4-0", "yuru": "2-0",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Trabzonspor–Eyüpspor bu akşam 19.00'da, Konyaspor–Beşiktaş 16.00'da. Hadi Trabzon'u bu haftanın şampiyonu ilan etti, Yürü takvime bakıyor; sence kim haklı? Tu çi dibêjî? Pêşbîniya xwe binivîse!",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/trabzonspor-eyupspor-hadi-firtinayi-sampiyon-ilan-etti/",
+              "yuru": "https://yurubaba.com/2026/11/konyaspor-besiktas-hadi-trabzonu-sampiyon-yapti-kasim-diyorum/"}
+}
