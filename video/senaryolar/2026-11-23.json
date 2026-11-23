@@ -1,0 +1,38 @@
+{
+  "tarih": "2026-11-23",
+  "mac": "Başakşehir – Çorum FK",
+  "mac_alt": "12. hafta · Pazartesi 20.00",
+  "kanca": "Hadi sekizinciyi şampiyon yaptı!",
+  "tablo": "Tahmin ligi: Hadi 7 · Yürü 8",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Rojbaş hevalno! Îşev maç heye, Başakşehir şampiyon e baba!",
+      "dil": "ku"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kürtçe günaydın dedi, sekizinciyi şampiyon yaptı. Lider 31 puanda baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Başakşehir evinde dört galibiyet aldı, Shomurodov 8 gol attı! 3-1 alırız baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Çorum deplasmanda evinden çok puan topladı. Bana 1-1 yeter. Görürüz baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "TAHMİNLER",
+    "hadi": "3-1",
+    "yuru": "1-1",
+    "hadi_soz": "Yaparız baba!",
+    "yuru_soz": "Görürüz baba."
+  },
+  "aciklama": "Başakşehir–Çorum FK bu akşam 20.00'de. Hadi Başakşehir'i haftanın şampiyonu ilan edip 3-1 dedi, Yürü 1-1'de ısrarcı; sence kim haklı? Tu çi dibêjî? Pêşbîniya xwe binivîse!",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/basaksehir-corum-fk-bu-aksam-hadi-uc-bir-diyor/",
+    "yuru": "https://yurubaba.com/2026/11/basaksehir-corum-fk-hadi-sekizinciyi-sampiyon-yapti-ben-bir-bir/"
+  }
+}
