@@ -24,6 +24,8 @@ Haksızlık etmeyeyim, **[Çorum FK](/takim/corum-fk/)** deplasmanda yine dişin
 
 Sonra teknik heyet **69. dakikada** Davie Selke'yi alıp **Bertuğ Yıldırım**'ı oyuna soktu. O değişikliği yapan eline sağlık! Önce Shomurodov farkı bire indirdi; sabah "Shomurodov bir atar" dedim, attı! Ardından sahne Bertuğ'un: **82'de** 2-2, **86'da** 3-2, son dakikada da **4-2**! Oyuna girdikten sonra dokuz dakika içinde üç gol, kariyerinin ilk hat-trick'i. Pazartesi akşamı futbol bu kadar güzel olur mu baba?
 
+Ben sabah "Çorum bir şeref golü atar" demiştim, iki attılar. Başakşehir de üç değil dört attı. Yani gol sayısında bile cömert davrandım ama maç benden de cömert çıktı! Altı gollü bir Pazartesi, bundan iyisi can sağlığı!
+
 Başakşehir **20 puana** çıktı, [Fenerbahçe](/takim/fenerbahce/) ve [Kocaelispor](/takim/kocaelispor/) ile aynı puanda. Sabah söylemiştim, tuttu. Çorum 16 puanda kaldı. Bütün goller ve istatistikler [maçın sayfasında](/maclar/2026-27/basaksehir-corum-fk/), puan durumu [canlı sayfada](/canli/).
 
 ## Tahmin Ligi
