@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-23T14:51:19.978Z",
+ "guncellendi": "2026-11-24T14:57:43.055Z",
  "sezon": "2026",
  "lig": "203",
  "tablo": [
@@ -89,6 +89,20 @@
   },
   {
    "sira": 7,
+   "takim": "Başakşehir",
+   "id": 564,
+   "o": 12,
+   "g": 6,
+   "b": 2,
+   "m": 4,
+   "a": 23,
+   "y": 19,
+   "av": 4,
+   "p": 20,
+   "form": "WWWLW"
+  },
+  {
+   "sira": 8,
    "takim": "Kocaelispor",
    "id": 7411,
    "o": 12,
@@ -102,7 +116,7 @@
    "form": "DWDWL"
   },
   {
-   "sira": 8,
+   "sira": 9,
    "takim": "Göztepe",
    "id": 994,
    "o": 12,
@@ -114,20 +128,6 @@
    "av": 4,
    "p": 18,
    "form": "WLWWW"
-  },
-  {
-   "sira": 9,
-   "takim": "Başakşehir",
-   "id": 564,
-   "o": 11,
-   "g": 5,
-   "b": 2,
-   "m": 4,
-   "a": 19,
-   "y": 17,
-   "av": 2,
-   "p": 17,
-   "form": "WWLWD"
   },
   {
    "sira": 10,
@@ -147,15 +147,15 @@
    "sira": 11,
    "takim": "Çorum FK",
    "id": 6343,
-   "o": 11,
+   "o": 12,
    "g": 5,
    "b": 1,
-   "m": 5,
-   "a": 21,
-   "y": 21,
-   "av": 0,
+   "m": 6,
+   "a": 23,
+   "y": 25,
+   "av": -2,
    "p": 16,
-   "form": "LWLWW"
+   "form": "LLWLW"
   },
   {
    "sira": 12,

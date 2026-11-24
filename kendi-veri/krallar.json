@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-23T14:51:20.243Z",
+ "guncellendi": "2026-11-24T14:57:43.360Z",
  "sezon": "2026",
  "gol": [
   {
@@ -48,6 +48,17 @@
   },
   {
    "sira": 5,
+   "oyuncu": "E. Shomurodov",
+   "takim": "Başakşehir",
+   "mac": 12,
+   "dakika": 1019,
+   "gol": 9,
+   "asist": 1,
+   "penalti": 2,
+   "sayi": 9
+  },
+  {
+   "sira": 6,
    "oyuncu": "A. Benedyczak",
    "takim": "Kasımpaşa",
    "mac": 12,
@@ -56,17 +67,6 @@
    "asist": 2,
    "penalti": 3,
    "sayi": 9
-  },
-  {
-   "sira": 6,
-   "oyuncu": "E. Shomurodov",
-   "takim": "Başakşehir",
-   "mac": 11,
-   "dakika": 929,
-   "gol": 8,
-   "asist": 1,
-   "penalti": 2,
-   "sayi": 8
   },
   {
    "sira": 7,
@@ -92,6 +92,17 @@
   },
   {
    "sira": 9,
+   "oyuncu": "C. Ramírez",
+   "takim": "Çorum FK",
+   "mac": 12,
+   "dakika": 985,
+   "gol": 7,
+   "asist": 1,
+   "penalti": 1,
+   "sayi": 7
+  },
+  {
+   "sira": 10,
    "oyuncu": "Juan",
    "takim": "Göztepe",
    "mac": 12,
@@ -102,7 +113,7 @@
    "sayi": 7
   },
   {
-   "sira": 10,
+   "sira": 11,
    "oyuncu": "A. Sowe",
    "takim": "Rizespor",
    "mac": 12,
@@ -113,7 +124,7 @@
    "sayi": 6
   },
   {
-   "sira": 11,
+   "sira": 12,
    "oyuncu": "B. Kutlu",
    "takim": "Kocaelispor",
    "mac": 12,
@@ -124,22 +135,11 @@
    "sayi": 6
   },
   {
-   "sira": 12,
+   "sira": 13,
    "oyuncu": "D. Sabia",
    "takim": "Amed",
    "mac": 12,
    "dakika": 1033,
-   "gol": 6,
-   "asist": 1,
-   "penalti": 1,
-   "sayi": 6
-  },
-  {
-   "sira": 13,
-   "oyuncu": "C. Ramírez",
-   "takim": "Çorum FK",
-   "mac": 11,
-   "dakika": 900,
    "gol": 6,
    "asist": 1,
    "penalti": 1,
@@ -160,8 +160,8 @@
    "sira": 15,
    "oyuncu": "A. Kyziridis",
    "takim": "Çorum FK",
-   "mac": 9,
-   "dakika": 736,
+   "mac": 10,
+   "dakika": 821,
    "gol": 4,
    "asist": 4,
    "penalti": 0,
@@ -270,6 +270,17 @@
   },
   {
    "sira": 5,
+   "oyuncu": "I. Brnić",
+   "takim": "Başakşehir",
+   "mac": 10,
+   "dakika": 568,
+   "gol": 0,
+   "asist": 5,
+   "penalti": 0,
+   "sayi": 5
+  },
+  {
+   "sira": 6,
    "oyuncu": "G. Orban",
    "takim": "Amed",
    "mac": 12,
@@ -280,34 +291,23 @@
    "sayi": 4
   },
   {
-   "sira": 6,
+   "sira": 7,
    "oyuncu": "A. Kyziridis",
    "takim": "Çorum FK",
-   "mac": 9,
-   "dakika": 736,
+   "mac": 10,
+   "dakika": 821,
    "gol": 4,
    "asist": 4,
    "penalti": 0,
    "sayi": 4
   },
   {
-   "sira": 7,
+   "sira": 8,
    "oyuncu": "L. Trossard",
    "takim": "Beşiktaş",
    "mac": 11,
-   "dakika": 924,
+   "dakika": 918,
    "gol": 3,
-   "asist": 4,
-   "penalti": 0,
-   "sayi": 4
-  },
-  {
-   "sira": 8,
-   "oyuncu": "I. Brnić",
-   "takim": "Başakşehir",
-   "mac": 9,
-   "dakika": 478,
-   "gol": 0,
    "asist": 4,
    "penalti": 0,
    "sayi": 4
@@ -383,7 +383,7 @@
    "oyuncu": "D. Türüç",
    "takim": "Konyaspor",
    "mac": 11,
-   "dakika": 876,
+   "dakika": 870,
    "gol": 1,
    "asist": 3,
    "penalti": 0,
