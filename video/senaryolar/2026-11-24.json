@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-24",
+  "mac": "Galatasaray – Aston Villa",
+  "mac_alt": "Şampiyonlar Ligi 5. hafta · Salı 20.45",
+  "kanca": "Hadi Avrupa kupasını erken verdi!",
+  "tablo": "Tahmin ligi: Hadi 8 · Yürü 8",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Îşev Galatasaray dilîze, ez pir kêfxweş im baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe selam verdi, bir de Devler Ligi kupasını Kasım'da verdi. Sakin ol baba."},
+    {"kim": "hadi", "metin": "Galatasaray ligde 31 puanla lider, Batrakov formda! RAMS Park'ta 2-1 alırız baba!"},
+    {"kim": "yuru", "metin": "Avrupa'da 6 puan, 18. sıra, Osimhen yok. Yine 1-1 diyorum. Görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "2-1", "yuru": "1-1",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Galatasaray–Aston Villa bu akşam 20.45'te RAMS Park'ta. Hadi 2-1 diyor, Yürü yine 1-1'de; sence kim haklı? Tu çi dibêjî? Pêşbîniya xwe binivîse!",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/galatasaray-aston-villa-bu-aksam-hadi-iki-bir-diyor/",
+              "yuru": "https://yurubaba.com/2026/11/galatasaray-aston-villa-hadi-kupayi-kasimda-verdi-ben-bir-bir/"}
+}
