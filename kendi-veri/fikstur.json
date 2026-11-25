@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-24T14:57:42.757Z",
+ "guncellendi": "2026-11-25T14:32:52.318Z",
  "lig": "203",
  "sezon": "2026",
  "maclar": [
@@ -109,7 +109,7 @@
    "depGol": 0,
    "stat": "Basaksehir Fatih Terim Stadium",
    "sehir": "Istanbul",
-   "hakem": "M. Turkmen"
+   "hakem": "Mehmet Turkmen"
   },
   {
    "id": 1584369,
@@ -163,7 +163,7 @@
    "depGol": 3,
    "stat": "Samsun 19 Mayis Stadyumu",
    "sehir": "Samsun",
-   "hakem": "K. Saglam"
+   "hakem": "Kadir Saglam"
   },
   {
    "id": 1584378,
@@ -289,7 +289,7 @@
    "depGol": 1,
    "stat": "Gursel Aksel Stadium",
    "sehir": "Izmir",
-   "hakem": "B. Kolak"
+   "hakem": "Batuhan Kolak"
   },
   {
    "id": 1584376,
@@ -305,9 +305,9 @@
    "depId": 549,
    "evGol": 1,
    "depGol": 0,
-   "stat": "Alanya Oba Stadium",
+   "stat": "Bahcesehir Okullari Stadium",
    "sehir": "Alanya",
-   "hakem": "A. D. Kayatepe"
+   "hakem": "Adnan Deniz Kayatepe"
   },
   {
    "id": 1584382,
@@ -595,7 +595,7 @@
    "depGol": 0,
    "stat": "Papara Park",
    "sehir": "Trabzon",
-   "hakem": "C. Altay"
+   "hakem": "Cagdas Altay"
   },
   {
    "id": 1584400,
@@ -1909,7 +1909,7 @@
    "depGol": 1,
    "stat": "Recep Tayyip Erdogan Stadium",
    "sehir": "Istanbul",
-   "hakem": "Davut Dakul Celik"
+   "hakem": "D. Celik"
   },
   {
    "id": 1584474,
@@ -1927,7 +1927,7 @@
    "depGol": 0,
    "stat": "Papara Park",
    "sehir": "Trabzon",
-   "hakem": "Gurcan Hasova"
+   "hakem": "G. Hasova"
   },
   {
    "id": 1584467,
@@ -1945,7 +1945,7 @@
    "depGol": 2,
    "stat": "Basaksehir Fatih Terim Stadium",
    "sehir": "Istanbul",
-   "hakem": "Direnc Tonusluoglu"
+   "hakem": "D. Tonusluoglu"
   },
   {
    "id": 1584475,
@@ -1961,7 +1961,7 @@
    "depId": 607,
    "evGol": null,
    "depGol": null,
-   "stat": "Alanya Oba Stadium",
+   "stat": "Alanya Oba Stadyumu",
    "sehir": "Alanya",
    "hakem": null
   },
@@ -1979,7 +1979,7 @@
    "depId": 1004,
    "evGol": null,
    "depGol": null,
-   "stat": null,
+   "stat": "Çaykur Didi Stadyumu",
    "sehir": "Rize",
    "hakem": null
   },
