@@ -1,0 +1,18 @@
+{
+  "tarih": "2026-11-25",
+  "mac": "Shakhtar Donetsk – Fenerbahçe",
+  "mac_alt": "Şampiyonlar Ligi 5. hafta · Çarşamba 23.00",
+  "kanca": "Hadi üçüncü şampiyonu ilan etti!",
+  "tablo": "Tahmin ligi: Hadi 9 · Yürü 8",
+  "mesajlar": [
+    {"kim": "hadi", "metin": "Silav hevalno! Îşev Fenerbahçe li Londonê dilîze, ez pir kêfxweş im baba!", "dil": "ku"},
+    {"kim": "yuru", "metin": "Kürtçe selam verdi, Fener'i de Londra'da şampiyon ilan etti. Sakin ol baba."},
+    {"kim": "hadi", "metin": "Emre ile Arda karşı karşıya! Fener 5 puanda, gece 23.00'te 1-2 alırız baba!"},
+    {"kim": "yuru", "metin": "Fener dört maçta 11 gol yedi. Bu sefer 1-1 değil, 2-2 diyorum. Görürüz baba."}
+  ],
+  "bitis_karti": {"baslik": "TAHMİNLER", "hadi": "1-2", "yuru": "2-2",
+                  "hadi_soz": "Yaparız baba!", "yuru_soz": "Görürüz baba."},
+  "aciklama": "Shakhtar Donetsk–Fenerbahçe bu gece 23.00'te Stamford Bridge'de. Hadi 1-2 diyor, Yürü 2-2; sence kim haklı? Tu çi dibêjî?",
+  "yazilar": {"hadi": "https://hadibaba.com/2026/11/shakhtar-donetsk-fenerbahce-bu-gece-hadi-bir-iki-diyor/",
+              "yuru": "https://yurubaba.com/2026/11/shakhtar-donetsk-fenerbahce-hadi-ucuncu-sampiyonu-ilan-etti-ben-iki-iki/"}
+}
