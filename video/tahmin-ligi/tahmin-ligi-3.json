@@ -1,0 +1,18 @@
+{
+  "tarih": "tahmin-ligi-3",
+  "seri_no": 3,
+  "mac": "CSKA Sofya - Trabzonspor",
+  "skor": "1-2",
+  "bilen": "yuru",
+  "puan": {"yuru": 11, "hadi": 11},
+  "replikler": [
+    {"kim": "hadi", "duygu": "uzgun", "metin": "Tahmin Ligi'nde tam skor alarmı! Of be... Yürü yine bildi: CSKA Sofya Trabzonspor, bire iki!"},
+    {"kim": "yuru", "duygu": "sevinc", "metin": "Trabzonspor kazanır ama Sofya'dan gol yemeden dönmez dedim. Avrupa'da deplasmanda gol yiyordu. Fark bir olur dedim, bir oldu."},
+    {"kim": "hadi", "metin": "Ben sıfıra üç demiştim! Galibi yine bildim baba. Ama son dakikada golü atan Saviolo'ydu, sen değil!"},
+    {"kim": "yuru", "duygu": "sevinc", "metin": "Tam skor üç puan. Yürü on bir, Hadi on bir. İki puan gerideydim, eşitledim. Hesap makinesi bende."},
+    {"kim": "hadi", "metin": "Pazartesi derbide farkı yeniden açacağım! Sen de tahminini yorumlara yaz!"}
+  ],
+  "aciklama": "🎯 TAHMİN LİGİ #3 · TAM SKOR!\nYürü, CSKA Sofya-Trabzonspor maçını perşembe sabahı 1-2 yazdı ve tuttu! Gerekçesi: Trabzonspor kazanır ama Sofya'dan gol yemeden dönmez, fark bir olur. Hadi'nin 0-3'ü galibi buldu, skoru bulamadı.\n\nPuan durumu: Yürü 11 – Hadi 11\nSen de bu haftanın maçlarına skor tahminini yorumlara yaz! Burada bahis yok, sadece futbol ve laf var.",
+  "yt_ek": "Seri: #TahminLigi",
+  "yt_baslik": "TAM SKOR! Yürü CSKA Sofya-Trabzonspor maçını 1-2 bildi · Tahmin Ligi #3"
+}
