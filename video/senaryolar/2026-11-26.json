@@ -1,0 +1,38 @@
+{
+  "tarih": "2026-11-26",
+  "mac": "CSKA Sofya – Trabzonspor",
+  "mac_alt": "Konferans Ligi 4. hafta · Perşembe 23.00",
+  "kanca": "Yürü dün söyledi, bugün oldu!",
+  "tablo": "Tahmin ligi: Hadi 10 · Yürü 8",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Silav hevalno! Îşev Trabzonspor li Sofyayê dilîze, em ê bi ser bikevin baba!",
+      "dil": "ku"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kürtçe selam verdi, Trabzon'u da yine şampiyon yaptı. Dün söylemiştim baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Fırtına 3 maçta 6 puan, CSKA'nın 1 puanı var! Bu akşam 23.00'te 0-3 alırız baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Beraberliği bıraktım ama Trabzon sıfır yemeden dönmez. Bence 1-2. Görürüz baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "TAHMİNLER",
+    "hadi": "0-3",
+    "yuru": "1-2",
+    "hadi_soz": "Yaparız baba!",
+    "yuru_soz": "Görürüz baba."
+  },
+  "aciklama": "CSKA Sofya–Trabzonspor bu akşam 23.00'te Sofya'da. Hadi 0-3 diyor, Yürü 1-2; sence kim haklı? Tu çi dibêjî?",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/cska-sofya-trabzonspor-bu-gece-hadi-sifir-uc-diyor/",
+    "yuru": "https://yurubaba.com/2026/11/cska-sofya-trabzonspor-hadi-dorduncu-sampiyonu-ilan-etti-ben-bir-iki/"
+  }
+}
