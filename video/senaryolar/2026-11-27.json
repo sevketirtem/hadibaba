@@ -1,0 +1,38 @@
+{
+  "tarih": "2026-11-27",
+  "mac": "Rizespor – Kasımpaşa",
+  "mac_alt": "13. hafta · Cuma 20.00",
+  "kanca": "Hadi'nin beşinci şampiyonu!",
+  "tablo": "Tahmin ligi: Hadi 11 · Yürü 11",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Silav hevalno! Îşev Kasimpaşa li Rîzeyê dilîze, sibê jî Amed! Ez kêfxweş im baba!",
+      "dil": "ku"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kürtçe selam verdi, Paşa'yı da şampiyon yaptı. Beş günde beş şampiyon baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Paşa 12 maçta bir kez yenildi! Bu akşam 20.00'de Rize'de 1-2 alırız baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Kasımpaşa'nın 5 beraberliği var, ligde en çok. Ben yine 1-1 diyorum. Görürüz baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "TAHMİNLER",
+    "hadi": "1-2",
+    "yuru": "1-1",
+    "hadi_soz": "Yaparız baba!",
+    "yuru_soz": "Görürüz baba."
+  },
+  "aciklama": "Rizespor–Kasımpaşa bu akşam 20.00'de Rize'de. Hadi 1-2 diyor, Yürü 1-1; sence kim haklı? Tu çi dibêjî?",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/rizespor-kasimpasa-bu-aksam-hadi-pasayi-sampiyon-ilan-etti/",
+    "yuru": "https://yurubaba.com/2026/11/rizespor-kasimpasa-hadi-besinci-sampiyonu-ilan-etti-ben-bir-bir/"
+  }
+}
