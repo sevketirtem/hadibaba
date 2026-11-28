@@ -1,0 +1,38 @@
+{
+  "tarih": "2026-11-28",
+  "mac": "Gaziantep FK – Amedspor",
+  "mac_alt": "13. hafta · Cumartesi 19.00",
+  "kanca": "Kürsü düştü, altıncı şampiyon geldi!",
+  "tablo": "Tahmin ligi: Hadi 11 · Yürü 11",
+  "mesajlar": [
+    {
+      "kim": "hadi",
+      "metin": "Silav hevalno! Îro êvarê Amed li Gaziantepê dilîze. Em ê bikin baba!",
+      "dil": "ku"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Amed'e selam verdi, kürsüyü de verdi. Altı günde altı şampiyon baba."
+    },
+    {
+      "kim": "hadi",
+      "metin": "Amed 12 maçta 23 puan, dördüncü! Bu akşam 19.00'da 1-3 alırız baba!"
+    },
+    {
+      "kim": "yuru",
+      "metin": "Gaziantep 7 maçtır kaybediyor ama evinde bir gol bulur. Ben 1-2 diyorum. Görürüz baba."
+    }
+  ],
+  "bitis_karti": {
+    "baslik": "TAHMİNLER",
+    "hadi": "1-3",
+    "yuru": "1-2",
+    "hadi_soz": "Yaparız baba!",
+    "yuru_soz": "Görürüz baba."
+  },
+  "aciklama": "Gaziantep FK–Amedspor bu akşam 19.00'da Gaziantep'te. Hadi 1-3 diyor, Yürü 1-2; sence kim haklı? Tu çi dibêjî? Pêşbîniya xwe binivîse! ⚽",
+  "yazilar": {
+    "hadi": "https://hadibaba.com/2026/11/gaziantep-fk-amedspor-bu-aksam-hadi-bir-uc-diyor/",
+    "yuru": "https://yurubaba.com/2026/11/gaziantep-fk-amedspor-hadi-altinci-sampiyonu-ilan-etti-ben-bir-iki/"
+  }
+}
